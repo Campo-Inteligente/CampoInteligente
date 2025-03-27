@@ -1,0 +1,169 @@
+.sobreContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+  z-index: 100;
+  background-color: transparent;
+  color: white;
+}
+
+
+.navList {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #fff;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+.navLink:hover, 
+.activeNavLink {
+  font-weight: bold;
+  color: #00ff88;
+}
+
+.intro {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  background: rgba(40, 80, 50, 0.8);
+  margin: 20px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.texto {
+  width: 50%;
+}
+
+.texto h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.texto p {
+  font-size: 1.2rem;
+  color: white;
+}
+
+.imagemContainer {
+  width: 45%;
+}
+
+.equipeImg {
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: auto;
+}
+
+.blocos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+.bloco {
+  background: rgba(40, 80, 50, 0.8);
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
+  color: white;
+}
+
+.bloco:hover {
+  transform: scale(1.05);
+}
+
+.missao {
+  align-self: flex-start;
+}
+
+.visao {
+  align-self: flex-end;
+}
+
+.valores {
+  align-self: flex-start;
+}
+
+.bloco h2 {
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.equipe {
+  text-align: center;
+  padding: 40px;
+}
+
+.equipe h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #ffffff;
+}
+
+.membros {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.membro {
+  background: rgba(10, 111, 35, 0.8);
+  padding: 20px;
+  border-radius: 15px;
+  width: 250px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+  color: white;
+}
+
+.membro:hover {
+  transform: scale(1.05);
+}
+
+.membroImg {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00ff88;
+}
+
+.membro h3 {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+
+.membro p {
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
