@@ -5,14 +5,13 @@
 
 
 .header {
-  position: fixed;
   width: 100%;
   padding: 20px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  background: transparent;
+  background: transparent !important;
   transition: background 0.3s ease;
 }
 
