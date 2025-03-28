@@ -59,7 +59,7 @@ export default function Home() {
           </div>
 
           <div className={styles.heroText}>
-              <a href="#" className={styles.btn}>Conheça nosso ChatBot      →</a>
+              <a href="#" className={styles.btn}>Conheça nosso ChatBot→</a>
               <p className={styles.description}>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut quasi, animi voluptatibus pariatur voluptas expedita nemo qui libero quo odio autem saepe, debitis error aperiam cumque facilis dignissimos incidunt vero.
               </p>
