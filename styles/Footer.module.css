@@ -1,8 +1,11 @@
 .footer {
+  position: relative;
+  width: 100%;
   background-color: rgba(217, 217, 217, 0.762);
   color: #166534;
   padding: 30px 50px;
   font-size: 14px;
+  margin-top: auto;
 }
 
 .footercontainer {

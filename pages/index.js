@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faLinkedin, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import styles from '../styles/Home.module.css';
 import Footer from '../components/Footer';
+import Navbar from '../components/Navbar';
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -24,27 +25,10 @@ export default function Home() {
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
       </Head>
 
-      <header className={styles.header}>
-        <div className={styles.logo}>
-          <Image 
-            src="/imagens/Logo.png" 
-            alt="Campo Inteligente" 
-            width={200} 
-            height={50}
-            priority
-          />
-        </div>
-        <nav className={styles.nav}>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="/sobre">Sobre nós</a></li>
-            <li><a href="#">Contato</a></li>
-          </ul>
-        </nav>
-      </header>
-
       <main className={styles.mainContent}>
+      
         <section className={styles.hero}>
+        <Navbar />
           <div className={styles.overlay}></div>
           
           <div className={styles.heroContent}>
@@ -71,9 +55,12 @@ export default function Home() {
             <a href="#"><FontAwesomeIcon icon={faLinkedin} /></a>
             <a href="#"><FontAwesomeIcon icon={faFacebook} /></a>
           </div>
+          
         </section>
-        <Footer />
+        
       </main>
+
+      <Footer />
     
     </>
   );
