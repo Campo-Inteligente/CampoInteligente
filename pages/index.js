@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faInstagram, faLinkedin, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import styles from '../styles/Home.module.css';
+import Footer from '../components/Footer';
 
 export default function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,8 +29,8 @@ export default function Home() {
           <Image 
             src="/imagens/Logo.png" 
             alt="Campo Inteligente" 
-            width={160} 
-            height={45}
+            width={200} 
+            height={50}
             priority
           />
         </div>
@@ -59,7 +60,7 @@ export default function Home() {
           </div>
 
           <div className={styles.heroText}>
-              <a href="#" className={styles.btn}>Conheça nosso ChatBot→</a>
+              <a href="#" className={styles.btn}>Conheça nosso ChatBot<span className={styles.arrow}>⟶</span></a>
               <p className={styles.description}>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut quasi, animi voluptatibus pariatur voluptas expedita nemo qui libero quo odio autem saepe, debitis error aperiam cumque facilis dignissimos incidunt vero.
               </p>
@@ -71,7 +72,9 @@ export default function Home() {
             <a href="#"><FontAwesomeIcon icon={faFacebook} /></a>
           </div>
         </section>
+        <Footer />
       </main>
+    
     </>
   );
 }
