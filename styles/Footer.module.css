@@ -1,5 +1,5 @@
 .footer {
-  background-color: rgba(217, 217, 217, 0.762); /* Fundo com transparência */
+  background-color: rgba(217, 217, 217, 0.762);
   color: #166534;
   padding: 30px 50px;
   font-size: 14px;
@@ -73,19 +73,19 @@
 .footersocial a {
   color: #127234;
   font-size: 20px;
-  background: #d9d9d9; /* Fundo escuro transparente */
-  padding: 12px; /* Tamanho interno do botão */
-  border-radius: 50%; /* Garante que fique redondo */
+  background: #d9d9d9;
+  padding: 12px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 35px; /* Define um tamanho fixo para manter o formato redondo */
+  width: 35px;
   height: 35px;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
 .footersocial a:hover {
-  background: #127234; /* Muda o fundo ao passar o mouse */
+  background: #127234;
   color: #d9d9d9;
 }
 
