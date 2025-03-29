@@ -2,46 +2,55 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Sobre.module.css'
-
+import Footer from '../components/Footer';
+import Navbar from '../components/Navbar'; 
 export default function Sobre() {
  
   const membros = [
     {
+      cargo: "Cientista de Dados",
       nome: "Abimael Soares",
-      descricao: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipiscing quis voluptas possimus.",
+      descricao: "Tem experiência em ciências de dados e atualmente cursa ciência da computação na UESC",
       imagem: "/imagens/abimael.jpeg"
     },
     {
+      cargo: "Scrum Master",
       nome: "Arthur Martins",
-      descricao: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere molestias ut?",
+      descricao: "Graduando em Sistemas Informações pela UESB, com experiência em back end e ciências de dados",
       imagem: "/imagens/arthur.jpg"
     },
     {
+      cargo: "Desenvolvimento Mobile",
       nome: "Bruna Galiza",
       descricao: "Técnica em Informática pelo Instituto Federal de Educação, Ciência e Tecnologia Baiano – Campus Santa Inês. Possui experiência prática em projetos voltados para tecnologia, comunicação e atendimento ao público.",
       imagem: "/imagens/bruna.jpg"
     },
     {
+      cargo: "Desenvolvedor front end",
       nome: "Fabio Santos",
       descricao: "Técnico em Informática pelo IFBA, graduando em Sistemas de Informação pela UESB. Possui experiência em bancos de dados, desenvolvimento web, flutter e linguagens como Java e Python.",
       imagem: "/imagens/fabio.jpeg"
     },
     {
+      cargo: "Desenvoldedora Fron end",
       nome: "Gisele Gomes",
-      descricao: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Evenet nobis enpildate minus ex scepe puratur suut delcerus.",
+      descricao: "Graduando em Sistemas de Informação pela Universidade Estadual da Bahia, tem experiência com desenvolvimento WEB e front end",
       imagem: "/imagens/gisele.jpg"
     },
     {
+      cargo: "DEsenvolvedor mobile",
       nome: "João Victor",
-      descricao: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligeudi, neque vertistat Dolores ipsam dicta velit suut consequatur.",
+      descricao: "Graduando em Sistemas de Informações pela Universidade Estadual do Sudoeste da Bahia.",
       imagem: "/imagens/joao.jpg"
     },
     {
+      cargo: "Desenvolvedor back end",
       nome: "Juan Pablo",
-      descricao: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium nihil id voluptate cum necetur voluptatem repellat.",
+      descricao: "Técnico em Informática pelo IFBA e graduando em Sistemas de Informação na UESB, com experiência em back-end e automação. Especialista em soluções inovadoras com Python, focadas em eficiência e análise de dados.",
       imagem: "/imagens/juan.jpg"
     },
     {
+      cargo: "Gerente de projeto",
       nome: "Marcos Morais",
       descricao: "Dinâmico Gerente de Projetos de TI com mais de 15 anos de experiência, especializado em gerenciamento ágil e desenvolvimento de software usando tecnologias como C#, Python, PHP e bancos de dados relacionais, como Oracle e SQL Server. Bacharel em Sistemas de Informação, pós-graduado em Gestão de Tecnologia da Informação e Mestre em Ciência da Computação.",
       imagem: "/imagens/marcos.jpg"
@@ -55,32 +64,8 @@ export default function Sobre() {
         <meta name="description" content="Conheça nossa equipe e nossa missão" />
       </Head>
       
-      <header className={styles.header}>
-        <Link href="/">
-          <Image 
-                   src="/imagens/Logo.png" 
-                   alt="Campo Inteligente" 
-                   width={150} 
-                   height={50}
-                   priority
-                 />
-        </Link>
+      <Navbar />
         
-        <nav className={styles.navContainer}>
-          <ul className={styles.navList}>
-            <li>
-              <Link href="/" className={styles.navLink}>Home</Link>
-            </li>
-            <li>
-              <Link href="/sobre" className={`${styles.navLink} ${styles.activeNavLink}`}>Sobre nós</Link>
-            </li>
-            <li>
-              <Link href="/contato" className={styles.navLink}>Contato</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-      
       <main>
         <section className={styles.intro}>
           <div className={styles.texto}>
@@ -150,25 +135,40 @@ export default function Sobre() {
         </section>
         
         <section className={styles.equipe}>
-          <h2>Nossa equipe</h2>
-          
-          <div className={styles.membros}>
-            {membros.map((membro, index) => (
-              <div key={index} className={styles.membro}>
-                <Image
-                  src={membro.imagem}
-                  alt={membro.nome}
-                  className={styles.membroImg}
-                  width={120}
-                  height={120}
-                />
-                <h3>{membro.nome}</h3>
-                <p>{membro.descricao}</p>
-              </div>
-            ))}
-          </div>
-        </section>
+  <h2>Nossa equipe</h2>
+  
+  <div className={styles.membrosGrid}>
+    {membros.map((membro, index) => (
+      <div key={index} className={styles.cardMembro}>
+        <div className={styles.cardEsquerda}>
+          <Image
+            src={membro.imagem}
+            alt={membro.nome}
+          layout="fill"
+          objectFit="cover"
+            className={styles.avatar}
+          />
+        </div>
+        <div className={styles.cardDireita}>
+          <h3>{membro.nome}</h3>
+          <p className={styles.cargo}>{membro.cargo}</p>
+          <p className={styles.descricao}>{membro.descricao}</p>
+          <a href="#" className={styles.linkedin}>
+            <img 
+              src="/imagens/linkedin.png" 
+              alt="LinkedIn" 
+              width={20}
+              height={20}
+            />
+          </a>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
       </main>
+      <Footer />
     </div>
+    
   )
 }
