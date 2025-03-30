@@ -46,7 +46,7 @@ export default function Home() {
           <div className={styles.heroText}>
               <a href="#" className={styles.btn}>Conheça nosso ChatBot<span className={styles.arrow}>⟶</span></a>
               <p className={styles.description}>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut quasi, animi voluptatibus pariatur voluptas expedita nemo qui libero quo odio autem saepe, debitis error aperiam cumque facilis dignissimos incidunt vero.
+              Somos uma plataforma inovadora que coloca a tecnologia a serviço do agricultor familiar. Com inteligência artificial integrada a dados meteorológicos e de mercado, oferecemos uma ferramenta simples, eficiente e acessível para otimizar o plantio, o manejo das lavouras e a colheita. Tudo isso na palma da sua mão, direto pelo WhatsApp, para que você tome decisões estratégicas e maximize seus lucros com segurança e praticidade!
               </p>
             </div>
 
