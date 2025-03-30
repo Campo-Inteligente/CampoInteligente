@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
-import Navbar from '../components/Navbar';
+import Navbar from '../components/NavbarVerde';
 import Footer from '../components/Footer';
 import styles from '../styles/Contato.module.css';
 
