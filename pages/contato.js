@@ -29,13 +29,13 @@ export default function Contato() {
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
       </Head>
 
-      <Navbar />
+      
 
       <main className={styles.container}>
       <h2>Conecte-se com a Campo Inteligente</h2>
       <p>Cultive oportunidades e transforme sua produção com inovação.</p>
         <section className={styles.contato}>
-            
+        <Navbar />
           <div className={styles.formulario}>
             
             <form onSubmit={handleSubmit}>
@@ -55,7 +55,7 @@ export default function Contato() {
             </form>
           </div>
           <div className={styles.imagem}>
-            <Image src="/imagens/contato.png" alt="Agricultor usando o app" width={500} height={500} />
+            <Image src="/imagens/contato1.png" alt="Agricultor usando o app" width={500} height={500} />
           </div>
         </section>
       </main>
