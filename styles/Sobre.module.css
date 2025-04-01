@@ -32,6 +32,7 @@
 .texto p {
   font-size: 1.2rem;
   color: white;
+  text-align: justify;
 }
 
 .imagemContainer {
@@ -204,8 +205,16 @@
   background-color: rgba(234, 214, 34, 0.866); 
   transform: scale(1.1);
 }
+.linkedinBtn a {
+  color: #127234;
+}
+
+.linkedinBtn a:hover {
+  color: #D9D9D9;
+}
 
 .linkedinIcon {
+  color: #127234;
   width: 24px;
   height: 24px;
   object-fit: contain;

@@ -4,6 +4,13 @@ import { motion } from "framer-motion";
 import styles from "../styles/Sobre.module.css";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faInstagram,
+  faLinkedin,
+  faFacebook,
+} from "@fortawesome/free-brands-svg-icons";
+
 export default function Sobre() {
   const membros = [
     {
@@ -17,14 +24,14 @@ export default function Sobre() {
       cargo: "Scrum Master",
       nome: "Arthur Martins",
       descricao:
-        "Graduando em Sistemas Informações pela UESB, com experiência em back end e ciências de dados",
+        "Scrum Master com foco em gestão de projetos. Graduando em Sistemas de Informação pela UESB, com experiência em desenvolvimento mobile e análise de dados, impulsionando a otimização de processos e a tomada de decisões estratégicas.",
       imagem: "/imagens/arthur.jpg",
     },
     {
       cargo: "Analista de Cloud",
       nome: "Bruna Queiroz",
       descricao:
-        "Técnica em Informática pelo IF Baiano, com experiência em comunicação e atendimento ao público.",
+        "Técnica em Informática pelo Instituto Federal de Educação, Ciência e Tecnologia Baiano – Campus Santa Inês. Possui experiência prática em projetos voltados para tecnologia, comunicação e atendimento ao público.",
       imagem: "/imagens/bruna.jpg",
     },
     {
@@ -35,29 +42,31 @@ export default function Sobre() {
       imagem: "/imagens/fabio.jpeg",
     },
     {
-      cargo: "Desenvoldedora Fron end",
+      cargo: "Desenvoldedora Front-End",
       nome: "Gisele Gomes",
       descricao:
-        "Graduando em Sistemas de Informação pela UESB e desenvolvedora front-end.",
-      imagem: "/imagens/gisele.jpg",
+        "UI/UX Designer e Desenvolvedora Front-End. Técnica em Informática pelo IFBA e graduanda em Sistemas de Informação pela UESB, experiente em Figma, React Native e Next.js para criar interfaces intuitivas e experiências digitais envolventes.",
+      imagem: "/imagens/gisele1.jpg",
     },
     {
       cargo: "DEsenvolvedor mobile",
       nome: "João Victor",
-      descricao: "Graduando em Sistemas de Informações pela UESB.",
-      imagem: "/imagens/joao.jpg",
+      descricao:
+        "Bacharelando em Sistemas de Informação pela UESB.  Atuando profissionalmente na área de Ciência de Dados. Com experiência em análise de dados e com habilidades em ferramentas como SQL e Power BI, Python para análise e ciência de dados.",
+      imagem: "/imagens/joao2.jpg",
     },
     {
-      cargo: "Desenvolvedor back end",
+      cargo: "Desenvolvedor Back-End",
       nome: "Juan Pablo",
-      descricao: "Técnico em Informática pelo IFBA e graduando em SI na UESB.",
+      descricao:
+        "Desenvolvedor Back-End com foco em automação e processamento de dados. Técnico pelo IFBA e graduando em Sistemas de Informação, possui experiência IA e Python para criar soluções inteligentes.",
       imagem: "/imagens/juan.jpg",
     },
     {
-      cargo: "Gerente de projeto",
+      cargo: "Gerente de Projetos",
       nome: "Marcos Morais",
       descricao:
-        "Dinâmico Gerente de Projetos de TI com mais de 15 anos de experiência.",
+        "Mestre em Ciência da Computação, com especialização em Visão Computacional e IA aplicada à área médica. Pós-graduado em Gestão de TI e Bacharel em Sistemas de Informação, atuando desde 1995 com tecnologia e inovação",
       imagem: "/imagens/marcos.jpg",
     },
   ];
@@ -83,9 +92,13 @@ export default function Sobre() {
           >
             <h1>Colhendo soluções, Cultivando o Futuro.</h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Voluptatibus quo itaque, accusantium ad ipsum praesentium quis
-              amet atque quisquam impedit molestias.
+              Na Campo Inteligente, unimos tecnologia e inovação para
+              transformar o agronegócio. Nosso chatbot utiliza IA e APIs
+              avançadas para fornecer previsões do tempo, recomendações de
+              cultivo e respostas precisas para suas dúvidas. Com dados
+              confiáveis na palma da sua mão, você toma decisões mais
+              estratégicas e garante uma colheita mais produtiva. Cultive com
+              inteligência, colha com eficiência!
             </p>
           </motion.div>
 
@@ -198,11 +211,6 @@ export default function Sobre() {
                     objectFit="cover"
                     className={styles.avatar}
                   />
-                </div>
-                <div className={styles.cardDireita}>
-                  <h3>{membro.nome}</h3>
-                  <p className={styles.cargo}>{membro.cargo}</p>
-                  <p className={styles.descricao}>{membro.descricao}</p>
                   <motion.a
                     href="https://www.linkedin.com"
                     target="_blank"
@@ -211,14 +219,15 @@ export default function Sobre() {
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <Image
-                      src="/imagens/linkedin.png"
-                      alt="LinkedIn"
-                      width={24}
-                      height={24}
-                      className={styles.linkedinIcon}
-                    />
+                    <a href="#">
+                      <FontAwesomeIcon icon={faLinkedin} />
+                    </a>
                   </motion.a>
+                </div>
+                <div className={styles.cardDireita}>
+                  <h3>{membro.nome}</h3>
+                  <p className={styles.cargo}>{membro.cargo}</p>
+                  <p className={styles.descricao}>{membro.descricao}</p>
                 </div>
               </motion.div>
             ))}
