@@ -31,7 +31,7 @@ export default function Sobre() {
       linkedin: "https://www.linkedin.com/in/arthur-martins-510b36235/",
     },
     {
-      cargo: "Diretora de Marketing",
+      cargo: "CMO",
       nome: "Bruna Queiroz",
       descricao:
         "Técnica em Informática pelo Instituto Federal de Educação, Ciência e Tecnologia Baiano – Campus Santa Inês. Possui experiência prática em projetos voltados para tecnologia, comunicação e atendimento ao público.",
@@ -47,7 +47,7 @@ export default function Sobre() {
       linkedin: "https://www.linkedin.com/in/fabio-santos-frutuoso-1784401b9/",
     },
     {
-      cargo: "CTO - Diretora de tecnologia",
+      cargo: "CTO",
       nome: "Gisele Gomes",
       descricao:
         "UI/UX Designer e Desenvolvedora Front-End. Técnica em Informática pelo IFBA e graduanda em Sistemas de Informação pela UESB, experiente em Figma, React Native e Next.js para criar interfaces intuitivas e experiências digitais envolventes.",
@@ -55,7 +55,7 @@ export default function Sobre() {
       linkedin: "https://www.linkedin.com/in/gisele-gomes-oliveira-037bb1128/",
     },
     {
-      cargo: "CFO - Diretor Financeiro",
+      cargo: "CFO",
       nome: "João Victor",
       descricao:
         "Bacharelando em Sistemas de Informação pela UESB.  Atuando profissionalmente na área de Ciência de Dados. Com experiência em análise de dados e com habilidades em ferramentas como SQL e Power BI, Python para análise e ciência de dados.",
@@ -64,7 +64,7 @@ export default function Sobre() {
         "https://www.linkedin.com/in/jo%C3%A3o-victor-oliveira-santos-3b8aa1203/",
     },
     {
-      cargo: "Desenvolvedor",
+      cargo: "CTO",
       nome: "Juan Pablo",
       descricao:
         "Desenvolvedor Back-End com foco em automação e processamento de dados. Técnico pelo IFBA e graduando em Sistemas de Informação, possui experiência IA e Python para criar soluções inteligentes.",
