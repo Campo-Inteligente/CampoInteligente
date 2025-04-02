@@ -14,53 +14,61 @@ import {
 export default function Sobre() {
   const membros = [
     {
-      cargo: "Cientista de Dados",
+      cargo: "Desenvolvedor",
       nome: "Abimael Soares",
       descricao:
-        "Tem experiência em ciências de dados e atualmente cursa ciência da computação na UESC",
+        "Graduando em Ciências da Computação pelo Instituto Federal de Educação, Ciências e Tecnologia da Bahia,IFBA, tem experiência com as linguagens java, python, C e com desenvolvimento back-end e automação de tarefas.",
       imagem: "/imagens/abimael.jpeg",
+      linkedin: "https://www.linkedin.com/in/abimael-uanderson/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
     },
     {
-      cargo: "Scrum Master",
+      cargo: "CEO",
       nome: "Arthur Martins",
       descricao:
         "Scrum Master com foco em gestão de projetos. Graduando em Sistemas de Informação pela UESB, com experiência em desenvolvimento mobile e análise de dados, impulsionando a otimização de processos e a tomada de decisões estratégicas.",
       imagem: "/imagens/arthur.jpg",
+       linkedin: "https://www.linkedin.com/in/arthur-martins-510b36235/"
     },
     {
-      cargo: "Analista de Cloud",
+      cargo: "Diretora de Marketing",
       nome: "Bruna Queiroz",
       descricao:
         "Técnica em Informática pelo Instituto Federal de Educação, Ciência e Tecnologia Baiano – Campus Santa Inês. Possui experiência prática em projetos voltados para tecnologia, comunicação e atendimento ao público.",
       imagem: "/imagens/bruna.jpg",
+      linkedin: "https://www.linkedin.com/in/bruna-queiroz-5422a7261/"
+
     },
     {
-      cargo: "Desenvolvedor front end",
+      cargo: "Desenvolvedor",
       nome: "Fabio Santos",
       descricao:
-        "Técnico em Informática pelo IFBA, graduando em Sistemas de Informação pela UESB",
+        "Técnico em Informática pelo IFBA, graduando em Sistemas de Informação pela UESB. Com experiências em designer gráfico, por meio dos programas Photoshop e Corel Draw, já trabalhou com as linguagens java, python e C, além dos frameworks flutter e next.js.",
       imagem: "/imagens/fabio.jpeg",
+      linkedin: "https://www.linkedin.com/in/fabio-santos-frutuoso-1784401b9/"
     },
     {
-      cargo: "Desenvoldedora Front-End",
+      cargo: "CTO - Diretora de tecnologia",
       nome: "Gisele Gomes",
       descricao:
         "UI/UX Designer e Desenvolvedora Front-End. Técnica em Informática pelo IFBA e graduanda em Sistemas de Informação pela UESB, experiente em Figma, React Native e Next.js para criar interfaces intuitivas e experiências digitais envolventes.",
       imagem: "/imagens/gisele1.jpg",
+      linkedin: "https://www.linkedin.com/in/gisele-gomes-oliveira-037bb1128/"
     },
     {
-      cargo: "DEsenvolvedor mobile",
+      cargo: "CFO - Diretor Financeiro",
       nome: "João Victor",
       descricao:
         "Bacharelando em Sistemas de Informação pela UESB.  Atuando profissionalmente na área de Ciência de Dados. Com experiência em análise de dados e com habilidades em ferramentas como SQL e Power BI, Python para análise e ciência de dados.",
       imagem: "/imagens/joao2.jpg",
+       linkedin: "https://www.linkedin.com/in/jo%C3%A3o-victor-oliveira-santos-3b8aa1203/"
     },
     {
-      cargo: "Desenvolvedor Back-End",
+      cargo: "Desenvolvedor",
       nome: "Juan Pablo",
       descricao:
         "Desenvolvedor Back-End com foco em automação e processamento de dados. Técnico pelo IFBA e graduando em Sistemas de Informação, possui experiência IA e Python para criar soluções inteligentes.",
       imagem: "/imagens/juan.jpg",
+      linkedin: "https://www.linkedin.com/in/marcosmoraisjr/"
     },
     {
       cargo: "Gerente de Projetos",
@@ -68,6 +76,7 @@ export default function Sobre() {
       descricao:
         "Mestre em Ciência da Computação, com especialização em Visão Computacional e IA aplicada à área médica. Pós-graduado em Gestão de TI e Bacharel em Sistemas de Informação, atuando desde 1995 com tecnologia e inovação",
       imagem: "/imagens/marcos.jpg",
+      linkedin: "https://www.linkedin.com/in/marcosmoraisjr/"
     },
   ];
 
@@ -185,8 +194,12 @@ export default function Sobre() {
               <h2>Valores</h2>
             </div>
             <p>
-              • Inovação • Acessibilidade • Sustentabilidade • Confiabilidade
-              Estratégicas no campo e Empoderamento
+            <p>
+  • Inovação <br /> 
+  • Acessibilidade <br /> 
+  • Sustentabilidade <br /> 
+  
+</p>
             </p>
           </motion.div>
         </section>
@@ -212,16 +225,16 @@ export default function Sobre() {
                     className={styles.avatar}
                   />
                   <motion.a
-                    href="https://www.linkedin.com"
+                    href={membro.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={styles.linkedinBtn}
                     whileHover={{ scale: 1.1 }}
                     transition={{ duration: 0.3 }}
                   >
-                    <a href="#">
+                    
                       <FontAwesomeIcon icon={faLinkedin} />
-                    </a>
+                 
                   </motion.a>
                 </div>
                 <div className={styles.cardDireita}>
