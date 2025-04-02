@@ -27,7 +27,7 @@ export default function Sobre() {
       nome: "Arthur Martins",
       descricao:
         "Scrum Master com foco em gestão de projetos. Graduando em Sistemas de Informação pela UESB, com experiência em desenvolvimento mobile e análise de dados, impulsionando a otimização de processos e a tomada de decisões estratégicas.",
-      imagem: "/imagens/arthurr.jpg",
+      imagem: "/imagens/arthurrr.jpg",
       linkedin: "https://www.linkedin.com/in/arthur-martins-510b36235/",
     },
     {
@@ -92,11 +92,9 @@ export default function Sobre() {
       </Head>
       <div className={styles.navbar}>
         <Navbar />
-        </div>
+      </div>
 
       <main className={styles.mainContent}>
-        
-        
         <section className={styles.intro}>
           <motion.div
             className={styles.texto}
@@ -199,11 +197,9 @@ export default function Sobre() {
               <h2>Valores</h2>
             </div>
             <p>
-              <p>
-                • Inovação <br />
-                • Acessibilidade <br />
-                • Sustentabilidade <br />• Empoderamento
-              </p>
+              • Inovação <br />
+              • Acessibilidade <br />
+              • Sustentabilidade <br />• Empoderamento
             </p>
           </motion.div>
         </section>
