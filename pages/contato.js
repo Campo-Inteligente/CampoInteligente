@@ -18,9 +18,31 @@ export default function Contato() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Mensagem enviada com sucesso!");
+
+    try {
+      const response = await fetch("/api/sendEmail", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        alert("Mensagem enviada com sucesso!");
+        setFormData({
+          nome: "",
+          telefone: "",
+          email: "",
+          mensagem: "",
+        });
+      } else {
+        alert("Erro ao enviar. Tente novamente mais tarde.");
+      }
+    } catch (error) {
+      console.error("Erro ao enviar:", error);
+      alert("Erro ao enviar. Verifique sua conexão.");
+    }
   };
 
   return (
