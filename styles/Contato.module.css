@@ -116,14 +116,72 @@
   object-fit: contain; /* Garante que a imagem não distorça */
 }
 
+/* Ajuste para centralizar os textos e reduzir tamanho no mobile */
 @media (max-width: 768px) {
+
+  .contain {
+    background-color: #f1f8f4;
+    background-image: url('/imagens/fundo2.png');
+
+  }
   .contato {
     flex-direction: column;
     text-align: center;
   }
 
   .formulario {
-    padding-right: 0;
-    margin-bottom: 20px;
+    width: 90%;
+    max-width: 400px; /* Reduz tamanho do bloco */
+    padding: 20px;
+    height: auto;
   }
+
+  .formulario button {
+    margin-left: 0; /* Centraliza botão */
+    width: 100%; /* Ocupa toda a largura */
+  }
+
+  .imagem {
+    max-width: 80%; /* Reduz tamanho da imagem */
+  }
+
+  .imagem img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+
+/* Ajuste para telas menores (máximo de 600px) */
+@media (max-width: 600px) {
+
+  .contato {
+    flex-direction: column; /* Formulário e imagem ficam um abaixo do outro */
+    text-align: center;
+    gap: 10px;
+  }
+
+  .formulario {
+    width: 100%; /* Usa toda a largura disponível */
+    max-width: 350px; /* Limita para não ficar muito grande */
+    padding: 20px;
+    height: auto; /* Ajuste automático da altura */
+  }
+
+  .formulario button {
+    margin-left: 0; /* Remove margem lateral */
+    width: 100%; /* Botão ocupa toda a largura */
+  }
+
+  .imagem {
+    max-width: 90%; /* Mantém um tamanho adequado */
+    margin-top: 10px;
+  }
+
+  .imagem img {
+    max-width: 100%;
+    height: auto;
+  }
+
 }

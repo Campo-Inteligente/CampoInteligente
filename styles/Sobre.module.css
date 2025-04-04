@@ -2,13 +2,17 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  background-image: url('/imagens/fundo2.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Opcional: para efeito parallax */
+  background-repeat: no-repeat;
 }
 
 .mainContent {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  
 }
 .navbar {
   padding-bottom: 50px;
@@ -254,7 +258,139 @@
 
 
 @media (max-width: 768px) {
+  .intro {
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+   width: 390px;
+  }
+
+  .texto {
+    width: 100%;
+    padding: 0;
+  }
+
+  .imagemContainer img {
+    margin-top: 20px;
+    width: 350px;
+    height: 300px;
+    
+  }
+
+  .bloco {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    
+  }
+
+  .missao,
+ .visao,
+  .valores {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: 365px;
+    height:40%;
+    max-width:500px;
+    text-align:center;
+  }
+
+  .cardMembro {
+  flex-direction: column;
+   max-width: 370px;;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .cardEsquerda {
+    width: 100% !important;
+    height: 250px;
+  }
+
+
+  .avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    position: absolute;
+    object-position: center 20%;
+  }
+
+  .cardDireita {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .cardDireita h3 {
+    font-size: 1rem;
+  }
+
+
+
+  .descricao {
+    font-size: 1rem;
+  }
+
+  .cargo {
+    font-size: 0.8rem;
+  }
+
   .membrosGrid {
+    gap: 25px;
+    padding: 0 20px;
     grid-template-columns: 1fr;
   }
+
+
+  .linkedinBtn {
+    width: 24px;
+    height: 24px;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .linkedinIcon {
+    width: 20px;
+    height: 20px;
+  }
+
 }
+
+
+@media (max-width: 600px) {
+  .missao,
+  .visao,
+  .valores {
+    width: 90%; 
+    padding: 15px;
+    text-align: center;
+    margin: 10px auto;
+  }
+
+  .missao h2,
+  .visao h2,
+  .valores h2 {
+    font-size: 1.4rem; 
+  }
+
+  .missao p,
+  .visao p,
+  .valores p {
+    font-size: 1rem; 
+    line-height: 1.4;
+  }
+
+  .missao img,
+  .visao img,
+  .valores img {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+
+
+
+
+

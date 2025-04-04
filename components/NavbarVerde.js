@@ -4,8 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import styles from "../styles/NavbarVerde.module.css";
 
-export default function NavbarVerde() {
+export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,6 +16,10 @@ export default function NavbarVerde() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <motion.header
       initial={{ opacity: 0, y: -50 }}
@@ -22,22 +27,28 @@ export default function NavbarVerde() {
       transition={{ duration: 0.8, ease: "easeOut" }}
       className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}
     >
-      {/* Logo animada */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
         className={styles.logo}
       >
-        <Image src="/imagens/logov.png" alt="Campo Inteligente" width={200} height={50} priority />
+        <Image src="/imagens/Logov.png" alt="Campo Inteligente" width={200} height={50} priority />
       </motion.div>
 
-      {/* Menu animado */}
+      {/* Botão menu hamburguer */}
+      <div className={styles.hamburger} onClick={toggleMenu}>
+        <div className={`${styles.bar} ${isMenuOpen ? styles.open : ""}`}></div>
+        <div className={`${styles.bar} ${isMenuOpen ? styles.open : ""}`}></div>
+        <div className={`${styles.bar} ${isMenuOpen ? styles.open : ""}`}></div>
+      </div>
+
+      {/* Menu normal + mobile */}
       <motion.nav
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, ease: "easeOut" }}
-        className={styles.nav}
+        className={`${styles.nav} ${isMenuOpen ? styles.open : ""}`}
       >
         <ul>
           <li>

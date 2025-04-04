@@ -107,3 +107,65 @@
   text-align: center;
   margin-top: 40px;
 }
+
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px;
+    font-size: 12px;
+  }
+
+  .footercontainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footerlogo img {
+    width: 120px;
+  }
+
+  .footerlinks,
+  .footerlegal,
+  .footercontact {
+    align-items: center;
+  }
+
+  .footerlinks {
+    gap: 20px;
+  }
+
+  .footerlinks a,
+  .footerlegal a,
+  .footercontact a {
+    font-size: 14px;
+  }
+
+  .footertitle,
+  .footercontact p {
+    font-size: 14px;
+  }
+
+  .footersocial {
+    gap: 20px;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+
+  .footersocial a {
+    font-size: 14px;
+    padding: 8px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .footercopyright {
+    font-size: 12px;
+    margin-top: 20px;
+  }
+
+  .footerline {
+    margin: 20px 0;
+  }
+}

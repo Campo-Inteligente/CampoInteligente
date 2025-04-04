@@ -127,25 +127,151 @@
 }
 
 @media (max-width: 768px) {
-  .header {
-    padding: 15px 20px;
-  }
-  
-  .nav ul {
-    gap: 15px;
-  }
-  
-  .hero {
-    padding-left: 20px;
-    padding-right: 20px;
-    justify-content: center;
-    text-align: center;
-  }
-  
 
   
+
+  .hero {
+    background: url('/imagens/homenvv.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100vh; /* 🔹 Altura mínima de toda a página */
+    height: 100vh;
+    width: 100vw; /* 🔹 Mantém a largura total */
+    background-size: cover;
+    background-position: center; /* 🔹 Centraliza a imagem */
+    background-repeat: no-repeat;
+    padding: 0 20px;
+    overflow: hidden;
+    
+  }
+
+  .heroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 240px; /* 🔹 Move a imagem 1.png mais para baixo */
+  }
+
+  .logo2 {
+    max-width: 55%;
+    height: auto;
+    margin-bottom: -130px; /* Pequeno espaço entre imagem e botão */
+  }
+
+  .heroText .btn {
+    width: auto;
+    height: 45px;
+    font-size: 14px;
+    padding: 8px 12px;
+    margin-left: 30px; /* 🔹 Mantém alinhado à direita da imagem */
+    margin-top: -10px; /* 🔹 Sobe um pouco o botão */
+    white-space: nowrap;
+  }
+
+  .heroText {
+    max-width: 90%;
+    text-align: left;
+    margin-left: 50px; /* 🔹 Mantém alinhado ao botão */
+    margin-top: 160px; /* 🔹 Sobe um pouco o texto para não encostar no footer */
+  }
+
   .socialIcons {
-    right: 15px;
+    z-index: 10;
+    position: absolute;
+    right: 10px;
+    top: 18%;
+    transform: translateY(-50%);
+    gap: 15px;
+    
+  }
+
+  .socialIcons a {
+    font-size: 16px;
+    width: 34px;
+    height: 34px;
+    padding: 8px;
+  }
+
+  
+
+}
+
+
+
+@media (max-width: 600px) {
+
+  
+
+  .hero {
+    background: url('/imagens/homenvv.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 100vh; /* 🔹 Altura mínima de toda a página */
+    height: 100vh;
+    width: 100vw; /* 🔹 Mantém a largura total */
+    background-size: fixed;
+    background-position: center; /* 🔹 Centraliza a imagem */
+    background-repeat: no-repeat;
+    padding: 0 20px;
+    overflow: hidden;
+    
+  }
+
+  .heroContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 39%; /* 🔹 Move a imagem 1.png mais para baixo */
+  }
+
+  .logo2 {
+    max-width: 55%;
+    height: auto;
+    margin-bottom: -10%; /* Pequeno espaço entre imagem e botão */
+  }
+
+  .heroText .btn {
+    width: auto;
+    height: 45px;
+    font-size: 14px;
+    padding: 8px 12px;
+    margin-left: 30px; /* 🔹 Mantém alinhado à direita da imagem */
+    margin-top: 10px; /* 🔹 Sobe um pouco o botão */
+    white-space: nowrap;
+  }
+
+  .heroText {
+    max-width: 90%;
+    text-align: left;
+    margin-left: 50px; /* 🔹 Mantém alinhado ao botão */
+    margin-top: 10%; /* 🔹 Sobe um pouco o texto para não encostar no footer */
+  }
+
+  .socialIcons {
+    position: absolute;
+    right: 10px;
+    top: 18%;
+    transform: translateY(-50%);
     gap: 15px;
   }
+
+  .socialIcons a {
+    font-size: 16px;
+    width: 34px;
+    height: 34px;
+    padding: 8px;
+    
+  }
+
+  
+
 }
+
+
+
