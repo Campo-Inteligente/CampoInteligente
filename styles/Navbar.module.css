@@ -83,7 +83,7 @@
     }
   
     .nav.open {
-      max-height: 300px; /* Ajuste conforme necessidade */
+      max-height: 300px; 
     }
   
     .nav ul {
@@ -94,11 +94,11 @@
     }
 
     .nav ul li a {
-      color: white !important; /* Cor padrão branca */
+      color: white !important;
       font-size: 18px;
       padding: 10px 15px;
       transition: all 0.3s ease;
-      background: transparent !important; /* Remove qualquer fundo */
+      background: transparent !important; 
     }
 
     

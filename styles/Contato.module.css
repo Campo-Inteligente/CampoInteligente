@@ -131,18 +131,18 @@
 
   .formulario {
     width: 90%;
-    max-width: 400px; /* Reduz tamanho do bloco */
+    max-width: 400px; 
     padding: 20px;
     height: auto;
   }
 
   .formulario button {
-    margin-left: 0; /* Centraliza botão */
-    width: 100%; /* Ocupa toda a largura */
+    margin-left: 0; 
+    width: 100%; 
   }
 
   .imagem {
-    max-width: 80%; /* Reduz tamanho da imagem */
+    max-width: 80%; 
   }
 
   .imagem img {
@@ -157,25 +157,25 @@
 @media (max-width: 600px) {
 
   .contato {
-    flex-direction: column; /* Formulário e imagem ficam um abaixo do outro */
+    flex-direction: column;
     text-align: center;
     gap: 10px;
   }
 
   .formulario {
-    width: 100%; /* Usa toda a largura disponível */
-    max-width: 350px; /* Limita para não ficar muito grande */
+    width: 100%; 
+    max-width: 350px; 
     padding: 20px;
-    height: auto; /* Ajuste automático da altura */
+    height: auto; 
   }
 
   .formulario button {
-    margin-left: 0; /* Remove margem lateral */
-    width: 100%; /* Botão ocupa toda a largura */
+    margin-left: 0; 
+    width: 100%; 
   }
 
   .imagem {
-    max-width: 90%; /* Mantém um tamanho adequado */
+    max-width: 90%; 
     margin-top: 10px;
   }
 
