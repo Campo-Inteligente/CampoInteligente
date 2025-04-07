@@ -157,8 +157,11 @@
 
   .logo2 {
     max-width: 55%;
+    width: 400px;
     height: auto;
-    margin-bottom: -130px; 
+    margin-bottom: -10%; 
+    margin-left: 30px;
+    margin-bottom: 2px;
   }
 
   .heroText .btn {
@@ -175,7 +178,8 @@
     max-width: 90%;
     text-align: left;
     margin-left: 50px; 
-    margin-top: 160px; 
+    margin-top: 10%; 
+    margin-bottom: 20px;
   }
 
   .socialIcons {
@@ -206,21 +210,18 @@
   
 
   .hero {
-    background: url('/imagens/homenvv.png') no-repeat center center/cover;
+    background: url('/imagens/homenvv.png') no-repeat center center;
+    background-position: 80% center;
+    background-size: cover;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-    min-height: 100vh; 
-    height: 100vh;
-    width: 100vw; 
-    background-size: fixed;
-    background-position: center; 
-    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100vw;
     padding: 0 20px;
     overflow: hidden;
-    
-  }
+  }  
 
   .heroContent {
     display: flex;
@@ -232,8 +233,11 @@
 
   .logo2 {
     max-width: 55%;
+    width: 400px;
     height: auto;
     margin-bottom: -10%; 
+    margin-left: 30px;
+    margin-bottom: 2px;
   }
 
   .heroText .btn {
@@ -241,7 +245,7 @@
     height: 45px;
     font-size: 14px;
     padding: 8px 12px;
-    margin-left: 30px; 
+    margin-left: 10px; 
     margin-top: 10px; 
     white-space: nowrap;
   }
@@ -251,6 +255,7 @@
     text-align: left;
     margin-left: 50px; 
     margin-top: 10%; 
+    margin-bottom: 20px;
   }
 
   .socialIcons {
