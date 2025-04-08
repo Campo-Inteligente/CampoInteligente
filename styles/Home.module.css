@@ -86,7 +86,6 @@
   width: auto;
   height: auto;
   max-width: 100%;
-  margin-bottom: 50px;
 }
 
 .description {
@@ -156,12 +155,11 @@
   }
 
   .logo2 {
-    max-width: 55%;
-    width: 400px;
-    height: auto;
-    margin-bottom: -10%; 
+    width: 700px;
+    height: 700px;
     margin-left: 30px;
-    margin-bottom: 2px;
+    padding-top: 50px;
+    margin-bottom: 10px;
   }
 
   .heroText .btn {
@@ -169,15 +167,19 @@
     height: 45px;
     font-size: 14px;
     padding: 8px 12px;
-    margin-left: 30px; 
-    margin-top: -10px; 
+    margin-left: 20px;
+    margin-right: 10px; 
+    margin-top: 1px; 
     white-space: nowrap;
+    align-items: center;
+    justify-content: center;
   }
 
   .heroText {
     max-width: 90%;
     text-align: left;
-    margin-left: 50px; 
+    margin-left: 20px;
+    margin-right: 5px;
     margin-top: 10%; 
     margin-bottom: 20px;
   }
@@ -235,9 +237,8 @@
     max-width: 55%;
     width: 400px;
     height: auto;
-    margin-bottom: -10%; 
     margin-left: 30px;
-    margin-bottom: 2px;
+    padding-top: 50px;
   }
 
   .heroText .btn {
@@ -245,15 +246,19 @@
     height: 45px;
     font-size: 14px;
     padding: 8px 12px;
-    margin-left: 10px; 
-    margin-top: 10px; 
+    margin-left: 15px;
+    margin-right: 10px; 
+    margin-top: 1px; 
     white-space: nowrap;
+    align-items: center;
+    justify-content: center;
   }
 
   .heroText {
     max-width: 90%;
     text-align: left;
-    margin-left: 50px; 
+    margin-left: 20px;
+    margin-right: 5px;
     margin-top: 10%; 
     margin-bottom: 20px;
   }
