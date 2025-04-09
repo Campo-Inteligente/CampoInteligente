@@ -27,74 +27,143 @@ export default function Home() {
     <>
       <Head>
         <title>Campo Inteligente</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link
           href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap"
           rel="stylesheet"
         />
       </Head>
         
-
       <main className={styles.mainContent}>
-        <section className={styles.hero}>
-        <Navbar />
-          <div className={styles.overlay}></div>
+        <section className={`${styles.hero} position-relative`}>
+          <Navbar isScrolled={isScrolled} />
+          <div className={`${styles.overlay} position-absolute w-100 h-100`}></div>
 
-          {/* Logo animado */}
-          <motion.div
-            initial={{ opacity: 0, y: -50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className={styles.heroContent}
-          >
-            <div className={styles.logo2}>
-              <Image
-                src="/imagens/1.png"
-                alt="Campo Inteligente"
-                width={400}
-                height={100}
-                layout="intrinsic"
-              />
+          <div className="container h-100 d-flex align-items-center">
+            <div className="row w-100 align-items-center justify-content-center">
+              {/* Coluna do Logo */}
+              <motion.div
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="col-xl-4 col-lg-5 col-md-6 order-1 mb-5 mb-md-0"
+              >
+                <div className={`${styles.logoContainer} text-center`}>
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                  >
+                    <Image
+                      src="/imagens/1.png"
+                      alt="Campo Inteligente"
+                      width={400}
+                      height={100}
+                      className="img-fluid"
+                      priority
+                    />
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              {/* Coluna do Conteúdo */}
+              <motion.div
+                initial={{ opacity: 0, x: -50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                className="col-xl-5 col-lg-6 col-md-8 order-3 order-lg-2"
+              >
+                <div className="text-center text-lg-start px-3 px-md-0">
+                  <motion.a
+                    href="#"
+                    className={`${styles.btn} btn-lg d-inline-flex align-items-center`}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                  >
+                    Conheça nosso ChatBot <span className="ms-2">→</span>
+                  </motion.a>
+                  <motion.p 
+                    className={`${styles.description} mt-4`}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ delay: 0.4 }}
+                  >
+                    Somos uma plataforma inovadora que coloca a tecnologia a serviço
+                    do agricultor familiar. Com inteligência artificial integrada a
+                    dados meteorológicos e de mercado, oferecemos uma ferramenta
+                    simples, eficiente e acessível para otimizar o plantio, o manejo
+                    das lavouras e a colheita. Tudo isso na palma da sua mão, direto
+                    pelo WhatsApp, para que você tome decisões estratégicas e maximize
+                    seus lucros com segurança e praticidade!
+                  </motion.p>
+                </div>
+              </motion.div>
+
+              {/* Ícones Sociais (Desktop) */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="col-xl-1 col-lg-1 order-2 order-xl-3 d-none d-lg-flex justify-content-end"
+              >
+                <div className={`${styles.socialIcons} vstack gap-3`}>
+                  <motion.a
+                    href="#"
+                    whileHover={{ y: -3 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <FontAwesomeIcon icon={faInstagram} />
+                  </motion.a>
+                  <motion.a
+                    href="#"
+                    whileHover={{ y: -3 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <FontAwesomeIcon icon={faLinkedin} />
+                  </motion.a>
+                  <motion.a
+                    href="#"
+                    whileHover={{ y: -3 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <FontAwesomeIcon icon={faFacebook} />
+                  </motion.a>
+                </div>
+              </motion.div>
+
+              {/* Ícones Sociais (Mobile) */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+                className="col-12 order-4 d-flex d-lg-none justify-content-center mt-4 mt-md-5"
+              >
+                <div className={`${styles.socialIcons} d-flex gap-4`}>
+                  <motion.a
+                    href="#"
+                    whileHover={{ y: -3 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <FontAwesomeIcon icon={faInstagram} size="lg" />
+                  </motion.a>
+                  <motion.a
+                    href="#"
+                    whileHover={{ y: -3 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <FontAwesomeIcon icon={faLinkedin} size="lg" />
+                  </motion.a>
+                  <motion.a
+                    href="#"
+                    whileHover={{ y: -3 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <FontAwesomeIcon icon={faFacebook} size="lg" />
+                  </motion.a>
+                </div>
+              </motion.div>
             </div>
-          </motion.div>
-
-          {/* Texto animado vindo da esquerda */}
-          <motion.div
-            initial={{ opacity: 0, x: -100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
-            className={styles.heroText}
-          >
-            <a href="#" className={styles.btn}>
-              Conheça nosso ChatBot <span className={styles.arrow}>⟶</span>
-            </a>
-            <p className={styles.description}>
-              Somos uma plataforma inovadora que coloca a tecnologia a serviço
-              do agricultor familiar. Com inteligência artificial integrada a
-              dados meteorológicos e de mercado, oferecemos uma ferramenta
-              simples, eficiente e acessível para otimizar o plantio, o manejo
-              das lavouras e a colheita. Tudo isso na palma da sua mão, direto
-              pelo WhatsApp, para que você tome decisões estratégicas e maximize
-              seus lucros com segurança e praticidade!
-            </p>
-          </motion.div>
-
-          {/* Ícones sociais animados vindo da direita */}
-          <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1.4, ease: "easeOut" }}
-            className={styles.socialIcons}
-          >
-            <a href="#">
-              <FontAwesomeIcon icon={faInstagram} />
-            </a>
-            <a href="#">
-              <FontAwesomeIcon icon={faLinkedin} />
-            </a>
-            <a href="#">
-              <FontAwesomeIcon icon={faFacebook} />
-            </a>
-          </motion.div>
+          </div>
         </section>
       </main>
 
