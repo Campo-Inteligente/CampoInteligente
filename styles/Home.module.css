@@ -5,12 +5,13 @@
 }
 
 .hero {
-  background: url('/imagens/homenvv.png') no-repeat center center/cover;
+  background: url("/imagens/homenvv.png") no-repeat center center/cover;
   min-height: 100vh;
   position: relative;
   display: flex;
   align-items: center;
-  padding-top: 80px; /* Espaço para o navbar */
+  padding-top: 80px;
+  z-index: 0;
 }
 
 .overlay {
@@ -20,6 +21,12 @@
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
+
+.contentWrapper {
+  position: relative !important;
+  z-index: 2 !important;
 }
 
 .logoContainer {
@@ -45,14 +52,15 @@
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
   border: none;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .btn:hover {
-  background-color: #0d5a2a;
-  transform: translateY(-2px);
+  background: #e8f5e9;
+  color: #127234;
+  transform: scale(1.1);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -63,11 +71,13 @@
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
+  text-align: justify;
 }
 
+
 .socialIcons a {
-  width: 48px;
-  height: 48px;
+  width: 34px;
+  height: 34px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -84,7 +94,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Ajustes para mobile */
+/* Responsivo */
 @media (max-width: 992px) {
   .hero {
     background-position: 75% center;
@@ -118,11 +128,9 @@
   }
 }
 
-/* Ajustes para telas muito pequenas (iPhone SE) */
 @media (max-width: 576px) {
   .hero {
     background-position: 80% center;
-
   }
 
   .logoContainer {

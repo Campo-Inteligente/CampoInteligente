@@ -33,13 +33,13 @@ export default function Home() {
           rel="stylesheet"
         />
       </Head>
-        
+
       <main className={styles.mainContent}>
         <section className={`${styles.hero} position-relative`}>
           <Navbar isScrolled={isScrolled} />
-          <div className={`${styles.overlay} position-absolute w-100 h-100`}></div>
+          <div className={`${styles.overlay}`}></div>
 
-          <div className="container h-100 d-flex align-items-center">
+          <div className={`container h-100 d-flex align-items-center ${styles.contentWrapper}`}>
             <div className="row w-100 align-items-center justify-content-center">
               {/* Coluna do Logo */}
               <motion.div
@@ -70,7 +70,7 @@ export default function Home() {
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                className="col-xl-5 col-lg-6 col-md-8 order-3 order-lg-2"
+                className="col-xl-5 col-lg-6 col-md-8 order-3 order-lg-2 left"
               >
                 <div className="text-center text-lg-start px-3 px-md-0">
                   <motion.a
@@ -83,7 +83,7 @@ export default function Home() {
                     Conheça nosso ChatBot <span className="ms-2">→</span>
                   </motion.a>
                   <motion.p 
-                    className={`${styles.description} mt-4`}
+                    className={`${styles.description} mt-4 `}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.4 }}
@@ -104,28 +104,16 @@ export default function Home() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="col-xl-1 col-lg-1 order-2 order-xl-3 d-none d-lg-flex justify-content-end"
+                className="col-xl-1 col-lg-1 order-2 order-xl-3 d-none d-lg-flex justify-content-end ms-5"
               >
-                <div className={`${styles.socialIcons} vstack gap-3`}>
-                  <motion.a
-                    href="#"
-                    whileHover={{ y: -3 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
+                <div className={`${styles.socialIcons} vstack gap-4`}>
+                  <motion.a href="#" whileHover={{ y: -3 }} whileTap={{ scale: 0.9 }}>
                     <FontAwesomeIcon icon={faInstagram} />
                   </motion.a>
-                  <motion.a
-                    href="#"
-                    whileHover={{ y: -3 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
+                  <motion.a href="#" whileHover={{ y: -3 }} whileTap={{ scale: 0.9 }}>
                     <FontAwesomeIcon icon={faLinkedin} />
                   </motion.a>
-                  <motion.a
-                    href="#"
-                    whileHover={{ y: -3 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
+                  <motion.a href="#" whileHover={{ y: -3 }} whileTap={{ scale: 0.9 }}>
                     <FontAwesomeIcon icon={faFacebook} />
                   </motion.a>
                 </div>
@@ -139,25 +127,13 @@ export default function Home() {
                 className="col-12 order-4 d-flex d-lg-none justify-content-center mt-4 mt-md-5"
               >
                 <div className={`${styles.socialIcons} d-flex gap-4`}>
-                  <motion.a
-                    href="#"
-                    whileHover={{ y: -3 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
+                  <motion.a href="#" whileHover={{ y: -3 }} whileTap={{ scale: 0.9 }}>
                     <FontAwesomeIcon icon={faInstagram} size="lg" />
                   </motion.a>
-                  <motion.a
-                    href="#"
-                    whileHover={{ y: -3 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
+                  <motion.a href="#" whileHover={{ y: -3 }} whileTap={{ scale: 0.9 }}>
                     <FontAwesomeIcon icon={faLinkedin} size="lg" />
                   </motion.a>
-                  <motion.a
-                    href="#"
-                    whileHover={{ y: -3 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
+                  <motion.a href="#" whileHover={{ y: -3 }} whileTap={{ scale: 0.9 }}>
                     <FontAwesomeIcon icon={faFacebook} size="lg" />
                   </motion.a>
                 </div>

@@ -15,7 +15,7 @@
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.5",
     "framer-motion": "^12.6.3",
-    "next": "15.2.3",
+    "next": "^15.3.0",
     "next-images": "^1.8.5",
     "nodemailer": "^6.10.0",
     "react": "19.0.0",
