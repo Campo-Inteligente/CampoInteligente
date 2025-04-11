@@ -222,7 +222,7 @@ export default function Home() {
                   zIndex: 999,
                 }}
               >
-                <div className={`${styles.socialIcons} vstack gap-4`}>
+                <div className={`${styles.socialIcons} vstack gap-5`}>
                   <motion.a
                     href="#"
                     whileHover={{ y: -3 }}
