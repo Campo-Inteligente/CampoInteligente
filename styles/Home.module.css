@@ -75,7 +75,6 @@
   text-align: justify;
 }
 
-
 .socialIcons a {
   width: 34px;
   height: 34px;
@@ -85,13 +84,13 @@
   background: rgba(255, 255, 255, 0.9);
   color: #127234;
   border-radius: 50%;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
 }
 
 .socialIcons a:hover {
   background: #127234;
   color: white;
-  transform: translateY(-3px);
+  transform: scale(1.1);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -149,3 +148,39 @@
     font-size: 0.95rem;
   }
 }
+@media (max-width: 1399px) {
+  .logo-desktop {
+    display: none !important;
+  }
+
+  .logo-mobile {
+    display: block !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .logo-desktop {
+    display: flex !important;
+  }
+
+  .logo-mobile {
+    display: none !important;
+  }
+}
+.conteudo-mobile {
+  display: block;
+}
+
+.conteudo-desktop {
+  display: none;
+}
+
+@media (min-width: 1400px) {
+  .conteudo-mobile {
+    display: none !important;
+  }
+  .conteudo-desktop {
+    display: block !important;
+  }
+}
+
