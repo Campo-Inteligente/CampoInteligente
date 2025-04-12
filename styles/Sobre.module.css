@@ -5,107 +5,86 @@
   background-image: url('/imagens/fundo2.png');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Opcional: para efeito parallax */
+  background-attachment: fixed;
   background-repeat: no-repeat;
 }
 
 .mainContent {
+  flex: 1;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
 }
+
 .navbar {
   padding-bottom: 50px;
   position: relative;
 }
 
 .intro {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 40px;
+  padding: 30px;
   background: rgba(76, 175, 80, 0.13);
-  margin: 60px auto;
+  margin: 40px auto;
   border-radius: 25px;
   backdrop-filter: blur(4px);
-  max-width: 1900px;
-  width: 80%;
+  width: 90%;
+  max-width: 1200px;
 }
 
-.texto {
-  width: 55%;
-  padding-right: 20px;
-}
-
-.texto h1 {
-  font-size: 2.5rem;
+.tituloPrincipal {
+  font-size: 2.2rem;
+  color: white;
   margin-bottom: 20px;
-  color: white;
+  line-height: 1.3;
 }
 
-.texto p {
-  font-size: 1.2rem;
+.textoDescricao {
+  font-size: 1.1rem;
   color: white;
-  text-align: justify;
-}
-
-.imagemContainer {
-  height: auto;
+  line-height: 1.6;
 }
 
 .equipeImg {
   border-radius: 25px;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  flex: 2;
-  max-width: 600px; /* Mantém um tamanho proporcional */
+  width: 100%;
+  height: auto;
 }
 
-.blocos {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 40px;
+.blocosContainer {
+  position: relative;
+  min-height: 500px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 25px;
 }
+
+.textoBloco {
+  text-align: center;
+  line-height: 1.6;
+}
+
+
+
 
 .bloco {
   background: rgba(76, 175, 80, 0.5);
-  padding: 20px;
-  width: 80%;
-  max-width: 600px;
+  padding: 25px;
   border-radius: 25px;
-  text-align: center;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out;
+  backdrop-filter: blur(4px);
   color: white;
-  
-  
+  transition: transform 0.3s ease;
 }
+
 
 .bloco:hover {
-  transform: scale(1.05);
-}
-
-.missao {
-  align-self: flex-start;
-  margin-left: 15%;
-  backdrop-filter: blur(4px);
-}
-
-.visao {
-  align-self: flex-end;
-  margin-right: 15%; 
-  backdrop-filter: blur(4px);
-}
-
-.valores {
-  align-self: flex-start;
-  margin-left: 15%;
-  backdrop-filter: blur(4px);
+  transform: scale(1.03);
 }
 
 
-.tituloComIcone{
+
+
+.tituloComIcone {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -113,83 +92,93 @@
   margin-bottom: 15px;
 }
 
-.iconeBloco{
- width: 50px;
- height: 50px;
- position: relative;
- top: 6.4px;
- align-self: flex-start;
- margin-top: 3px;
-}
-
-.bloco{
-  text-align: center;
-  padding: 20px;
-}
-
-
 .bloco h2 {
   margin-bottom: 0;
   font-size: 1.5rem;
   color: #ffffff;
-  line-height: 1.3;
-  display: inline-block;
 }
-
 
 .equipe {
-  padding: 40px 20px;
-  text-align: center;
-  font-size: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
-.membrosGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 25px;
-  max-width: 1000px;
-  margin: 0 auto;
+.tituloEquipe {
+  color: white; 
+  text-align: center;
+  margin-bottom: 40px;
+  font-size: 2rem;
 }
 
 .cardMembro {
   display: flex;
+  flex-direction: column;
   background: transparent;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 6px rgba(0,0,0,0.1);
   backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 25px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.cardMembro:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
-
-
-.cardEsquerda {
-  width: 120px;
-  background: rgba(245, 245, 245, 0.9); 
-  position: relative; 
-  overflow: hidden; 
-
-
+  transition: transform 0.3s ease;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
 }
 
 .avatar {
-  object-fit: cover; 
   width: 100%;
   height: 100%;
+  object-fit: cover; 
+  object-position: center; 
 }
 
+.imagemWrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.cardEsquerda {
+  width: 120px;
+  min-width: 120px;
+  height: 100%;
+  background: rgba(245, 245, 245, 0.9);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: stretch; 
+}
+
+.membroImagem {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.cardDireita {
+  flex: 1;
+  padding: 20px;
+  background: rgba(76, 175, 80, 0.2);
+  color: white;
+  text-align: center; 
+  padding: 15px; 
+}
 
 .cardDireita h3 {
   margin: 0;
   font-size: 1.2rem;
   color: white;
+}
+
+
+.cardDireita h3,
+.cardDireita .cargo,
+.cardDireita .descricao {
+  text-align: center; 
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .cargo {
@@ -204,17 +193,14 @@
   color: white;
 }
 
-
 .linkedinBtn {
   position: absolute;
   bottom: 15px;
   left: 15px;
   width: 28px;
   height: 28px;
-  background-color: rgba(255, 255, 255, 0.749); 
+  background-color: rgba(255, 255, 255, 0.75);
   border-radius: 6px;
-  border: none;
-  padding: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -223,174 +209,145 @@
 }
 
 .linkedinBtn:hover {
-  background-color: rgba(234, 214, 34, 0.866); 
-  transform: scale(1.1);
+  background-color: rgba(234, 214, 34, 0.87);
   color: white;
 }
 
-
-.linkedinIcon {
-  color: #127234;
-  width: 24px;
-  height: 24px;
-  object-fit: contain;
-  filter: brightness(0) saturate(100%) invert(38%) sepia(70%) saturate(900%) hue-rotate(72deg) brightness(88%) contrast(95%); 
-  transition: all 0.3s ease;
-}
-
-.linkedinBtn:hover .linkedinIcon {
-  filter: brightness(1000%) saturate(0%);
-}
-
-.cardDireita {
-  flex: 1;
-  padding: 20px;
-  background: rgba(76, 175, 80, 0.2);
-  color: white;
-  position: relative;
-}
-
-
-
-
-
-
-
-
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .intro {
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
-    text-align: center;
-   width: 390px;
+    padding: 40px;
+    margin: 60px auto;
   }
-
-  .texto {
-    width: 100%;
-    padding: 0;
+  
+  .tituloPrincipal {
+    font-size: 2.5rem;
   }
-
-  .imagemContainer img {
-    margin-top: 20px;
-    width: 350px;
-    height: 300px;
-    
-  }
-
-  .bloco {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    
-  }
-
-  .missao,
- .visao,
-  .valores {
-    margin-left: auto !important;
-    margin-right: auto !important;
-    width: 365px;
-    height:40%;
-    max-width:500px;
-    text-align:center;
-  }
-
+  
   .cardMembro {
-  flex-direction: column;
-   max-width: 370px;;
-    height: 100%;
-    margin: 0 auto;
+    flex-direction: row;
+    max-width: 100%;
+    min-height: 180px;
   }
-
+  
   .cardEsquerda {
-    width: 100% !important;
-    height: 250px;
-  }
-
-
-  .avatar {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    position: absolute;
-    object-position: center 20%;
+    width: 120px;
+    height: auto;
   }
 
   .cardDireita {
+    padding: 12px;
+  }
+}
+
+@media (min-width: 992px) {
+  .intro {
+    width: 80%;
+  }
+  
+  .textoDescricao {
+    font-size: 1.2rem;
+  }
+
+  .bloco {
     width: 100%;
+    max-width: 600px;
+    margin: 0;
+    padding: 25px;
+  }
+
+  .missao {
+    margin-right: auto;
+    margin-left: 5%;
+  }
+
+  .visao {
+    margin-left: auto;
+    margin-right: 5%;
+  }
+  
+  .valores {
+    margin-right: auto;
+    margin-left: 5%;
+  }
+
+  .conteudoValores {
+    display: flex;
+    justify-content: center;
+  }
+
+  .listaValores {
+    
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+
+}
+
+
+@media (max-width: 991px) {
+  .blocosContainer {
+    min-height: auto;
+  }
+  
+  .bloco {
+    margin-bottom: 20px;
+  }
+
+  .conteudoValores {
+    text-align: center;
+  }
+
+  .listaValores li {
+    list-style-type: none;
+    position: relative;
+    padding-left: 20px;
+    padding: 5px 0;
+    margin-bottom: 5px;
+    font-size: 1rem;
+  }
+  
+  .listaValores li:before {
+    content: "•";
+    color: #fff;
+    font-size: 1.2rem;
+    margin-right: 8px;
+    vertical-align: middle;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .tituloPrincipal {
+    font-size: 1.8rem;
+  }
+  
+  .textoDescricao {
+    font-size: 1rem;
+  }
+
+  .cardMembro {
+    flex-direction: column;
+  }
+
+  .cardEsquerda {
+    width: 100%;
+    height: 200px;
+  }
+  
+  .membroImagem {
+    height: 100%;
+    width: auto;
+    max-width: 100%;
+  }
+  
+  .bloco {
     padding: 20px;
   }
-
+  
   .cardDireita h3 {
-    font-size: 1rem;
-  }
-
-
-
-  .descricao {
-    font-size: 1rem;
-  }
-
-  .cargo {
-    font-size: 0.8rem;
-  }
-
-  .membrosGrid {
-    gap: 25px;
-    padding: 0 20px;
-    grid-template-columns: 1fr;
-  }
-
-
-  .linkedinBtn {
-    width: 24px;
-    height: 24px;
-    bottom: 10px;
-    left: 10px;
-  }
-
-  .linkedinIcon {
-    width: 20px;
-    height: 20px;
-  }
-
-}
-
-
-@media (max-width: 600px) {
-  .missao,
-  .visao,
-  .valores {
-    width: 90%; 
-    padding: 15px;
-    text-align: center;
-    margin: 10px auto;
-  }
-
-  .missao h2,
-  .visao h2,
-  .valores h2 {
-    font-size: 1.4rem; 
-  }
-
-  .missao p,
-  .visao p,
-  .valores p {
-    font-size: 1rem; 
-    line-height: 1.4;
-  }
-
-  .missao img,
-  .visao img,
-  .valores img {
-    width: 40px;
-    height: 40px;
+    font-size: 1.1rem;
   }
 }
-
-
-
-
-
-

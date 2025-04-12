@@ -5,11 +5,8 @@ import styles from "../styles/Sobre.module.css";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faInstagram,
-  faLinkedin,
-  faFacebook,
-} from "@fortawesome/free-brands-svg-icons";
+import { faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { Container, Row, Col } from 'react-bootstrap';
 
 export default function Sobre() {
   const membros = [
@@ -85,166 +82,223 @@ export default function Sobre() {
     <div className={styles.sobreContainer}>
       <Head>
         <title>Sobre Nós | Campo Inteligente</title>
-        <meta
-          name="description"
-          content="Conheça nossa equipe e nossa missão"
-        />
+        <meta name="description" content="Conheça nossa equipe e nossa missão" />
       </Head>
+      
       <div className={styles.navbar}>
         <Navbar />
       </div>
 
       <main className={styles.mainContent}>
-        <section className={styles.intro}>
-          <motion.div
-            className={styles.texto}
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <h1>Colhendo soluções, Cultivando o Futuro.</h1>
-            <p>
-              Na Campo Inteligente, unimos tecnologia e inovação para
-              transformar o agronegócio. Nosso chatbot utiliza IA e APIs
-              avançadas para fornecer previsões do tempo, recomendações de
-              cultivo e respostas precisas para suas dúvidas. Com dados
-              confiáveis na palma da sua mão, você toma decisões mais
-              estratégicas e garante uma colheita mais produtiva. Cultive com
-              inteligência, colha com eficiência!
-            </p>
-          </motion.div>
-
-          <motion.div
-            className={styles.imagemContainer}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-          >
-            <Image
-              src="/imagens/equipe.jpg"
-              alt="Nossa equipe"
-              className={styles.equipeImg}
-              width={500}
-              height={300}
-              priority
-            />
-          </motion.div>
-        </section>
-
-        <section className={styles.blocos}>
-          <motion.div
-            className={`${styles.bloco} ${styles.missao}`}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <div className={styles.tituloComIcone}>
-              <Image
-                src="/imagens/missao.png"
-                alt="missão"
-                width={50}
-                height={50}
-                className={styles.iconeBloco}
-              />
-              <h2>Missão</h2>
-            </div>
-            <p>
-              Democratizar o acesso à tecnologia e à inteligência artificial
-              para agricultores familiares, oferecendo informações estratégicas
-              que otimizam a produtividade, reduzem riscos e promovem uma
-              agricultura mais eficiente, sustentável e rentável.
-            </p>
-          </motion.div>
-
-          <motion.div
-            className={`${styles.bloco} ${styles.visao}`}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <div className={styles.tituloComIcone}>
-              <Image
-                src="/imagens/visão.png"
-                alt="visão"
-                width={50}
-                height={50}
-                className={styles.iconeBloco}
-              />
-              <h2>Visão</h2>
-            </div>
-            <p>
-              Ser a principal plataforma de suporte inteligente para a
-              agricultura familiar, conectando tecnologia e inovação ao campo
-              para transformar a tomada de decisões e impulsionar um agro mais
-              produtivo, acessível e sustentável.
-            </p>
-          </motion.div>
-
-          <motion.div
-            className={`${styles.bloco} ${styles.valores}`}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
-          >
-            <div className={styles.tituloComIcone}>
-              <Image
-                src="/imagens/valores.png"
-                alt="valores"
-                width={50}
-                height={50}
-                className={styles.iconeBloco}
-              />
-              <h2>Valores</h2>
-            </div>
-            <p>
-              • Inovação <br />
-              • Acessibilidade <br />
-              • Sustentabilidade <br />• Empoderamento
-            </p>
-          </motion.div>
-        </section>
-
-        <section className={styles.equipe}>
-          <h2>Nossa equipe</h2>
-
-          <div className={styles.membrosGrid}>
-            {membros.map((membro, index) => (
+        {/* Seção Intro */}
+        <Container className={`${styles.intro} my-5 py-4`}>
+          <Row className="align-items-center">
+            <Col lg={6} className="mb-4 mb-lg-0">
               <motion.div
-                key={index}
-                className={styles.cardMembro}
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
+                transition={{ duration: 0.8 }}
               >
-                <div className={styles.cardEsquerda}>
-                  <Image
-                    src={membro.imagem}
-                    alt={membro.nome}
-                    layout="fill"
-                    objectFit="cover"
-                    className={styles.avatar}
-                  />
-                  <motion.a
-                    href={membro.linkedin}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={styles.linkedinBtn}
-                    whileHover={{ scale: 1.1 }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <FontAwesomeIcon icon={faLinkedin} />
-                  </motion.a>
-                </div>
-                <div className={styles.cardDireita}>
-                  <h3>{membro.nome}</h3>
-                  <p className={styles.cargo}>{membro.cargo}</p>
-                  <p className={styles.descricao}>{membro.descricao}</p>
-                </div>
+                <h1 className={styles.tituloPrincipal}>Colhendo soluções, Cultivando o Futuro.</h1>
+                <p className={styles.textoDescricao}>
+                Na Campo Inteligente, unimos tecnologia e inovação para transformar o agronegócio. Nosso chatbot utiliza IA e APIs avançadas para fornecer previsões do tempo, recomendações de cultivo e respostas precisas para suas dúvidas. Com dados confiáveis na palma da sua mão, você toma decisões mais estratégicas e garante uma colheita mais produtiva. Cultive com inteligência, colha com eficiência!
+                </p>
               </motion.div>
-            ))}
+            </Col>
+
+            <Col lg={6} className="text-center">
+              <motion.div
+                initial={{ opacity: 0, x: 50 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+              >
+                <Image
+                  src="/imagens/equipe.jpg"
+                  alt="Nossa equipe"
+                  width={600}
+                  height={400}
+                  className={`img-fluid ${styles.equipeImg}`}
+                  priority
+                  layout="responsive"
+                />
+              </motion.div>
+            </Col>
+          </Row>
+        </Container>
+
+      {/* Seção Missão, Visão e Valores */}
+<Container className={`${styles.blocosContainer} my-5`}>
+  {/* Versão Desktop */}
+  <Row className="d-none d-lg-flex flex-column" style={{ gap: '40px' }}>
+    {/* Missão - Alinhado à esquerda */}
+    <Col lg={7} className="align-self-start">
+      <motion.div
+        className={`${styles.bloco} ${styles.missao}`}
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className={styles.tituloComIcone}>
+          <Image src="/imagens/missao.png" alt="Missão" width={50} height={50} />
+          <h2>Missão</h2>
+        </div>
+        <p className={styles.textoBloco}>
+          Democratizar o acesso à tecnologia e à inteligência artificial para agricultores familiares, oferecendo informações estratégicas que otimizam a produtividade, reduzem riscos e promovem uma agricultura mais eficiente, sustentável e rentável.
+        </p>
+      </motion.div>
+    </Col>
+
+    {/* Visão - Alinhado à direita */}
+    <Col lg={7} className="align-self-end">
+      <motion.div
+        className={`${styles.bloco} ${styles.visao}`}
+        initial={{ opacity: 0, x: 50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <div className={styles.tituloComIcone}>
+          <Image src="/imagens/visão.png" alt="Visão" width={50} height={50} />
+          <h2>Visão</h2>
+        </div>
+        <p className={styles.textoBloco}>
+          Ser a principal plataforma de suporte inteligente para a agricultura familiar, conectando tecnologia e inovação ao campo para transformar a tomada de decisões e impulsionar um agro mais produtivo, acessível e sustentável.
+        </p>
+      </motion.div>
+    </Col>
+
+    {/* Valores - Alinhado à esquerda e texto centralizado */}
+    <Col lg={7} className="align-self-start">
+      <motion.div
+        className={`${styles.bloco} ${styles.valores}`}
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
+        <div className={styles.tituloComIcone}>
+          <Image src="/imagens/valores.png" alt="Valores" width={50} height={50} />
+          <h2>Valores</h2>
+        </div>
+        <div className={styles.conteudoValores}>
+          <ul className={styles.listaValores}>
+            <li>Inovação</li>
+            <li>Acessibilidade</li>
+            <li>Sustentabilidade</li>
+            <li>Empoderamento</li>
+          </ul>
+        </div>
+      </motion.div>
+    </Col>
+  </Row>
+
+  {/* Versão Mobile */}
+  <Row className="d-lg-none g-4">
+    <Col md={12}>
+      <motion.div
+        className={`${styles.bloco} ${styles.missao}`}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className={styles.tituloComIcone}>
+          <Image src="/imagens/missao.png" alt="Missão" width={50} height={50} />
+          <h2>Missão</h2>
+        </div>
+        <p className={styles.textoBloco}>
+          Democratizar o acesso à tecnologia e à inteligência artificial para agricultores familiares, oferecendo informações estratégicas que otimizam a produtividade, reduzem riscos e promovem uma agricultura mais eficiente, sustentável e rentável.
+        </p>
+      </motion.div>
+    </Col>
+
+    <Col md={12}>
+      <motion.div
+        className={`${styles.bloco} ${styles.visao}`}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+      >
+        <div className={styles.tituloComIcone}>
+          <Image src="/imagens/visão.png" alt="Visão" width={50} height={50} />
+          <h2>Visão</h2>
+        </div>
+        <p className={styles.textoBloco}>
+          Ser a principal plataforma de suporte inteligente para a agricultura familiar, conectando tecnologia e inovação ao campo para transformar a tomada de decisões e impulsionar um agro mais produtivo, acessível e sustentável.
+        </p>
+      </motion.div>
+    </Col>
+
+    <Col md={12}>
+      <motion.div
+        className={`${styles.bloco} ${styles.valores}`}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.4 }}
+      >
+        <div className={styles.tituloComIcone}>
+          <Image src="/imagens/valores.png" alt="Valores" width={50} height={50} />
+          <h2>Valores</h2>
+        </div>
+        <div className={styles.conteudoValores}>
+          <ul className={styles.listaValores}>
+            <li>Inovação</li>
+            <li>Acessibilidade</li>
+            <li>Sustentabilidade</li>
+            <li>Empoderamento</li>
+          </ul>
+        </div>
+      </motion.div>
+    </Col>
+  </Row>
+</Container>
+
+{/* Seção Equipe */}
+<Container className={`${styles.equipe} my-5 py-4`}>
+<h2 className={`text-center mb-5 ${styles.tituloEquipe}`}>Nossa Equipe</h2>
+  <Row className="g-4">
+    {membros.map((membro, index) => (
+      <Col key={index} lg={6} className="d-flex justify-content-center">
+        <motion.div
+          className={styles.cardMembro}
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: index * 0.1 }}
+        >
+          <div className={styles.cardEsquerda}>
+  <div className={styles.imagemWrapper}>
+    <Image
+      src={membro.imagem}
+      alt={membro.nome}
+      fill 
+      className={styles.avatar}
+      style={{
+        objectFit: 'cover',
+        objectPosition: 'center'
+      }}
+    />
+  </div>
+  <motion.a
+    href={membro.linkedin}
+    target="_blank"
+    rel="noopener noreferrer"
+    className={styles.linkedinBtn}
+    whileHover={{ scale: 1.1 }}
+  >
+              <FontAwesomeIcon icon={faLinkedin} />
+            </motion.a>
           </div>
-        </section>
+          <div className={styles.cardDireita}>
+            <h3>{membro.nome}</h3>
+            <p className={styles.cargo}>{membro.cargo}</p>
+            <p className={styles.descricao}>{membro.descricao}</p>
+          </div>
+        </motion.div>
+      </Col>
+    ))}
+  </Row>
+</Container>
+  
+ 
       </main>
+
       <Footer />
     </div>
   );
