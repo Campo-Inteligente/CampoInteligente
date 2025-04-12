@@ -123,6 +123,7 @@ export default function Contato() {
                 type="submit"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.3 }}
+                className="fw-semibold"
               >
                 Enviar
               </motion.button>

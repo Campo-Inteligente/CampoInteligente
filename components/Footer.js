@@ -56,25 +56,27 @@ export default function Footer() {
       <div className={styles.footercontainer}>
         {/* Links de navegação animados */}
         <motion.div className={styles.footerlinks}>
-          {[
-            { text: "Home", href: "/" },
-            { text: "Sobre nós", href: "/sobre" },
-            { text: "Contato", href: "/contato" },
-          ].map((item, index) => (
-            <Link href={item.href} key={index} passHref legacyBehavior>
-              <motion.a
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{
-                  duration: 0.8,
-                  delay: 0.2 * index,
-                  ease: "easeOut",
-                }}
-              >
-                {item.text}
-              </motion.a>
-            </Link>
-          ))}
+  {[
+    { text: "Home", href: "/" },
+    { text: "Sobre nós", href: "/sobre" },
+    { text: "Contato", href: "/contato" },
+  ].map((item, index) => (
+    <Link href={item.href} key={index} passHref legacyBehavior>
+      <motion.a
+        onClick={() => window.scrollTo(0, 0)}
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{
+          duration: 0.8,
+          delay: 0.2 * index,
+          ease: "easeOut",
+        }}
+      >
+        {item.text}
+      </motion.a>
+    </Link>
+  ))}
+
         </motion.div>
 
         {/* Jurídico animado */}

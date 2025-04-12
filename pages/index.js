@@ -48,8 +48,8 @@ export default function Home() {
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className={`${styles["logo-mobile"]} col-12 order-1 mb-4 text-start`} // text-start alinha à esquerda
-                style={{ paddingLeft: "70px" }} // controle do espaçamento
+                className={`${styles["logo-mobile"]} col-12 order-1 mb-4 text-start`} 
+                style={{ paddingLeft: "70px" }} 
               >
                 <div className={`${styles.logoContainer}`}>
                   <motion.div
@@ -216,7 +216,7 @@ export default function Home() {
                 className="d-none d-lg-flex flex-column gap-4"
                 style={{
                   position: "fixed",
-                  left: "calc(100vw - 100px)", // gruda no lado direito com margem
+                  left: "calc(100vw - 100px)", 
                   top: "50%",
                   transform: "translateY(-90%)",
                   zIndex: 999,
