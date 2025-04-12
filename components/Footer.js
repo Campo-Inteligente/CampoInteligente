@@ -4,6 +4,7 @@ import {
   faLinkedin,
   faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
+import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../styles/Footer.module.css";
 
@@ -38,7 +39,11 @@ export default function Footer() {
               href={item.link}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 * index, ease: "easeOut" }}
+              transition={{
+                duration: 0.8,
+                delay: 0.2 * index,
+                ease: "easeOut",
+              }}
             >
               <FontAwesomeIcon icon={item.icon} />
             </motion.a>
@@ -51,16 +56,24 @@ export default function Footer() {
       <div className={styles.footercontainer}>
         {/* Links de navegação animados */}
         <motion.div className={styles.footerlinks}>
-          {["Home", "Sobre nós", "Contato"].map((text, index) => (
-            <motion.a
-              key={index}
-              href="#"
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 * index, ease: "easeOut" }}
-            >
-              {text}
-            </motion.a>
+          {[
+            { text: "Home", href: "/" },
+            { text: "Sobre nós", href: "/sobre" },
+            { text: "Contato", href: "/contato" },
+          ].map((item, index) => (
+            <Link href={item.href} key={index} passHref legacyBehavior>
+              <motion.a
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.2 * index,
+                  ease: "easeOut",
+                }}
+              >
+                {item.text}
+              </motion.a>
+            </Link>
           ))}
         </motion.div>
 
