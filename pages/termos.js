@@ -73,7 +73,7 @@ export default function Termos() {
 
           <h5 className="mt-4">Contato</h5>
           <p>
-            Em caso de dúvidas, entre em contato pelo e-mail:{" "}
+            Em caso de dúvidas, entre em contato pelo e-mail: 📩{" "}
             <a
               href="mailto:contato@campointeligente.com.br"
               className="text-success fw-semibold"
