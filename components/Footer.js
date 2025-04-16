@@ -92,7 +92,9 @@ export default function Footer() {
           <Link href="/privacidade" passHref legacyBehavior>
             <a onClick={() => window.scrollTo(0, 0)}>Política de Privacidade</a>
           </Link>
-          <a href="#">Política de Cookies</a>
+          <Link href="/cookies" passHref legacyBehavior>
+            <a onClick={() => window.scrollTo(0, 0)}>Política de Cookies</a>
+          </Link>
         </motion.div>
 
         {/* Contato animado */}
