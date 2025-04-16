@@ -1,0 +1,57 @@
+.container {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f1f8f4;
+}
+
+.formulario {
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+.titulo {
+  font-size: 2rem;
+  color: #127234;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  margin-top: 70px;
+}
+
+.formulario h5 {
+  font-size: 1.2rem;
+  margin-top: 25px;
+  font-weight: 600;
+  color: #127234;
+}
+
+.formulario ul {
+  padding-left: 1.2rem;
+  margin-top: 10px;
+}
+
+.formulario ul li {
+  margin-bottom: 8px;
+}
+
+.link {
+  color: #215732;
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.text-muted {
+  font-size: 0.9rem;
+}
