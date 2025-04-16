@@ -2,7 +2,7 @@ import Head from "next/head";
 import { motion } from "framer-motion";
 import Navbar from "../components/NavbarVerde";
 import Footer from "../components/Footer";
-import styles from "../styles/Termos.module.css"; // Reaproveitando o mesmo estilo
+import styles from "../styles/Termos.module.css";
 
 export default function Termos() {
   return (

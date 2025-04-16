@@ -89,8 +89,9 @@ export default function Footer() {
           <Link href="/termos" passHref legacyBehavior>
             <a onClick={() => window.scrollTo(0, 0)}>Termos de uso</a>
           </Link>
-
-          <a href="#">Política de Privacidade</a>
+          <Link href="/privacidade" passHref legacyBehavior>
+            <a onClick={() => window.scrollTo(0, 0)}>Política de Privacidade</a>
+          </Link>
           <a href="#">Política de Cookies</a>
         </motion.div>
 
