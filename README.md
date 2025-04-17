@@ -1,119 +1,123 @@
-# 🌱 CampoInteligente
 
-**CampoInteligente** é uma aplicação desenvolvida com [Next.js](https://nextjs.org/) voltada para o monitoramento e gestão inteligente de propriedades rurais. Seu objetivo é fornecer uma interface moderna e eficiente para auxiliar na coleta, análise e visualização de dados do campo.
+# 🌱 **Campo Inteligente**
 
----
-
-## 🚀 Tecnologias Utilizadas
-
-- [Next.js](https://nextjs.org/)
-- [React](https://react.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Vercel](https://vercel.com/) (para deploy)
-- [GitHub](https://github.com/) (versionamento)
+**CampoInteligente** é uma aplicação inovadora desenvolvida com [Next.js](https://nextjs.org/) para o monitoramento e gestão inteligente de propriedades rurais. A aplicação foi projetada para fornecer uma interface moderna e eficiente, permitindo a coleta, análise e visualização de dados no campo, com o objetivo de otimizar o gerenciamento e a produtividade de propriedades agrícolas.
 
 ---
 
-## 🧑‍💻 Como Contribuir
+## 🚀 **Tecnologias Utilizadas**
 
-Siga os passos abaixo para fazer um **fork**, criar um commit e contribuir com o projeto:
+Este projeto foi desenvolvido com as seguintes tecnologias:
 
-### 1. Faça um Fork do Repositório
+- **[Next.js](https://nextjs.org/)**: Framework React para criação de aplicações web escaláveis e de alto desempenho.
+- **[React](https://react.dev/)**: Biblioteca JavaScript para construção de interfaces de usuário interativas.
+- **[Tailwind CSS](https://tailwindcss.com/)**: Framework CSS para estilização rápida e personalizada.
+- **[Vercel](https://vercel.com/)**: Plataforma de deploy e hospedagem para aplicativos Next.js.
+- **[GitHub](https://github.com/)**: Controle de versão e colaboração no código.
 
-Clique no botão **Fork** no canto superior direito da página deste repositório para criar uma cópia em sua conta GitHub.
+---
 
-### 2. Clone o Repositório
+## 🧑‍💻 **Como Contribuir**
 
-No seu terminal, clone o projeto:
+Contribuições são sempre bem-vindas! Para colaborar com o projeto, siga os passos abaixo:
+
+### 1. **Faça um Fork do Repositório**
+
+Clique no botão **Fork** no canto superior direito deste repositório para criar uma cópia do repositório em sua conta do GitHub.
+
+### 2. **Clone o Repositório**
+
+Clone o repositório na sua máquina local para começar a trabalhar:
 
 ```bash
 git clone https://github.com/seu-usuario/CampoInteligente.git
 cd CampoInteligente
 ```
 
-### 3. Crie uma Branch
+### 3. **Crie uma Branch para Sua Contribuição**
+
+Crie uma nova branch para a sua contribuição, garantindo que seu trabalho seja mantido separado da branch principal:
 
 ```bash
 git checkout -b minha-contribuicao
 ```
 
-### 4. Faça as Alterações Desejadas
+### 4. **Realize as Alterações Necessárias**
 
-Edite, corrija ou adicione novos recursos ao projeto.
+Sinta-se à vontade para editar, corrigir ou adicionar novos recursos à aplicação conforme sua necessidade.
 
-### 5. Commit e Push
+### 5. **Commit e Push das Alterações**
+
+Adicione suas alterações e faça o commit com uma mensagem descritiva:
 
 ```bash
 git add .
-git commit -m "Minha contribuição: descreva aqui"
+git commit -m "Descrição das mudanças realizadas"
 git push origin minha-contribuicao
 ```
 
-### 6. Crie um Pull Request
+### 6. **Crie um Pull Request (PR)**
 
-Acesse seu fork no GitHub e clique em **"Compare & pull request"** para enviar suas alterações para revisão.
+Após realizar o push da sua branch, acesse seu repositório no GitHub e crie um **Pull Request**. Compare a sua branch com a branch principal (`main`) do repositório original e envie para revisão.
 
 ---
 
-## 🛠️ Como Rodar Localmente
+## 🛠️ **Como Rodar Localmente**
 
-### Pré-requisitos
+Para rodar a aplicação localmente em seu ambiente de desenvolvimento, siga os passos abaixo.
 
-- Node.js (recomenda-se a versão LTS)
-- npm ou yarn
+### **Pré-requisitos**
 
-### Passos
+Certifique-se de ter o seguinte instalado:
 
-1. Instale as dependências:
+- **Node.js** (versão LTS recomendada)
+- **npm** ou **yarn** (gerenciador de pacotes)
+
+### **Passos para Executar o Projeto Localmente**
+
+1. **Instale as dependências do projeto**:
 
 ```bash
 npm install
 npm install framer-motion
 ```
 
-2. Faça o build.
+2. **Construa o projeto**:
 
-```bash   
-   npx next build
+```bash
+npx next build
 ```
 
-3. Rode o servidor de desenvolvimento:
+3. **Execute a aplicação localmente**:
 
 ```bash
 npm run dev
 ```
 
-3. Acesse no navegador:
+4. **Acesse a aplicação**:
 
-```
-http://localhost:3000
-```
+Abra o navegador e acesse `http://localhost:3000` para ver a aplicação em funcionamento.
 
----
+5. **Atualize o repositório**:
 
-## ☁️ Como Publicar na Vercel
+Após realizar alterações e verificar que tudo está funcionando localmente, envie suas modificações para o GitHub:
 
-1. Acesse [https://vercel.com](https://vercel.com) e crie uma conta (ou entre com GitHub).
-2. Clique em **"Add New Project"**.
-3. Selecione seu repositório **CampoInteligente** (ele precisa estar no seu GitHub).
-4. Confirme as configurações padrão e clique em **"Deploy"**.
-5. Após alguns segundos, sua aplicação estará online com um link como:
-
-```
-https://campo-inteligente.vercel.app
+```bash
+git add .
+git commit -m "Mensagem explicando as mudanças"
+git push origin minha-contribuicao
 ```
 
 ---
 
-## 📄 Licença
+## 📄 **Licença**
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Este projeto está licenciado sob a licença **MIT**. Para mais detalhes, consulte o arquivo [LICENSE](LICENSE).
 
 ---
 
-## 🤝 Agradecimentos
+## 🤝 **Agradecimentos**
 
-Contribuições, sugestões e feedbacks são bem-vindos! Sinta-se à vontade para abrir uma *issue* ou enviar um *pull request*.
+Contribuições, sugestões e feedbacks são muito bem-vindos! Caso tenha algum comentário ou queira contribuir com o projeto, sinta-se à vontade para abrir uma *issue* ou enviar um *pull request*.
 
-Desenvolvido por Campo Inteligente LTDA
-
+Desenvolvido com ❤️ pela equipe **Campo Inteligente LTDA**.
