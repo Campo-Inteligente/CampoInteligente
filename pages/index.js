@@ -28,10 +28,7 @@ export default function Home() {
       <Head>
         <title>Campo Inteligente</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap"
-          rel="stylesheet"
-        />
+
       </Head>
 
       <main className={styles.mainContent}>
@@ -163,7 +160,7 @@ export default function Home() {
                   plantio, o manejo das lavouras e a colheita. Tudo isso na
                   palma da sua mão, direto pelo WhatsApp, para que você tome
                   decisões estratégicas e maximize seus lucros com segurança e
-                  praticidade!
+                  praticidade!!
                 </motion.p>
               </motion.div>
 

@@ -9,10 +9,7 @@ export default function PoliticaPrivacidade() {
     <>
       <Head>
         <title>Política de Privacidade | Campo Inteligente</title>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap"
-          rel="stylesheet"
-        />
+
       </Head>
 
       <main className={styles.container}>
@@ -101,7 +98,7 @@ export default function PoliticaPrivacidade() {
           <p>
             Se você deseja excluir seus dados pessoais dos nossos sistemas,
             basta enviar uma solicitação para o e-mail abaixo com o assunto{" "}
-            <strong>"Exclusão de Dados"</strong>:
+            <strong>&quot;Exclusão de Dados&quot;</strong>:
           </p>
 
           <p>
