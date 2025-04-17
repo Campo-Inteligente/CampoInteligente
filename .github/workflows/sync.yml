@@ -3,18 +3,21 @@ name: Sync from startup-campo-inteligente-site to CampoInteligente
 on:
   schedule:
     - cron: '*/30 * * * *'  # Executa a cada 30 minutos
-  workflow_dispatch:       # Permite execução manual pela aba "Actions"
+  workflow_dispatch:        # Permite execução manual
 
 jobs:
   mirror:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Mirror do repositório original
-        uses: wei/git-sync@v3
-        with:
-          source_repo: "https://github.com/restic36/startup-campo-inteligente-site.git"
-          source_branch: "main"
-          destination_repo: "https://github.com/marcosmoraisjr/CampoInteligente.git"
-          destination_branch: "main"
-        env:
-          GIT_SYNC_TOKEN: ${{ secrets.GH_PAT }}
+      - name: Configurar Git
+        run: |
+          git config --global user.name "Marcos Morais"
+          git config --global user.email "marcosmoraisjr@users.noreply.github.com"
+
+      - name: Clonar repositório de origem
+        run: |
+          git clone https://marcosmoraisjr:${{ secrets.GH_PAT }}@github.com/restic36/startup-campo-inteligente-site.git source
+          cd source
+          git remote add destino https://marcosmoraisjr:${{ secrets.GH_PAT }}@github.com/marcosmoraisjr/CampoInteligente.git
+          git push --force destino main
