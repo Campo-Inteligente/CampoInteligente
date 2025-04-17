@@ -68,16 +68,19 @@ Acesse seu fork no GitHub e clique em **"Compare & pull request"** para enviar s
 
 ```bash
 npm install
-# ou
-yarn install
+npm install framer-motion
 ```
 
-2. Rode o servidor de desenvolvimento:
+2. Faça o build.
+
+```bash   
+   npx next build
+```
+
+3. Rode o servidor de desenvolvimento:
 
 ```bash
 npm run dev
-# ou
-yarn dev
 ```
 
 3. Acesse no navegador:
