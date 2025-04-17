@@ -12,7 +12,6 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 - **[Next.js](https://nextjs.org/)**: Framework React para criação de aplicações web escaláveis e de alto desempenho.
 - **[React](https://react.dev/)**: Biblioteca JavaScript para construção de interfaces de usuário interativas.
 - **[Tailwind CSS](https://tailwindcss.com/)**: Framework CSS para estilização rápida e personalizada.
-- **[Vercel](https://vercel.com/)**: Plataforma de deploy e hospedagem para aplicativos Next.js.
 - **[GitHub](https://github.com/)**: Controle de versão e colaboração no código.
 
 ---
