@@ -1,3 +1,23 @@
+.cardMembro {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+.cardMembro:hover {
+  transform: translateY(-5px);
+}
+.imagemMembro {
+  border-radius: 50%;
+  object-fit: cover;
+}
+.descricaoMembro {
+  font-size: 0.95rem;
+  margin: 10px 0;
+}
+
 .sobreContainer {
   min-height: 100vh;
   display: flex;
