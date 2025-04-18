@@ -10,6 +10,7 @@ import styles from "../styles/Footer.module.css";
 import Image from "next/image";
 
 export default function Footer() {
+  const PAGE_VERSION = "1.0.0"; // Ou a versão que você preferir
   return (
     <motion.footer
       initial={{ opacity: 0, y: 50 }}
@@ -124,6 +125,7 @@ export default function Footer() {
         className={styles.footercopyright}
       >
         &copy; 2025 Campo Inteligente. Todos os direitos reservados.
+        <p>Versão: {PAGE_VERSION}</p>
       </motion.div>
     </motion.footer>
   );
