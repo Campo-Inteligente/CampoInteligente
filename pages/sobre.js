@@ -80,7 +80,7 @@ export default function Sobre() {
       cargo: "Gerente de Projetos",
       nome: "Marcos Morais",
       descricao:
-        "Mestre em Ciência da Computação, com especialização em Visão Computacional e IA aplicada à área médica. Pós-graduado em Gestão de TI e Bacharel em Sistemas de Informação, atuando desde 1995 com tecnologia e inovação",
+        "Especialista em TI com vasta experiência em projetos de transformação digital, Inteligência Artificial e Visão Computacional. Mestre em Ciência da Computação, pós-graduado em Gestão de TI e bacharel em Sistemas de Informação. Atuação focada em inovação, liderança e soluções de alto impacto.",
       imagem: "/imagens/marcos.jpg",
       linkedin: "https://www.linkedin.com/in/marcosmoraisjr/",
     },

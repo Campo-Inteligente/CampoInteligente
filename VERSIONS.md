@@ -1,13 +1,14 @@
 
 # 📦 VERSIONS.md
 
-Este documento registra as versões utilizadas no projeto **campo-inteligente** para garantir consistência e facilitar a manutenção entre os ambientes de desenvolvimento e produção.
+### Vesão 1.0.0
 
+Este documento registra as versões utilizadas no projeto **campo-inteligente** para garantir consistência e facilitar a manutenção entre os ambientes de desenvolvimento e produção.
 ---
 
 ## 🧰 Ferramentas e Bibliotecas
 
-| Dependência                         | Versão    | Tipo            |
+| Dependência                        | Versão    | Tipo            |
 |------------------------------------|-----------|------------------|
 | next                               | ^15.3.0   | dependência      |
 | react                              | 19.0.0    | dependência      |
