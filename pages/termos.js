@@ -75,10 +75,10 @@ export default function Termos() {
           <p>
             Em caso de dúvidas, entre em contato pelo e-mail: 📩{" "}
             <a
-              href="mailto:contato@campointeligente.com.br"
+              href="mailto:startupcampointeligente@gmail.com"
               className="text-success fw-semibold"
             >
-              contato@campointeligente.com.br
+              startupcampointeligente@gmail.comcl
             </a>
           </p>
 
