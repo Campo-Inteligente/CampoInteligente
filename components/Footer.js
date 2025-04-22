@@ -130,3 +130,5 @@ export default function Footer() {
     </motion.footer>
   );
 }
+
+/* Consegui corrigir a rolagem do footer*/
