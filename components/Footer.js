@@ -9,6 +9,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../styles/Footer.module.css";
 
 export default function Footer() {
+  const handleClick = (e) => {
+    e.preventDefault();
+    const href = e.currentTarget.getAttribute('href');
+    window.scrollTo(0, 0);
+    window.location.href = href;
+  };
+
   return (
     <motion.footer
       initial={{ opacity: 0, y: 50 }}
@@ -63,7 +70,7 @@ export default function Footer() {
           ].map((item, index) => (
             <Link href={item.href} key={index} passHref legacyBehavior>
               <motion.a
-                onClick={() => window.scrollTo(0, 0)}
+                onClick={handleClick}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{
@@ -87,13 +94,13 @@ export default function Footer() {
         >
           <span className={styles.footertitle}>JURÍDICO</span>
           <Link href="/termos" passHref legacyBehavior>
-            <a onClick={() => window.scrollTo(0, 0)}>Termos de uso</a>
+            <a onClick={handleClick}>Termos de uso</a>
           </Link>
           <Link href="/privacidade" passHref legacyBehavior>
-            <a onClick={() => window.scrollTo(0, 0)}>Política de Privacidade</a>
+            <a onClick={handleClick}>Política de Privacidade</a>
           </Link>
           <Link href="/cookies" passHref legacyBehavior>
-            <a onClick={() => window.scrollTo(0, 0)}>Política de Cookies</a>
+            <a onClick={handleClick}>Política de Cookies</a>
           </Link>
         </motion.div>
 
