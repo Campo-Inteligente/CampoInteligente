@@ -26,12 +26,18 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Campo Inteligente</title>
+        <title>Campo Inteligente | Chatbot para o Agronegócio com Inteligência Artificial</title>
+        <meta name="description" content="A Campo Inteligente é uma plataforma com chatbot via WhatsApp que usa inteligência artificial para otimizar o agronegócio familiar com dados climáticos e de mercado." />
+        <meta name="keywords" content="agronegócio, chatbot, inteligência artificial, IA no campo, agricultura familiar, clima, mercado agrícola, WhatsApp" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap"
-          rel="stylesheet"
-        />
+        <meta name="robots" content="index, follow" />
+        <meta property="og:title" content="Campo Inteligente | Chatbot com IA para o Agronegócio" />
+        <meta property="og:description" content="Plataforma inteligente que oferece suporte ao agricultor familiar via chatbot com IA." />
+        {/* recomendo uma imagem em /public/imagens/og-image.jpg (1200x630) para o Open Graph e redes sociais. */}
+        <meta property="og:image" content="/imagens/og-image.jpg" />
+        <meta property="og:url" content="https://www.campointeligente.agr.br/" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <link rel="canonical" href="https://www.campointeligente.agr.br/" />
       </Head>
 
       <main className={styles.mainContent}>

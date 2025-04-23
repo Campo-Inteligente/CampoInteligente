@@ -1,4 +1,4 @@
-name: Sync from startup-campo-inteligente-site to CampoInteligente
+name: Sync to CampoInteligente
 
 on:
   schedule:
