@@ -17,7 +17,7 @@ export default function Footer() {
     window.location.href = href;
   };
 
-  const PAGE_VERSION = "1.0.0"; // Ou a versão que você preferir
+  const PAGE_VERSION = "1.1.0"; // Ou a versão que você preferir
   return (
     <motion.footer
       initial={{ opacity: 0, y: 50 }}
