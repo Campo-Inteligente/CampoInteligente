@@ -169,7 +169,7 @@ export default function Home() {
                   plantio, o manejo das lavouras e a colheita. Tudo isso na
                   palma da sua mão, direto pelo WhatsApp, para que você tome
                   decisões estratégicas e maximize seus lucros com segurança e
-                  praticidade! 🔴🔴
+                  praticidade! 🔴🔴🟢
                 </motion.p>
               </motion.div>
 
@@ -181,37 +181,7 @@ export default function Home() {
                 className={`${styles["conteudo-desktop"]} col-xl-5 col-lg-6 col-md-8 order-3 order-lg-2`}
                 style={{ marginTop: "300px", marginRight: "200px" }}
               >
-                <div className="text-center px-3 px-md-0">
-                  <motion.a
-                    href="#"
-                    className={`${styles.btn} btn-lg d-inline-flex align-items-center justify-content-center`}
-                    style={{ marginRight: "250px" }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 400,
-                      damping: 10,
-                    }}
-                  >
-                    Conheça nosso ChatBot <span className="ms-3">→</span>
-                  </motion.a>
-                  <motion.p
-                    className={`${styles.description} mt-5`}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.4 }}
-                  >
-                    Somos uma plataforma inovadora que coloca a tecnologia a
-                    serviço do agricultor familiar. Com inteligência artificial
-                    integrada a dados meteorológicos e de mercado, oferecemos
-                    uma ferramenta simples, eficiente e acessível para otimizar
-                    o plantio, o manejo das lavouras e a colheita. Tudo isso na
-                    palma da sua mão, direto pelo WhatsApp, para que você tome
-                    decisões estratégicas e maximize seus lucros com segurança e
-                    praticidade! 🔴🔴
-                  </motion.p>
-                </div>
+                
               </motion.div>
 
               {/* Ícones Sociais (Desktop) */}
