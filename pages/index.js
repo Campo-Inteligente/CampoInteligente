@@ -148,7 +148,7 @@ export default function Home() {
                   plantio, o manejo das lavouras e a colheita. Tudo isso na
                   palma da sua mão, direto pelo WhatsApp, para que você tome
                   decisões estratégicas e maximize seus lucros com segurança e
-                  praticidade! 
+                  praticidade! 🟡
                 </motion.p>
               </motion.div>
 
@@ -182,7 +182,7 @@ export default function Home() {
                   plantio, o manejo das lavouras e a colheita. Tudo isso na
                   palma da sua mão, direto pelo WhatsApp, para que você tome
                   decisões estratégicas e maximize seus lucros com segurança e
-                  praticidade! 
+                  praticidade! 🟡
                 </motion.p>
               </motion.div>
 
