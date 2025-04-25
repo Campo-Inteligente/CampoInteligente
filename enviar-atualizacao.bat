@@ -3,7 +3,7 @@ set /p commit_message="Digite a mensagem do commit: "
 
 git add .
 git commit -m "%commit_message%"
-git push origin main
+git push origin main --force
 
 echo Atualização enviada com sucesso!
 pause
