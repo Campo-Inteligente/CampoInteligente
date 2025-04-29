@@ -54,22 +54,25 @@ export default function Footer() {
 
         {/* Redes sociais animadas */}
         <motion.div className={styles.footersocial}>
-          {[{ icon: faInstagram, link: "#" }, { icon: faLinkedin, link: "#" }, { icon: faFacebook, link: "#" }]
-            .map((item, index) => (
-              <motion.a
-                key={index}
-                href={item.link}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 0.8,
-                  delay: 0.2 * index,
-                  ease: "easeOut",
-                }}
-              >
-                <FontAwesomeIcon icon={item.icon} />
-              </motion.a>
-            ))}
+          {[
+            { icon: faInstagram, link: "#" },
+            { icon: faLinkedin, link: "#" },
+            { icon: faFacebook, link: "#" },
+          ].map((item, index) => (
+            <motion.a
+              key={index}
+              href={item.link}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.2 * index,
+                ease: "easeOut",
+              }}
+            >
+              <FontAwesomeIcon icon={item.icon} />
+            </motion.a>
+          ))}
         </motion.div>
       </div>
 
@@ -78,23 +81,26 @@ export default function Footer() {
       <div className={styles.footercontainer}>
         {/* Links de navegação animados */}
         <motion.div className={styles.footerlinks}>
-          {[{ text: "Home", href: "/" }, { text: "Sobre nós", href: "/sobre" }, { text: "Contato", href: "/contato" }]
-            .map((item, index) => (
-              <Link href={item.href} key={index} passHref legacyBehavior>
-                <motion.a
-                  onClick={handleClick}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{
-                    duration: 0.8,
-                    delay: 0.2 * index,
-                    ease: "easeOut",
-                  }}
-                >
-                  {item.text}
-                </motion.a>
-              </Link>
-            ))}
+          {[
+            { text: "Home", href: "/" },
+            { text: "Sobre nós", href: "/sobre" },
+            { text: "Contato", href: "/contato" },
+          ].map((item, index) => (
+            <Link href={item.href} key={index} passHref legacyBehavior>
+              <motion.a
+                onClick={handleClick}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{
+                  duration: 0.8,
+                  delay: 0.2 * index,
+                  ease: "easeOut",
+                }}
+              >
+                {item.text}
+              </motion.a>
+            </Link>
+          ))}
         </motion.div>
 
         {/* Jurídico animado */}
@@ -137,12 +143,16 @@ export default function Footer() {
         transition={{ duration: 1.2, ease: "easeOut" }}
         className={styles.footercopyright}
       >
-        &copy; 2025 Campo Inteligente. Todos os direitos reservados.
-        {version && ( // Usando "version" aqui
-          <p>
-            Versão: {version.version} ({version.commit})
-          </p>
+        {version && (
+          <div className={styles.footerleft}>
+            <p>
+              Versão: {version.version} ({version.commit})
+            </p>
+          </div>
         )}
+        <div className={styles.footercenter}>
+          &copy; 2025 Campo Inteligente. Todos os direitos reservados.
+        </div>
       </motion.div>
     </motion.footer>
   );

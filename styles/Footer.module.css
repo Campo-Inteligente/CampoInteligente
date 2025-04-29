@@ -104,21 +104,33 @@
 }
 
 .footercopyright {
-  font-size: 16px;
-  color: #4CAF50;
-  text-align: center;
-  margin-top: 40px;
+  position: relative;
   display: flex;
-  flex-direction: column; /* Added to stack copyright and version */
-  align-items: center; /* Added to center the content */
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 40px;
+  padding: 0 20px;
 }
 
-.footercopyright p { /* Style for the version paragraph */
-  margin-top: 5px;
+.footerleft {
+  position: absolute;
+  left: 20px;
+}
+
+.footerleft p {
   font-size: 0.9rem;
   color: #777;
+  margin: 0;
 }
 
+.footercenter {
+  text-align: center;
+  font-size: 16px;
+  color: #4CAF50;
+}
 
 @media (max-width: 768px) {
   .footer {
