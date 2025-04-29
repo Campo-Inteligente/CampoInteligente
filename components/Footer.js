@@ -17,7 +17,7 @@ export default function Footer() {
     window.location.href = href;
   };
 
-  const PAGE_VERSION = "1.1.0"; // Ou a versão que você preferir
+  const PAGE_VERSION = "1.0.0"; // Ou a versão que você preferir
   return (
     <motion.footer
       initial={{ opacity: 0, y: 50 }}
@@ -33,23 +33,21 @@ export default function Footer() {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className={styles.footerlogo}
         >
-
-        {/* Adicionado o Image do nextjs para evitar avisos de erro no build... 
-        Esse Image é otimizado pela propria vercel pra ajudar no carregamento */}
-
           <Image width={100} height={80} style={{objectFit: 'contain'}} src="/imagens/logov.png" alt="Campo Inteligente" />
         </motion.div>
 
         {/* Redes sociais animadas */}
         <motion.div className={styles.footersocial}>
           {[
-            { icon: faInstagram, link: "#" },
+            { icon: faInstagram, link: "https://www.instagram.com/startupcampointeligente/" },
             { icon: faLinkedin, link: "#" },
             { icon: faFacebook, link: "#" },
           ].map((item, index) => (
             <motion.a
               key={index}
               href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{
@@ -137,5 +135,3 @@ export default function Footer() {
     </motion.footer>
   );
 }
-
-/* Consegui corrigir a rolagem do footer*/
