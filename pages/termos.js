@@ -75,7 +75,7 @@ export default function Termos() {
               href="mailto:startupcampointeligente@gmail.com"
               className="text-success fw-semibold"
             >
-              startupcampointeligente@gmail.comcl
+              startupcampointeligente@gmail.com
             </a>
           </p>
 

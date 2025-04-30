@@ -88,10 +88,10 @@ export default function PoliticaCookies() {
           <p>
             📩{" "}
             <a
-              href="mailto:contato@campointeligente.com.br"
+              href="mailto:startupcampointeligente@gmail.com"
               className="text-success fw-semibold"
             >
-              contato@campointeligente.com.br
+              startupcampointeligente@gmail.com
             </a>
           </p>
 
