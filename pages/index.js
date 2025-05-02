@@ -227,10 +227,10 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.6 }}
                 className="d-none d-lg-flex flex-column gap-4"
                 style={{
-                  position: "fixed",
-                  left: "calc(100vw - 100px)", 
-                  top: "50%",
-                  transform: "translateY(-90%)",
+                  position: "absolute",
+                  left:"1338px", 
+                  top: "30%",
+                  transform: "translateY(-50%)",
                   zIndex: 999,
                 }}
               >
