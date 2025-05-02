@@ -184,8 +184,25 @@
   }
 
   .footercopyright {
-    font-size: 12px;
-    margin-top: 20px;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .footerleft {
+    position: static;
+    order: 2; 
+    margin-top: 8px;
+  }
+
+  .footercenter {
+    order: 1;
+  
+  }
+
+  .footerleft p {
+    text-align: center;
+    font-size: 0.8rem;
   }
 
   .footerline {
