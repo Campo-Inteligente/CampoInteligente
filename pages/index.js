@@ -150,7 +150,7 @@ export default function Home() {
                 className={`${styles["conteudo-mobile"]} col-12 order-3 text-center px-3`}
               >
                 <motion.a
-                  href="#"
+                  href="/chatbot"
                   className={`${styles.btn} btn-lg d-inline-flex align-items-center justify-content-center`}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
@@ -189,7 +189,7 @@ export default function Home() {
               >
                 <div className="text-center px-3 px-md-0">
                   <motion.a
-                    href="#"
+                    href="/chatbot"
                     className={`${styles.btn} btn-lg d-inline-flex align-items-center justify-content-center`}
                     style={{ marginRight: "250px" }}
                     whileHover={{ scale: 1.05 }}
