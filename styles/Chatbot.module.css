@@ -1,5 +1,5 @@
 .container {
-    position: relative;
+  position: relative;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,14 +11,12 @@
 
 .introducao {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center; /* Centraliza os itens */
-  gap: 20px; /* Define um espaçamento menor entre os elementos */
   width: 100%;
-  max-width: 1200px; /* Ajuste conforme necessário */
+  max-width: 1200px;
   padding: 10px;
   margin-top: 50px;
-  margin-bottom: 40px;
 }
 
 .titulo {
@@ -31,57 +29,47 @@
 .subtitulo {
   font-size: 20px;
   color: #4caf50;
-  margin-bottom: 20px;
-}
-
-.descricao {
-  font-size: 16px;
-  color: #333;
-  line-height: 1.6;
-}
-
-.container h2 {
-    text-align: center;
-  }
-  
-
-.servicos h3 {
-  color: #127234;
-  font-weight: bold;
-}
-
-.card {
-  background: #e8f5e9;
-  padding: 20px;
-  border-radius: 16px;
-  height: 180px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.card h5 {
-  color: #127234;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-.card p {
-  font-size: 14px;
-  color: #555;
+  margin-bottom: 30px;
 }
 
 .mockupContainer {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.mockupImage {
+  width: auto;
+  height: 550px;
+  border-radius: 12px;
+  margin-left: 100px;
+}
+
+.mockupImage:hover{
+  z-index: 2;
+}
+
+
+@media (max-width: 768px) {
+  .mockupContainer {
+    flex-direction: column;
     align-items: center;
-    gap: 5px; /* Espaço reduzido entre as imagens */
-    margin-top: 20px;
+    gap: 20px;
   }
   
   .mockupImage {
-    height: auto; /* Mantém proporção natural */
+    height: 400px;
+    margin: 0;
   }
   
-
-
-
+  .titulo {
+    font-size: 28px;
+  }
+  
+  .subtitulo {
+    font-size: 16px;
+  }
+}

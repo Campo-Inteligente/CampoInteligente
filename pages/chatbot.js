@@ -13,52 +13,48 @@ export default function Chatbot() {
       </Head>
 
       <main className={styles.container}>
-        {/* Seção principal com texto e imagem */}
-        <section
-          className={`${styles.introducao} container d-flex flex-column align-items-center text-center`}
-        >
+        <section className={`${styles.introducao} container d-flex flex-column align-items-center text-center`}>
           <Navbar />
 
           <motion.div
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1 }}
-            className="mb-4"
           >
             <h2 className={styles.titulo}>Otimize sua produção agrícola com o nosso ChatBot no WhatsApp!</h2>
             <p className={styles.subtitulo}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1 }}
-            className={styles.mockupContainer}
-          >
+          <div className={styles.mockupContainer}>
             <Image
               src="/imagens/c1.png"
-              alt="Chatbot tela 1"
-              width={600}
-              height={600}
+              alt="Menu do ChatBot"
+              width={320}
+              height={650}
               className={styles.mockupImage}
+              style={{marginRight:'-90px'}}
             />
             <Image
               src="/imagens/c2.png"
-              alt="Chatbot tela 2"
-              width={600}
-              height={600}
+              alt="Interação com usuário"
+              width={320}
+              height={650}
               className={styles.mockupImage}
+              style={{ transform: 'translateY(50px)',
+                 marginLeft:'-50px' }}
+              
             />
             <Image
               src="/imagens/c3.png"
-              alt="Chatbot tela 3"
-              width={600}
-              height={600}
+              alt="Solução recomendada"
+              width={320}
+              height={650}
               className={styles.mockupImage}
+              style={{marginLeft:'-250px'}}
             />
-          </motion.div>
+          </div>
         </section>
       </main>
 
