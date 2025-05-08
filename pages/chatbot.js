@@ -27,8 +27,7 @@ export default function Chatbot() {
               Otimize sua produção agrícola com o nosso ChatBot no WhatsApp!
             </h2>
             <p className={styles.subtitulo}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Receba previsões climáticas, alertas de pragas e dicas de cultivo direto no seu celular. Fácil, rápido e do jeito que o agricultor precisa!
             </p>
           </motion.div>
 
@@ -39,23 +38,38 @@ export default function Chatbot() {
               width={320}
               height={650}
               className={styles.mockupImage}
-              style={{ marginRight: "-20px" }}
             />
-            <Image
-              src="/imagens/c2.png"
-              alt="Interação com usuário"
-              width={320}
-              height={650}
-              className={styles.mockupImage}
-              style={{ transform: "translateY(70px)", marginLeft: "-120px" }}
-            />
+            <div className={styles.centerImageContainer}>
+              <motion.a
+                href="/chatbot"
+                className={styles.chatbotBtn}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{
+                  type: "spring",
+                  stiffness: 400,
+                  damping: 10,
+                }}
+              >
+                ChatBot ↗
+              </motion.a>
+
+              <Image
+                src="/imagens/c2.png"
+                alt="Interação com usuário"
+                width={320}
+                height={650}
+                className={styles.mockupImage}
+                style={{ transform: "translateY(0px)", marginLeft: "50px" }}
+              />
+            </div>
             <Image
               src="/imagens/c3.png"
               alt="Solução recomendada"
               width={320}
               height={650}
               className={styles.mockupImage}
-              style={{ marginLeft: "-250px" }}
+              style={{ marginLeft: "-180px" }}
             />
           </div>
         </section>

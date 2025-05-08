@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #d9d9d9;
+  background-color: #E8F5E9;
   padding: 0;
 }
 
@@ -30,7 +30,7 @@
 .subtitulo {
   font-size: 20px;
   color: #4caf50;
-  margin-bottom: 30px;
+  margin-bottom: 5px;
 }
 
 .mockupContainer {
@@ -54,7 +54,7 @@
 }
 
 .featuresSection {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   padding: 80px 20px;
   width: 100vw;
   margin-left: calc(-50vw + 50%);
@@ -63,7 +63,7 @@
 
 .benefitsSection {
   padding: 60px 0;
-  background-color: #f9f9f9;
+  background-color: #d9d9d9;
 }
 
 .infoSection {
@@ -103,7 +103,7 @@
 
 .featureCard p {
   color: white;
-  font-size: 15px;
+  font-size: 18px;
   line-height: 1.6;
   margin-top: 20px;
   text-align: justify;
@@ -168,13 +168,39 @@
 
 .heroSection {
   padding: 60px;
-  background-color: #d9d9d9;
+  background-color: #E8F5E9;
 }
 
 .cardHeader {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+.centerImageContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(70px);
+  margin-left: -120px;
+}
+
+.chatbotBtn {
+  background-color: #127234;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  transition: background 0.3s ease;
+  margin-left: 50px;
+}
+
+.chatbotBtn:hover {
+  background-color: #FFD54F;
 }
 
 @media (max-width: 768px) {
