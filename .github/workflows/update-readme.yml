@@ -24,11 +24,12 @@ jobs:
 
       - name: Executar script Python
         run: |
-          python update-readme.py  # Certifique-se de que o script está no diretório correto
+          cd documentos
+          python update-readme.py
 
       - name: Commit e Push
         run: |
-          git add documentos/README.md  # Especificando o caminho correto do arquivo
+          git add documentos/README.md documentos/versao.txt
           git commit -m "Atualização automática do README" || echo "Nenhuma alteração para commit"
           git remote set-url origin https://x-access-token:${GH_PAT}@github.com/restic36/startup-campo-inteligente-site.git
           git push origin main
