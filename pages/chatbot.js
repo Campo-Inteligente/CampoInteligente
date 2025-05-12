@@ -69,57 +69,61 @@ export default function Chatbot() {
               />
             </div>
 
-            {/* Versão mobile - carrossel ajustado */}
-            <div className="d-md-none w-100">
-             
-              <div className="text-center">
-                <motion.a
-                  href="/chatbot"
-                  className={styles.chatbotBtn}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  ChatBot ↗
-                </motion.a>
-              </div>
+           {/* Versão mobile - carrossel ajustado */}
+<div className="d-md-none w-100">
+  {/* Botão do ChatBot */}
+  <div className="text-center">
+    <motion.a
+      href="/chatbot"
+      className={styles.chatbotBtn}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      ChatBot ↗
+    </motion.a>
+  </div>
 
-              {/* Carrossel com imagens */}
-              <div style={{ position: 'relative', margin: '0 auto', maxWidth: '340px' }}>
-                <div id="chatbotCarousel" className="carousel slide" data-bs-ride="carousel">
-                  <div className="carousel-inner">
-                    {['c1', 'c2', 'c3'].map((img, index) => (
-                      <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
-                        <div className={styles.carouselImageContainer}>
-                          <Image
-                            src={`/imagens/${img}.png`}
-                            alt={index === 0 ? "Menu do ChatBot" : index === 1 ? "Interação com usuário" : "Solução recomendada"}
-                            width={340}
-                            height={650}
-                            className={styles.carouselImage}
-                            priority={index === 0}
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* bolinha abaixo do carrosel de imagen */}
-                <div className="carousel-indicators">
-                  {[0, 1, 2].map((index) => (
-                    <button
-                      key={index}
-                      type="button"
-                      data-bs-target="#chatbotCarousel"
-                      data-bs-slide-to={index}
-                      className={index === 0 ? 'active' : ''}
-                      aria-current={index === 0 ? 'true' : undefined}
-                      aria-label={`Slide ${index + 1}`}
-                    />
-                  ))}
-                </div>
-              </div>
+  {/* Container do carrossel */}
+  <div style={{ 
+    position: 'relative', 
+    margin: '0 auto', 
+    maxWidth: '340px',
+    paddingBottom: '30px' /* Espaço para os indicadores */
+  }}>
+    <div id="chatbotCarousel" className="carousel slide" data-bs-ride="carousel">
+      <div className="carousel-inner">
+        {['c1', 'c2', 'c3'].map((img, index) => (
+          <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
+            <div className={styles.carouselImageContainer}>
+              <Image
+                src={`/imagens/${img}.png`}
+                alt={index === 0 ? "Menu do ChatBot" : index === 1 ? "Interação com usuário" : "Solução recomendada"}
+                width={340}
+                height={650}
+                className={styles.carouselImage}
+                priority={index === 0}
+              />
             </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    {/* Indicadores em bolinhas verdes */}
+    <div className={`carousel-indicators ${styles.carouselIndicators}`}>
+      {[0, 1, 2].map((index) => (
+        <button
+          key={index}
+          type="button"
+          data-bs-target="#chatbotCarousel"
+          data-bs-slide-to={index}
+          className={index === 0 ? 'active' : ''}
+          aria-label={`Slide ${index + 1}`}
+        />
+      ))}
+    </div>
+  </div>
+</div>
           </div>
         </section>
 
@@ -231,7 +235,7 @@ export default function Chatbot() {
           <div className="container">
             <h2 className={styles.sectionTitle}>Mais informações</h2>
             <p className={styles.infoText}>
-              Nosso ChatBot foi desenvolvido com tecnologia de ponta para atender às necessidades específicas do agricultor brasileiro. 
+              Nosso ChatBot foi desenvolvido com tecnologia de ponta para atender às necessidades específicas do agricultor brasileiro
               Com atualizações constantes e suporte especializado, garantimos a qualidade e confiabilidade das informações fornecidas.
             </p>
           </div>
