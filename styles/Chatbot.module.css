@@ -5,7 +5,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #E8F5E9;
+  background-color: #e8f5e9;
   padding: 0;
 }
 
@@ -65,8 +65,59 @@
 }
 
 .benefitsSection {
-  padding: 60px 0;
-  background-color: #d9d9d9;
+  padding: 4rem 1rem;
+}
+
+.benefitsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.benefitCard {
+  background-color: #6ba574;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column; /* <-- mudou de row para column */
+  align-items: center;
+  gap: 1rem;
+  text-align: center; /* <-- mudou de left para center */
+  backdrop-filter: blur(10px); /* <-- adiciona o blur */
+  background-color: rgba(0, 72, 9, 0.55); /* verde com transparência */
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.benefitIcon {
+  font-size: 1.8rem;
+  background-color: #ffffff30;
+  padding: 0.5rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefitText h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #127234;
+}
+
+.benefitText p {
+  margin: 0;
+  font-size: 0.95rem;
 }
 
 .infoSection {
@@ -77,6 +128,14 @@
 .sectionTitle {
   font-size: 32px;
   color: white;
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: bold;
+}
+
+.sectionTitle2 {
+  font-size: 32px;
+  color: #127234;
   text-align: center;
   margin-bottom: 40px;
   font-weight: bold;
@@ -98,10 +157,32 @@
   box-shadow: none;
 }
 
-.featureCard h3 {
+.cardHeader h3 {
   color: white;
   font-size: 22px;
   margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.cardHeader p {
+  color: white;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-top: 20px;
+  text-align: justify;
+}
+
+.cardHeader2 {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cardHeader2 h3 {
+  color: white;
+  font-size: 22px;
+  margin-bottom: 10px;
+  font-weight: bold;
 }
 
 .featureCard p {
@@ -110,23 +191,6 @@
   line-height: 1.6;
   margin-top: 20px;
   text-align: justify;
-}
-
-.benefitsList {
-  max-width: 800px;
-  margin: 0 auto;
-  list-style: none;
-  padding: 0;
-}
-
-.benefitsList li {
-  margin-bottom: 25px;
-  padding-bottom: 25px;
-  border-bottom: 1px solid #eee;
-}
-
-.benefitsList li:last-child {
-  border-bottom: none;
 }
 
 .checkIcon {
@@ -141,20 +205,6 @@
   margin-right: 15px;
 }
 
-.benefitsList h3 {
-  display: inline-block;
-  color: #127234;
-  font-size: 20px;
-  margin-bottom: 8px;
-  font-weight: 600;
-}
-
-.benefitsList p {
-  color: #555;
-  line-height: 1.6;
-  padding-left: 39px;
-}
-
 .infoText {
   max-width: 800px;
   margin: 0 auto;
@@ -166,7 +216,7 @@
 
 .heroSection {
   padding: 40px 20px;
-  background-color: #E8F5E9;
+  background-color: #e8f5e9;
 }
 
 .cardHeader {
@@ -198,7 +248,7 @@
 }
 
 .chatbotBtn:hover {
-  background-color: #FFD54F;
+  background-color: #ffd54f;
 }
 
 .carousel {
@@ -234,7 +284,6 @@
   object-position: center;
 }
 
-
 .carousel-indicators {
   position: absolute;
   bottom: -35px;
@@ -268,7 +317,6 @@
   background-color: #127234 !important;
   transform: scale(1.2);
 }
-
 
 @media (max-width: 768px) {
   .sectionTitle {
@@ -338,7 +386,7 @@
   }
 
   .carousel-indicators {
-    bottom: -25px; 
+    bottom: -25px;
     padding: 10px 15px;
   }
 
