@@ -3,7 +3,7 @@ const fs = require("fs");
 
 try {
   // Verifica se está dentro de um repositório Git
-  execSync("git rev-parse --is-inside-work-tree");
+  execSync("git rev-parse --is-inside-work-tree", { stdio: 'ignore' });
 
   // Obtém o número total de commits
   const commitCount = execSync("git rev-list --count HEAD").toString().trim();
@@ -45,6 +45,5 @@ try {
   // Exibe mensagem de sucesso
   console.log(`✅ version.json gerado com sucesso!\n→ Versão: ${version}\n→ Commit: ${commitSha}\n→ Data: ${buildDate}${tag ? `\n→ Tag: ${tag}` : ''}`);
 } catch (err) {
-  console.error("❌ Erro ao gerar version.json:", err.message || err);
-  process.exit(1);
+  console.warn("⚠️  Não foi possível gerar version.json (repositório Git ausente?). Ignorando erro para ambiente de build.");
 }
