@@ -1,19 +1,21 @@
-# ConsumoCerto.
+# CampoInteligente.
 
-Bem-vindo ao **Campo Inteligente**, uma API RESTful desenvolvida com FastAPI e Tortoise ORM.
+Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura familiar, oferecendo um chatbot com inteligência artificial que integra dados meteorológicos e de mercado para auxiliar no plantio, manejo e colheita. A navegação é simples, com foco na interação via WhatsApp.
 
 ## 📄 Lista de arquivos da raiz deste repositório, atualizado a cada modificação.
 
-**Sistema:** Campo Inteligente  
-**Versão:** 1.0  
-**Data:** 12/05/2025  
+**Sistema:** Campo Inteligente
+
+**Versão:** 3 (AUTO-INCREMENTO)
+
+**Data de Atualização:** 12/05/2025 16:41:32
+
 **Responsável:** Marcos Morais
 
 ## Listagem de Arquivos
 
 - LICENSE
-- README.md
-- documento_de_requisitos.md
-- diagrama_er.md
-- atualizar_readme.py-bkp
 - diagrama_de_fluxo.md
+- diagrama_er.md
+- documento_de_requisitos.md
+- update-readme.py
