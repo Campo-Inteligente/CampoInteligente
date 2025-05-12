@@ -14,6 +14,7 @@ FUSO_HORARIO_BRASIL = pytz.timezone("America/Sao_Paulo")
 # Arquivo de controle para armazenar a versão atual
 VERSAO_FILE = "documentos/versao.txt"
 
+
 # Verifica se o arquivo existe, se não, cria e inicializa com 1
 if not os.path.exists(VERSAO_FILE):
     with open(VERSAO_FILE, "w") as file:
@@ -37,7 +38,8 @@ def obter_data_hora_atual():
     return hora_atual.strftime("%d/%m/%Y %H:%M:%S")
 
 def atualizar_readme():
-    arquivos = [f for f in os.listdir('.') if os.path.isfile(f) and f not in ["atualizar_readme.py", ".gitignore", VERSAO_FILE]]
+    arquivos = [f for f in os.listdir('documentos') if os.path.isfile(os.path.join('documentos', f)) and f not in ["README.md", "versao.txt"]]
+
 
     # Obtém e incrementa a versão
     versao_atual = obter_versao_atual()
@@ -47,7 +49,7 @@ def atualizar_readme():
     # Obtém a data e hora da atualização corrigida
     data_hora_atualizacao = obter_data_hora_atual()
 
-    with open("README.md", "w", encoding="utf-8") as readme:
+    with open("documentos/README.md", "w", encoding="utf-8") as readme:
 
         readme.write("# CampoInteligente.\n\n")
         readme.write("Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura familiar, oferecendo um chatbot com inteligência artificial que integra dados meteorológicos e de mercado para auxiliar no plantio, manejo e colheita. A navegação é simples, com foco na interação via WhatsApp.\n\n")

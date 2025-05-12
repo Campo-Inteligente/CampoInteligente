@@ -1,4 +1,4 @@
-name: Atualizar README
+name: update-readme
 
 on:
   schedule:
@@ -23,12 +23,13 @@ jobs:
           git config --global user.email "action@github.com"
 
       - name: Executar script Python
-        run: python atualizar_readme.py
+        run: python update-readme.py
 
       - name: Commit e Push
         run: |
-          git add documentos/README.mb  # Especificando o caminho correto do arquivo
+          git add documentos/README.md  # Especificando o caminho correto do arquivo
           git commit -m "Atualização automática do README"
-          git push https://$GH_PAT@github.com/marcosmoraisjr/CampoInteligente.git
+          git push https://$GH_PAT@github.com/restic36/startup-campo-inteligente-site.git
+
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
