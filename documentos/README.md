@@ -1,6 +1,6 @@
 # ConsumoCerto.
 
-Bem-vindo ao **Campo INteligente**, uma API RESTful desenvolvida com FastAPI e Tortoise ORM.
+Bem-vindo ao **Campo Inteligente**, uma API RESTful desenvolvida com FastAPI e Tortoise ORM.
 
 ## 📄 Lista de arquivos da raiz deste repositório, atualizado a cada modificação.
 

@@ -33,8 +33,14 @@ try {
     tag,
   };
 
+  // Garante que a pasta ./public existe
+  const path = "./public";
+  if (!fs.existsSync(path)) {
+    fs.mkdirSync(path, { recursive: true });
+  }
+
   // Salva o JSON na pasta public
-  fs.writeFileSync("./public/version.json", JSON.stringify(versionInfo, null, 2));
+  fs.writeFileSync(`${path}/version.json`, JSON.stringify(versionInfo, null, 2));
 
   // Exibe mensagem de sucesso
   console.log(`✅ version.json gerado com sucesso!\n→ Versão: ${version}\n→ Commit: ${commitSha}\n→ Data: ${buildDate}${tag ? `\n→ Tag: ${tag}` : ''}`);
