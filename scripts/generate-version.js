@@ -2,21 +2,43 @@ const { execSync } = require("child_process");
 const fs = require("fs");
 
 try {
+  // Verifica se está dentro de um repositório Git
+  execSync("git rev-parse --is-inside-work-tree");
+
+  // Obtém o número total de commits
   const commitCount = execSync("git rev-list --count HEAD").toString().trim();
+
+  // Obtém o hash do último commit (curto)
   const commitSha = execSync("git rev-parse --short HEAD").toString().trim();
+
+  // Obtém a data atual em formato ISO
   const buildDate = new Date().toISOString();
 
-  const version = `v0.${commitCount}`;
+  // Tenta obter a última tag, se existir
+  let tag = null;
+  try {
+    tag = execSync("git describe --tags --abbrev=0").toString().trim();
+  } catch {
+    tag = null; // Sem tag encontrada
+  }
 
+  // Define a versão no formato SemVer-like (ex: 0.23.0)
+  const version = `0.${commitCount}.0`;
+
+  // Monta o objeto de versão
   const versionInfo = {
     version,
     commit: commitSha,
     date: buildDate,
+    tag,
   };
 
+  // Salva o JSON na pasta public
   fs.writeFileSync("./public/version.json", JSON.stringify(versionInfo, null, 2));
-  console.log("✅ version.json gerado:", versionInfo);
+
+  // Exibe mensagem de sucesso
+  console.log(`✅ version.json gerado com sucesso!\n→ Versão: ${version}\n→ Commit: ${commitSha}\n→ Data: ${buildDate}${tag ? `\n→ Tag: ${tag}` : ''}`);
 } catch (err) {
-  console.error("❌ Erro ao gerar version.json:", err);
+  console.error("❌ Erro ao gerar version.json:", err.message || err);
   process.exit(1);
 }
