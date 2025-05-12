@@ -57,7 +57,7 @@ def atualizar_readme():
         readme.write("**Sistema:** Campo Inteligente\n\n")
         readme.write(f"**Versão:** {nova_versao} (AUTO-INCREMENTO)\n\n")
         readme.write(f"**Data de Atualização:** {data_hora_atualizacao}\n\n")
-        readme.write("**Responsável:** Artur\n\n")
+        readme.write("**Responsável:** Marcos Morais\n\n")
         readme.write("## Listagem de Arquivos\n\n")
 
         for arquivo in arquivos:
