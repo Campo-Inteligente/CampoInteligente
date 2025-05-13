@@ -6,9 +6,9 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 
 **Sistema:** Campo Inteligente
 
-**Versão:** 6 (AUTO-INCREMENTO)
+**Versão:** 7 (AUTO-INCREMENTO)
 
-**Data de Atualização:** 12/05/2025 22:46:33
+**Data de Atualização:** 13/05/2025 09:42:09
 
 **Responsável:** Marcos Morais
 
