@@ -62,7 +62,7 @@ export default function Chatbot() {
                 />
               </div>
               <Image
-                src="/imagens/c3.png"
+                src="/imagens/c31.png"
                 alt="Solução recomendada"
                 width={320}
                 height={650}
