@@ -100,7 +100,7 @@ export default function Chatbot() {
                   data-bs-ride="carousel"
                 >
                   <div className="carousel-inner">
-                    {["c1", "c2", "c3"].map((img, index) => (
+                    {["c1", "c2", "c31"].map((img, index) => (
                       <div
                         key={index}
                         className={`carousel-item ${
