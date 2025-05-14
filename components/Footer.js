@@ -13,7 +13,7 @@ import Image from "next/image";
 
 export default function Footer() {
   const handleClick = (e) => {
-    e.preventDefault();a
+    e.preventDefault();
     const href = e.currentTarget.getAttribute("href");
     window.scrollTo(0, 0);
     window.location.href = href;
