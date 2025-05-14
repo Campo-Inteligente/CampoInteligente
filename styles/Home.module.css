@@ -55,6 +55,7 @@
   font-weight: 600;
   text-decoration: none;
   display: inline-flex;
+  white-space: nowrap;
   align-items: center;
   transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
   border: none;
