@@ -286,15 +286,26 @@ export default function Chatbot() {
           </div>
         </section>
 
-        <section className={styles.infoSection}>
-          <div className="container">
+        <section className={styles.featuresSection}>
+          <div className="container text-center">
             <h2 className={styles.sectionTitle}>Mais informações</h2>
-            <p className={styles.infoText}>
-              Nosso ChatBot foi desenvolvido com tecnologia de ponta para
-              atender às necessidades específicas do agricultor brasileiro Com
-              atualizações constantes e suporte especializado, garantimos a
-              qualidade e confiabilidade das informações fornecidas.
+            <p className={styles.infoTextv}>
+              Assista ao vídeo e conheça mais sobre o funcionamento do nosso
+              ChatBot, desenvolvido especialmente para facilitar o dia a dia do
+              agricultor com informações precisas e suporte inteligente.
             </p>
+
+            {/* Vídeo responsivo */}
+            <div
+              className="ratio ratio-16x9 mt-4"
+              style={{ maxWidth: "720px", margin: "0 auto" }}
+            >
+              <iframe
+                src="https://www.youtube.com/embed/Dc_0qcpoDrY"
+                title="Vídeo de apresentação"
+                allowFullScreen
+              ></iframe>
+            </div>
           </div>
         </section>
       </main>
