@@ -34,46 +34,56 @@ export default function Chatbot() {
           </motion.div>
 
           <div className={styles.mockupContainer}>
-            {/* Versão desktop - mantém como estava */}
-            <div className="d-none d-md-flex">
-              <Image
-                src="/imagens/c1.png"
-                alt="Menu do ChatBot"
-                width={320}
-                height={650}
-                className={styles.mockupImage}
-              />
-              <div className={styles.centerImageContainer}>
-                <motion.a
-                  href="/chatbot"
-                  className={styles.chatbotBtn}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  ChatBot ↗
-                </motion.a>
-                <Image
-                  src="/imagens/c2.png"
-                  alt="Interação com usuário"
-                  width={320}
-                  height={650}
-                  className={styles.mockupImage}
-                  style={{ transform: "translateY(0px)", marginLeft: "50px" }}
-                />
-              </div>
-              <Image
-                src="/imagens/c31.png"
-                alt="Solução recomendada"
-                width={320}
-                height={650}
-                className={styles.mockupImage}
-                style={{ marginLeft: "-180px" }}
-              />
-            </div>
+    {/* Versão desktop com posicionamento centralizado */}
+<div className={`d-none d-md-flex ${styles.mockupRow}`}>
+
+  <Image
+    src="/imagens/c1next.png"
+    alt="Menu do ChatBot"
+    width={560}
+  height={580}
+  style={{ zIndex: 1, marginRight: "-220px" }}
+  />
+
+  
+  <div className="position-relative d-flex flex-column align-items-center" style={{ zIndex: 2 }}>
+    <motion.a
+      href="/chatbot"
+      className={styles.chatbotBtn}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      style={{
+        marginBottom: '-11px',
+        marginTop: '45px',
+        zIndex: 3,
+      }}
+    >
+      ChatBot ↗
+    </motion.a>
+
+    <Image
+      src="/imagens/c2next.png"
+      alt="Interação com usuário"
+      width={560}
+  height={580}
+    />
+  </div>
+
+  {}
+  <Image
+    src="/imagens/c3next.png"
+    alt="Solução recomendada"
+      width={560}
+  height={580}
+   style={{ zIndex: 1, marginLeft: "-220px" }}
+  />
+</div>
+
+
 
             {/* Versão mobile - carrossel ajustado */}
             <div className="d-md-none w-100">
-              {/* Botão do ChatBot */}
+              {}
               <div className="text-center">
                 <motion.a
                   href="/chatbot"
@@ -90,8 +100,8 @@ export default function Chatbot() {
                 style={{
                   position: "relative",
                   margin: "0 auto",
-                  maxWidth: "340px",
-                  paddingBottom: "30px" /* Espaço para os indicadores */,
+                  maxWidth: "600px",
+                  paddingBottom: "30px" 
                 }}
               >
                 <div
@@ -100,7 +110,7 @@ export default function Chatbot() {
                   data-bs-ride="carousel"
                 >
                   <div className="carousel-inner">
-                    {["c1", "c2", "c31"].map((img, index) => (
+                    {["c1next", "c2next", "c3next"].map((img, index) => (
                       <div
                         key={index}
                         className={`carousel-item ${
@@ -117,7 +127,7 @@ export default function Chatbot() {
                                 ? "Interação com usuário"
                                 : "Solução recomendada"
                             }
-                            width={340}
+                            width={600}
                             height={650}
                             className={styles.carouselImage}
                             priority={index === 0}
@@ -128,7 +138,7 @@ export default function Chatbot() {
                   </div>
                 </div>
 
-                {/* Indicadores em bolinhas verdes */}
+                {}
                 <div
                   className={`carousel-indicators ${styles.carouselIndicators}`}
                 >

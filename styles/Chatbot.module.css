@@ -9,6 +9,15 @@
   padding: 0;
 }
 
+.centerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 -40px; 
+  z-index: 2;
+}
+
 .introducao {
   display: flex;
   flex-direction: column;
@@ -43,14 +52,18 @@
   margin-top: 20px;
   width: 100%;
   padding: 0;
+  position: relative;
 }
 
 .mockupImage {
   width: auto;
-  height: 550px;
+  height: auto;
+  max-height: 580px;
   border-radius: 12px;
-  margin-left: 100px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background: none; 
 }
+
 
 .mockupImage:hover {
   z-index: 2;
@@ -226,27 +239,30 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  transform: translateY(70px);
-  margin-left: -120px;
+  gap: 20px;
+  z-index: 1;
 }
 
 .chatbotBtn {
   background-color: #127234;
   color: white;
-  border: none;
-  border-radius: 12px;
   padding: 12px 24px;
-  margin: 0 auto 8px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s;
   text-decoration: none;
-  display: block;
-  font-size: 18px;
-  transition: background 0.3s ease;
-  width: fit-content;
 }
 
 .chatbotBtn:hover {
   background-color: #ffd54f;
+  color: #127234;
+  transform: translateY(-2px);
 }
+
+
 
 .carousel {
   position: relative;
@@ -340,6 +356,15 @@
     padding: 0 15px;
     margin-top: 10px;
   }
+
+ .mockupRow {
+  display: flex;
+  gap: 24px; 
+  margin:0;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 20px;
+}
 
   .mockupImage {
     height: auto;
