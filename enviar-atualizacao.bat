@@ -1,4 +1,5 @@
 @echo off
+chcp 65001 >nul
 set /p commit_message="Digite a mensagem do commit: "
 
 git add .
