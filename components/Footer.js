@@ -55,9 +55,9 @@ export default function Footer() {
         {/* Redes sociais animadas */}
         <motion.div className={styles.footersocial}>
           {[
-            { icon: faInstagram, link: "#" },
-            { icon: faLinkedin, link: "#" },
-            { icon: faFacebook, link: "#" },
+            { icon: faInstagram, link: "https://www.instagram.com/startupcampointeligente/" },
+            { icon: faLinkedin, link: "https://www.linkedin.com/company/campointeligente/" },
+            { icon: faFacebook, link: "https://www.facebook.com/share/1P3EQSsmCx/" },
           ].map((item, index) => (
             <motion.a
               key={index}

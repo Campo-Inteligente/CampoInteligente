@@ -122,7 +122,7 @@ export default function Home() {
                     <FontAwesomeIcon icon={faInstagram} size="lg" />
                   </motion.a>
                   <motion.a
-                    href="#"
+                    href="https://www.linkedin.com/company/campointeligente/"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ y: -3 }}
@@ -131,7 +131,7 @@ export default function Home() {
                     <FontAwesomeIcon icon={faLinkedin} size="lg" />
                   </motion.a>
                   <motion.a
-                    href="#"
+                    href="https://www.facebook.com/share/1P3EQSsmCx/"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ y: -3 }}
@@ -245,7 +245,7 @@ export default function Home() {
                     <FontAwesomeIcon icon={faInstagram} size="lg" />
                   </motion.a>
                   <motion.a
-                    href="#"
+                    href="https://www.linkedin.com/company/campointeligente/"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ y: -3 }}
@@ -254,7 +254,7 @@ export default function Home() {
                     <FontAwesomeIcon icon={faLinkedin} size="lg" />
                   </motion.a>
                   <motion.a
-                    href="mailto:startupcampointeligente@gmail.com"
+                    href="https://www.facebook.com/share/1P3EQSsmCx/"
                     target="_blank"
                     rel="noopener noreferrer"
                     whileHover={{ y: -3 }}
