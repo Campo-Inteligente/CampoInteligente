@@ -8,7 +8,12 @@ export default function Document() {
         <link rel="icon" href="/icone.ico" />
         <link rel="icon" type="image/png" href="/icon.png" />
         
-        {/* Removido o <link> da fonte Poppins */}
+        {/*  Fonte personalizada Poppins do Google Fonts */}
+        <link
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+          rel="stylesheet"
+        />
+
       </Head>
       <body>
         <Main />
