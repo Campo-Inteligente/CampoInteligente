@@ -38,7 +38,10 @@ try {
     fs.mkdirSync("./public", { recursive: true });
   }
 
-  fs.writeFileSync("./public/version.json", JSON.stringify(versionInfo, null, 2));
+  fs.writeFileSync(
+    "./public/version.json",
+    JSON.stringify(versionInfo, null, 2)
+  );
 
   console.log(`✅ version.json gerado com sucesso!
 → Versão: ${version} (${commit})
