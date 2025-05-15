@@ -1,50 +1,49 @@
 const { execSync } = require("child_process");
 const fs = require("fs");
 
+function getGitInfo() {
+  try {
+    execSync("git rev-parse --is-inside-work-tree", { stdio: "ignore" });
+    const commitCount = execSync("git rev-list --count HEAD").toString().trim();
+    const commitSha = execSync("git rev-parse --short HEAD").toString().trim();
+    const tag = execSync("git describe --tags --abbrev=0").toString().trim();
+
+    return {
+      version: `0.${commitCount}.0`,
+      commit: commitSha,
+      tag,
+    };
+  } catch {
+    return null;
+  }
+}
+
 try {
-  // Verifica se está dentro de um repositório Git
-  execSync("git rev-parse --is-inside-work-tree", { stdio: 'ignore' });
-
-  // Obtém o número total de commits
-  const commitCount = execSync("git rev-list --count HEAD").toString().trim();
-
-  // Obtém o hash do último commit (curto)
-  const commitSha = execSync("git rev-parse --short HEAD").toString().trim();
-
-  // Obtém a data atual em formato ISO
   const buildDate = new Date().toISOString();
 
-  // Tenta obter a última tag, se existir
-  let tag = null;
-  try {
-    tag = execSync("git describe --tags --abbrev=0").toString().trim();
-  } catch {
-    tag = null; // Sem tag encontrada
-  }
+  const gitInfo = getGitInfo();
 
-  // Define a versão no formato SemVer-like (ex: 0.23.0)
-  const version = `0.${commitCount}.0`;
+  const version = gitInfo?.version || process.env.APP_VERSION || "0.0.0";
+  const commit = gitInfo?.commit || process.env.APP_COMMIT || "unknown";
+  const tag = gitInfo?.tag || process.env.APP_TAG || null;
 
-  // Monta o objeto de versão
   const versionInfo = {
     version,
-    commit: commitSha,
+    commit,
     date: buildDate,
     tag,
   };
 
-  // Garante que a pasta ./public existe
-  const path = "./public";
-  if (!fs.existsSync(path)) {
-    fs.mkdirSync(path, { recursive: true });
+  if (!fs.existsSync("./public")) {
+    fs.mkdirSync("./public", { recursive: true });
   }
 
-  // Salva o JSON na pasta public
-  fs.writeFileSync(`${path}/version.json`, JSON.stringify(versionInfo, null, 2));
+  fs.writeFileSync("./public/version.json", JSON.stringify(versionInfo, null, 2));
 
-  // Exibe mensagem de sucesso
-  console.log(`✅ version.json gerado com sucesso!\n→ Versão: ${version}\n→ Commit: ${commitSha}\n→ Data: ${buildDate}${tag ? `\n→ Tag: ${tag}` : ''}`);
+  console.log(`✅ version.json gerado com sucesso!
+→ Versão: ${version} (${commit})
+→ Data: ${buildDate}${tag ? `\n→ Tag: ${tag}` : ""}`);
 } catch (err) {
-  console.warn("⚠️  Não foi possível gerar version.json (repositório Git ausente?). Ignorando erro para ambiente de build.");
-  console.error(err); // <-- Adicione isso para ver a causa real
+  console.warn("⚠️  Erro ao gerar version.json.");
+  console.error(err);
 }

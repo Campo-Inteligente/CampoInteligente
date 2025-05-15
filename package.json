@@ -1,6 +1,8 @@
 {
   "name": "campo-inteligente",
-  "version": "0.1.0",
+  "commit": "d2f3df9",
+  "date": "2025-05-15T13:00:00.000Z",
+  "tag": "v1.3.2",
   "private": true,
   "scripts": {
   "dev": "next dev",
