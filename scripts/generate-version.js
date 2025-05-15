@@ -46,4 +46,5 @@ try {
   console.log(`✅ version.json gerado com sucesso!\n→ Versão: ${version}\n→ Commit: ${commitSha}\n→ Data: ${buildDate}${tag ? `\n→ Tag: ${tag}` : ''}`);
 } catch (err) {
   console.warn("⚠️  Não foi possível gerar version.json (repositório Git ausente?). Ignorando erro para ambiente de build.");
+  console.error(err); // <-- Adicione isso para ver a causa real
 }

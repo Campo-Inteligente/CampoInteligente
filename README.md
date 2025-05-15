@@ -90,7 +90,9 @@ npx next build
 3. **Execute a aplicação localmente**:
 
 ```bash
-npm run dev
+npm run dev     --Modo de Desenvolvimento
+npm run build   --Compilação para Produção
+
 ```
 
 4. **Acesse a aplicação**:
