@@ -1,7 +1,7 @@
 
 # 📦 VERSIONS.md
 
-### Vesão 1.0.0
+### Vesão: 0.138.0 (61bf28a)
 
 Este documento registra as versões utilizadas no projeto **campo-inteligente** para garantir consistência e facilitar a manutenção entre os ambientes de desenvolvimento e produção.
 ---
