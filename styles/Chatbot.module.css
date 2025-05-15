@@ -50,6 +50,7 @@
   align-items: flex-start;
   gap: 0;
   margin-top: 20px;
+  margin-bottom: 50px;
   width: 100%;
   padding: 0;
   position: relative;
@@ -258,11 +259,9 @@
 
 .chatbotBtn:hover {
   background-color: #ffd54f;
-  color: #127234;
+  color: white;
   transform: translateY(-2px);
 }
-
-
 
 .carousel {
   position: relative;
@@ -295,6 +294,7 @@
   max-height: 580px;
   object-fit: contain;
   object-position: center;
+  margin-top: 30px;
 }
 
 .carousel-indicators {

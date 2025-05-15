@@ -34,52 +34,53 @@ export default function Chatbot() {
           </motion.div>
 
           <div className={styles.mockupContainer}>
-    {/* Versão desktop com posicionamento centralizado */}
-<div className={`d-none d-md-flex ${styles.mockupRow}`}>
+            {/* Versão desktop com posicionamento centralizado */}
+            <div className={`d-none d-md-flex ${styles.mockupRow}`}>
+              <Image
+                src="/imagens/next1.png"
+                alt="Menu do ChatBot"
+                width={300}
+                height={500}
+                style={{ marginRight: "100px" }}
+              />
 
-  <Image
-    src="/imagens/c1next.png"
-    alt="Menu do ChatBot"
-    width={560}
-  height={580}
-  style={{ zIndex: 1, marginRight: "-220px" }}
-  />
+              <div
+                className="position-relative d-flex flex-column align-items-center"
+                style={{ zIndex: 2 }}
+              >
+                <motion.a
+                  href="/chatbot"
+                  className={styles.chatbotBtn}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  style={{
+                    marginBottom: "-15px",
+                    marginTop: "40px",
+                    zIndex: 3,
+                  }}
+                >
+                  ChatBot ↗
+                </motion.a>
 
-  
-  <div className="position-relative d-flex flex-column align-items-center" style={{ zIndex: 2 }}>
-    <motion.a
-      href="/chatbot"
-      className={styles.chatbotBtn}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-      style={{
-        marginBottom: '-11px',
-        marginTop: '45px',
-        zIndex: 3,
-      }}
-    >
-      ChatBot ↗
-    </motion.a>
+                <Image
+                  src="/imagens/next2.png"
+                  alt="Interação com usuário"
+                  width={300}
+                  height={500}
+                  style={{
+                    transform: "translateY(50px)",
+                  }}
+                />
+              </div>
 
-    <Image
-      src="/imagens/c2next.png"
-      alt="Interação com usuário"
-      width={560}
-  height={580}
-    />
-  </div>
-
-  {}
-  <Image
-    src="/imagens/c3next.png"
-    alt="Solução recomendada"
-      width={560}
-  height={580}
-   style={{ zIndex: 1, marginLeft: "-220px" }}
-  />
-</div>
-
-
+              <Image
+                src="/imagens/next3.png"
+                alt="Solução recomendada"
+                width={300}
+                height={500}
+                style={{ marginLeft: "100px" }}
+              />
+            </div>
 
             {/* Versão mobile - carrossel ajustado */}
             <div className="d-md-none w-100">
@@ -101,7 +102,7 @@ export default function Chatbot() {
                   position: "relative",
                   margin: "0 auto",
                   maxWidth: "600px",
-                  paddingBottom: "30px" 
+                  paddingBottom: "30px",
                 }}
               >
                 <div
@@ -110,7 +111,7 @@ export default function Chatbot() {
                   data-bs-ride="carousel"
                 >
                   <div className="carousel-inner">
-                    {["c1next", "c2next", "c3next"].map((img, index) => (
+                    {["next1", "next2", "next3"].map((img, index) => (
                       <div
                         key={index}
                         className={`carousel-item ${
