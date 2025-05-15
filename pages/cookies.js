@@ -9,10 +9,6 @@ export default function PoliticaCookies() {
     <>
       <Head>
         <title>Política de Cookies | Campo Inteligente</title>
-        <link
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap"
-          rel="stylesheet"
-        />
       </Head>
 
       <main className={styles.container}>
