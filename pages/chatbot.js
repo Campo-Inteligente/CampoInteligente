@@ -17,7 +17,6 @@ export default function Chatbot() {
           className={`${styles.heroSection} container d-flex flex-column align-items-center text-center`}
         >
           <Navbar />
-
           <motion.div
             initial={{ opacity: 0, y: -30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -32,19 +31,29 @@ export default function Chatbot() {
               precisa!
             </p>
           </motion.div>
-
           <div className={styles.mockupContainer}>
-            {/* Versão desktop com posicionamento centralizado */}
+            {/* Versão desktop com animações */}
             <div className={`d-none d-md-flex ${styles.mockupRow}`}>
-              <Image
-                src="/imagens/next1.png"
-                alt="Menu do ChatBot"
-                width={300}
-                height={500}
-                style={{ marginRight: "100px" }}
-              />
+              {/* C1 - entra da esquerda */}
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1 }}
+              >
+                <Image
+                  src="/imagens/next1.png"
+                  alt="Menu do ChatBot"
+                  width={300}
+                  height={500}
+                  style={{ marginRight: "100px" }}
+                />
+              </motion.div>
 
-              <div
+              {/* C2 + botão - sobem de baixo */}
+              <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, delay: 0.2 }}
                 className="position-relative d-flex flex-column align-items-center"
                 style={{ zIndex: 2 }}
               >
@@ -71,21 +80,32 @@ export default function Chatbot() {
                     transform: "translateY(50px)",
                   }}
                 />
-              </div>
+              </motion.div>
 
-              <Image
-                src="/imagens/next3.png"
-                alt="Solução recomendada"
-                width={300}
-                height={500}
-                style={{ marginLeft: "100px" }}
-              />
+              {/* C3 - entra da direita */}
+              <motion.div
+                initial={{ opacity: 0, x: 100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1 }}
+              >
+                <Image
+                  src="/imagens/next3.png"
+                  alt="Solução recomendada"
+                  width={300}
+                  height={500}
+                  style={{ marginLeft: "100px" }}
+                />
+              </motion.div>
             </div>
 
-            {/* Versão mobile - carrossel ajustado */}
+            {/* Versão mobile - carrossel com efeito de entrada */}
             <div className="d-md-none w-100">
-              {}
-              <div className="text-center">
+              <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="text-center"
+              >
                 <motion.a
                   href="/chatbot"
                   className={styles.chatbotBtn}
@@ -94,10 +114,13 @@ export default function Chatbot() {
                 >
                   ChatBot ↗
                 </motion.a>
-              </div>
+              </motion.div>
 
-              {/* Container do carrossel */}
-              <div
+              {/* Animação do carrossel entrando da esquerda */}
+              <motion.div
+                initial={{ opacity: 0, x: -100 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 1 }}
                 style={{
                   position: "relative",
                   margin: "0 auto",
@@ -139,7 +162,6 @@ export default function Chatbot() {
                   </div>
                 </div>
 
-                {}
                 <div
                   className={`carousel-indicators ${styles.carouselIndicators}`}
                 >
@@ -154,7 +176,7 @@ export default function Chatbot() {
                     />
                   ))}
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </section>
