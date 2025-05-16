@@ -33,16 +33,19 @@
 }
 
 .container h2 {
+  font-size: 36px;
   color: #127234;
-  font-size: 40px;
-  margin-bottom: 1px;
+  font-weight: bold;
+  margin-bottom: 20px;
   margin-top: 70px;
+  text-align: center;
 }
 
 .container p {
-  font-size: 16px;
-  margin-bottom: 10px;
-  color: #4CAF50;
+  font-size: 20px;
+  color: #4caf50;
+  margin-bottom: 15px;
+  text-align: center;
 }
 
 .formulario form {
@@ -118,11 +121,9 @@
 
 /* Ajuste para centralizar os textos e reduzir tamanho no mobile */
 @media (max-width: 768px) {
-
   .contain {
     background-color: #f1f8f4;
-    background-image: url('/imagens/fundo2.png');
-
+    background-image: url("/imagens/fundo2.png");
   }
   .contato {
     flex-direction: column;
@@ -131,18 +132,18 @@
 
   .formulario {
     width: 90%;
-    max-width: 400px; 
+    max-width: 400px;
     padding: 20px;
     height: auto;
   }
 
   .formulario button {
-    margin-left: 0; 
-    width: 100%; 
+    margin-left: 0;
+    width: 100%;
   }
 
   .imagem {
-    max-width: 80%; 
+    max-width: 80%;
   }
 
   .imagem img {
@@ -151,11 +152,8 @@
   }
 }
 
-
-
 /* Ajuste para telas menores (máximo de 600px) */
 @media (max-width: 600px) {
-
   .contato {
     flex-direction: column;
     text-align: center;
@@ -163,19 +161,19 @@
   }
 
   .formulario {
-    width: 100%; 
-    max-width: 350px; 
+    width: 100%;
+    max-width: 350px;
     padding: 20px;
-    height: auto; 
+    height: auto;
   }
 
   .formulario button {
-    margin-left: 0; 
-    width: 100%; 
+    margin-left: 0;
+    width: 100%;
   }
 
   .imagem {
-    max-width: 90%; 
+    max-width: 90%;
     margin-top: 10px;
   }
 
@@ -183,5 +181,4 @@
     max-width: 100%;
     height: auto;
   }
-
 }
