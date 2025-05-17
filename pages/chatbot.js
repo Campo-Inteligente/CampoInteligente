@@ -100,7 +100,7 @@ export default function Chatbot() {
               </motion.div>
             </div>
 
-            {/* Versão mobile - carrossel com efeito de entrada */}
+            {/* Versão mobile - carrossel com efeitos de entrada */}
    
            <div className="d-xl-none w-100">
 
