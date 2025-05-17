@@ -92,7 +92,7 @@ npx next build
 ```bash
 npm run dev     --Modo de Desenvolvimento
 npm run build   --Compilação para Produção
-
+npm run start   --Modo de Visualização
 ```
 
 4. **Acesse a aplicação**:
