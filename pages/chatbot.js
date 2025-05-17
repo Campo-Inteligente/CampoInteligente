@@ -33,7 +33,9 @@ export default function Chatbot() {
           </motion.div>
           <div className={styles.mockupContainer}>
             {/* Versão desktop com animações */}
-            <div className={`d-none d-md-flex ${styles.mockupRow}`}>
+         <div className={`d-none d-xl-flex ${styles.mockupRow}`}>
+
+
               {/* C1 - entra da esquerda */}
               <motion.div
                 initial={{ opacity: 0, x: -100 }}
@@ -99,7 +101,9 @@ export default function Chatbot() {
             </div>
 
             {/* Versão mobile - carrossel com efeito de entrada */}
-            <div className="d-md-none w-100">
+   
+           <div className="d-xl-none w-100">
+
               <motion.div
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}

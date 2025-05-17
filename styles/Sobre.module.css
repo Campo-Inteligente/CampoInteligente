@@ -421,3 +421,12 @@
       }
     }
   }
+
+  @media (max-width: 991.98px) {
+  .tituloPrincipal{
+    text-align: center;
+  }
+  .textoDescricao {
+    text-align: justify;
+  }
+}
