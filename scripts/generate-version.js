@@ -1,52 +1,59 @@
-const { execSync } = require("child_process");
 const fs = require("fs");
+const path = require("path");
+const { execSync } = require("child_process");
 
-function getGitInfo() {
+// Caminho do package.json
+const packageJsonPath = path.join(__dirname, "..", "package.json");
+const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
+const { name, description, version } = packageJson;
+
+// Data atual em ISO
+const buildDate = new Date().toISOString();
+
+// Função para tentar executar um comando Git e retornar null em caso de erro
+function tryGitCommand(command) {
   try {
-    execSync("git rev-parse --is-inside-work-tree", { stdio: "ignore" });
-    const commitCount = execSync("git rev-list --count HEAD").toString().trim();
-    const commitSha = execSync("git rev-parse --short HEAD").toString().trim();
-    const tag = execSync("git describe --tags --abbrev=0").toString().trim();
-
-    return {
-      version: `0.${commitCount}.0`,
-      commit: commitSha,
-      tag,
-    };
+    return execSync(command).toString().trim();
   } catch {
     return null;
   }
 }
 
-try {
-  const buildDate = new Date().toISOString();
+// Tenta obter informações do Git, com fallback
+const commit = tryGitCommand("git rev-parse --short HEAD") || "local";
+const tag = tryGitCommand("git describe --tags --abbrev=0") || `v${version}`;
 
-  const gitInfo = getGitInfo();
+// Monta o objeto final
+const versionInfo = {
+  name: name || "campo-inteligente",
+  description:
+    description ||
+    "Campo Inteligente - Aplicativo de gestão agrícola para o campo inteligente",
+  version: version,
+  commit: commit,
+  date: buildDate,
+  tag: tag
+};
 
-  const version = gitInfo?.version || process.env.NEXT_PUBLIC_APP_VERSION  || "dev";
-  const commit = gitInfo?.commit || process.env.NEXT_PUBLIC_APP_COMMIT || "local";
-  const tag = gitInfo?.tag || process.env.APP_TAG || null;
+// Caminho para a pasta public/
+const publicDir = path.join(__dirname, "..", "public");
 
-  const versionInfo = {
-    version,
-    commit,
-    date: buildDate,
-    tag,
-  };
-
-  if (!fs.existsSync("./public")) {
-    fs.mkdirSync("./public", { recursive: true });
-  }
-
-  fs.writeFileSync(
-    "./public/version.json",
-    JSON.stringify(versionInfo, null, 2)
-  );
-
-  console.log(`✅ version.json gerado com sucesso!
-→ Versão: ${version} (${commit})
-→ Data: ${buildDate}${tag ? `\n→ Tag: ${tag}` : ""}`);
-} catch (err) {
-  console.warn("⚠️  Erro ao gerar version.json.");
-  console.error(err);
+// Cria a pasta public/ caso não exista
+if (!fs.existsSync(publicDir)) {
+  fs.mkdirSync(publicDir, { recursive: true });
 }
+
+// Escreve o arquivo version.json
+fs.writeFileSync(
+  path.join(publicDir, "version.json"),
+  JSON.stringify(versionInfo, null, 2)
+);
+
+// Mensagens no terminal
+console.log("✅ version.json gerado com sucesso!");
+console.log(`→ Nome: ${versionInfo.name}`);
+console.log(`→ Descrição: ${versionInfo.description}`);
+console.log(`→ Versão: ${versionInfo.version}`);
+console.log(`→ Commit: ${versionInfo.commit}`);
+console.log(`→ Data: ${versionInfo.date}`);
+console.log(`→ Tag: ${versionInfo.tag}`);
