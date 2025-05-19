@@ -23,8 +23,8 @@ try {
 
   const gitInfo = getGitInfo();
 
-  const version = gitInfo?.version || process.env.APP_VERSION || "0.0.0";
-  const commit = gitInfo?.commit || process.env.APP_COMMIT || "unknown";
+  const version = gitInfo?.version || process.env.NEXT_PUBLIC_APP_VERSION  || "dev";
+  const commit = gitInfo?.commit || process.env.NEXT_PUBLIC_APP_COMMIT || "local";
   const tag = gitInfo?.tag || process.env.APP_TAG || null;
 
   const versionInfo = {
