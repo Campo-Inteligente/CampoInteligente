@@ -32,7 +32,7 @@ export default function Chatbot() {
             </p>
           </motion.div>
           <div className={styles.mockupContainer}>
-            {/* Versão desktop com animações */}
+            {/* Versão desktopd com animações */}
          <div className={`d-none d-xl-flex ${styles.mockupRow}`}>
 
 
