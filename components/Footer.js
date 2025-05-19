@@ -146,7 +146,7 @@ export default function Footer() {
         {version && (
           <div className={styles.footerleft}>
             <p>
-              Versão: {version.version} ({version.commit} - Build: {new Date(version.date).toLocaleString()})
+              Versão: {version.version} - Build: {new Date(version.date).toLocaleString()} ({version.commit})
             </p>
           </div>
         )}
