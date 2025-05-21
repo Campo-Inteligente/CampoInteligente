@@ -126,21 +126,6 @@ export default function Contato() {
               </motion.button>
             </form>
           </motion.div>
-
-          {/* Imagem animada */}
-          <motion.div
-            className={styles.imagem}
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-          >
-            <Image
-              src="/imagens/contato1.png"
-              alt="Agricultor usando o app"
-              width={500}
-              height={500}
-            />
-          </motion.div>
         </section>
       </main>
 

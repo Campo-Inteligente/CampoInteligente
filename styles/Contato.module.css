@@ -6,23 +6,21 @@
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background-color: #f1f8f4;
+  background: url("/imagens/contato.png") no-repeat center center/cover;
 }
 
 .contato {
   display: flex;
-  align-items: center;
-  justify-content: center; /* Centraliza os itens */
-  gap: 20px; /* Define um espaçamento menor entre os elementos */
   width: 100%;
-  max-width: 1200px; /* Ajuste conforme necessário */
+  max-width: 1000px; /* Ajuste conforme necessário */
   padding: 10px;
+  margin-right: 250px;
 }
 
 .formulario {
   padding-right: 40px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  background: #127234;
+  background: rgba(18, 114, 52, 0.8);
   height: 564px;
   padding-left: 40px;
   padding-bottom: 20px;
@@ -30,6 +28,8 @@
   flex: 1;
   width: 60%;
   max-width: 650px;
+  margin-right: 50px;
+  backdrop-filter: blur(4px);
 }
 
 .container h2 {
@@ -135,6 +135,7 @@
     max-width: 400px;
     padding: 20px;
     height: auto;
+    margin-left: 150px;
   }
 
   .formulario button {
