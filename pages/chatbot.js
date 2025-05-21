@@ -4,8 +4,34 @@ import { motion } from "framer-motion";
 import Navbar from "../components/NavbarVerde";
 import Footer from "../components/Footer";
 import styles from "../styles/Chatbot.module.css";
+import { useEffect } from 'react';
 
 export default function Chatbot() {
+   useEffect(() => {
+    const carousel = document.getElementById('chatbotCarousel');
+    if (carousel) {
+      carousel.addEventListener('slid.bs.carousel', (event) => {
+        const indicators = document.querySelectorAll('.carousel-indicators [data-bs-target]');
+        indicators.forEach((indicator, index) => {
+          if (index === event.to) {
+            indicator.style.backgroundColor = '#127234';
+            indicator.style.transform = 'scale(1.3)';
+          } else {
+            indicator.style.backgroundColor = '#a5d6a7';
+            indicator.style.transform = 'scale(1)';
+          }
+        });
+      });
+    }
+    
+   
+    return () => {
+      if (carousel) {
+        carousel.removeEventListener('slid.bs.carousel');
+      }
+    };
+  }, []);
+
   return (
     <>
       <Head>
@@ -103,85 +129,110 @@ export default function Chatbot() {
             {/* Versão mobile - carrossel com efeitos de entrada */}
    
            <div className="d-xl-none w-100">
+  <motion.div
+    initial={{ opacity: 0, y: 100 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+    className="text-center"
+  >
+    <motion.a
+      href="/chatbot"
+      className={styles.chatbotBtn}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      ChatBot ↗
+    </motion.a>
+  </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 100 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1 }}
-                className="text-center"
-              >
-                <motion.a
-                  href="/chatbot"
-                  className={styles.chatbotBtn}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  ChatBot ↗
-                </motion.a>
-              </motion.div>
-
-              {/* Animação do carrossel entrando da esquerda */}
-              <motion.div
-                initial={{ opacity: 0, x: -100 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 1 }}
-                style={{
-                  position: "relative",
-                  margin: "0 auto",
-                  maxWidth: "600px",
-                  paddingBottom: "30px",
-                }}
-              >
-                <div
-                  id="chatbotCarousel"
-                  className="carousel slide"
-                  data-bs-ride="carousel"
-                >
-                  <div className="carousel-inner">
-                    {["next1", "next2", "next3"].map((img, index) => (
-                      <div
-                        key={index}
-                        className={`carousel-item ${
-                          index === 0 ? "active" : ""
-                        }`}
-                      >
-                        <div className={styles.carouselImageContainer}>
-                          <Image
-                            src={`/imagens/${img}.png`}
-                            alt={
-                              index === 0
-                                ? "Menu do ChatBot"
-                                : index === 1
-                                ? "Interação com usuário"
-                                : "Solução recomendada"
-                            }
-                            width={600}
-                            height={650}
-                            className={styles.carouselImage}
-                            priority={index === 0}
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div
-                  className={`carousel-indicators ${styles.carouselIndicators}`}
-                >
-                  {[0, 1, 2].map((index) => (
-                    <button
-                      key={index}
-                      type="button"
-                      data-bs-target="#chatbotCarousel"
-                      data-bs-slide-to={index}
-                      className={index === 0 ? "active" : ""}
-                      aria-label={`Slide ${index + 1}`}
-                    />
-                  ))}
-                </div>
-              </motion.div>
+  <motion.div
+    initial={{ opacity: 0, x: -100 }}
+    animate={{ opacity: 1, x: 0 }}
+    transition={{ duration: 1 }}
+    style={{
+      position: "relative",
+      margin: "0 auto",
+      maxWidth: "600px",
+      paddingBottom: "30px",
+    }}
+  >
+    <div
+      id="chatbotCarousel"
+      className="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div className="carousel-inner">
+        {["next1", "next2", "next3"].map((img, index) => (
+          <div
+            key={index}
+            className={`carousel-item ${index === 0 ? "active" : ""}`}
+          >
+            <div className={styles.carouselImageContainer}>
+              <Image
+                src={`/imagens/${img}.png`}
+                alt={
+                  index === 0
+                    ? "Menu do ChatBot"
+                    : index === 1
+                    ? "Interação com usuário"
+                    : "Solução recomendada"
+                }
+                width={600}
+                height={650}
+                className={styles.carouselImage}
+                priority={index === 0}
+              />
             </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+<div className={`carousel-indicators ${styles.carouselIndicators}`} style={{
+  position: 'absolute',
+  bottom: '10px',
+  left: '50%',
+  transform: 'translateX(-50%)',
+  zIndex: 15,
+  display: 'flex',
+  justifyContent: 'center',
+  padding: '10px 15px',
+  margin: 0,
+  listStyle: 'none',
+  backgroundColor: 'transparent',
+  borderRadius: '20px'
+}}>
+  {[0, 1, 2].map((index) => (
+    <button
+      key={index}
+      type="button"
+      data-bs-target="#chatbotCarousel"
+      data-bs-slide-to={index}
+      className={index === 0 ? "active" : ""}
+      aria-current={index === 0 ? "true" : "false"}
+      aria-label={`Slide ${index + 1}`}
+      style={{
+        boxSizing: 'content-box',
+        flex: '0 1 auto',
+        width: '12px',
+        height: '12px',
+        borderRadius: '50%',
+        margin: '0 8px',
+        cursor: 'pointer',
+        backgroundColor: index === 0 ? '#127234' : '#a5d6a7',
+        border: 'none',
+        opacity: 1,
+        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+        textIndent: '-999px',
+        overflow: 'hidden',
+        transform: index === 0 ? 'scale(1.3)' : 'scale(1)'
+      }}
+    />
+  ))}
+</div>
+
+  </motion.div>
+</div>
           </div>
         </section>
 
