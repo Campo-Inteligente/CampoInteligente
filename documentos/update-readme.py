@@ -119,15 +119,19 @@ def gerar_readme(versao, data_hora, arquivos):
 
         # Lista simples de arquivos
         readme.write("## Listagem de Arquivos\n\n")
-        for arquivo in arquivos:
-            readme.write(f"- {arquivo}\n")
-
-        # Seção adicional: estrutura em árvore
-        readme.write("\n## 🌳 Estrutura em Árvore da Raiz do Repositório\n\n")
+        
         readme.write("```\n")  # Bloco de código para preservar formatação
         readme.write(gerar_arvore("."))  # Gera a árvore do diretório atual
-        readme.write(gerar_arvore(".."))  # Gera árvore da pasta informada
+        readme.write("\n```\n")        
 
+        #for arquivo in arquivos:
+        #    readme.write(f"- {arquivo}\n")
+
+        # Seção adicional: estrutura em árvore
+        readme.write("\n## 🌳 Estrutura do Repositório\n\n")
+        
+        readme.write("```\n")  # Bloco de código para preservar formatação
+        readme.write(gerar_arvore(".."))  # Gera árvore da pasta informada
         readme.write("\n```\n")
 
 def atualizar_readme():
