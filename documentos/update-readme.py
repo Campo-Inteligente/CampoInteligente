@@ -1,61 +1,153 @@
-# update-readme.py
-
-# ✅ Gera ou atualiza o README.md com a lista de arquivos da pasta atual (exceto versao.txt e README.md)
-# ✅ Incrementa a versão automaticamente e registra a data e hora da atualização em horário de Brasília
-
 import os
 from datetime import datetime
 import pytz
 
-# Caminho relativo (este script deve ser executado dentro da pasta 'documentos')
-VERSAO_FILE = "versao.txt"
-README_FILE = "README.md"
+# Constantes usadas no script
+VERSAO_FILE = "versao.txt"        # Arquivo que controla a versão do README
+README_FILE = "README.md"         # Arquivo README a ser gerado/atualizado
+UPDATE_FILE = "update-readme.py"  # Nome deste script (para ignorar na listagem)
+FUSO_HORARIO_BRASIL = pytz.timezone("America/Sao_Paulo")  # Fuso horário para data/hora
 
-# Definir o fuso horário para Brasília
-FUSO_HORARIO_BRASIL = pytz.timezone("America/Sao_Paulo")
-
-def obter_versao_atual():
-    """Lê a versão atual do arquivo de controle."""
-    if os.path.exists(VERSAO_FILE):
-        with open(VERSAO_FILE, "r") as file:
+def inicializar_versao():
+    """
+    Garante que o arquivo de versão exista.
+    Se não existir, cria com valor inicial 1.
+    Retorna o número da versão atual (int).
+    """
+    if not os.path.exists(VERSAO_FILE):
+        with open(VERSAO_FILE, "w") as file:
+            file.write("1")
+        return 1
+    with open(VERSAO_FILE, "r") as file:
+        try:
             return int(file.read().strip())
-    return 1
+        except ValueError:
+            # Caso o conteúdo seja inválido, reinicia a versão em 1
+            return 1
 
-def incrementar_versao(nova_versao):
-    """Atualiza o arquivo de controle com a nova versão."""
+def incrementar_versao(versao_atual):
+    """
+    Incrementa a versão passada em 1 e salva no arquivo de controle.
+    Retorna a nova versão (int).
+    """
+    nova_versao = versao_atual + 1
     with open(VERSAO_FILE, "w") as file:
         file.write(str(nova_versao))
+    return nova_versao
 
-def obter_data_hora_atual():
-    """Obtém a data e hora atual formatadas para o fuso de Brasília."""
-    hora_atual = datetime.now(FUSO_HORARIO_BRASIL)
-    return hora_atual.strftime("%d/%m/%Y %H:%M:%S")
+def obter_data_hora_brasilia():
+    """
+    Obtém a data e hora atuais no fuso horário de Brasília,
+    formatadas como string "dd/mm/yyyy HH:MM:SS".
+    """
+    agora = datetime.now(FUSO_HORARIO_BRASIL)
+    return agora.strftime("%d/%m/%Y %H:%M:%S")
+
+def listar_arquivos():
+    """
+    Retorna uma lista ordenada dos arquivos presentes no diretório atual,
+    ignorando arquivos específicos definidos na constante 'ignorar'.
+    Somente arquivos (não diretórios) são listados.
+    """
+    ignorar = {README_FILE, VERSAO_FILE, UPDATE_FILE, ".gitignore"}
+    return sorted([
+        f for f in os.listdir(".")
+        if os.path.isfile(f) and f not in ignorar
+    ])
+
+def gerar_arvore(path, prefixo="", ignorar=None):
+    """
+    Gera uma representação em árvore do diretório 'path', recursivamente,
+    semelhante ao comando 'tree' do DOS/Linux.
+    
+    Args:
+        path (str): Caminho do diretório raiz para gerar a árvore.
+        prefixo (str): Prefixo usado para criar a indentação recursiva.
+        ignorar (set): Conjunto de nomes de arquivos/pastas a ignorar.
+    
+    Retorna:
+        str: A representação em árvore do diretório.
+    """
+    if ignorar is None:
+        ignorar = {README_FILE, VERSAO_FILE, UPDATE_FILE, ".gitignore"}
+
+    linhas = []
+    try:
+        itens = sorted([item for item in os.listdir(path) if item not in ignorar])
+    except FileNotFoundError:
+        return f"Diretório não encontrado: {path}"
+    except PermissionError:
+        return f"Permissão negada: {path}"
+
+    total = len(itens)
+    for i, item in enumerate(itens):
+        caminho_item = os.path.join(path, item)
+        ultimo = (i == total - 1)
+        ponteiro = "└── " if ultimo else "├── "
+
+        linhas.append(f"{prefixo}{ponteiro}{item}")
+
+        if os.path.isdir(caminho_item):
+            extensao_prefixo = "    " if ultimo else "│   "
+            linhas.append(gerar_arvore(caminho_item, prefixo + extensao_prefixo, ignorar))
+
+    return "\n".join(linhas)
+
+
+def gerar_readme(versao, data_hora, arquivos):
+    """
+    Cria ou sobrescreve o arquivo README.md com as informações da versão,
+    data de atualização, lista de arquivos e a estrutura em árvore do diretório raiz.
+    Recebe:
+        - versao: número da versão atual (int)
+        - data_hora: string da data/hora formatada
+        - arquivos: lista de arquivos no diretório raiz
+    """
+    with open(README_FILE, "w", encoding="utf-8") as readme:
+        readme.write("# CampoInteligente\n\n")
+        readme.write(
+            "Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura familiar, "
+            "oferecendo um chatbot com inteligência artificial que integra dados meteorológicos e de mercado "
+            "para auxiliar no plantio, manejo e colheita. A navegação é simples, com foco na interação via WhatsApp.\n\n"
+        )
+        readme.write("## 📄 Lista de arquivos da raiz deste repositório, atualizada automaticamente.\n\n")
+        readme.write("**Sistema:** [Campo Inteligente](https://www.campointeligente.agr.br/)\n\n")
+        readme.write(f"**Versão:** {versao} (AUTO-INCREMENTO)\n\n")
+        readme.write(f"**URL:** https://www.campointeligente.agr.br/\n\n")
+        readme.write(f"**Data de Atualização:** {data_hora}\n\n")
+        readme.write("**Responsável:** Marcos Morais\n\n")
+
+        # Lista simples de arquivos
+        readme.write("## 📂 Listagem de Arquivos\n\n")
+        
+        readme.write("```\n")  # Bloco de código para preservar formatação
+        readme.write(gerar_arvore("."))  # Gera a árvore do diretório atual
+        readme.write("\n```\n")        
+
+        #for arquivo in arquivos:
+        #    readme.write(f"- {arquivo}\n")
+
+        # Seção adicional: estrutura em árvore
+        readme.write("\n## 🌳 Estrutura do Repositório\n\n")
+        
+        readme.write("```\n")  # Bloco de código para preservar formatação
+        readme.write(gerar_arvore(".."))  # Gera árvore da pasta informada
+        readme.write("\n```\n")
 
 def atualizar_readme():
-    arquivos = [
-        f for f in os.listdir(".")
-        if os.path.isfile(f) and f not in [README_FILE, VERSAO_FILE, ".gitignore"]
-    ]
-
-    # Incrementa versão
-    versao_atual = obter_versao_atual()
-    nova_versao = versao_atual + 1
-    incrementar_versao(nova_versao)
-
-    data_hora_atualizacao = obter_data_hora_atual()
-
-    with open(README_FILE, "w", encoding="utf-8") as readme:
-        readme.write("# CampoInteligente.\n\n")
-        readme.write("Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura familiar, oferecendo um chatbot com inteligência artificial que integra dados meteorológicos e de mercado para auxiliar no plantio, manejo e colheita. A navegação é simples, com foco na interação via WhatsApp.\n\n")
-        readme.write("## 📄 Lista de arquivos da raiz deste repositório, atualizado a cada modificação.\n\n")
-        readme.write("**Sistema:** Campo Inteligente\n\n")
-        readme.write(f"**Versão:** {nova_versao} (AUTO-INCREMENTO)\n\n")
-        readme.write(f"**Data de Atualização:** {data_hora_atualizacao}\n\n")
-        readme.write("**Responsável:** Marcos Morais\n\n")
-        readme.write("## Listagem de Arquivos\n\n")
-
-        for arquivo in sorted(arquivos):
-            readme.write(f"- {arquivo}\n")
+    """
+    Função principal do script:
+    - Inicializa ou lê a versão atual
+    - Incrementa a versão
+    - Obtém a data/hora atual em Brasília
+    - Lista os arquivos do diretório atual
+    - Gera o README.md com todas as informações
+    """
+    versao_atual = inicializar_versao()
+    nova_versao = incrementar_versao(versao_atual)
+    data_hora = obter_data_hora_brasilia()
+    arquivos = listar_arquivos()
+    gerar_readme(nova_versao, data_hora, arquivos)
 
 if __name__ == "__main__":
     atualizar_readme()

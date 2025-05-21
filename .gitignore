@@ -1,40 +1,44 @@
-.env
-.env.local
+# Arquivos de ambiente e configuração
+.env       # Contém variáveis de ambiente sensíveis
+.env.local # Arquivo local para variáveis de ambiente específicas
+versao.txt  # Pode conter informações de versão, dependendo do contexto
 
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-.bat
+# Veja mais sobre ignorar arquivos no GitHub: https://help.github.com/articles/ignoring-files/
 
-# dependencies
-/node_modules
-/.pnp
+# Arquivos de script do Windows
+.bat # Scripts executáveis do Windows podem não ser necessários no versionamento
+
+# Dependências de pacotes (geradas automaticamente e não devem ser versionadas)
+node_modules/
+.pnp/
 .pnp.js
 
-# testing
-/coverage
+# Arquivos de teste e cobertura
+coverage/ # Diretório de relatórios de cobertura de testes
 
-# next.js
-/.next/
-/out/
+# Next.js (arquivos gerados pelo build do framework)
+.next/
+out/
 
-# production
-/build
+# Arquivos de produção (gerados automaticamente no processo de build)
+build/
 
-# misc
-.DS_Store
-*.pem
+# Arquivos diversos do sistema operacional
+.DS_Store # Arquivo de cache do macOS
+*.pem     # Chaves privadas, **nunca devem ser versionadas!**
 
-# debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-.pnpm-debug.log*
+# Arquivos de depuração e logs
+npm-debug.log*   # Logs de depuração do npm
+yarn-debug.log*  # Logs de depuração do Yarn
+yarn-error.log*  # Logs de erro do Yarn
+.pnpm-debug.log* # Logs de depuração do pnpm
 
-# local env files
-.env*.local
+# Arquivos locais de ambiente (evita que variantes específicas sejam versionadas)
+.env*.local 
 
-# vercel
+# Diretório do Vercel (caso o projeto esteja hospedado lá)
 .vercel
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# Arquivos relacionados ao TypeScript
+*.tsbuildinfo    # Informações de build do TypeScript
+next-env.d.ts    # Configuração do ambiente para Next.js
