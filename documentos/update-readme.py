@@ -55,7 +55,7 @@ def listar_arquivos():
         if os.path.isfile(f) and f not in ignorar
     ])
 
-def gerar_arvore():
+def gerar_arvore(path):
     """
     Gera uma representação textual simples, no estilo 'tree' do DOS/Linux,
     para os arquivos e pastas no diretório atual (nível raiz apenas).
@@ -63,7 +63,7 @@ def gerar_arvore():
     Retorna a árvore como uma string formatada.
     """
     ignorar = {README_FILE, VERSAO_FILE, UPDATE_FILE, ".gitignore"}
-    itens = sorted([f for f in os.listdir(".") if f not in ignorar])
+    itens = sorted([f for f in os.listdir(path) if f not in ignorar])
     linhas = []
     total = len(itens)
     for i, item in enumerate(itens):
@@ -97,14 +97,16 @@ def gerar_readme(versao, data_hora, arquivos):
         readme.write("**Responsável:** Marcos Morais\n\n")
 
         # Lista simples de arquivos
-        readme.write("## Listagem de Arquivos\n\n")
+        readme.write("## Listagem de Arquivos em Documentos\n\n")
+        readme.write(gerar_arvore(".."))
+        readme.write("\n```\n")
         for arquivo in arquivos:
             readme.write(f"- {arquivo}\n")
 
         # Seção adicional: estrutura em árvore
         readme.write("\n## 🌳 Estrutura em Árvore da Raiz do Repositório\n\n")
         readme.write("```\n")  # Bloco de código para preservar formatação
-        readme.write(gerar_arvore())
+        readme.write(gerar_arvore("."))
         readme.write("\n```\n")
 
 def atualizar_readme():
