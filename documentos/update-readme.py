@@ -55,23 +55,44 @@ def listar_arquivos():
         if os.path.isfile(f) and f not in ignorar
     ])
 
-def gerar_arvore(path):
+def gerar_arvore(path, prefixo="", ignorar=None):
     """
-    Gera uma representação textual simples, no estilo 'tree' do DOS/Linux,
-    para os arquivos e pastas no diretório atual (nível raiz apenas).
-    Ignora arquivos/pastas definidos na constante 'ignorar'.
-    Retorna a árvore como uma string formatada.
+    Gera uma representação em árvore do diretório 'path', recursivamente,
+    semelhante ao comando 'tree' do DOS/Linux.
+    
+    Args:
+        path (str): Caminho do diretório raiz para gerar a árvore.
+        prefixo (str): Prefixo usado para criar a indentação recursiva.
+        ignorar (set): Conjunto de nomes de arquivos/pastas a ignorar.
+    
+    Retorna:
+        str: A representação em árvore do diretório.
     """
-    ignorar = {README_FILE, VERSAO_FILE, UPDATE_FILE, ".gitignore"}
-    itens = sorted([f for f in os.listdir(path) if f not in ignorar])
+    if ignorar is None:
+        ignorar = {README_FILE, VERSAO_FILE, UPDATE_FILE, ".gitignore"}
+
     linhas = []
+    try:
+        itens = sorted([item for item in os.listdir(path) if item not in ignorar])
+    except FileNotFoundError:
+        return f"Diretório não encontrado: {path}"
+    except PermissionError:
+        return f"Permissão negada: {path}"
+
     total = len(itens)
     for i, item in enumerate(itens):
-        prefixo = "├── "  # Prefixo padrão para todos, menos o último
-        if i == total - 1:
-            prefixo = "└── "  # Último item recebe prefixo diferente
-        linhas.append(f"{prefixo}{item}")
+        caminho_item = os.path.join(path, item)
+        ultimo = (i == total - 1)
+        ponteiro = "└── " if ultimo else "├── "
+
+        linhas.append(f"{prefixo}{ponteiro}{item}")
+
+        if os.path.isdir(caminho_item):
+            extensao_prefixo = "    " if ultimo else "│   "
+            linhas.append(gerar_arvore(caminho_item, prefixo + extensao_prefixo, ignorar))
+
     return "\n".join(linhas)
+
 
 def gerar_readme(versao, data_hora, arquivos):
     """
@@ -97,19 +118,17 @@ def gerar_readme(versao, data_hora, arquivos):
         readme.write("**Responsável:** Marcos Morais\n\n")
 
         # Lista simples de arquivos
-        readme.write("## Listagem de Arquivos em Documentos\n\n")
-        readme.write("```\n")            # Abre bloco de código para a árvore do diretório pai
-        readme.write(gerar_arvore("..")) # Gera a árvore no diretório pai
-        readme.write("\n```\n")          # Fecha bloco de código
-
+        readme.write("## Listagem de Arquivos\n\n")
         for arquivo in arquivos:
             readme.write(f"- {arquivo}\n")
 
         # Seção adicional: estrutura em árvore
         readme.write("\n## 🌳 Estrutura em Árvore da Raiz do Repositório\n\n")
-        readme.write("```\n")            # Abre bloco de código para a árvore do diretório atual
+        readme.write("```\n")  # Bloco de código para preservar formatação
         readme.write(gerar_arvore("."))  # Gera a árvore do diretório atual
-        readme.write("\n```\n")          # Fecha bloco de código
+        readme.write(gerar_arvore(".."))  # Gera árvore da pasta informada
+
+        readme.write("\n```\n")
 
 def atualizar_readme():
     """
