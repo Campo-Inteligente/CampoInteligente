@@ -11,6 +11,7 @@ import pytz
 # Constantes
 VERSAO_FILE = "versao.txt"
 README_FILE = "README.md"
+UPDATE_FILE = "update-readme.py"
 FUSO_HORARIO_BRASIL = pytz.timezone("America/Sao_Paulo")
 
 def inicializar_versao():
@@ -39,7 +40,7 @@ def obter_data_hora_brasilia():
 
 def listar_arquivos():
     """Retorna a lista de arquivos da pasta atual, ignorando os arquivos definidos."""
-    ignorar = {README_FILE, VERSAO_FILE, ".gitignore"}
+    ignorar = {README_FILE, VERSAO_FILE, UPDATE_FILE, ".gitignore"}
     return sorted([
         f for f in os.listdir(".")
         if os.path.isfile(f) and f not in ignorar
