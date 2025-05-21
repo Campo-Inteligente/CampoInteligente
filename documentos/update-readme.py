@@ -118,7 +118,7 @@ def gerar_readme(versao, data_hora, arquivos):
         readme.write("**Responsável:** Marcos Morais\n\n")
 
         # Lista simples de arquivos
-        readme.write("## Listagem de Arquivos\n\n")
+        readme.write("## 📂 Listagem de Arquivos\n\n")
         
         readme.write("```\n")  # Bloco de código para preservar formatação
         readme.write(gerar_arvore("."))  # Gera a árvore do diretório atual
