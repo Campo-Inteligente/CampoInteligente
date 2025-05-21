@@ -7,30 +7,32 @@ import styles from "../styles/Chatbot.module.css";
 import { useEffect } from 'react';
 
 export default function Chatbot() {
-   useEffect(() => {
-    const carousel = document.getElementById('chatbotCarousel');
-    if (carousel) {
-      carousel.addEventListener('slid.bs.carousel', (event) => {
-        const indicators = document.querySelectorAll('.carousel-indicators [data-bs-target]');
-        indicators.forEach((indicator, index) => {
-          if (index === event.to) {
-            indicator.style.backgroundColor = '#127234';
-            indicator.style.transform = 'scale(1.3)';
-          } else {
-            indicator.style.backgroundColor = '#a5d6a7';
-            indicator.style.transform = 'scale(1)';
-          }
-        });
-      });
-    }
-    
-   
-    return () => {
-      if (carousel) {
-        carousel.removeEventListener('slid.bs.carousel');
+ useEffect(() => {
+  const handleSlide = (event) => {
+    const indicators = document.querySelectorAll('.carousel-indicators [data-bs-target]');
+    indicators.forEach((indicator, index) => {
+      if (index === event.to) {
+        indicator.style.backgroundColor = '#127234';
+        indicator.style.transform = 'scale(1.3)';
+      } else {
+        indicator.style.backgroundColor = '#a5d6a7';
+        indicator.style.transform = 'scale(1)';
       }
-    };
-  }, []);
+    });
+  };
+
+  const carousel = document.getElementById('chatbotCarousel');
+  if (carousel) {
+    carousel.addEventListener('slid.bs.carousel', handleSlide);
+  }
+  
+  
+  return () => {
+    if (carousel) {
+      carousel.removeEventListener('slid.bs.carousel', handleSlide);
+    }
+  };
+}, []);
 
   return (
     <>
