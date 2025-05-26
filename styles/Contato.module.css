@@ -1,38 +1,24 @@
-.container {
+.wrapper {
   position: relative;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.container {
+  position: relative;
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 20px;
   background: url("/imagens/contato.png") no-repeat center center/cover;
+ 
 }
 
-.contato {
-  display: flex;
-  width: 100%;
-  max-width: 1000px; /* Ajuste conforme necessário */
-  padding: 10px;
-  margin-right: 250px;
-}
-
-.formulario {
-  padding-right: 40px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  background: rgba(18, 114, 52, 0.8);
-  height: 564px;
-  padding-left: 40px;
-  padding-bottom: 20px;
-  border-radius: 20px;
-  flex: 1;
-  width: 60%;
-  max-width: 650px;
-  margin-right: 50px;
-  backdrop-filter: blur(4px);
-}
-
-.container h2 {
+.titulo {
   font-size: 36px;
   color: #127234;
   font-weight: bold;
@@ -41,145 +27,148 @@
   text-align: center;
 }
 
-.container p {
+.subtitulo {
   font-size: 20px;
   color: #4caf50;
   margin-bottom: 15px;
   text-align: center;
 }
 
-.formulario form {
+.contato {
   display: flex;
-  flex-direction: column;
+  width: 100%;
+  max-width: 1000px;
+  padding: 10px;
+  margin-right: 250px;
 }
 
-.formulario label {
-  margin-top: 25px;
+.formulario {
+  padding: 30px 40px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background: rgba(18, 114, 52, 0.8);
+  height: 530px;
+  border-radius: 20px;
+  flex: 1;
+  width: 60%;
+  max-width: 650px;
+  margin-right: 50px;
+  backdrop-filter: blur(4px);
+}
+
+.campo {
+  margin-bottom: 15px;
+}
+
+.campo label {
+  display: block;
+  margin-bottom: 5px;
   font-size: 14px;
   color: #e8f5e9;
 }
 
-.formulario textarea {
+.campo input,
+.campo textarea {
   width: 100%;
-  padding: 10px;
-  margin-top: 10px;
-  border: 1px rgba(232, 245, 233, 0.36);
+  padding: 12px 15px;
+  border: 1px solid rgba(232, 245, 233, 0.36);
   border-radius: 20px;
   background-color: rgba(232, 245, 233, 0.36);
-  height: 130px;
+  color: white;
+}
+
+.campo textarea {
+  height: 120px;
   resize: none;
 }
 
-.formulario input {
-  width: 100%;
-  height: 40px;
-  padding: 20px;
-  margin-top: 10px;
-  border: 1px rgba(232, 245, 233, 0.36);
-  border-radius: 20px;
-  background-color: rgba(232, 245, 233, 0.36);
-  resize: none;
-}
-
-.formulario button {
+.botao {
   margin-top: 15px;
   padding: 12px;
   background: #e8f5e9;
   color: #127234;
-  font-weight: lighter;
   font-size: 18px;
   border: none;
   border-radius: 20px;
   cursor: pointer;
-  transition: 0.3s;
   width: 160px;
   height: 45px;
-  align-items: center;
-  justify-content: center;
-  margin-left: 200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.formulario button:hover {
+.botao:hover {
   background: #ffd54f;
   color: #e8f5e9;
 }
 
-.imagem {
-  flex: 0.8; /* Faz a imagem se ajustar proporcionalmente ao formulário */
-  max-width: 40%; /* Mantém um tamanho proporcional */
-  height: auto; /* Mantém a proporção sem distorcer */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.imagem img {
-  max-width: 100%; /* Garante que a imagem não ultrapasse seu contêiner */
-  height: auto; /* Mantém a proporção */
-  object-fit: contain; /* Garante que a imagem não distorça */
-}
-
-/* Ajuste para centralizar os textos e reduzir tamanho no mobile */
-@media (max-width: 768px) {
-  .contain {
-    background-color: #f1f8f4;
-    background-image: url("/imagens/fundo2.png");
+@media (max-width: 1199px) {
+  .container {
+    justify-content: flex-start;
+    padding-top: 80px;
+    background-size: cover;
+    background-position: 75% center;
+    background-attachment: scroll;
   }
+
   .contato {
     flex-direction: column;
-    text-align: center;
-  }
-
-  .formulario {
-    width: 90%;
-    max-width: 400px;
-    padding: 20px;
-    height: auto;
-    margin-left: 150px;
-  }
-
-  .formulario button {
-    margin-left: 0;
+    align-items: center;
+    margin-right: 0;
     width: 100%;
-  }
-
-  .imagem {
-    max-width: 80%;
-  }
-
-  .imagem img {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
-/* Ajuste para telas menores (máximo de 600px) */
-@media (max-width: 600px) {
-  .contato {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
+    padding: 0 20px;
   }
 
   .formulario {
     width: 100%;
-    max-width: 350px;
+    max-width: 500px;
+    margin: 0 auto 40px;
+    padding: 25px;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .titulo {
+    font-size: 28px;
+    margin-top: 20px;
+  }
+
+  .subtitulo {
+    font-size: 16px;
+  }
+
+  .campo {
+    margin-bottom: 12px;
+  }
+}
+
+
+@media (max-width: 992px) and (orientation: landscape) {
+  .formulario {
+    width: 80%;
+    max-height: none;
+    padding: 20px 25px;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .formulario {
+    width: 70%;
+    margin: 0 auto 40px;
+  }
+}
+
+
+@media (max-width: 576px) {
+  .formulario {
     padding: 20px;
-    height: auto;
   }
 
-  .formulario button {
-    margin-left: 0;
+  .botao {
     width: 100%;
-  }
-
-  .imagem {
-    max-width: 90%;
-    margin-top: 10px;
-  }
-
-  .imagem img {
-    max-width: 100%;
-    height: auto;
+    max-width: 200px;
   }
 }
