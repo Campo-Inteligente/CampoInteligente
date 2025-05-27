@@ -63,9 +63,6 @@
   line-height: 1.6;
 }
 
-
-
-
 .bloco {
   background: rgba(76, 175, 80, 0.5);
   padding: 25px;
@@ -76,13 +73,9 @@
   transition: transform 0.3s ease;
 }
 
-
 .bloco:hover {
   transform: scale(1.03);
 }
-
-
-
 
 .tituloComIcone {
   display: flex;
@@ -125,48 +118,38 @@
   max-width: 320px;
   margin: 0 auto;
   min-height: 280px;
+  position: relative;
+}
+
+.cardEsquerda {
+  width: 100%;
+  height: 200px;
+  background: rgba(245, 245, 245, 0.9);
+  position: relative;
+  overflow: hidden;
+}
+
+.imagemWrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
 .avatar {
   width: 100%;
   height: 100%;
-  object-fit: cover; 
-  object-position: center; 
-}
-
-.imagemWrapper {
-  width: 100%;
-  height: 100%;
-  position: relative;
   object-fit: cover;
   object-position: center;
 }
 
-.cardEsquerda {
-  width: 120px;
-  min-width: 120px;
-  height: 200px;
-  background: rgba(245, 245, 245, 0.9);
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: stretch; 
-}
-
-.membroImagem {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
 .cardDireita {
   flex: 1;
-  padding: 20px;
+  padding: 15px;
   background: rgba(76, 175, 80, 0.2);
   color: white;
-  text-align: center; 
-  padding: 15px; 
+  text-align: center;
 }
 
 .cardDireita h3 {
@@ -175,14 +158,6 @@
   color: white;
 }
 
-
-.cardDireita h3,
-.cardDireita .cargo,
-.cardDireita .descricao {
-  text-align: center; 
-  margin-left: auto;
-  margin-right: auto;
-}
 
 .cargo {
   margin: 5px 0 15px 0;
@@ -210,13 +185,14 @@
   transition: all 0.3s ease;
   color: #127234;
   font-size: 1.5rem;
+  z-index: 2;
 }
-
 
 .linkedinBtn:hover {
   background-color: rgba(234, 214, 34, 0.87);
   color: white;
 }
+
 
 @media (min-width: 768px) {
   .intro {
@@ -236,11 +212,21 @@
   
   .cardEsquerda {
     width: 120px;
-    height: auto;
+    height: 100%;
+    flex-shrink: 0;
   }
 
   .cardDireita {
-    padding: 12px;
+    padding: 15px;
+  }
+  
+  /* Correção para linha branca */
+  .cardEsquerda {
+    margin-right: -1px;
+  }
+  
+  .cardDireita {
+    margin-left: -1px;
   }
 }
 
@@ -281,16 +267,12 @@
   }
 
   .listaValores {
-    
     text-align: center;
     display: inline-block;
     margin: 0 auto;
     padding: 0;
   }
-
-
 }
-
 
 @media (max-width: 991px) {
   .blocosContainer {
@@ -324,7 +306,6 @@
 }
 
 @media (max-width: 576px) {
-
   .tituloPrincipal {
     font-size: 1.8rem;
   }
@@ -342,12 +323,6 @@
     height: 200px;
   }
   
-  .membroImagem {
-    height: 100%;
-    width: auto;
-    max-width: 100%;
-  }
-  
   .bloco {
     padding: 20px;
   }
@@ -357,75 +332,60 @@
   }
 }
 
-
-@media only screen 
-  and (max-device-width: 667px)
-  and (max-device-height: 375px)
-  and (orientation: landscape) {
-
-    .cardMembro{
-      flex-direction: row;
-      max-width: 100%;
-      min-height: 160px;
-    }
-
-    .cardEsquerda{
-      width: 160px;
-      height: 100%;
-    
-    }
-
-    .avatar{
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center top;
-    }
-    
-    .cardDireita{
-      padding: 10px;
-      flex: 1;
-      min-width: 0;
-    }
-
+@media only screen and (max-device-width: 667px) and (max-device-height: 375px) and (orientation: landscape) {
+  .cardMembro {
+    flex-direction: row;
+    max-width: 100%;
+    min-height: 160px;
   }
 
-  @media (max-width: 991px) and (orientation: landscape) {
-    .cardMembro {
-      flex-direction: row;
-      max-width: 100%;
-      min-height: 160px;
-    }
-    
+  .cardEsquerda {
+    width: 160px;
+    height: 100%;
+  }
+  
+  .cardDireita {
+    padding: 10px;
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 991px) and (orientation: landscape) {
+  .cardMembro {
+    flex-direction: row;
+    max-width: 100%;
+    min-height: 160px;
+  }
+  
+  .cardEsquerda {
+    width: 160px;
+    height: 100%;
+    flex-shrink: 0;
+  }
+  
+  .cardDireita {
+    padding: 10px;
+    flex: 1;
+    min-width: 0; 
+  }
+  
+  @media (max-aspect-ratio: 1/1) {
     .cardEsquerda {
-      width: 160px;
-      height: 100%;
-      flex-shrink: 0;
+      width: 120px;
     }
     
-    .cardDireita {
-      padding: 10px;
-      flex: 1;
-      min-width: 0; 
-    }
-    
-    
-    @media (max-aspect-ratio: 1/1) {
-      .cardEsquerda {
-        width: 120px;
-      }
-      
-      .descricao {
-        font-size: 0.8rem;
-      }
+    .descricao {
+      font-size: 0.8rem;
     }
   }
+}
 
-  @media (max-width: 991.98px) {
-  .tituloPrincipal{
+@media (max-width: 991.98px) {
+  .tituloPrincipal {
     text-align: center;
   }
+  
   .textoDescricao {
     text-align: justify;
   }
