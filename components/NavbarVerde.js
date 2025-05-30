@@ -33,7 +33,17 @@ export default function Navbar() {
         transition={{ duration: 1, ease: "easeOut" }}
         className={styles.logo}
       >
-        <Image src="/imagens/logov.png" alt="Campo Inteligente" width={200} height={50} priority />
+        <Link href="/">
+         <Image
+          src="/imagens/logov.png" 
+          alt="Campo Inteligente"
+           width={200} 
+           height={50}
+            priority 
+            style={{cursor: 'pointer'}}
+            />
+        </Link>
+       
       </motion.div>
 
       {/* Botão menu hamburguer */}
