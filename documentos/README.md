@@ -6,11 +6,11 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 
 **Sistema:** [Campo Inteligente](https://www.campointeligente.agr.br/)
 
-**Versão:** 47 (AUTO-INCREMENTO)
+**Versão:** 48 (AUTO-INCREMENTO)
 
 **URL:** https://www.campointeligente.agr.br/
 
-**Data de Atualização:** 30/05/2025 12:24:48
+**Data de Atualização:** 30/05/2025 22:44:31
 
 **Responsável:** Marcos Morais
 
@@ -64,9 +64,9 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   ├── info
 
 │   │   └── pack
-│   │       ├── pack-e4c454ae3fd047a4d3912bf32a05f3e5f8a7914f.idx
-│   │       ├── pack-e4c454ae3fd047a4d3912bf32a05f3e5f8a7914f.pack
-│   │       └── pack-e4c454ae3fd047a4d3912bf32a05f3e5f8a7914f.rev
+│   │       ├── pack-9e38d9e57b5f151af43db6cdc201ca9594e9bef7.idx
+│   │       ├── pack-9e38d9e57b5f151af43db6cdc201ca9594e9bef7.pack
+│   │       └── pack-9e38d9e57b5f151af43db6cdc201ca9594e9bef7.rev
 │   ├── refs
 │   │   ├── heads
 │   │   │   └── main
