@@ -1,5 +1,4 @@
 import '../styles/globals.css';
-import '../styles/sobre.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useEffect } from 'react';
 import { useRouter } from 'next/router';
