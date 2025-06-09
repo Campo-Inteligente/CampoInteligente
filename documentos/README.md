@@ -6,11 +6,11 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 
 **Sistema:** [Campo Inteligente](https://www.campointeligente.agr.br/)
 
-**Versão:** 57 (AUTO-INCREMENTO)
+**Versão:** 58 (AUTO-INCREMENTO)
 
 **URL:** https://www.campointeligente.agr.br/
 
-**Data de Atualização:** 08/06/2025 22:54:27
+**Data de Atualização:** 09/06/2025 17:14:48
 
 **Responsável:** Marcos Morais
 
@@ -64,9 +64,9 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   ├── info
 
 │   │   └── pack
-│   │       ├── pack-c73cfa0f52b7aa61546c2ba9a23c0c8d69c82ad7.idx
-│   │       ├── pack-c73cfa0f52b7aa61546c2ba9a23c0c8d69c82ad7.pack
-│   │       └── pack-c73cfa0f52b7aa61546c2ba9a23c0c8d69c82ad7.rev
+│   │       ├── pack-f779c8c6d8c4b779610c87d20ed64e615e192b14.idx
+│   │       ├── pack-f779c8c6d8c4b779610c87d20ed64e615e192b14.pack
+│   │       └── pack-f779c8c6d8c4b779610c87d20ed64e615e192b14.rev
 │   ├── refs
 │   │   ├── heads
 │   │   │   └── main
@@ -137,6 +137,7 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   ├── fundo3.jpeg
 │   │   ├── fundo3.jpg
 │   │   ├── gisele1.jpg
+│   │   ├── homecerto.png
 │   │   ├── homenvv.png
 │   │   ├── instagram.png
 │   │   ├── joao2.jpg
