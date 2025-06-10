@@ -6,11 +6,11 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 
 **Sistema:** [Campo Inteligente](https://www.campointeligente.agr.br/)
 
-**Versão:** 60 (AUTO-INCREMENTO)
+**Versão:** 61 (AUTO-INCREMENTO)
 
 **URL:** https://www.campointeligente.agr.br/
 
-**Data de Atualização:** 09/06/2025 17:42:38
+**Data de Atualização:** 09/06/2025 22:50:22
 
 **Responsável:** Marcos Morais
 
@@ -63,6 +63,8 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   ├── objects
 │   │   ├── 00
 │   │   │   └── 81de66c1ee4b260faa26ba5860f8851f533305
+│   │   ├── 01
+│   │   │   └── ddb076fcca25b6e08940b2b4db430fbd8b76b9
 │   │   ├── 02
 │   │   │   └── 06b4f030f4b81671a98b31f89e058088d3fb4c
 │   │   ├── 04
@@ -78,6 +80,8 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   │   └── b4a8f38a3c982f8ae3499071725389253402fa
 │   │   ├── 28
 │   │   │   └── 259c9ca310ca75ba8d5ecd7cc964d102da86c0
+│   │   ├── 2b
+│   │   │   └── 82dfea308730c4f925388dbb683e6eae360640
 │   │   ├── 2c
 │   │   │   └── fdc15fa2e892928e21c966caaf3d0c1961b215
 │   │   ├── 2d
@@ -117,6 +121,8 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   ├── 60
 │   │   │   ├── 237a8d0e048bedea9b665318acb487a6425d79
 │   │   │   └── 2cf4d88bcd9d4bd8658364d4641eed25c8782b
+│   │   ├── 63
+│   │   │   └── bf042f7a1bfd73731a808b2e70f2f82021218b
 │   │   ├── 6c
 │   │   │   └── b74a0a2c3a2206bba582b69ae390fe8fb876bd
 │   │   ├── 6d
@@ -132,6 +138,8 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   │   └── 8dec6f6fb569368f5874bdcf1122b5881c8a5b
 │   │   ├── 75
 │   │   │   └── 639f809f41eb8f423357da449eaae9f66dbd57
+│   │   ├── 7d
+│   │   │   └── 07007b5ee5d8a4a0a2854595ff1b284535a524
 │   │   ├── 7e
 │   │   │   └── 43c7f4712730971fd23a84d3911ae36183ae1c
 │   │   ├── 7f
@@ -145,8 +153,6 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   │   └── ff545aa7a6923a4dcc3c68cdbe4c4cac34bd1f
 │   │   ├── 86
 │   │   │   └── bd19690206fa2607e5638fbc7445aa0cf64020
-│   │   ├── 87
-│   │   │   └── 349153fcf426321a0519601f336ee1562ae7bf
 │   │   ├── 88
 │   │   │   └── d9c5fdd0587f5129ea29a48c104cdc56f90636
 │   │   ├── 8b
@@ -168,10 +174,10 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   ├── 9a
 │   │   │   └── 378b36cf6ea02faade6ee88488d96b8a692a3c
 │   │   ├── 9c
-│   │   │   ├── 956ae87520693d70a79040777ffafe1735c27c
-│   │   │   └── c4a68061d97e5f16d90e833b7f7829bceea4ba
+│   │   │   └── 956ae87520693d70a79040777ffafe1735c27c
 │   │   ├── a0
-│   │   │   └── a5eaadcfbcc52e6962cca2c71af9b9a95238c3
+│   │   │   ├── a5eaadcfbcc52e6962cca2c71af9b9a95238c3
+│   │   │   └── fa258e05c85d46e26b20c3bc3be95ae8f33ffe
 │   │   ├── a1
 │   │   │   └── d6a8cd525153c805ecd858529bf882f69713aa
 │   │   ├── a2
@@ -192,8 +198,6 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   ├── b4
 │   │   │   ├── 6ef23420b02c881af43c5e7a55fa6f8bd378ea
 │   │   │   └── fdb992b4e607c11e5e3330ca5a4bd46f712c49
-│   │   ├── b5
-│   │   │   └── 21c7665217933ed5a5bb752d014be525a9d16e
 │   │   ├── b8
 │   │   │   └── af89b28b38fc3879e6da00928c805facc5baf0
 │   │   ├── b9
@@ -206,8 +210,6 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   │   └── fb357a7122523ec94045523758c4b825b448ef
 │   │   ├── c8
 │   │   │   └── 1ea8d4556afba2161a2aa78f5cf00996d9fab4
-│   │   ├── cc
-│   │   │   └── 316bab655bc0636b192da588c173871da7fa56
 │   │   ├── cd
 │   │   │   └── c3e99627cb70e1e34923085b2f47c129c08f04
 │   │   ├── cf
@@ -238,7 +240,6 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   ├── fb
 │   │   │   └── f0e25a651c28931b2fe8afa2947e124eebc74f
 │   │   ├── fc
-│   │   │   ├── 9afb48e033d9a7d2a778e81ae0e9424950c1cd
 │   │   │   └── e741403a1ef732f4e5e15e3ff43e21722fd673
 │   │   ├── fe
 │   │   │   └── 6ce7b2cb51e1e941e53af2e43e90ddb43c3eaa
