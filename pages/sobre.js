@@ -74,7 +74,7 @@ export default function Sobre() {
       descricao:
         "Desenvolvedor Back-End com foco em automação e processamento de dados. Técnico pelo IFBA e graduando em Sistemas de Informação, possui experiência IA e Python para criar soluções inteligentes.",
       imagem: "/imagens/juan.jpg",
-      linkedin: "https://www.linkedin.com/in/marcosmoraisjr/",
+      linkedin: "https://www.linkedin.com/in/juan-pablo-09a65b2a6/",
     },
     {
       cargo: "Gerente de Projetos",
