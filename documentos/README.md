@@ -6,11 +6,11 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 
 **Sistema:** [Campo Inteligente](https://www.campointeligente.agr.br/)
 
-**Versão:** 67 (AUTO-INCREMENTO)
+**Versão:** 68 (AUTO-INCREMENTO)
 
 **URL:** https://www.campointeligente.agr.br/
 
-**Data de Atualização:** 13/06/2025 22:45:38
+**Data de Atualização:** 14/06/2025 09:01:55
 
 **Responsável:** Marcos Morais
 
@@ -69,10 +69,6 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   │   └── b97d5ab8b4ac57c5e43febaeaab6d8bb884370
 │   │   ├── 11
 │   │   │   └── 1f1063ea36b49bf84bf5c01a229faf8228dc71
-│   │   ├── 13
-│   │   │   └── 63e249d85c7a5d33f24ce084d1148dd8657b47
-│   │   ├── 1b
-│   │   │   └── 7906264a69088cff33b35effafcf8e6a4192bd
 │   │   ├── 1d
 │   │   │   └── fb3936fec0357987969bfe3b4f0ba07720cda5
 │   │   ├── 25
@@ -97,8 +93,6 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   │   └── 64f93364d4b7d4517baf771681cdb593c6aca2
 │   │   ├── 46
 │   │   │   └── fb7473c0ce2ce036e414a640bf4ec5e7776660
-│   │   ├── 4a
-│   │   │   └── ef32c3262161c5c7720d05c71ceacb91a5c7c7
 │   │   ├── 4d
 │   │   │   └── 1b5e279548d5d6f103f4fdeb53aeb4dcee4276
 │   │   ├── 51
@@ -132,8 +126,6 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   │   └── 8dec6f6fb569368f5874bdcf1122b5881c8a5b
 │   │   ├── 75
 │   │   │   └── 639f809f41eb8f423357da449eaae9f66dbd57
-│   │   ├── 7a
-│   │   │   └── 292491d812e0a3dca41202e65941faf96137db
 │   │   ├── 7e
 │   │   │   └── 43c7f4712730971fd23a84d3911ae36183ae1c
 │   │   ├── 7f
@@ -141,7 +133,7 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   ├── 81
 │   │   │   └── b4baa433a4111e65bd3c892536ac59d3f16b2c
 │   │   ├── 83
-│   │   │   └── 74e410491305e289ab2cff0b0ffb44b5b034be
+│   │   │   └── 2332893ab752cd7a530a0d45c00fdf2f436453
 │   │   ├── 84
 │   │   │   ├── 20e79d87e705663988775064d3f29e0c9c5202
 │   │   │   └── ff545aa7a6923a4dcc3c68cdbe4c4cac34bd1f
@@ -181,9 +173,11 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   │   ├── a731c930b79c4a7249eeae8199930b313ce43c
 │   │   │   └── a83ca291364820b851f65e5a73755b8d20e691
 │   │   ├── a7
-│   │   │   └── 4f23b1431992188844d8674ac592c7354caa9b
+│   │   │   ├── 4f23b1431992188844d8674ac592c7354caa9b
+│   │   │   └── 9328f84ec6e86a3271b505651867e705372ac1
 │   │   ├── a9
-│   │   │   └── 715ab980ebb899da208510f2da1d2cbc3ff379
+│   │   │   ├── 715ab980ebb899da208510f2da1d2cbc3ff379
+│   │   │   └── 864812dbef98df5adff2d84325537921471067
 │   │   ├── ab
 │   │   │   └── 56641d32eec491337c3e7b579565057f19d88f
 │   │   ├── af
@@ -207,15 +201,17 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   │   └── fb357a7122523ec94045523758c4b825b448ef
 │   │   ├── c4
 │   │   │   └── db845aa3836dfc1a5c1fc4b9e0dcd3c32849e9
+│   │   ├── c7
+│   │   │   └── 950964702a301d28ecef115e4fd744e3ecabe1
 │   │   ├── c8
 │   │   │   └── 1ea8d4556afba2161a2aa78f5cf00996d9fab4
 │   │   ├── cd
 │   │   │   └── c3e99627cb70e1e34923085b2f47c129c08f04
 │   │   ├── cf
-│   │   │   ├── 4883e3eea91249be5f9c4c931726eac42dabb2
 │   │   │   └── 5e1425f468e9214dcdf9b3c1cd7b1ee585dc61
-│   │   ├── d1
-│   │   │   └── cbcfa54043559204a5b30b0d1b808dfe9cb552
+│   │   ├── d9
+│   │   │   ├── b7d8e9df16c18e7a67d27ece91fb6a23a6aba0
+│   │   │   └── cc53ca3a7cc7439f5c05d522e5e680084ef4e5
 │   │   ├── df
 │   │   │   └── 63de88fa67cb006e692cc789caea580ba3697e
 │   │   ├── e0
@@ -227,8 +223,10 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   ├── e6
 │   │   │   ├── 36c15e8469403d3453cf7dafe35012ebc99eff
 │   │   │   └── ef583d20ca19ecc36ce4fbb232e235fce12790
-│   │   ├── e8
-│   │   │   └── f5f6f174d9b49cfc6fa094357d405674bf7d31
+│   │   ├── e7
+│   │   │   └── f5443f134ca5d75da70d682c3d64fd3779d7a8
+│   │   ├── ed
+│   │   │   └── 5620e40a415cb2805f29fa053ab8ac8c2feff6
 │   │   ├── ee
 │   │   │   └── e6b35e4e303ad18c3ee463c5b36836a8b99024
 │   │   ├── ef
