@@ -6,11 +6,11 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 
 **Sistema:** [Campo Inteligente](https://www.campointeligente.agr.br/)
 
-**Versão:** 66 (AUTO-INCREMENTO)
+**Versão:** 67 (AUTO-INCREMENTO)
 
 **URL:** https://www.campointeligente.agr.br/
 
-**Data de Atualização:** 12/06/2025 22:49:24
+**Data de Atualização:** 13/06/2025 22:45:38
 
 **Responsável:** Marcos Morais
 
@@ -69,8 +69,10 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   │   └── b97d5ab8b4ac57c5e43febaeaab6d8bb884370
 │   │   ├── 11
 │   │   │   └── 1f1063ea36b49bf84bf5c01a229faf8228dc71
-│   │   ├── 17
-│   │   │   └── 273cdb125c0b0d395a6315d94efcb571630197
+│   │   ├── 13
+│   │   │   └── 63e249d85c7a5d33f24ce084d1148dd8657b47
+│   │   ├── 1b
+│   │   │   └── 7906264a69088cff33b35effafcf8e6a4192bd
 │   │   ├── 1d
 │   │   │   └── fb3936fec0357987969bfe3b4f0ba07720cda5
 │   │   ├── 25
@@ -89,8 +91,6 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   │   └── df15a63018b189893d741cf2f43d35f1e4ce0e
 │   │   ├── 3b
 │   │   │   └── d6102442c5c20ce255f527846b797887d428b9
-│   │   ├── 3c
-│   │   │   └── 37f83c27f079f7be3fccb7f227cfd4895ea874
 │   │   ├── 3d
 │   │   │   └── 9db9dc7721d17bf1fec63a091218111c8ffe4d
 │   │   ├── 3f
@@ -132,6 +132,8 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   │   └── 8dec6f6fb569368f5874bdcf1122b5881c8a5b
 │   │   ├── 75
 │   │   │   └── 639f809f41eb8f423357da449eaae9f66dbd57
+│   │   ├── 7a
+│   │   │   └── 292491d812e0a3dca41202e65941faf96137db
 │   │   ├── 7e
 │   │   │   └── 43c7f4712730971fd23a84d3911ae36183ae1c
 │   │   ├── 7f
@@ -145,8 +147,6 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   │   └── ff545aa7a6923a4dcc3c68cdbe4c4cac34bd1f
 │   │   ├── 86
 │   │   │   └── bd19690206fa2607e5638fbc7445aa0cf64020
-│   │   ├── 87
-│   │   │   └── aaeede3a3cc35f35d3329eb92fe83dd17f96aa
 │   │   ├── 88
 │   │   │   └── d9c5fdd0587f5129ea29a48c104cdc56f90636
 │   │   ├── 8b
@@ -189,7 +189,6 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   ├── af
 │   │   │   └── 0f28049077e788f88732cbc8aa00d6b2f54093
 │   │   ├── b4
-│   │   │   ├── 4fe09a7a833a4736542e3a089713d34eb4abaa
 │   │   │   ├── 6ef23420b02c881af43c5e7a55fa6f8bd378ea
 │   │   │   └── fdb992b4e607c11e5e3330ca5a4bd46f712c49
 │   │   ├── b6
@@ -213,9 +212,10 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   ├── cd
 │   │   │   └── c3e99627cb70e1e34923085b2f47c129c08f04
 │   │   ├── cf
-│   │   │   ├── 24811d2a02ac8bc27d595ab243a07e18711149
 │   │   │   ├── 4883e3eea91249be5f9c4c931726eac42dabb2
 │   │   │   └── 5e1425f468e9214dcdf9b3c1cd7b1ee585dc61
+│   │   ├── d1
+│   │   │   └── cbcfa54043559204a5b30b0d1b808dfe9cb552
 │   │   ├── df
 │   │   │   └── 63de88fa67cb006e692cc789caea580ba3697e
 │   │   ├── e0
@@ -227,6 +227,8 @@ Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura fam
 │   │   ├── e6
 │   │   │   ├── 36c15e8469403d3453cf7dafe35012ebc99eff
 │   │   │   └── ef583d20ca19ecc36ce4fbb232e235fce12790
+│   │   ├── e8
+│   │   │   └── f5f6f174d9b49cfc6fa094357d405674bf7d31
 │   │   ├── ee
 │   │   │   └── e6b35e4e303ad18c3ee463c5b36836a8b99024
 │   │   ├── ef
