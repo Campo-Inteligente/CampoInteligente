@@ -251,4 +251,4 @@ def gerar_readme(versao, data_hora, arquivos):
 
 if __name__ == "__main__":
     atualizar_readme()
-    #copiar_readme_para_raiz()
+    copiar_readme_para_raiz()
