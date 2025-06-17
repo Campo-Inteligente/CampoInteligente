@@ -20,7 +20,7 @@ def inicializar_versao():
         return 1
     with open(VERSAO_FILE, "r") as file:
         try:
-            return int(file.read().strip())
+            return int(file.read().strip()) 
         except ValueError:
             # Caso o conteúdo seja inválido, reinicia a versão em 1
             return 1
