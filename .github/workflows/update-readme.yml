@@ -26,8 +26,7 @@ jobs:
 
       - name: Executar script Python
         run: |
-          cd documentos
-          python update-readme.py
+          python documentos/update-readme.py
 
       - name: Verificar alterações
         run: git status    
