@@ -112,11 +112,13 @@ def gerar_readme(versao, data_hora, arquivos):
         )
         
         readme.write("## 📄 Lista de arquivos da raiz deste repositório, atualizada automaticamente.\n\n")
+        readme.write("```\n") 
         readme.write("**Sistema:** [Campo Inteligente](https://www.campointeligente.agr.br/)\n\n")
         readme.write(f"**Versão:** {versao} (AUTO-INCREMENTO)\n\n")
         readme.write(f"**URL:** https://www.campointeligente.agr.br/\n\n")
         readme.write(f"**Data de Atualização:** {data_hora}\n\n")
         readme.write("**Responsável:** Marcos Morais\n\n")
+        readme.write("```\n") 
 
         readme.write("<br /><br />\n")
         readme.write("## 🧩 Tecnologias Utilizadas\n\n")
