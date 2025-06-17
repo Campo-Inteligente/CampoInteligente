@@ -118,6 +118,23 @@ def gerar_readme(versao, data_hora, arquivos):
         readme.write(f"**Data de Atualização:** {data_hora}\n\n")
         readme.write("**Responsável:** Marcos Morais\n\n")
 
+        readme.write("<br /><br />\n")
+        readme.write("## 🧩 Tecnologias Utilizadas\n\n")
+        readme.write("<p align='left'>\n")
+        readme.write("  <img src='https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=white' alt='Figma' />\n")
+        readme.write("  <img src='https://img.shields.io/badge/Next.js-13.x-black?logo=next.js&logoColor=white' alt='Next.js' />\n")
+        readme.write("  <img src='https://img.shields.io/badge/React-18.x-61DAFB?logo=react&logoColor=white' alt='React' />\n")
+        readme.write("  <img src='https://img.shields.io/badge/Tailwind_CSS-3.x-38B2AC?logo=tailwindcss&logoColor=white' alt='Tailwind CSS' />\n")
+        readme.write("  <img src='https://img.shields.io/badge/GitHub-100000?logo=github&logoColor=white&style=flat' alt='GitHub' />\n")
+        readme.write("</p>\n\n")
+        
+        readme.write("### Descrição das tecnologias:\n\n")
+        readme.write("- **Next.js**: Framework React para criação de aplicações web escaláveis e de alto desempenho.\n")
+        readme.write("- **React**: Biblioteca JavaScript para construção de interfaces de usuário interativas.\n")
+        readme.write("- **Tailwind CSS**: Framework CSS para estilização rápida e personalizada.\n")
+        readme.write("- **GitHub**: Controle de versão e colaboração no código.\n\n")
+
+
         # Lista simples de arquivos
         readme.write("## 📂 Listagem de Arquivos\n\n")
         
@@ -165,4 +182,4 @@ def atualizar_readme():
 
 if __name__ == "__main__":
     atualizar_readme()
-    copiar_readme_para_raiz()
+    #copiar_readme_para_raiz()
