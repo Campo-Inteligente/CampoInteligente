@@ -139,6 +139,15 @@ def gerar_readme(versao, data_hora, arquivos):
         readme.write("\n## 📜 Licença\n\n")
         readme.write("Este projeto está licenciado sob os termos do arquivo [LICENSE](./documentos/LICENSE).\n\n")
 
+def copiar_readme_para_raiz():
+    origem = os.path.join(os.path.dirname(os.path.abspath(__file__)), "README.md")
+    destino = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "README.md"))
+    try:
+        shutil.copy2(origem, destino)
+        print("::notice::✅ README.md copiado para a raiz do projeto com sucesso.")
+    except Exception as e:
+        print(f"::error::❌ Erro ao copiar README para a raiz: {e}")
+
 def atualizar_readme():
     """
     Função principal do script:
@@ -156,3 +165,4 @@ def atualizar_readme():
 
 if __name__ == "__main__":
     atualizar_readme()
+    copiar_readme_para_raiz()
