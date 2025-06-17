@@ -36,6 +36,6 @@ jobs:
         run: |
           git add -u
           git diff --quiet || git commit -m "Atualização automática do README"
-          git push origin main
+          git diff --quiet || git push origin main
         env: 
           GH_PAT: ${{ secrets.GH_PAT }}
