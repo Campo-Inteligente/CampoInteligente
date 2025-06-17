@@ -104,12 +104,13 @@ def gerar_readme(versao, data_hora, arquivos):
         - arquivos: lista de arquivos no diretório raiz
     """
     with open(README_FILE, "w", encoding="utf-8") as readme:
-        readme.write("# CampoInteligente\n\n")
+        readme.write("# Bem-vindo à **CampoInteligente** \n\n")
         readme.write(
-            "Bem-vindo ao **CampoInteligente**, uma plataforma voltada para a agricultura familiar, "
+            "O **CampoInteligente**, é uma plataforma voltada para a agricultura familiar, "
             "oferecendo um chatbot com inteligência artificial que integra dados meteorológicos e de mercado "
             "para auxiliar no plantio, manejo e colheita. A navegação é simples, com foco na interação via WhatsApp.\n\n"
         )
+        
         readme.write("## 📄 Lista de arquivos da raiz deste repositório, atualizada automaticamente.\n\n")
         readme.write("**Sistema:** [Campo Inteligente](https://www.campointeligente.agr.br/)\n\n")
         readme.write(f"**Versão:** {versao} (AUTO-INCREMENTO)\n\n")
@@ -133,6 +134,10 @@ def gerar_readme(versao, data_hora, arquivos):
         readme.write("```\n")  # Bloco de código para preservar formatação
         readme.write(gerar_arvore(".."))  # Gera árvore da pasta informada
         readme.write("\n```\n")
+
+        readme.write("<br /><br />")
+        readme.write("\n## 📜 Licença\n\n")
+        readme.write("Este projeto está licenciado sob os termos do arquivo [LICENSE](./documentos/LICENSE).\n\n")
 
 def atualizar_readme():
     """
