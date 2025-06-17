@@ -16,6 +16,8 @@ jobs:
     steps:
       - name: Checkout do repositório
         uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.GH_PAT }}
 
       - name: Configurar Git
         run: |
@@ -27,11 +29,13 @@ jobs:
           cd documentos
           python update-readme.py
 
+      - name: Verificar alterações
+        run: git status    
+
       - name: Commit e Push
         run: |
-          git add documentos/README.md documentos/versao.txt
-          git commit -m "Atualização automática do README" || echo "Nenhuma alteração para commit"
-          git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/${{ github.repository }}.git
+          git add -u
+          git diff --quiet || git commit -m "Atualização automática do README"
           git push origin main
         env: 
           GH_PAT: ${{ secrets.GH_PAT }}
