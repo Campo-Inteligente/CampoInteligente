@@ -183,7 +183,7 @@ def gerar_readme(versao, data_hora, arquivos):
 
         readme.write("<br /><br />")
         readme.write("\n## 📜 Licença\n\n")
-        readme.write("Este projeto está licenciado sob os termos do arquivo [LICENSE](./documentos/LICENSE).\n\n")
+        readme.write("Este projeto está licenciado sob os termos do arquivo [LICENSE](./documentos/LICENSE).\n\n") 
 
 if __name__ == "__main__":
     atualizar_readme()
