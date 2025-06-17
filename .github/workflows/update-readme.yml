@@ -1,40 +1,61 @@
-name: update-readme
+name: Executar update-readme.py
 
 on:
-  schedule:
-    - cron: "0 0 * * *" # Executa diariamente à meia-noite
   push:
     branches:
-      - main # Executa ao detectar alterações
-  workflow_dispatch: # Permite execução manual
+      - main
+  schedule:
+    - cron: '*/30 * * * *'  # Executa a cada 30 minutos
+  workflow_dispatch:         # Permite execução manual
 
 jobs:
-  update-readme:
+  run-script:
     runs-on: ubuntu-latest
+
     permissions:
-      contents: write
+      contents: write  # Permite fazer push no repositório
+
     steps:
+      # Passo 1: Checkout do repositório
       - name: Checkout do repositório
         uses: actions/checkout@v3
-        with:
-          token: ${{ secrets.GH_PAT }}
 
+      # Passo 2: Configurar ambiente Python
+      - name: Configurar ambiente Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      # Passo 3: Instalar dependências
+      - name: Instalar dependências
+        run: pip install pytz
+
+      # Passo 4: Executar o script Python
+      - name: Executar script Python update-readme.py
+        run: python documentos/update-readme.py
+
+      # Passo 5: Configurar Git
       - name: Configurar Git
         run: |
-          git config --global user.name "GitHub Action"
-          git config --global user.email "action@github.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Executar script Python
+      # Passo 6: Commit e push do README.md e versao.txt, se houver mudanças
+      - name: Commit e push do README.md
         run: |
-          python documentos/update-readme.py
-
-      - name: Verificar alterações
-        run: git status    
-
-      - name: Commit e Push
-        run: |
-          git add -u
-          git diff --quiet || git commit -m "Atualização automática do README"
-          git diff --quiet || git push origin main
-        env: 
-          GH_PAT: ${{ secrets.GH_PAT }}
+          if git diff --quiet; then
+            echo 'Nenhuma mudança detectada no README.md. Nada a fazer.'
+          else
+            git add documentos/README.md documentos/versao.txt 
+            git add README.md 
+            git commit -m 'Atualização automática do README.md via GitHub Actions'
+            
+            echo "Tentando rebase..."
+            git pull --rebase origin main || {
+              echo '⚠️ Conflito detectado. Abortando rebase e ignorando commit.'
+              git rebase --abort
+              exit 0
+            }
+      
+            git push
+          fi
