@@ -166,8 +166,8 @@ def gerar_readme(versao, data_hora):
 
         readme.write("## 👥 Participantes\n\n")
         readme.write("```\n")
-        readme.write("Nome                               | Função                 | Contato\n")
-        readme.write("-----------------------------------+------------------------+------------------------------------------------------------\n")
+        readme.write("Nome                               │ Função                 | Contato\n")
+        readme.write("───────────────────────────────────┼────────────────────────┼─────────────────────────────────────────────────────────\n")
         readme.write("MARCOS MORAIS DE SOUSA             | Gerente de Projetos    | linkedin.com/in/marcosmoraisjr\n")
         readme.write("ARTHUR LAGO MARTINS                | Scrum Master           | linkedin.com/in/arthur-martins-510b36235\n")
         readme.write("JOÃO VICTOR OLIVEIRA SANTOS        | Ciência de Dados       | linkedin.com/in/joão-victor-oliveira-santos-3b8aa1203\n")
@@ -177,6 +177,7 @@ def gerar_readme(versao, data_hora):
         readme.write("BRUNA DE QUEIROZ COSTA             | Serviços Computacionais| linkedin.com/in/bruna-queiroz-5422a7261\n")
         readme.write("GISELE GOMES OLIVEIRA              | Mobile                 | linkedin.com/in/gisele-gomes-oliveira-037bb1128\n")
         readme.write("CAMPO INTELIGENTE                  | Startup                | instagram.com/startupcampointeligente\n")
+        readme.write("───────────────────────────────────┴────────────────────────┴─────────────────────────────────────────────────────────\n")
         readme.write("```\n")
 
 
