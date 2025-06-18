@@ -131,7 +131,7 @@ def gerar_readme(versao, data_hora):
             "para auxiliar no plantio, manejo e colheita. A navegação é simples, com foco na interação via WhatsApp.\n\n"
         )
 
-        readme.write("\n## ℹ️ Importante \n\n")
+        readme.write("## ℹ️ Importante \n\n")
         readme.write("ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN \n\n")
         readme.write("```\n")
         readme.write(f"Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)\n")
@@ -142,7 +142,7 @@ def gerar_readme(versao, data_hora):
         readme.write("```\n")
 
         readme.write("## 👥 Participantes\n\n")
-        
+        readme.write("---")
         readme.write("<table style='width:100%'>\n")
         readme.write("<thead><tr>")
         readme.write("<th style='text-align:left'>Nome</th>")
@@ -161,7 +161,7 @@ def gerar_readme(versao, data_hora):
         readme.write("<tr><td>CAMPO INTELIGENTE</td><td>Startup</td><td>— | <a href='https://instagram.com/startupcampointeligente'>Instagram</a> | <a href='mailto:startupcampointeligente@gmail.com'>Email</a></td></tr>\n")
         readme.write("</tbody>\n</table>\n")
 
-        readme.write("## 👥 Participantes\n\n")
+        readme.write("## 👥 Participantes \n\n")
         
         readme.write("```\n")
         readme.write("Nome                               │ Função                 | Contato\n")
