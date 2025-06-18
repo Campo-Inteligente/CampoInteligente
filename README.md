@@ -9,9 +9,9 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 
 ```
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 93 (AUTO-INCREMENTO)
+Versão...............: 94 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 18/06/2025 01:00:22
+Data de Atualização..: 18/06/2025 01:49:26
 Responsável..........: Marcos Morais
 ```
 ## 🧩 Tecnologias Utilizadas
@@ -85,9 +85,9 @@ Responsável..........: Marcos Morais
 │   │   ├── info
 
 │   │   └── pack
-│   │       ├── pack-4b51aaa2f9e9021ad94da243706aa390a5dcfcfe.idx
-│   │       ├── pack-4b51aaa2f9e9021ad94da243706aa390a5dcfcfe.pack
-│   │       └── pack-4b51aaa2f9e9021ad94da243706aa390a5dcfcfe.rev
+│   │       ├── pack-1bbf561fd9a7833bfbf3f2dd202a9ebf26b47719.idx
+│   │       ├── pack-1bbf561fd9a7833bfbf3f2dd202a9ebf26b47719.pack
+│   │       └── pack-1bbf561fd9a7833bfbf3f2dd202a9ebf26b47719.rev
 │   ├── refs
 │   │   ├── heads
 │   │   │   └── main
