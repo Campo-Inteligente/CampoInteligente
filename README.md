@@ -8,9 +8,9 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 
 ```
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 142 (AUTO-INCREMENTO)
+Versão...............: 143 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 18/06/2025 14:44:58
+Data de Atualização..: 18/06/2025 15:18:39
 Responsável..........: Marcos Morais
 ```
 ## 👥 Participantes
@@ -32,20 +32,6 @@ Responsável..........: Marcos Morais
 
 ## 👥 Participantes 
 
-```
-Nome                               │ Função                 | Contato
-───────────────────────────────────┼────────────────────────┼─────────────────────────────────────────────────────────
-MARCOS MORAIS DE SOUSA             | Gerente de Projetos    | linkedin.com/in/marcosmoraisjr
-ARTHUR LAGO MARTINS                | Scrum Master           | linkedin.com/in/arthur-martins-510b36235
-JOÃO VICTOR OLIVEIRA SANTOS        | Ciência de Dados       | linkedin.com/in/joão-victor-oliveira-santos-3b8aa1203
-JUAN PABLO SÃO PEDRO SAPUCAIA      | Back-End               | linkedin.com/in/juan-pablo-09a65b2a6
-ABIMAEL UANDERSON S. CRISTÓVÃO     | Fullstack              | linkedin.com/in/abimael-uanderson
-FABIO SANTOS FRUTUOSO              | Front-End              | linkedin.com/in/fabio-santos-frutuoso-1784401b9
-BRUNA DE QUEIROZ COSTA             | Serviços Computacionais| linkedin.com/in/bruna-queiroz-5422a7261
-GISELE GOMES OLIVEIRA              | Mobile                 | linkedin.com/in/gisele-gomes-oliveira-037bb1128
-CAMPO INTELIGENTE                  | Startup                | instagram.com/startupcampointeligente
-───────────────────────────────────┴────────────────────────┴─────────────────────────────────────────────────────────
-```
 ## 🧩 Tecnologias Utilizadas
 
 <p align='left'>
