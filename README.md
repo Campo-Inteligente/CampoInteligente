@@ -9,9 +9,9 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 
 ```
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 129 (AUTO-INCREMENTO)
+Versão...............: 130 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 18/06/2025 11:45:45
+Data de Atualização..: 18/06/2025 11:51:08
 Responsável..........: Marcos Morais
 ```
 <h2>👥 Participantes</h2>
@@ -19,30 +19,30 @@ Responsável..........: Marcos Morais
 <thead><tr><th style='text-align:left'>Nome</th><th style='text-align:left'>Função</th><th style='text-align:left'>Contato</th></tr></thead>
 <tbody>
 <tr><td>MARCOS MORAIS DE SOUSA</td><td>Gerente de Projetos</td><td><a href='https://www.linkedin.com/in/marcosmoraisjr/'>LinkedIn</a> | <a href='https://instagram.com/marcosmoraisjr'>Instagram</a> | <a href='mailto:mmstec@gmail.com'>Email</a></td></tr>
-<tr><td>FABIO SANTOS FRUTUOSO</td><td>Front-End</td><td><a href='https://www.linkedin.com/in/fabio-santos-frutuoso-1784401b9/'>LinkedIn</a> | <a href='https://instagram.com/gandalfs_800'>Instagram</a> | <a href='mailto:frutuosofabio10@gmail.com'>Email</a></td></tr>
-<tr><td>BRUNA DE QUEIROZ COSTA</td><td>Serviços Computacionais</td><td><a href='https://www.linkedin.com/in/bruna-queiroz-5422a7261/'>LinkedIn</a> | <a href='https://instagram.com/brhunaqueiroz'>Instagram</a> | <a href='mailto:qbruna2003@gmail.com'>Email</a></td></tr>
 <tr><td>ARTHUR LAGO MARTINS</td><td>Scrum Master</td><td><a href='https://www.linkedin.com/in/arthur-martins-510b36235/'>LinkedIn</a> | <a href='https://instagram.com/arthurmarttins'>Instagram</a> | <a href='mailto:202110445@uesb.edu.br'>Email</a></td></tr>
 <tr><td>JOÃO VICTOR OLIVEIRA SANTOS</td><td>Ciência de Dados</td><td><a href='https://www.linkedin.com/in/joão-victor-oliveira-santos-3b8aa1203/'>LinkedIn</a> | <a href='https://instagram.com/jv.osantos'>Instagram</a> | <a href='mailto:joao.osantos27@gmail.com'>Email</a></td></tr>
 <tr><td>JUAN PABLO SÃO PEDRO SAPUCAIA</td><td>Back-End</td><td><a href='https://www.linkedin.com/in/juan-pablo-09a65b2a6/'>LinkedIn</a> | <a href='https://instagram.com/juan_pablosps'>Instagram</a> | <a href='mailto:juan.psapucaia7@gmail.com'>Email</a></td></tr>
 <tr><td>ABIMAEL UANDERSON S. CRISTÓVÃO</td><td>Fullstack</td><td><a href='https://www.linkedin.com/in/abimael-uanderson/'>LinkedIn</a> | <a href='https://instagram.com/abimaeluanderson'>Instagram</a> | <a href='mailto:abimael.servicos12dt@gmail.com'>Email</a></td></tr>
+<tr><td>FABIO SANTOS FRUTUOSO</td><td>Front-End</td><td><a href='https://www.linkedin.com/in/fabio-santos-frutuoso-1784401b9/'>LinkedIn</a> | <a href='https://instagram.com/gandalfs_800'>Instagram</a> | <a href='mailto:frutuosofabio10@gmail.com'>Email</a></td></tr>
+<tr><td>BRUNA DE QUEIROZ COSTA</td><td>Serviços Computacionais</td><td><a href='https://www.linkedin.com/in/bruna-queiroz-5422a7261/'>LinkedIn</a> | <a href='https://instagram.com/brhunaqueiroz'>Instagram</a> | <a href='mailto:qbruna2003@gmail.com'>Email</a></td></tr>
 <tr><td>GISELE GOMES OLIVEIRA</td><td>Mobile</td><td><a href='https://www.linkedin.com/in/gisele-gomes-oliveira-037bb1128/'>LinkedIn</a> | <a href='https://instagram.com/belagisa13'>Instagram</a> | <a href='mailto:belagisa14@gmail.com'>Email</a></td></tr>
-<tr><td>Campo Inteligente</td><td>Startup</td><td>— | <a href='https://instagram.com/startupcampointeligente'>Instagram</a> | <a href='mailto:startupcampointeligente@gmail.com'>Email</a></td></tr>
+<tr><td>CAMPO INTELIGENTE</td><td>Startup</td><td>— | <a href='https://instagram.com/startupcampointeligente'>Instagram</a> | <a href='mailto:startupcampointeligente@gmail.com'>Email</a></td></tr>
 </tbody>
 </table>
 ## 👥 Participantes
 
 ```
 Nome                               | Função                 | Contato
------------------------------------+------------------------+---------------------------------------------
-MARCOS MORAIS DE SOUSA             | Gerente de Projetos    | <a href='https://www.linkedin.com/in/marcosmoraisjr/'>LinkedIn</a> | <a href='https://instagram.com/marcosmoraisjr'>Instagram</a> | <a href='mailto:mmstec@gmail.com'>Email</a>
-ARTHUR LAGO MARTINS                | Scrum Master           | LinkedIn | Instagram | Email
-JOÃO VICTOR OLIVEIRA SANTOS        | Ciência de Dados       | LinkedIn | Instagram | Email
-JUAN PABLO SÃO PEDRO SAPUCAIA      | Back-End               | LinkedIn | Instagram | Email
-ABIMAEL UANDERSON S. CRISTÓVÃO     | Fullstack              | LinkedIn | Instagram | Email
-FABIO SANTOS FRUTUOSO              | Front-End              | LinkedIn | Instagram | Email
-BRUNA DE QUEIROZ COSTA             | Serviços Computacionais| LinkedIn | Instagram | Email
-GISELE GOMES OLIVEIRA              | Mobile                 | LinkedIn | Instagram | Email
-CAMPO INTELIGENTE                  | Startup                | —        | Instagram | Email
+-----------------------------------+------------------------+------------------------------------------------------------
+MARCOS MORAIS DE SOUSA             | Gerente de Projetos    | linkedin.com/in/marcosmoraisjr | instagram.com/marcosmoraisjr | mmstec@gmail.com
+ARTHUR LAGO MARTINS                | Scrum Master           | linkedin.com/in/arthur-martins-510b36235 | instagram.com/arthurmarttins | 202110445@uesb.edu.br
+JOÃO VICTOR OLIVEIRA SANTOS        | Ciência de Dados       | linkedin.com/in/joão-victor-oliveira-santos-3b8aa1203 | instagram.com/jv.osantos | joao.osantos27@gmail.com
+JUAN PABLO SÃO PEDRO SAPUCAIA      | Back-End               | linkedin.com/in/juan-pablo-09a65b2a6 | instagram.com/juan_pablosps | juan.psapucaia7@gmail.com
+ABIMAEL UANDERSON S. CRISTÓVÃO     | Fullstack              | linkedin.com/in/abimael-uanderson | instagram.com/abimaeluanderson | abimael.servicos12dt@gmail.com
+FABIO SANTOS FRUTUOSO              | Front-End              | linkedin.com/in/fabio-santos-frutuoso-1784401b9 | instagram.com/gandalfs_800 | frutuosofabio10@gmail.com
+BRUNA DE QUEIROZ COSTA             | Serviços Computacionais| linkedin.com/in/bruna-queiroz-5422a7261 | instagram.com/brhunaqueiroz | qbruna2003@gmail.com
+GISELE GOMES OLIVEIRA              | Mobile                 | linkedin.com/in/gisele-gomes-oliveira-037bb1128 | instagram.com/belagisa13 | belagisa14@gmail.com
+CAMPO INTELIGENTE                  | Startup                | — | instagram.com/startupcampointeligente | startupcampointeligente@gmail.com
 ```
 ## 🧩 Tecnologias Utilizadas
 
