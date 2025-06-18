@@ -168,15 +168,15 @@ def gerar_readme(versao, data_hora):
         readme.write("```\n")
         readme.write("Nome                               | Função                 | Contato\n")
         readme.write("-----------------------------------+------------------------+------------------------------------------------------------\n")
-        readme.write("MARCOS MORAIS DE SOUSA             | Gerente de Projetos    | linkedin.com/in/marcosmoraisjr | instagram.com/marcosmoraisjr | mmstec@gmail.com\n")
-        readme.write("ARTHUR LAGO MARTINS                | Scrum Master           | linkedin.com/in/arthur-martins-510b36235 | instagram.com/arthurmarttins | 202110445@uesb.edu.br\n")
-        readme.write("JOÃO VICTOR OLIVEIRA SANTOS        | Ciência de Dados       | linkedin.com/in/joão-victor-oliveira-santos-3b8aa1203 | instagram.com/jv.osantos | joao.osantos27@gmail.com\n")
-        readme.write("JUAN PABLO SÃO PEDRO SAPUCAIA      | Back-End               | linkedin.com/in/juan-pablo-09a65b2a6 | instagram.com/juan_pablosps | juan.psapucaia7@gmail.com\n")
-        readme.write("ABIMAEL UANDERSON S. CRISTÓVÃO     | Fullstack              | linkedin.com/in/abimael-uanderson | instagram.com/abimaeluanderson | abimael.servicos12dt@gmail.com\n")
-        readme.write("FABIO SANTOS FRUTUOSO              | Front-End              | linkedin.com/in/fabio-santos-frutuoso-1784401b9 | instagram.com/gandalfs_800 | frutuosofabio10@gmail.com\n")
-        readme.write("BRUNA DE QUEIROZ COSTA             | Serviços Computacionais| linkedin.com/in/bruna-queiroz-5422a7261 | instagram.com/brhunaqueiroz | qbruna2003@gmail.com\n")
-        readme.write("GISELE GOMES OLIVEIRA              | Mobile                 | linkedin.com/in/gisele-gomes-oliveira-037bb1128 | instagram.com/belagisa13 | belagisa14@gmail.com\n")
-        readme.write("CAMPO INTELIGENTE                  | Startup                | — | instagram.com/startupcampointeligente | startupcampointeligente@gmail.com\n")
+        readme.write("MARCOS MORAIS DE SOUSA             | Gerente de Projetos    | linkedin.com/in/marcosmoraisjr
+        readme.write("ARTHUR LAGO MARTINS                | Scrum Master           | linkedin.com/in/arthur-martins-510b36235
+        readme.write("JOÃO VICTOR OLIVEIRA SANTOS        | Ciência de Dados       | linkedin.com/in/joão-victor-oliveira-santos-3b8aa1203
+        readme.write("JUAN PABLO SÃO PEDRO SAPUCAIA      | Back-End               | linkedin.com/in/juan-pablo-09a65b2a6
+        readme.write("ABIMAEL UANDERSON S. CRISTÓVÃO     | Fullstack              | linkedin.com/in/abimael-uanderson
+        readme.write("FABIO SANTOS FRUTUOSO              | Front-End              | linkedin.com/in/fabio-santos-frutuoso-1784401b9
+        readme.write("BRUNA DE QUEIROZ COSTA             | Serviços Computacionais| linkedin.com/in/bruna-queiroz-5422a7261
+        readme.write("GISELE GOMES OLIVEIRA              | Mobile                 | linkedin.com/in/gisele-gomes-oliveira-037bb1128
+        readme.write("CAMPO INTELIGENTE                  | Startup                | instagram.com/startupcampointeligente
         readme.write("```\n")
 
 
