@@ -156,5 +156,5 @@ Contribuições, sugestões e feedbacks são muito bem-vindos! Caso tenha algum 
 
 --- 
 
-Desenvolvido com ❤️ pela equipe 12 | [Campo Inteligente](https://www.campointeligente.agr.br/) 
+Desenvolvido com ❤️ pela equipe 11 | [Campo Inteligente](https://www.campointeligente.agr.br/) 
 
