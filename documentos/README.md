@@ -8,9 +8,9 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 
 ```
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 145 (AUTO-INCREMENTO)
+Versão...............: 146 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 18/06/2025 15:20:15
+Data de Atualização..: 18/06/2025 15:20:33
 Responsável..........: Marcos Morais
 ```
 ## 👥 Participantes
@@ -29,8 +29,6 @@ Responsável..........: Marcos Morais
 <tr><td>CAMPO INTELIGENTE</td><td>Startup</td><td> <a href='https://instagram.com/startupcampointeligente'>LinkedIn | Instagram</a> | <a href='mailto:startupcampointeligente@gmail.com'>Email</a></td></tr>
 </tbody>
 </table>
-
-## 👥 Participantes 
 
 ## 🧩 Tecnologias Utilizadas
 
