@@ -142,7 +142,7 @@ def gerar_readme(versao, data_hora):
         readme.write("```\n")
 
         readme.write("## 👥 Participantes\n\n")
-        readme.write("---")
+        
         readme.write("<table style='width:100%'>\n")
         readme.write("<thead><tr>")
         readme.write("<th style='text-align:left'>Nome</th>")
@@ -159,10 +159,10 @@ def gerar_readme(versao, data_hora):
         readme.write("<tr><td>BRUNA DE QUEIROZ COSTA</td><td>Serviços Computacionais</td><td><a href='https://www.linkedin.com/in/bruna-queiroz-5422a7261/'>LinkedIn</a> | <a href='https://instagram.com/brhunaqueiroz'>Instagram</a> | <a href='mailto:qbruna2003@gmail.com'>Email</a></td></tr>\n")
         readme.write("<tr><td>GISELE GOMES OLIVEIRA</td><td>Mobile</td><td><a href='https://www.linkedin.com/in/gisele-gomes-oliveira-037bb1128/'>LinkedIn</a> | <a href='https://instagram.com/belagisa13'>Instagram</a> | <a href='mailto:belagisa14@gmail.com'>Email</a></td></tr>\n")
         readme.write("<tr><td>CAMPO INTELIGENTE</td><td>Startup</td><td>— | <a href='https://instagram.com/startupcampointeligente'>Instagram</a> | <a href='mailto:startupcampointeligente@gmail.com'>Email</a></td></tr>\n")
-        readme.write("</tbody>\n</table>\n")
+        readme.write("</tbody>\n</table>\n\n")
 
         readme.write("## 👥 Participantes \n\n")
-        readme.write("---")
+        
         readme.write("```\n")
         readme.write("Nome                               │ Função                 | Contato\n")
         readme.write("───────────────────────────────────┼────────────────────────┼─────────────────────────────────────────────────────────\n")
