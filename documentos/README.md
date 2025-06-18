@@ -9,9 +9,9 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 
 ```
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 116 (AUTO-INCREMENTO)
+Versão...............: 117 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 18/06/2025 10:46:55
+Data de Atualização..: 18/06/2025 10:55:21
 Responsável..........: Marcos Morais
 ```
 ## 🧩 Tecnologias Utilizadas
@@ -42,7 +42,9 @@ Responsável..........: Marcos Morais
 ├── 📄 diagrama_er.md
 ├── 📄 documento_de_requisitos.md
 ├── 📂 imagens
-│   └── 📄 info
+│   ├── 📄 Pitch - Campo Inteligente.png
+│   ├── 📄 info
+│   └── 📄 wallpaper-campointeligente.png
 └── 📄 versao.txt
 ```
 ## 🌳 Estrutura do Repositório
@@ -67,7 +69,9 @@ Responsável..........: Marcos Morais
 │   ├── 📄 diagrama_er.md
 │   ├── 📄 documento_de_requisitos.md
 │   ├── 📂 imagens
-│   │   └── 📄 info
+│   │   ├── 📄 Pitch - Campo Inteligente.png
+│   │   ├── 📄 info
+│   │   └── 📄 wallpaper-campointeligente.png
 │   └── 📄 versao.txt
 ├── 📄 enviar-atualizacao.bat
 ├── 📄 next.config.js
