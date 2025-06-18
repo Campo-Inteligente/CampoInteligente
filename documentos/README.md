@@ -2,21 +2,20 @@
 
 O **CampoInteligente** é uma plataforma voltada para a agricultura familiar, oferecendo um chatbot com inteligência artificial que integra dados meteorológicos e de mercado para auxiliar no plantio, manejo e colheita. A navegação é simples, com foco na interação via WhatsApp.
 
-
 ## ℹ️ Importante 
 
 ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN 
 
 ```
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 133 (AUTO-INCREMENTO)
+Versão...............: 134 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 18/06/2025 11:59:05
+Data de Atualização..: 18/06/2025 12:01:04
 Responsável..........: Marcos Morais
 ```
 ## 👥 Participantes
 
-<table style='width:100%'>
+---<table style='width:100%'>
 <thead><tr><th style='text-align:left'>Nome</th><th style='text-align:left'>Função</th><th style='text-align:left'>Contato</th></tr></thead>
 <tbody>
 <tr><td>MARCOS MORAIS DE SOUSA</td><td>Gerente de Projetos</td><td><a href='https://www.linkedin.com/in/marcosmoraisjr/'>LinkedIn</a> | <a href='https://instagram.com/marcosmoraisjr'>Instagram</a> | <a href='mailto:mmstec@gmail.com'>Email</a></td></tr>
@@ -30,7 +29,7 @@ Responsável..........: Marcos Morais
 <tr><td>CAMPO INTELIGENTE</td><td>Startup</td><td>— | <a href='https://instagram.com/startupcampointeligente'>Instagram</a> | <a href='mailto:startupcampointeligente@gmail.com'>Email</a></td></tr>
 </tbody>
 </table>
-## 👥 Participantes
+## 👥 Participantes 
 
 ```
 Nome                               │ Função                 | Contato
