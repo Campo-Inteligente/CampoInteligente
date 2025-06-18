@@ -154,7 +154,7 @@ def gerar_readme(versao, data_hora):
         readme.write("<tr><td>ABIMAEL UANDERSON SOARES CRISTÓVÃO</td><td><a href='https://www.linkedin.com/in/abimael-uanderson/'>LinkedIn</a> | <a href='https://instagram.com/abimaeluanderson'>Instagram</a> | <a href='mailto:abimael.servicos12dt@gmail.com'>Email</a></td></tr>\n")
         readme.write("<tr><td>GISELE GOMES OLIVEIRA</td><td><a href='https://www.linkedin.com/in/gisele-gomes-oliveira-037bb1128/'>LinkedIn</a> | <a href='https://instagram.com/belagisa13'>Instagram</a> | <a href='mailto:belagisa14@gmail.com'>Email</a></td></tr>\n")
         readme.write("<tr><td>Campo Inteligente</td><td>— | <a href='https://instagram.com/startupcampointeligente'>Instagram</a> | <a href='mailto:startupcampointeligente@gmail.com'>Email</a></td></tr>\n")
-        readme.write("</tbody>\n</table>\n")
+        readme.write("</tbody>\n</table>\n") 
 
 
         readme.write("## 🧩 Tecnologias Utilizadas\n\n")
