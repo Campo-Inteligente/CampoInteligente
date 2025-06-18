@@ -9,9 +9,9 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 
 ```
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 113 (AUTO-INCREMENTO)
+Versão...............: 114 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 18/06/2025 10:43:06
+Data de Atualização..: 18/06/2025 10:44:23
 Responsável..........: Marcos Morais
 ```
 ## 🧩 Tecnologias Utilizadas
@@ -36,7 +36,6 @@ Responsável..........: Marcos Morais
 ```
 📂 documentos
 ├── 📄 LICENSE
-├── 📄 teste.txt
 └── 📄 versao.txt
 ```
 ## 🌳 Estrutura do Repositório
@@ -53,7 +52,6 @@ Responsável..........: Marcos Morais
 │   └── 📄 NavbarVerde.js
 ├── 📂 documentos
 │   ├── 📄 LICENSE
-│   ├── 📄 teste.txt
 │   └── 📄 versao.txt
 ├── 📄 enviar-atualizacao.bat
 ├── 📄 next.config.js
