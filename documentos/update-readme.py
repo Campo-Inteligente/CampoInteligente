@@ -170,7 +170,7 @@ def gerar_readme(versao, data_hora):
         readme.write("  <img src='https://img.shields.io/badge/GitHub-100000?logo=github&logoColor=white&style=flat' alt='GitHub' />\n")
         readme.write("</p>\n\n")
 
-        readme.write("### Descrição das tecnologias:\n\n")
+        readme.write("Descrição das tecnologias:\n\n")
         readme.write("- **Next.js**: Framework React para criação de aplicações web escaláveis e de alto desempenho.\n")
         readme.write("- **React**: Biblioteca JavaScript para construção de interfaces de usuário interativas.\n")
         readme.write("- **Tailwind CSS**: Framework CSS para estilização rápida e personalizada.\n")
