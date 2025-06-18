@@ -165,6 +165,7 @@ def gerar_readme(versao, data_hora):
 
 
         readme.write("## 👥 Participantes\n\n")
+        readme.write("```\n")
         readme.write("Nome                               | Função                 | Contato\n")
         readme.write("-----------------------------------+------------------------+---------------------------------------------\n")
         readme.write("MARCOS MORAIS DE SOUSA             | Gerente de Projetos    | LinkedIn | Instagram | Email\n")
@@ -176,7 +177,7 @@ def gerar_readme(versao, data_hora):
         readme.write("BRUNA DE QUEIROZ COSTA             | Serviços Computacionais| LinkedIn | Instagram | Email\n")
         readme.write("GISELE GOMES OLIVEIRA              | Mobile                 | LinkedIn | Instagram | Email\n")
         readme.write("CAMPO INTELIGENTE                  | Startup                | —        | Instagram | Email\n")
-
+        readme.write("```\n")
 
         readme.write("## 🧩 Tecnologias Utilizadas\n\n")
         readme.write("<p align='left'>\n")
