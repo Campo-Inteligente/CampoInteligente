@@ -141,7 +141,8 @@ def gerar_readme(versao, data_hora):
         readme.write("Responsável..........: Marcos Morais\n")
         readme.write("```\n")
 
-        readme.write("<h2>👥 Participantes</h2>\n")
+        readme.write("## 👥 Participantes\n\n")
+        
         readme.write("<table style='width:100%'>\n")
         readme.write("<thead><tr>")
         readme.write("<th style='text-align:left'>Nome</th>")
@@ -149,7 +150,6 @@ def gerar_readme(versao, data_hora):
         readme.write("<th style='text-align:left'>Contato</th>")
         readme.write("</tr></thead>\n")
         readme.write("<tbody>\n")
-        
         readme.write("<tr><td>MARCOS MORAIS DE SOUSA</td><td>Gerente de Projetos</td><td><a href='https://www.linkedin.com/in/marcosmoraisjr/'>LinkedIn</a> | <a href='https://instagram.com/marcosmoraisjr'>Instagram</a> | <a href='mailto:mmstec@gmail.com'>Email</a></td></tr>\n")
         readme.write("<tr><td>ARTHUR LAGO MARTINS</td><td>Scrum Master</td><td><a href='https://www.linkedin.com/in/arthur-martins-510b36235/'>LinkedIn</a> | <a href='https://instagram.com/arthurmarttins'>Instagram</a> | <a href='mailto:202110445@uesb.edu.br'>Email</a></td></tr>\n")
         readme.write("<tr><td>JOÃO VICTOR OLIVEIRA SANTOS</td><td>Ciência de Dados</td><td><a href='https://www.linkedin.com/in/joão-victor-oliveira-santos-3b8aa1203/'>LinkedIn</a> | <a href='https://instagram.com/jv.osantos'>Instagram</a> | <a href='mailto:joao.osantos27@gmail.com'>Email</a></td></tr>\n")
@@ -159,12 +159,10 @@ def gerar_readme(versao, data_hora):
         readme.write("<tr><td>BRUNA DE QUEIROZ COSTA</td><td>Serviços Computacionais</td><td><a href='https://www.linkedin.com/in/bruna-queiroz-5422a7261/'>LinkedIn</a> | <a href='https://instagram.com/brhunaqueiroz'>Instagram</a> | <a href='mailto:qbruna2003@gmail.com'>Email</a></td></tr>\n")
         readme.write("<tr><td>GISELE GOMES OLIVEIRA</td><td>Mobile</td><td><a href='https://www.linkedin.com/in/gisele-gomes-oliveira-037bb1128/'>LinkedIn</a> | <a href='https://instagram.com/belagisa13'>Instagram</a> | <a href='mailto:belagisa14@gmail.com'>Email</a></td></tr>\n")
         readme.write("<tr><td>CAMPO INTELIGENTE</td><td>Startup</td><td>— | <a href='https://instagram.com/startupcampointeligente'>Instagram</a> | <a href='mailto:startupcampointeligente@gmail.com'>Email</a></td></tr>\n")
-        
         readme.write("</tbody>\n</table>\n")
 
-
-
         readme.write("## 👥 Participantes\n\n")
+        
         readme.write("```\n")
         readme.write("Nome                               │ Função                 | Contato\n")
         readme.write("───────────────────────────────────┼────────────────────────┼─────────────────────────────────────────────────────────\n")
