@@ -9,9 +9,9 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 
 ```
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 127 (AUTO-INCREMENTO)
+Versão...............: 128 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 18/06/2025 11:42:52
+Data de Atualização..: 18/06/2025 11:45:02
 Responsável..........: Marcos Morais
 ```
 <h2>👥 Participantes</h2>
@@ -34,7 +34,7 @@ Responsável..........: Marcos Morais
 ```
 Nome                               | Função                 | Contato
 -----------------------------------+------------------------+---------------------------------------------
-MARCOS MORAIS DE SOUSA             | Gerente de Projetos    | LinkedIn | Instagram | Email
+MARCOS MORAIS DE SOUSA             | Gerente de Projetos    | <a href='https://www.linkedin.com/in/marcosmoraisjr/'>LinkedIn</a> | <a href='https://instagram.com/marcosmoraisjr'>Instagram</a> | <a href='mailto:mmstec@gmail.com'>Email</a>
 ARTHUR LAGO MARTINS                | Scrum Master           | LinkedIn | Instagram | Email
 JOÃO VICTOR OLIVEIRA SANTOS        | Ciência de Dados       | LinkedIn | Instagram | Email
 JUAN PABLO SÃO PEDRO SAPUCAIA      | Back-End               | LinkedIn | Instagram | Email
