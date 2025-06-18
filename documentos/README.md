@@ -8,14 +8,14 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 
 ```
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 135 (AUTO-INCREMENTO)
+Versão...............: 136 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 18/06/2025 12:01:43
+Data de Atualização..: 18/06/2025 12:02:23
 Responsável..........: Marcos Morais
 ```
 ## 👥 Participantes
 
----<table style='width:100%'>
+<table style='width:100%'>
 <thead><tr><th style='text-align:left'>Nome</th><th style='text-align:left'>Função</th><th style='text-align:left'>Contato</th></tr></thead>
 <tbody>
 <tr><td>MARCOS MORAIS DE SOUSA</td><td>Gerente de Projetos</td><td><a href='https://www.linkedin.com/in/marcosmoraisjr/'>LinkedIn</a> | <a href='https://instagram.com/marcosmoraisjr'>Instagram</a> | <a href='mailto:mmstec@gmail.com'>Email</a></td></tr>
@@ -29,9 +29,10 @@ Responsável..........: Marcos Morais
 <tr><td>CAMPO INTELIGENTE</td><td>Startup</td><td>— | <a href='https://instagram.com/startupcampointeligente'>Instagram</a> | <a href='mailto:startupcampointeligente@gmail.com'>Email</a></td></tr>
 </tbody>
 </table>
+
 ## 👥 Participantes 
 
----```
+```
 Nome                               │ Função                 | Contato
 ───────────────────────────────────┼────────────────────────┼─────────────────────────────────────────────────────────
 MARCOS MORAIS DE SOUSA             | Gerente de Projetos    | linkedin.com/in/marcosmoraisjr
