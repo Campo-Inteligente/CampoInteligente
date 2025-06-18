@@ -163,22 +163,6 @@ def gerar_readme(versao, data_hora):
 
         readme.write("## 👥 Participantes \n\n")
         
-        readme.write("```\n")
-        readme.write("Nome                               │ Função                 | Contato\n")
-        readme.write("───────────────────────────────────┼────────────────────────┼─────────────────────────────────────────────────────────\n")
-        readme.write("MARCOS MORAIS DE SOUSA             | Gerente de Projetos    | linkedin.com/in/marcosmoraisjr\n")
-        readme.write("ARTHUR LAGO MARTINS                | Scrum Master           | linkedin.com/in/arthur-martins-510b36235\n")
-        readme.write("JOÃO VICTOR OLIVEIRA SANTOS        | Ciência de Dados       | linkedin.com/in/joão-victor-oliveira-santos-3b8aa1203\n")
-        readme.write("JUAN PABLO SÃO PEDRO SAPUCAIA      | Back-End               | linkedin.com/in/juan-pablo-09a65b2a6\n")
-        readme.write("ABIMAEL UANDERSON S. CRISTÓVÃO     | Fullstack              | linkedin.com/in/abimael-uanderson\n")
-        readme.write("FABIO SANTOS FRUTUOSO              | Front-End              | linkedin.com/in/fabio-santos-frutuoso-1784401b9\n")
-        readme.write("BRUNA DE QUEIROZ COSTA             | Serviços Computacionais| linkedin.com/in/bruna-queiroz-5422a7261\n")
-        readme.write("GISELE GOMES OLIVEIRA              | Mobile                 | linkedin.com/in/gisele-gomes-oliveira-037bb1128\n")
-        readme.write("CAMPO INTELIGENTE                  | Startup                | instagram.com/startupcampointeligente\n")
-        readme.write("───────────────────────────────────┴────────────────────────┴─────────────────────────────────────────────────────────\n")
-        readme.write("```\n")
-
-
         readme.write("## 🧩 Tecnologias Utilizadas\n\n")
         readme.write("<p align='left'>\n")
         readme.write("  <img src='https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=white' alt='Figma' />\n")
