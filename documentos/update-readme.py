@@ -158,7 +158,7 @@ def gerar_readme(versao, data_hora):
         readme.write("<tr><td>FABIO SANTOS FRUTUOSO</td><td>Front-End</td><td><a href='https://www.linkedin.com/in/fabio-santos-frutuoso-1784401b9/'>LinkedIn</a> | <a href='https://instagram.com/gandalfs_800'>Instagram</a> | <a href='mailto:frutuosofabio10@gmail.com'>Email</a></td></tr>\n")
         readme.write("<tr><td>BRUNA DE QUEIROZ COSTA</td><td>Serviços Computacionais</td><td><a href='https://www.linkedin.com/in/bruna-queiroz-5422a7261/'>LinkedIn</a> | <a href='https://instagram.com/brhunaqueiroz'>Instagram</a> | <a href='mailto:qbruna2003@gmail.com'>Email</a></td></tr>\n")
         readme.write("<tr><td>GISELE GOMES OLIVEIRA</td><td>Mobile</td><td><a href='https://www.linkedin.com/in/gisele-gomes-oliveira-037bb1128/'>LinkedIn</a> | <a href='https://instagram.com/belagisa13'>Instagram</a> | <a href='mailto:belagisa14@gmail.com'>Email</a></td></tr>\n")
-        readme.write("<tr><td>CAMPO INTELIGENTE</td><td>Startup</td><td>— | <a href='https://instagram.com/startupcampointeligente'>Instagram</a> | <a href='mailto:startupcampointeligente@gmail.com'>Email</a></td></tr>\n")
+        readme.write("<tr><td>CAMPO INTELIGENTE</td><td>Startup</td><td> <a href='https://instagram.com/startupcampointeligente'>Instagram</a> | <a href='mailto:startupcampointeligente@gmail.com'>Email</a></td></tr>\n")
         readme.write("</tbody>\n</table>\n\n")
 
         readme.write("## 👥 Participantes \n\n")
