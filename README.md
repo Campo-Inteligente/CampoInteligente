@@ -26,7 +26,7 @@ Responsável..........: Marcos Morais
 | JUAN PABLO SÃO PEDRO SAPUCAIA | [LinkedIn](https://www.linkedin.com/in/juan-pablo-09a65b2a6/) &#124; [Instagram](https://instagram.com/juan_pablosps) &#124; [Email](mailto:juan.psapucaia7@gmail.com) |
 | ABIMAEL UANDERSON SOARES CRISTÓVÃO | [LinkedIn](https://www.linkedin.com/in/abimael-uanderson/) &#124; [Instagram](https://instagram.com/abimaeluanderson) &#124; [Email](mailto:abimael.servicos12dt@gmail.com) |
 | GISELE GOMES OLIVEIRA | [LinkedIn](https://www.linkedin.com/in/gisele-gomes-oliveira-037bb1128/) &#124; [Instagram](https://instagram.com/belagisa13) &#124; [Email](mailto:belagisa14@gmail.com) |
-| Campo Inteligente | — &#124; [Instagram](https://instagram.com/startupcampointeligente) &#124; [Email](mailto:startupcampointeligente@gmail.com) |
+| Campo Inteligente | [LinkedIn](https://www.linkedin.com/company/106592257/admin/dashboard/) &#124; [Instagram](https://instagram.com/startupcampointeligente) &#124; [Email](mailto:startupcampointeligente@gmail.com) |
 ## 🧩 Tecnologias Utilizadas
 
 <p align='left'>
