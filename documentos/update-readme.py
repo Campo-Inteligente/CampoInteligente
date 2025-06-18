@@ -7,7 +7,7 @@ import shutil
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # Extensões e diretórios que devem ser ocultados na árvore
-OCULTA_EXT = {".yml",".py",".md"}
+OCULTA_EXT = {".yml",".py",".git"}
 OCULTA_DIR = {".git", ".github", ".gitignore", ".env", ".env.local"}
 
 # Arquivos importantes
