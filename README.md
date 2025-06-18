@@ -8,9 +8,9 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 
 ```
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 150 (AUTO-INCREMENTO)
+Versão...............: 151 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 18/06/2025 15:28:26
+Data de Atualização..: 18/06/2025 15:33:02
 Responsável..........: Marcos Morais
 ```
 ## 👥 Participantes
@@ -40,7 +40,7 @@ Responsável..........: Marcos Morais
   <img src='https://img.shields.io/badge/GitHub-100000?logo=github&logoColor=white&style=flat' alt='GitHub' />
 </p>
 
-Descrição das tecnologias:
+### Descrição das tecnologias:
 
 - **Next.js**: Framework React para criação de aplicações web escaláveis e de alto desempenho.
 - **React**: Biblioteca JavaScript para construção de interfaces de usuário interativas.
