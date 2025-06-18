@@ -9,11 +9,24 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 
 ```
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 118 (AUTO-INCREMENTO)
+Versão...............: 119 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 18/06/2025 11:19:00
+Data de Atualização..: 18/06/2025 11:21:15
 Responsável..........: Marcos Morais
 ```
+## 👥 Participantes
+
+| Nome | Email | Trilha de Formação | LinkedIn | Instagram |
+|------|-------|--------------------|----------|-----------|
+| MARCOS MORAIS DE SOUSA | mmstec@gmail.com | Gerente de Projetos de TI | [Perfil](https://www.linkedin.com/in/marcosmoraisjr/) | @marcosmoraisjr |
+| FABIO SANTOS FRUTUOSO | frutuosofabio10@gmail.com | Trilha 5 - Desenvolvimento Front-End. | [Perfil](https://www.linkedin.com/in/fabio-santos-frutuoso-1784401b9/) | @gandalfs_800 |
+| BRUNA DE QUEIROZ COSTA | qbruna2003@gmail.com | Trilha 1 - Provimento de Serviços Computacionais. | [Perfil](https://www.linkedin.com/in/bruna-queiroz-5422a7261/) | @brhunaqueiroz |
+| ARTHUR LAGO MARTINS | 202110445@uesb.edu.br | Trilha 3 - Ciência de Dados. | [Perfil](https://www.linkedin.com/in/arthur-martins-510b36235/) | @arthurmarttins |
+| JOÃO VICTOR OLIVEIRA SANTOS | joao.osantos27@gmail.com | Trilha 3 - Ciência de Dados. | [Perfil](https://www.linkedin.com/in/joão-victor-oliveira-santos-3b8aa1203/) | @jv.osantos |
+| JUAN PABLO SÃO PEDRO SAPUCAIA | juan.psapucaia7@gmail.com | Trilha 7 - Desenvolvimento Back-End. | [Perfil](https://www.linkedin.com/in/juan-pablo-09a65b2a6/) | @juan_pablosps |
+| ABIMAEL UANDERSON SOARES CRISTÓVÃO | abimael.servicos12dt@gmail.com | Trilha 2 - Desenvolvimento Fullstack. | [Perfil](https://www.linkedin.com/in/abimael-uanderson/) | @abimaeluanderson |
+| GISELE GOMES OLIVEIRA | belagisa14@gmail.com | Trilha 6 - Desenvolvimento Mobile. | [Perfil](https://www.linkedin.com/in/gisele-gomes-oliveira-037bb1128/) | @belagisa13 |
+| Campo Inteligente | startupcampointeligente@gmail.com | Startup | — | @startupcampointeligente |
 ## 🧩 Tecnologias Utilizadas
 
 <p align='left'>
@@ -156,5 +169,5 @@ Contribuições, sugestões e feedbacks são muito bem-vindos! Caso tenha algum 
 
 --- 
 
-Desenvolvido com ❤️ pela equipe 11 | [Campo Inteligente](https://www.campointeligente.agr.br/) 
+Desenvolvido com ❤️ pela equipe 12 | [Campo Inteligente](https://www.campointeligente.agr.br/) 
 
