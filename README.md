@@ -9,24 +9,24 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 
 ```
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 120 (AUTO-INCREMENTO)
+Versão...............: 121 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 18/06/2025 11:23:18
+Data de Atualização..: 18/06/2025 11:25:06
 Responsável..........: Marcos Morais
 ```
 ## 👥 Participantes
 
-| Nome | Email | Instagram |
-|------|-------|-----------|
-| MARCOS MORAIS DE SOUSA<br />[LinkedIn](https://www.linkedin.com/in/marcosmoraisjr/) | mmstec@gmail.com | @marcosmoraisjr |
-| FABIO SANTOS FRUTUOSO<br />[LinkedIn](https://www.linkedin.com/in/fabio-santos-frutuoso-1784401b9/) | frutuosofabio10@gmail.com | @gandalfs_800 |
-| BRUNA DE QUEIROZ COSTA<br />[LinkedIn](https://www.linkedin.com/in/bruna-queiroz-5422a7261/) | qbruna2003@gmail.com | @brhunaqueiroz |
-| ARTHUR LAGO MARTINS<br />[LinkedIn](https://www.linkedin.com/in/arthur-martins-510b36235/) | 202110445@uesb.edu.br | @arthurmarttins |
-| JOÃO VICTOR OLIVEIRA SANTOS<br />[LinkedIn](https://www.linkedin.com/in/joão-victor-oliveira-santos-3b8aa1203/) | joao.osantos27@gmail.com | @jv.osantos |
-| JUAN PABLO SÃO PEDRO SAPUCAIA<br />[LinkedIn](https://www.linkedin.com/in/juan-pablo-09a65b2a6/) | juan.psapucaia7@gmail.com | @juan_pablosps |
-| ABIMAEL UANDERSON SOARES CRISTÓVÃO<br />[LinkedIn](https://www.linkedin.com/in/abimael-uanderson/) | abimael.servicos12dt@gmail.com | @abimaeluanderson |
-| GISELE GOMES OLIVEIRA<br />[LinkedIn](https://www.linkedin.com/in/gisele-gomes-oliveira-037bb1128/) | belagisa14@gmail.com | @belagisa13 |
-| Campo Inteligente<br />— | startupcampointeligente@gmail.com | @startupcampointeligente |
+| Nome | Contato |
+|------|---------|
+| MARCOS MORAIS DE SOUSA | [LinkedIn](https://www.linkedin.com/in/marcosmoraisjr/) &#124; @marcosmoraisjr &#124; mmstec@gmail.com |
+| FABIO SANTOS FRUTUOSO | [LinkedIn](https://www.linkedin.com/in/fabio-santos-frutuoso-1784401b9/) &#124; @gandalfs_800 &#124; frutuosofabio10@gmail.com |
+| BRUNA DE QUEIROZ COSTA | [LinkedIn](https://www.linkedin.com/in/bruna-queiroz-5422a7261/) &#124; @brhunaqueiroz &#124; qbruna2003@gmail.com |
+| ARTHUR LAGO MARTINS | [LinkedIn](https://www.linkedin.com/in/arthur-martins-510b36235/) &#124; @arthurmarttins &#124; 202110445@uesb.edu.br |
+| JOÃO VICTOR OLIVEIRA SANTOS | [LinkedIn](https://www.linkedin.com/in/joão-victor-oliveira-santos-3b8aa1203/) &#124; @jv.osantos &#124; joao.osantos27@gmail.com |
+| JUAN PABLO SÃO PEDRO SAPUCAIA | [LinkedIn](https://www.linkedin.com/in/juan-pablo-09a65b2a6/) &#124; @juan_pablosps &#124; juan.psapucaia7@gmail.com |
+| ABIMAEL UANDERSON SOARES CRISTÓVÃO | [LinkedIn](https://www.linkedin.com/in/abimael-uanderson/) &#124; @abimaeluanderson &#124; abimael.servicos12dt@gmail.com |
+| GISELE GOMES OLIVEIRA | [LinkedIn](https://www.linkedin.com/in/gisele-gomes-oliveira-037bb1128/) &#124; @belagisa13 &#124; belagisa14@gmail.com |
+| Campo Inteligente | — &#124; @startupcampointeligente &#124; startupcampointeligente@gmail.com |
 ## 🧩 Tecnologias Utilizadas
 
 <p align='left'>
