@@ -8,9 +8,9 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 
 ```
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 134 (AUTO-INCREMENTO)
+Versão...............: 135 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 18/06/2025 12:01:04
+Data de Atualização..: 18/06/2025 12:01:43
 Responsável..........: Marcos Morais
 ```
 ## 👥 Participantes
@@ -31,7 +31,7 @@ Responsável..........: Marcos Morais
 </table>
 ## 👥 Participantes 
 
-```
+---```
 Nome                               │ Função                 | Contato
 ───────────────────────────────────┼────────────────────────┼─────────────────────────────────────────────────────────
 MARCOS MORAIS DE SOUSA             | Gerente de Projetos    | linkedin.com/in/marcosmoraisjr
