@@ -161,8 +161,6 @@ def gerar_readme(versao, data_hora):
         readme.write("<tr><td>CAMPO INTELIGENTE</td><td>Startup</td><td> <a href='https://instagram.com/startupcampointeligente'>LinkedIn | Instagram</a> | <a href='mailto:startupcampointeligente@gmail.com'>Email</a></td></tr>\n")
         readme.write("</tbody>\n</table>\n\n")
 
-        readme.write("## 👥 Participantes \n\n")
-        
         readme.write("## 🧩 Tecnologias Utilizadas\n\n")
         readme.write("<p align='left'>\n")
         readme.write("  <img src='https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=white' alt='Figma' />\n")
