@@ -168,7 +168,7 @@ def gerar_readme(versao, data_hora):
         readme.write("```\n")
         readme.write("Nome                               | Função                 | Contato\n")
         readme.write("-----------------------------------+------------------------+---------------------------------------------\n")
-        readme.write("MARCOS MORAIS DE SOUSA             | Gerente de Projetos    | LinkedIn | Instagram | Email\n")
+        readme.write("MARCOS MORAIS DE SOUSA             | Gerente de Projetos    | <a href='https://www.linkedin.com/in/marcosmoraisjr/'>LinkedIn</a> | <a href='https://instagram.com/marcosmoraisjr'>Instagram</a> | <a href='mailto:mmstec@gmail.com'>Email</a>\n")
         readme.write("ARTHUR LAGO MARTINS                | Scrum Master           | LinkedIn | Instagram | Email\n")        
         readme.write("JOÃO VICTOR OLIVEIRA SANTOS        | Ciência de Dados       | LinkedIn | Instagram | Email\n")        
         readme.write("JUAN PABLO SÃO PEDRO SAPUCAIA      | Back-End               | LinkedIn | Instagram | Email\n")
