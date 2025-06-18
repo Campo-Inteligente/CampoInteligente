@@ -9,24 +9,26 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 
 ```
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 123 (AUTO-INCREMENTO)
+Versão...............: 124 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 18/06/2025 11:30:17
+Data de Atualização..: 18/06/2025 11:30:51
 Responsável..........: Marcos Morais
 ```
-## 👥 Participantes
-
-| Nome | Contato |
-|------|---------|
-| MARCOS MORAIS DE SOUSA | [LinkedIn](https://www.linkedin.com/in/marcosmoraisjr/) &#124; [Instagram](https://instagram.com/marcosmoraisjr) &#124; [Email](mailto:mmstec@gmail.com) |
-| FABIO SANTOS FRUTUOSO | [LinkedIn](https://www.linkedin.com/in/fabio-santos-frutuoso-1784401b9/) &#124; [Instagram](https://instagram.com/gandalfs_800) &#124; [Email](mailto:frutuosofabio10@gmail.com) |
-| BRUNA DE QUEIROZ COSTA | [LinkedIn](https://www.linkedin.com/in/bruna-queiroz-5422a7261/) &#124; [Instagram](https://instagram.com/brhunaqueiroz) &#124; [Email](mailto:qbruna2003@gmail.com) |
-| ARTHUR LAGO MARTINS | [LinkedIn](https://www.linkedin.com/in/arthur-martins-510b36235/) &#124; [Instagram](https://instagram.com/arthurmarttins) &#124; [Email](mailto:202110445@uesb.edu.br) |
-| JOÃO VICTOR OLIVEIRA SANTOS | [LinkedIn](https://www.linkedin.com/in/joão-victor-oliveira-santos-3b8aa1203/) &#124; [Instagram](https://instagram.com/jv.osantos) &#124; [Email](mailto:joao.osantos27@gmail.com) |
-| JUAN PABLO SÃO PEDRO SAPUCAIA | [LinkedIn](https://www.linkedin.com/in/juan-pablo-09a65b2a6/) &#124; [Instagram](https://instagram.com/juan_pablosps) &#124; [Email](mailto:juan.psapucaia7@gmail.com) |
-| ABIMAEL UANDERSON SOARES CRISTÓVÃO | [LinkedIn](https://www.linkedin.com/in/abimael-uanderson/) &#124; [Instagram](https://instagram.com/abimaeluanderson) &#124; [Email](mailto:abimael.servicos12dt@gmail.com) |
-| GISELE GOMES OLIVEIRA | [LinkedIn](https://www.linkedin.com/in/gisele-gomes-oliveira-037bb1128/) &#124; [Instagram](https://instagram.com/belagisa13) &#124; [Email](mailto:belagisa14@gmail.com) |
-| Campo Inteligente | — &#124; [Instagram](https://instagram.com/startupcampointeligente) &#124; [Email](mailto:startupcampointeligente@gmail.com) |
+<h2>👥 Participantes</h2>
+<table style='width:100%'>
+<thead><tr><th style='text-align:left'>Nome</th><th style='text-align:left'>Contato</th></tr></thead>
+<tbody>
+<tr><td>MARCOS MORAIS DE SOUSA</td><td><a href='https://www.linkedin.com/in/marcosmoraisjr/'>LinkedIn</a> | <a href='https://instagram.com/marcosmoraisjr'>Instagram</a> | <a href='mailto:mmstec@gmail.com'>Email</a></td></tr>
+<tr><td>FABIO SANTOS FRUTUOSO</td><td><a href='https://www.linkedin.com/in/fabio-santos-frutuoso-1784401b9/'>LinkedIn</a> | <a href='https://instagram.com/gandalfs_800'>Instagram</a> | <a href='mailto:frutuosofabio10@gmail.com'>Email</a></td></tr>
+<tr><td>BRUNA DE QUEIROZ COSTA</td><td><a href='https://www.linkedin.com/in/bruna-queiroz-5422a7261/'>LinkedIn</a> | <a href='https://instagram.com/brhunaqueiroz'>Instagram</a> | <a href='mailto:qbruna2003@gmail.com'>Email</a></td></tr>
+<tr><td>ARTHUR LAGO MARTINS</td><td><a href='https://www.linkedin.com/in/arthur-martins-510b36235/'>LinkedIn</a> | <a href='https://instagram.com/arthurmarttins'>Instagram</a> | <a href='mailto:202110445@uesb.edu.br'>Email</a></td></tr>
+<tr><td>JOÃO VICTOR OLIVEIRA SANTOS</td><td><a href='https://www.linkedin.com/in/joão-victor-oliveira-santos-3b8aa1203/'>LinkedIn</a> | <a href='https://instagram.com/jv.osantos'>Instagram</a> | <a href='mailto:joao.osantos27@gmail.com'>Email</a></td></tr>
+<tr><td>JUAN PABLO SÃO PEDRO SAPUCAIA</td><td><a href='https://www.linkedin.com/in/juan-pablo-09a65b2a6/'>LinkedIn</a> | <a href='https://instagram.com/juan_pablosps'>Instagram</a> | <a href='mailto:juan.psapucaia7@gmail.com'>Email</a></td></tr>
+<tr><td>ABIMAEL UANDERSON SOARES CRISTÓVÃO</td><td><a href='https://www.linkedin.com/in/abimael-uanderson/'>LinkedIn</a> | <a href='https://instagram.com/abimaeluanderson'>Instagram</a> | <a href='mailto:abimael.servicos12dt@gmail.com'>Email</a></td></tr>
+<tr><td>GISELE GOMES OLIVEIRA</td><td><a href='https://www.linkedin.com/in/gisele-gomes-oliveira-037bb1128/'>LinkedIn</a> | <a href='https://instagram.com/belagisa13'>Instagram</a> | <a href='mailto:belagisa14@gmail.com'>Email</a></td></tr>
+<tr><td>Campo Inteligente</td><td>— | <a href='https://instagram.com/startupcampointeligente'>Instagram</a> | <a href='mailto:startupcampointeligente@gmail.com'>Email</a></td></tr>
+</tbody>
+</table>
 ## 🧩 Tecnologias Utilizadas
 
 <p align='left'>
