@@ -141,6 +141,20 @@ def gerar_readme(versao, data_hora):
         readme.write("Responsável..........: Marcos Morais\n")
         readme.write("```\n")
 
+        readme.write("## 👥 Participantes\n\n")
+        readme.write("| Nome | Email | Trilha de Formação | LinkedIn | Instagram |\n")
+        readme.write("|------|-------|--------------------|----------|-----------|\n")
+        readme.write("| MARCOS MORAIS DE SOUSA | mmstec@gmail.com | Gerente de Projetos de TI | [Perfil](https://www.linkedin.com/in/marcosmoraisjr/) | @marcosmoraisjr |\n")
+        readme.write("| FABIO SANTOS FRUTUOSO | frutuosofabio10@gmail.com | Trilha 5 - Desenvolvimento Front-End. | [Perfil](https://www.linkedin.com/in/fabio-santos-frutuoso-1784401b9/) | @gandalfs_800 |\n")
+        readme.write("| BRUNA DE QUEIROZ COSTA | qbruna2003@gmail.com | Trilha 1 - Provimento de Serviços Computacionais. | [Perfil](https://www.linkedin.com/in/bruna-queiroz-5422a7261/) | @brhunaqueiroz |\n")
+        readme.write("| ARTHUR LAGO MARTINS | 202110445@uesb.edu.br | Trilha 3 - Ciência de Dados. | [Perfil](https://www.linkedin.com/in/arthur-martins-510b36235/) | @arthurmarttins |\n")
+        readme.write("| JOÃO VICTOR OLIVEIRA SANTOS | joao.osantos27@gmail.com | Trilha 3 - Ciência de Dados. | [Perfil](https://www.linkedin.com/in/joão-victor-oliveira-santos-3b8aa1203/) | @jv.osantos |\n")
+        readme.write("| JUAN PABLO SÃO PEDRO SAPUCAIA | juan.psapucaia7@gmail.com | Trilha 7 - Desenvolvimento Back-End. | [Perfil](https://www.linkedin.com/in/juan-pablo-09a65b2a6/) | @juan_pablosps |\n")
+        readme.write("| ABIMAEL UANDERSON SOARES CRISTÓVÃO | abimael.servicos12dt@gmail.com | Trilha 2 - Desenvolvimento Fullstack. | [Perfil](https://www.linkedin.com/in/abimael-uanderson/) | @abimaeluanderson |\n")
+        readme.write("| GISELE GOMES OLIVEIRA | belagisa14@gmail.com | Trilha 6 - Desenvolvimento Mobile. | [Perfil](https://www.linkedin.com/in/gisele-gomes-oliveira-037bb1128/) | @belagisa13 |\n")
+        readme.write("| Campo Inteligente | startupcampointeligente@gmail.com | Startup | — | @startupcampointeligente |\n")
+
+
         readme.write("## 🧩 Tecnologias Utilizadas\n\n")
         readme.write("<p align='left'>\n")
         readme.write("  <img src='https://img.shields.io/badge/Figma-F24E1E?logo=figma&logoColor=white' alt='Figma' />\n")
