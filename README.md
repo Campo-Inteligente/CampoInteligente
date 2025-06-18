@@ -9,9 +9,9 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 
 ```
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 130 (AUTO-INCREMENTO)
+Versão...............: 131 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 18/06/2025 11:51:08
+Data de Atualização..: 18/06/2025 11:54:02
 Responsável..........: Marcos Morais
 ```
 <h2>👥 Participantes</h2>
@@ -34,15 +34,15 @@ Responsável..........: Marcos Morais
 ```
 Nome                               | Função                 | Contato
 -----------------------------------+------------------------+------------------------------------------------------------
-MARCOS MORAIS DE SOUSA             | Gerente de Projetos    | linkedin.com/in/marcosmoraisjr | instagram.com/marcosmoraisjr | mmstec@gmail.com
-ARTHUR LAGO MARTINS                | Scrum Master           | linkedin.com/in/arthur-martins-510b36235 | instagram.com/arthurmarttins | 202110445@uesb.edu.br
-JOÃO VICTOR OLIVEIRA SANTOS        | Ciência de Dados       | linkedin.com/in/joão-victor-oliveira-santos-3b8aa1203 | instagram.com/jv.osantos | joao.osantos27@gmail.com
-JUAN PABLO SÃO PEDRO SAPUCAIA      | Back-End               | linkedin.com/in/juan-pablo-09a65b2a6 | instagram.com/juan_pablosps | juan.psapucaia7@gmail.com
-ABIMAEL UANDERSON S. CRISTÓVÃO     | Fullstack              | linkedin.com/in/abimael-uanderson | instagram.com/abimaeluanderson | abimael.servicos12dt@gmail.com
-FABIO SANTOS FRUTUOSO              | Front-End              | linkedin.com/in/fabio-santos-frutuoso-1784401b9 | instagram.com/gandalfs_800 | frutuosofabio10@gmail.com
-BRUNA DE QUEIROZ COSTA             | Serviços Computacionais| linkedin.com/in/bruna-queiroz-5422a7261 | instagram.com/brhunaqueiroz | qbruna2003@gmail.com
-GISELE GOMES OLIVEIRA              | Mobile                 | linkedin.com/in/gisele-gomes-oliveira-037bb1128 | instagram.com/belagisa13 | belagisa14@gmail.com
-CAMPO INTELIGENTE                  | Startup                | — | instagram.com/startupcampointeligente | startupcampointeligente@gmail.com
+MARCOS MORAIS DE SOUSA             | Gerente de Projetos    | linkedin.com/in/marcosmoraisjr
+ARTHUR LAGO MARTINS                | Scrum Master           | linkedin.com/in/arthur-martins-510b36235
+JOÃO VICTOR OLIVEIRA SANTOS        | Ciência de Dados       | linkedin.com/in/joão-victor-oliveira-santos-3b8aa1203
+JUAN PABLO SÃO PEDRO SAPUCAIA      | Back-End               | linkedin.com/in/juan-pablo-09a65b2a6
+ABIMAEL UANDERSON S. CRISTÓVÃO     | Fullstack              | linkedin.com/in/abimael-uanderson
+FABIO SANTOS FRUTUOSO              | Front-End              | linkedin.com/in/fabio-santos-frutuoso-1784401b9
+BRUNA DE QUEIROZ COSTA             | Serviços Computacionais| linkedin.com/in/bruna-queiroz-5422a7261
+GISELE GOMES OLIVEIRA              | Mobile                 | linkedin.com/in/gisele-gomes-oliveira-037bb1128
+CAMPO INTELIGENTE                  | Startup                | instagram.com/startupcampointeligente
 ```
 ## 🧩 Tecnologias Utilizadas
 
