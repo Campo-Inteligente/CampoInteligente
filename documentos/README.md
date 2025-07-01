@@ -7,10 +7,11 @@ O **CampoInteligente** é uma plataforma voltada para a agricultura familiar, of
 ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN 
 
 ```
+Repositório..........: FRONT-END
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 263 (AUTO-INCREMENTO)
+Versão...............: 264 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 21/06/2025 08:38:38
+Data de Atualização..: 30/06/2025 22:48:15
 Responsável..........: Marcos Morais
 ```
 ## 👥 Participantes
