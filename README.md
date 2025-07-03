@@ -9,9 +9,9 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 ```
 Repositório..........: FRONT-END
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 372 (AUTO-INCREMENTO)
+Versão...............: 373 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 03/07/2025 14:18:35
+Data de Atualização..: 03/07/2025 14:42:14
 Responsável..........: Marcos Morais
 ```
 ## 👥 Participantes
@@ -20,7 +20,7 @@ Responsável..........: Marcos Morais
 <thead><tr><th style='text-align:left'>Nome</th><th style='text-align:left'>Função</th><th style='text-align:left'>Contato</th></tr></thead>
 <tbody>
 <tr><td>MARCOS MORAIS DE SOUSA            </td><td>Gerente de Projetos       </td><td><a href='https://www.linkedin.com/in/marcosmoraisjr/'>LinkedIn</a> | <a href='https://instagram.com/marcosmoraisjr'>Instagram</a> | <a href='mailto:mmstec@gmail.com'>Email</a></td></tr>
-<tr><td>ARTHUR LAGO MARTINS               </td><td>Scrum Master              </td><td><a href='https://www.linkedin.com/in/arthur-martins-510b36235/'>LinkedIn</a> | <a href='https://instagram.com/arthurmarttins'>Instagram</a> | <a href='mailto:202110445@uesb.edu.br'>Email</a></td></tr>
+<tr><td>ARTHUR LAGO MARTINS               </td><td>Scrum Master              </td><td><a href='https://www.linkedin.com/in/arthur-martins-510b36235/'>LinkedIn</a> | <a href='https://instagram.com/arthurmarttins_'>Instagram</a> | <a href='mailto:202110445@uesb.edu.br'>Email</a></td></tr>
 <tr><td>JOÃO VICTOR OLIVEIRA SANTOS       </td><td>Ciência de Dados          </td><td><a href='https://www.linkedin.com/in/joão-victor-oliveira-santos-3b8aa1203/'>LinkedIn</a> | <a href='https://instagram.com/jv.osantos'>Instagram</a> | <a href='mailto:joao.osantos27@gmail.com'>Email</a></td></tr>
 <tr><td>JUAN PABLO SÃO PEDRO SAPUCAIA     </td><td>Back-End                  </td><td><a href='https://www.linkedin.com/in/juan-pablo-09a65b2a6/'>LinkedIn</a> | <a href='https://instagram.com/juan_pablosps'>Instagram</a> | <a href='mailto:juan.psapucaia7@gmail.com'>Email</a></td></tr>
 <tr><td>ABIMAEL UANDERSON S. CRISTÓVÃO    </td><td>Back-End                  </td><td><a href='https://www.linkedin.com/in/abimael-uanderson/'>LinkedIn</a> | <a href='https://instagram.com/abimaeluanderson'>Instagram</a> | <a href='mailto:abimael.servicos12dt@gmail.com'>Email</a></td></tr>
