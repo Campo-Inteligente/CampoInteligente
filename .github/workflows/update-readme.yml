@@ -32,7 +32,7 @@ jobs:
 
       # Passo 4: Executar o script Python
       - name: Executar script Python update-readme.py
-        run: python .github/update-readme.py
+        run: python .github/workflows//update-readme.py
 
       # Passo 5: Configurar Git
       - name: Configurar Git
