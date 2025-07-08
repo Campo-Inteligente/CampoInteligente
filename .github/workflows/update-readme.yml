@@ -56,20 +56,15 @@ jobs:
           else
             echo '🚀 Mudanças detectadas. Comitando arquivos...'
 
-            # Adiciona README.md
-            git add documentos/README.md
-
-            # Adiciona versao.txt se existir
-            if [ -f documentos/versao.txt ]; then
-              git add documentos/versao.txt
-            fi
+            # Adiciona todos os arquivos modificados
+            git add .
 
             git commit -m '📄 Atualização automática do README.md via GitHub Actions'
 
             echo "🔄 Tentando rebase antes do push..."
             git pull --rebase origin main || {
               echo '⚠️ Conflito detectado. Abortando rebase e ignorando commit.'
-              git rebase --abort
+              git rebase --abort || true
               exit 0
             }
 
