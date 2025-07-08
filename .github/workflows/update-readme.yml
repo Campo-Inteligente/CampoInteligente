@@ -34,11 +34,11 @@ jobs:
           sudo ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
           sudo dpkg-reconfigure -f noninteractive tzdata
 
-      # Passo 4: Instalar dependências Python
+      # Passo 4: Instalar dependência pytz
       - name: Instalar dependências
         run: pip install pytz
 
-      # Passo 5: Executar o script Python
+      # Passo 5: Executar script Python
       - name: Executar script update-readme.py
         run: python .github/workflows/update-readme.py
 
@@ -48,14 +48,20 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      # Passo 7: Commit e push se houver alterações
+      # Passo 7: Commit e push do README.md e versao.txt (se houver mudanças)
       - name: Commit e push do README.md e versao.txt
         run: |
           if [ -z "$(git status --porcelain)" ]; then
             echo '✅ Nenhuma mudança detectada. Nada a fazer.'
           else
             echo '🚀 Mudanças detectadas. Comitando...'
-            git add documentos/README.md versao.txt
+            git add documentos/README.md
+
+            # Adiciona versao.txt se existir
+            if [ -f documentos/versao.txt ]; then
+              git add documentos/versao.txt
+            fi
+
             git commit -m '📄 Atualização automática do README.md via GitHub Actions'
 
             echo "🔄 Tentando rebase antes do push..."
