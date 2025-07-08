@@ -33,7 +33,7 @@ export default function ChatInterface() {
     setIsLoading(true);
 
     try {
-      // URL apontando para a sua API de backend no servidor
+      // URL apontando para a API de backend no servidor
       const response = await fetch(
         "http://campointeligente.ddns.com.br:21083/chat",
         {

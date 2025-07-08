@@ -28,7 +28,7 @@ export default function ChatOnline() {
           className="position-relative d-flex flex-column align-items-center"
           style={{ zIndex: 2 }}
         >
-          <h1 className={styles.titulo}>Converse com a Iagro</h1>
+          <h1 className={styles.titulo}>Converse com o Iagro</h1>
           <p
             style={{
               color: "#333",
