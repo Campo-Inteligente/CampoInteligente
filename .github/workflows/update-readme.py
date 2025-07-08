@@ -11,8 +11,9 @@ OCULTA_EXT = {".yml",".py",".git"}
 OCULTA_DIR = {".git", ".github", ".gitignore", ".env", ".env.local"}
 
 # Arquivos importantes
-VERSAO_FILE = os.path.join(BASE_DIR, "versao.txt")
-README_FILE = os.path.join(BASE_DIR, "README.md")
+VERSAO_FILE = os.path.join(BASE_DIR, "documentos", "versao.txt")
+#README_FILE = os.path.join(BASE_DIR, "README.md")
+README_FILE = os.path.join(BASE_DIR, "documentos", "README.md")
 UPDATE_FILE = "update-readme.py"
 
 # Fuso horário para data/hora
@@ -20,7 +21,7 @@ FUSO_HORARIO_BRASIL = pytz.timezone("America/Sao_Paulo")
 
 
 def copiar_readme_para_raiz():
-    origem = os.path.join(BASE_DIR, "README.md")
+    origem = os.path.join(BASE_DIR, "documentos", "README.md")
     destino = os.path.abspath(os.path.join(BASE_DIR, "..", "README.md"))
     try:
         shutil.copy2(origem, destino)
