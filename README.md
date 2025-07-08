@@ -1,4 +1,4 @@
-# Bem-vindo ao 🍃**JACA**
+# Bem-vindo ao 🍃**CampoInteligente** ¹
 
 O **CampoInteligente** é uma plataforma voltada para a agricultura familiar, oferecendo um chatbot com inteligência artificial que integra dados meteorológicos e de mercado para auxiliar no plantio, manejo e colheita. A navegação é simples, com foco na interação via WhatsApp.
 
