@@ -9,9 +9,9 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 ```
 Repositório..........: FRONT-END
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 4 (AUTO-INCREMENTO)
+Versão...............: 5 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 07/07/2025 21:44:51
+Data de Atualização..: 07/07/2025 21:46:07
 Responsável..........: Marcos Morais
 ```
 ## 👥 Participantes
@@ -64,7 +64,6 @@ Descrição das tecnologias:
 ├── 📄 .eslintrc.json
 ├── 📄 .vercelignore
 ├── 📄 LICENSE
-├── 📄 LICENSE.txt
 ├── 📄 README.md
 ├── 📄 TUTORIAL.md
 ├── 📄 VERSIONS.md
