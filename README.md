@@ -1,4 +1,4 @@
-# Bem-vindo ao 🍃**CampoInteligente** ¹
+# Bem-vindo ao 🍃**CampoInteligente**
 
 O **CampoInteligente** é uma plataforma voltada para a agricultura familiar, oferecendo um chatbot com inteligência artificial que integra dados meteorológicos e de mercado para auxiliar no plantio, manejo e colheita. A navegação é simples, com foco na interação via WhatsApp.
 
@@ -9,9 +9,9 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 ```
 Repositório..........: FRONT-END
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 533 (AUTO-INCREMENTO)
+Versão...............: 3 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 07/07/2025 12:42:32
+Data de Atualização..: 07/07/2025 21:43:00
 Responsável..........: Marcos Morais
 ```
 ## 👥 Participantes
@@ -52,26 +52,21 @@ Descrição das tecnologias:
 
 ```
 📂 documentos
-├── 📄 LICENSE
+├── 📄 LICENSE.txt
 ├── 📄 README.md
 ├── 📄 TUTORIAL.md
-├── 📄 diagrama_de_fluxo.md
-├── 📄 diagrama_er.md
-├── 📄 documento_de_requisitos.md
-├── 📂 imagens
-│   ├── 📄 Pitch - Campo Inteligente.png
-│   ├── 📄 info
-│   └── 📄 wallpaper-campointeligente.png
 └── 📄 versao.txt
 ```
 ## 🌳 Estrutura do Repositório
 
 ```
-📂 .
+📂 startup-campo-inteligente-site
 ├── 📄 .eslintrc.json
 ├── 📄 .vercelignore
 ├── 📄 LICENSE
+├── 📄 LICENSE.txt
 ├── 📄 README.md
+├── 📄 TUTORIAL.md
 ├── 📄 VERSIONS.md
 ├── 📄 baixar-atualizacao.bat
 ├── 📂 components
@@ -79,16 +74,9 @@ Descrição das tecnologias:
 │   ├── 📄 Navbar.js
 │   └── 📄 NavbarVerde.js
 ├── 📂 documentos
-│   ├── 📄 LICENSE
+│   ├── 📄 LICENSE.txt
 │   ├── 📄 README.md
 │   ├── 📄 TUTORIAL.md
-│   ├── 📄 diagrama_de_fluxo.md
-│   ├── 📄 diagrama_er.md
-│   ├── 📄 documento_de_requisitos.md
-│   ├── 📂 imagens
-│   │   ├── 📄 Pitch - Campo Inteligente.png
-│   │   ├── 📄 info
-│   │   └── 📄 wallpaper-campointeligente.png
 │   └── 📄 versao.txt
 ├── 📄 enviar-atualizacao.bat
 ├── 📄 next.config.js
