@@ -9,9 +9,9 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 ```
 Repositório..........: FRONT-END
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 6 (AUTO-INCREMENTO)
+Versão...............: 7 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 07/07/2025 21:50:44
+Data de Atualização..: 07/07/2025 22:38:26
 Responsável..........: Marcos Morais
 ```
 ## 👥 Participantes
@@ -55,6 +55,8 @@ Descrição das tecnologias:
 ├── 📄 LICENSE
 ├── 📄 README.md
 ├── 📄 TUTORIAL.md
+├── 📂 teste
+│   └── 📄 teste1.txt
 └── 📄 versao.txt
 ```
 ## 🌳 Estrutura do Repositório
@@ -76,6 +78,8 @@ Descrição das tecnologias:
 │   ├── 📄 LICENSE
 │   ├── 📄 README.md
 │   ├── 📄 TUTORIAL.md
+│   ├── 📂 teste
+│   │   └── 📄 teste1.txt
 │   └── 📄 versao.txt
 ├── 📄 enviar-atualizacao.bat
 ├── 📄 next.config.js
