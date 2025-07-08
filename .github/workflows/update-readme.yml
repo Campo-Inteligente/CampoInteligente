@@ -16,17 +16,17 @@ jobs:
       contents: write  # Permite fazer push no repositório
 
     steps:
-      # Passo 1: Checkout do repositório
+      # Passo 1: Fazer checkout do código
       - name: Checkout do repositório
         uses: actions/checkout@v3
 
       # Passo 2: Configurar ambiente Python
-      - name: Configurar ambiente Python
+      - name: Configurar Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
 
-      # Passo 3: Ajustar fuso horário para Brasília
+      # Passo 3: Ajustar timezone para Brasília
       - name: Ajustar fuso horário para Brasília
         run: |
           sudo apt-get update
@@ -34,12 +34,12 @@ jobs:
           sudo ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime
           sudo dpkg-reconfigure -f noninteractive tzdata
 
-      # Passo 4: Instalar dependência pytz
-      - name: Instalar dependências
+      # Passo 4: Instalar dependências
+      - name: Instalar pytz
         run: pip install pytz
 
-      # Passo 5: Executar script Python
-      - name: Executar script update-readme.py
+      # Passo 5: Executar o script Python
+      - name: Executar update-readme.py
         run: python .github/workflows/update-readme.py
 
       # Passo 6: Configurar Git
@@ -48,13 +48,15 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      # Passo 7: Commit e push do README.md e versao.txt (se houver mudanças)
+      # Passo 7: Commit e push se houver mudanças
       - name: Commit e push do README.md e versao.txt
         run: |
           if [ -z "$(git status --porcelain)" ]; then
             echo '✅ Nenhuma mudança detectada. Nada a fazer.'
           else
-            echo '🚀 Mudanças detectadas. Comitando...'
+            echo '🚀 Mudanças detectadas. Comitando arquivos...'
+
+            # Adiciona README.md
             git add documentos/README.md
 
             # Adiciona versao.txt se existir
