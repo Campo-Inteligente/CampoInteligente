@@ -3,8 +3,10 @@ import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "../../styles/painelControleStyles/Business.module.css";
-// 1. Importe o 'motion'
 import { motion } from "framer-motion";
+
+// 1. Importe os componentes do React Bootstrap
+import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -21,99 +23,104 @@ export default function LoginPage() {
       <Head>
         <title>Login | Campo Inteligente</title>
       </Head>
-      <div className={styles.loginContainer}>
-        {/* Painel da Esquerda com a Imagem Animada */}
-        <motion.div
-          className={styles.imagePanel}
-          initial={{ opacity: 0, x: -100 }} // Começa invisível e à esquerda
-          animate={{ opacity: 1, x: 0 }} // Aparece e desliza para a posição final
-          transition={{ duration: 0.8, ease: "easeOut" }}
-        />
-
-        {/* Painel da Direita com o Formulário */}
-        <div className={styles.formPanel}>
-          <div className={styles.formWrapper}>
+      {/* 2. A estrutura agora usa o Grid do Bootstrap */}
+      <Container fluid className={`${styles.loginContainer} p-0`}>
+        <Row className="g-0 vh-100">
+          {/* Painel da Imagem: Oculto em telas menores que 'lg' (992px) */}
+          <Col
+            lg={6}
+            className={`d-none d-lg-block ${styles.imagePanelWrapper}`}
+          >
             <motion.div
-              className={styles.logoContainer}
-              initial={{ opacity: 0, y: -50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }} // Atraso para animar depois da imagem
-            >
-              <Image
-                src="/imagens/logovector.png"
-                alt="Logo Campo Inteligente"
-                width={367}
-                height={264}
-              />
-            </motion.div>
+              className={styles.imagePanel}
+              initial={{ opacity: 0, x: -100 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            />
+          </Col>
 
-            <motion.form
-              onSubmit={handleLogin}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              {/* Campos do formulário... */}
-              <div className={styles.formGroup}>
-                <label htmlFor="email">Login:</label>
-                <input
-                  type="email"
-                  id="email"
-                  className={styles.input}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  placeholder="campointeligente@gmail.co"
-                />
-              </div>
-
-              <div className={styles.formGroup}>
-                <label htmlFor="password">Senha:</label>
-                <input
-                  type="password"
-                  id="password"
-                  className={styles.input}
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  placeholder="************"
-                />
-              </div>
-
-              <div className={styles.optionsRow}>
-                <div className={styles.checkboxContainer}>
-                  <input
-                    type="checkbox"
-                    id="remember-me"
-                    className={styles.customCheckbox}
-                  />
-                  <label htmlFor="remember-me">Manter-me conectado</label>
-                </div>
-                <Link href="/esqueci-a-senha" className={styles.link}>
-                  Esqueceu a senha?
-                </Link>
-              </div>
-
-              <button type="submit" className={styles.button}>
-                Entrar
-              </button>
-            </motion.form>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <Link
-                href="/criar-conta"
-                className={`${styles.link} ${styles.createAccountLink}`}
+          {/* Painel do Formulário: Ocupa a tela inteira em telas pequenas */}
+          <Col lg={4} className={styles.formPanel}>
+            <div className={styles.formWrapper}>
+              <motion.div
+                className={styles.logoContainer}
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
               >
-                Criar conta
-              </Link>
-            </motion.div>
-          </div>
-        </div>
-      </div>
+                <Image
+                  src="/imagens/logovector.png"
+                  alt="Logo Campo Inteligente"
+                  width={367 * 0.8}
+                  height={264 * 0.8}
+                />
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
+                {/* 3. O formulário agora usa componentes Form do Bootstrap */}
+                <Form onSubmit={handleLogin}>
+                  <Form.Group
+                    className={styles.formGroup}
+                    controlId="formEmail"
+                  >
+                    <Form.Label>Login:</Form.Label>
+                    <Form.Control
+                      type="email"
+                      placeholder="campointeligente@gmail.com"
+                      className={styles.input}
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+
+                  <Form.Group
+                    className={styles.formGroup}
+                    controlId="formPassword"
+                  >
+                    <Form.Label>Senha:</Form.Label>
+                    <Form.Control
+                      type="password"
+                      placeholder="************"
+                      className={styles.input}
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                      required
+                    />
+                  </Form.Group>
+
+                  <div className={styles.optionsRow}>
+                      <Form.Check
+                        type="checkbox"
+                        id="remember-me"
+                        label="Manter-me conectado"
+                        className={styles.customCheckboxContainer}
+                      />
+
+                    <Link href="/esqueci-a-senha" className={styles.link}>
+                      Esqueceu a senha?
+                    </Link>
+                  </div>
+
+                  <Button type="submit" className={styles.button}>
+                    Entrar
+                  </Button>
+                </Form>
+
+                <div className={`${styles.createAccountLink} mt-3`}>
+                  <Link href="/criar-conta" className={styles.link}>
+                    Criar conta
+                  </Link>
+                </div>
+              </motion.div>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 }

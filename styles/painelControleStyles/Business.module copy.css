@@ -1,34 +1,30 @@
 .loginContainer {
+  display: flex;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
   background-color: #e8f5e9;
 }
 
-/* NOVO: Wrapper para a coluna da imagem para garantir altura total */
-.imagePanelWrapper {
-  height: 100vh;
-  padding: 0;
-}
-
 .imagePanel {
-  width: 100%;
-  height: 100%;
+  flex: 0 0 34%;
   background-image: url("/imagens/background-painel.png");
   background-size: contain;
   background-repeat: no-repeat;
+  
 }
 
 .formPanel {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
-/* TODAS AS CLASSES ABAIXO FORAM MANTIDAS EXATAMENTE COMO VOCÊ ENVIOU */
 .formWrapper {
   width: 90%;
   max-width: 500px;
+ 
 }
 
 .logoContainer {
@@ -39,8 +35,7 @@
   margin-bottom: 20px;
 }
 
-.formGroup label,
-.formLabel {
+.formGroup label {
   display: block;
   font-size: 26;
   color: #004809;
@@ -56,13 +51,13 @@
   font-size: 1rem;
 }
 .input:focus {
+  outline: none;
   border-color: #127234;
-  background-color: rgba(76, 175, 80, 0.38);
   box-shadow: 0 0 0 2px rgba(18, 114, 52, 0.2);
 }
+
 .input::placeholder {
   color: #127234;
-  opacity: 0.3;
 }
 
 .optionsRow {
@@ -73,36 +68,28 @@
   font-size: 0.8rem;
 }
 
-.customCheckboxContainer {
+.checkboxContainer {
   display: flex;
   align-items: center;
   gap: 8px;
   color: #004809;
 }
 
-.customCheckboxContainer input[type="checkbox"] {
+.customCheckbox {
+  accent-color: #127234;
+  width: 14px;
+  height: 14px;
   cursor: pointer;
-  width: 1em;
-  height: 1em;
-}
-
-.customCheckboxContainer input[type="checkbox"]:checked {
-  background-color: #004809;
-  border-color: #004809;
-}
-
-.customCheckboxContainer input[type="checkbox"]:focus {
-  border-color: #004809;
-  box-shadow: 0 0 0 0.25rem rgba(0, 72, 9, 0.25);
 }
 
 .link {
   color: #004809;
+  text-decoration: none;
   font-weight: 500;
   text-decoration: underline;
 }
 .link:hover {
-  color: #e6cf35;
+  text-decoration: underline;
 }
 
 .button {
@@ -127,4 +114,15 @@
   display: block;
   text-align: center;
   margin-top: 20px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1500px) {
+  .imagePanel {
+    display: none;
+  }
+
+  .formPanel {
+    flex-basis: 100%; 
+  }
 }
