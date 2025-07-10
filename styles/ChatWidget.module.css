@@ -26,9 +26,10 @@
 }
 
 .chatWindow {
-  width: 350px;
-  height: 500px;
+  width: 400px;
+  height: 550px;
   background-color: white;
+  color: #0f5c2b;
   border-radius: 15px;
   box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
   display: flex;
@@ -41,14 +42,14 @@
 
 .chatHeader {
   background-color: #127234;
-  color: white;
+  color: #E8F5E9;
   padding: 15px;
   text-align: center;
   flex-shrink: 0;
 }
 .chatHeader h3 {
   margin: 0;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
 }
 .chatHeader p {
   margin: 0;
@@ -70,7 +71,6 @@
   white-space: nowrap;
   max-width: 800%;
   border-color: #ffffff;
-
 }
 
 .chatToggleButton {
@@ -105,13 +105,15 @@
   display: flex;
   align-items: flex-end;
   gap: 10px;
-  max-width: 85%;
+  max-width: 90%;
 }
 .message p {
-  padding: 10px 15px;
-  border-radius: 20px;
+  padding: 8px 12px; 
+  border-radius: 18px;
   margin: 0;
   word-wrap: break-word;
+  font-size: 0.8rem; 
+  line-height: 1.5; 
 }
 .message.user p {
   background-color: #dcf8c6;
@@ -147,8 +149,9 @@
 }
 .inputArea {
   display: flex;
-  padding: 10px;
+  padding: 5px;
   border-top: 1px solid #eee;
+  
 }
 .inputArea input {
   flex-grow: 1;
@@ -157,6 +160,7 @@
   border-radius: 20px;
   padding: 10px 15px;
   font-size: 1rem;
+  font-size: 0.9rem;
 }
 .inputArea input:focus {
   outline: none;
@@ -243,28 +247,25 @@
 
   .chatWindow {
     width: 100vw;
-    height: 100vh; 
-    max-height: 100vh; 
-    border-radius: 0; 
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
     bottom: 0;
     right: 0;
-    position: fixed; 
+    position: fixed;
     top: 0;
     left: 0;
   }
 
-
   .chatHeader {
     border-radius: 0;
-    padding-top: 30px; 
+    padding-top: 30px;
   }
-
 
   .closeButton {
     top: 20px;
     right: 20px;
   }
-
 
   .inputArea {
     padding: 15px;
@@ -277,16 +278,16 @@
   }
 
   .textBubble {
-    position: absolute; 
-    right: 75px; 
-    bottom: 30px; 
+    position: absolute;
+    right: 75px;
+    bottom: 30px;
     font-size: 0.7rem;
     white-space: nowrap;
     padding: 6px 10px;
-    white-space: nowrap; 
-    max-width: none; 
+    white-space: nowrap;
+    max-width: none;
     -webkit-line-clamp: unset;
-    padding: 6px 10px; 
+    padding: 6px 10px;
     line-clamp: none;
   }
 }

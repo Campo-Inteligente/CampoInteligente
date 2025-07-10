@@ -6,16 +6,22 @@ import Image from "next/image";
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState([
-    {
-      text: "Olá! Sou a Iagro, sua assistente virtual. Como posso ajudar?",
-      sender: "bot",
-    },
-  ]);
+  const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [convoStep, setConvoStep] = useState(0);
+
+  // 1. Estado para armazenar o ID da sessão do chat
+  const [sessionId, setSessionId] = useState(null);
+
   const messageListRef = useRef(null);
+
+  // 2. Efeito para carregar o ID da sessão do localStorage quando o componente é montado
+  useEffect(() => {
+    const savedSessionId = localStorage.getItem("iagro_session_id");
+    if (savedSessionId) {
+      setSessionId(savedSessionId);
+    }
+  }, []); // O array vazio [] garante que isso só rode uma vez
 
   // Efeito de scroll interno
   useEffect(() => {
@@ -24,44 +30,62 @@ export default function ChatWidget() {
     }
   }, [messages]);
 
-  // Função de mock...
-  const getMockResponse = (step, userInput) => {
-    switch (step) {
-      case 0:
-        setConvoStep(1);
-        return "Para começarmos, qual é o seu nome completo?";
-      case 1:
-        setConvoStep(2);
-        return `Prazer, ${userInput}! E qual o seu endereço?`;
-      case 2:
-        setConvoStep(0);
-        return `Entendi! Endereço registrado. Como posso te ajudar agora?`;
-      default:
-        setConvoStep(0);
-        return "Desculpe, não entendi.";
-    }
-  };
-
   const handleSend = async () => {
     if (input.trim() === "" || isLoading) return;
+
     const userMessage = { text: input, sender: "user" };
     setMessages((prev) => [...prev, userMessage]);
     const currentInput = input;
     setInput("");
     setIsLoading(true);
 
-    setTimeout(() => {
-      const botResponseText = getMockResponse(convoStep, currentInput);
-      const botMessage = { text: botResponseText, sender: "bot" };
+    // URL da sua API (usando a rota /webchat)
+    const API_URL = "https://793c29fe1c8c.ngrok-free.app/webchat";
+
+    try {
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          // Ngrok pode exigir este cabeçalho para evitar avisos
+          "ngrok-skip-browser-warning": "true",
+        },
+        body: JSON.stringify({
+          session_id: sessionId, // Envia o ID da sessão atual (pode ser null na primeira vez)
+          mensagem: currentInput,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Erro na API: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+
+      // Atualiza e armazena o novo ID da sessão retornado pela API
+      if (data.session_id) {
+        setSessionId(data.session_id);
+        localStorage.setItem("iagro_session_id", data.session_id);
+      }
+
+      const botMessage = { text: data.resposta, sender: "bot" };
       setMessages((prev) => [...prev, botMessage]);
+    } catch (error) {
+      console.error("Falha ao comunicar com o chatbot:", error);
+      const errorMessage = {
+        text: "Ops! Não consegui me conectar ao meu cérebro 🧠. Por favor, tente novamente mais tarde.",
+        sender: "bot",
+      };
+      setMessages((prev) => [...prev, errorMessage]);
+    } finally {
       setIsLoading(false);
-    }, 1500);
+    }
   };
 
   return (
     <div className={styles.Container}>
       <div className={styles.widgetContainer}>
-        {/* Janela do Chat (Animação com Framer Motion) */}
+        {/* Janela do Chat */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -72,8 +96,7 @@ export default function ChatWidget() {
               className={styles.chatWindow}
             >
               <div className={styles.chatHeader}>
-                <h3>Converse com a Iagro</h3>
-                <p>Sua assistente agrícola inteligente</p>
+                <h3>Como o Iagro pode te ajudar?</h3>
                 <button
                   className={styles.closeButton}
                   onClick={() => setIsOpen(false)}
@@ -91,8 +114,8 @@ export default function ChatWidget() {
                       <Image
                         src="/imagens/perfil.png"
                         alt="Avatar"
-                        width={40}
-                        height={40}
+                        width={30}
+                        height={30}
                         className={styles.avatar}
                       />
                     )}
@@ -104,8 +127,8 @@ export default function ChatWidget() {
                     <Image
                       src="/imagens/perfil.png"
                       alt="Avatar"
-                      width={40}
-                      height={40}
+                      width={30}
+                      height={30}
                       className={styles.avatar}
                     />
                     <div className={styles.loadingDots}>
@@ -137,17 +160,17 @@ export default function ChatWidget() {
           )}
         </AnimatePresence>
       </div>
-      {/* Gatilho para abrir o chat (só aparece quando o chat está fechado) */}
+      {/* Gatilho para abrir o chat */}
       <AnimatePresence>
         {!isOpen && (
           <motion.div
-            initial={{ opacity: 10, y: 20 }}
+            initial={{ opacity: 0, y: 5 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 20 }}
-            transition={{ duration: 0.3 }}
+            exit={{ opacity: 0, y: 5 }}
+            transition={{ duration: 0.8 }}
             className={styles.chatTrigger}
             onClick={() => setIsOpen(true)}
-            whileHover={{ scale: 1.10 }}
+            whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
             <span className={styles.textBubble}>Converse com o Iagro</span>
