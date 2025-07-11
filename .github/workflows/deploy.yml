@@ -1,28 +1,37 @@
-name: Deploy on main push
+name: Deploy on main push or manual run  # Nome do workflow que aparecerá no GitHub Actions
 
 on:
   push:
     branches:
-      - main  # Dispara quando houver push na branch main
+      - main  # Dispara automaticamente quando houver push na branch 'main'
+
+  workflow_dispatch:  # Permite a execução manual do workflow via botão no GitHub
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Define que o job será executado em um runner com Ubuntu
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v3
+      # Etapa 1: Faz o checkout do repositório para o runner
+      - name: Checkout repo
+        uses: actions/checkout@v3
 
-    - name: Setup SSH
-      uses: webfactory/ssh-agent@v0.5.4
-      with:
-        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+      # Etapa 2: Configura o agente SSH com a chave privada armazenada nos segredos do repositório
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-    - name: Deploy to server
-      run: |
-        ssh -p 21022 marcosmorais@campointeligente.ddns.com.br << 'EOF'
-          cd /var/www/campointeligente-site || exit 1
-          git fetch origin
-          git reset --hard origin/main
-          exit
-        EOF
+      # Etapa 3: Acessa o servidor remoto via SSH e executa os comandos de deploy
+      - name: Deploy to server
+        run: |
+          ssh -p 21022 marcosmorais@campointeligente.ddns.com.br << 'EOF'
+            # Navega até a pasta do projeto no servidor. Se não existir, gera erro.
+            cd /var/www/campointeligente-site || exit 1
+
+            # Atualiza a branch main diretamente do repositório remoto
+            git fetch origin
+            git reset --hard origin/main
+
+            exit
+          EOF
