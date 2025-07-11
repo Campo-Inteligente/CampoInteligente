@@ -1,4 +1,4 @@
-name: Deploy on main push or manual run  # Nome do workflow que aparecerá no GitHub Actions
+name: Executar Deploy on main push or manual run  # Nome do workflow que aparecerá no GitHub Actions
 
 on:
   push:
