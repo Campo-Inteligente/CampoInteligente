@@ -4,8 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../../styles/painelControleStyles/Business.module.css";
 import { motion } from "framer-motion";
-
-// 1. Importe os componentes do React Bootstrap
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 export default function LoginPage() {
@@ -49,10 +47,10 @@ export default function LoginPage() {
                 transition={{ duration: 0.8, delay: 0.2 }}
               >
                 <Image
-                  src="/imagens/logovector.png"
+                  src="/imagens/logo-business.svg"
                   alt="Logo Campo Inteligente"
-                  width={367 * 0.8}
-                  height={264 * 0.8}
+                  width={367 * 0.95}
+                  height={264 * 0.95}
                 />
               </motion.div>
 
@@ -94,14 +92,17 @@ export default function LoginPage() {
                   </Form.Group>
 
                   <div className={styles.optionsRow}>
-                      <Form.Check
-                        type="checkbox"
-                        id="remember-me"
-                        label="Manter-me conectado"
-                        className={styles.customCheckboxContainer}
-                      />
+                    <Form.Check
+                      type="checkbox"
+                      id="remember-me"
+                      label="Manter-me conectado"
+                      className={styles.customCheckboxContainer}
+                    />
 
-                    <Link href="/esqueci-a-senha" className={styles.link}>
+                    <Link
+                      href="/painelControle/forgotPassword"
+                      className={styles.link}
+                    >
                       Esqueceu a senha?
                     </Link>
                   </div>

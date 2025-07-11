@@ -25,15 +25,16 @@
   align-items: center;
 }
 
-/* TODAS AS CLASSES ABAIXO FORAM MANTIDAS EXATAMENTE COMO VOCÊ ENVIOU */
 .formWrapper {
-  width: 90%;
+  width: 100%;
   max-width: 500px;
+
 }
 
 .logoContainer {
   text-align: center;
 }
+
 
 .formGroup {
   margin-bottom: 20px;
@@ -42,9 +43,9 @@
 .formGroup label,
 .formLabel {
   display: block;
-  font-size: 26;
   color: #004809;
   margin-bottom: 7px;
+  text-align: left;
 }
 
 .input {
