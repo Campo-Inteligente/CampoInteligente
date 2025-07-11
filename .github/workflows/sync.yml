@@ -1,26 +1,42 @@
 name: Sync to CampoInteligente
 
 on:
-  push: # Gatilho para executar ao receber commits
+  push:
     branches:
-      - main # Executa apenas se o push for na branch main
-  schedule:
-    - cron: "*/30 * * * *" # Executa a cada 30 minutos
-  workflow_dispatch: # Permite execução manual
+      - main   # Executa automaticamente apenas com push na branch main
+  workflow_dispatch: # Permite execução manual via botão no GitHub
 
 jobs:
   mirror:
     runs-on: ubuntu-latest
 
     steps:
+      # Configura nome e e-mail global do Git (necessário para push)
       - name: Configurar Git
         run: |
           git config --global user.name "Marcos Morais"
           git config --global user.email "marcosmoraisjr@users.noreply.github.com"
 
+      # Clona o repositório de origem
       - name: Clonar repositório de origem
         run: |
           git clone https://marcosmoraisjr:${{ secrets.GH_PAT }}@github.com/restic36/startup-campo-inteligente-site.git source
+
+      # Verifica se houve mudanças antes de forçar o push para o destino
+      - name: Verificar e sincronizar se houver mudanças
+        run: |
           cd source
+
+          # Adiciona repositório de destino como remote
           git remote add destino https://marcosmoraisjr:${{ secrets.GH_PAT }}@github.com/marcosmoraisjr/CampoInteligente.git
-          git push --force destino main
+
+          # Busca o estado atual da branch main do destino
+          git fetch destino main
+
+          # Compara se há diferenças reais
+          if ! git diff --quiet origin/main destino/main; then
+            echo "Diferenças detectadas. Enviando sincronização..."
+            git push --force destino main
+          else
+            echo "Nenhuma mudança detectada. Sincronização não necessária."
+          fi
