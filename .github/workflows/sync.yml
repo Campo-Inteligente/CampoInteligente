@@ -1,42 +1,45 @@
-name: Sync to CampoInteligente
+name: Sync to CampoInteligente-Front
 
 on:
   push:
     branches:
-      - main   # Executa automaticamente apenas com push na branch main
-  workflow_dispatch: # Permite execução manual via botão no GitHub
+      - main  # Executa automaticamente com push na branch main
+  workflow_dispatch:        # Permite execução manual via GitHub Actions
 
 jobs:
   mirror:
     runs-on: ubuntu-latest
 
     steps:
-      # Configura nome e e-mail global do Git (necessário para push)
+      # Configura identidade do Git
       - name: Configurar Git
         run: |
           git config --global user.name "Marcos Morais"
           git config --global user.email "marcosmoraisjr@users.noreply.github.com"
 
-      # Clona o repositório de origem
-      - name: Clonar repositório de origem
-        run: |
-          git clone https://marcosmoraisjr:${{ secrets.GH_PAT }}@github.com/restic36/startup-campo-inteligente-site.git source
+      # Ativa o ssh-agent com a chave privada armazenada nos segredos
+      - name: Configurar ssh-agent
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      # Verifica se houve mudanças antes de forçar o push para o destino
-      - name: Verificar e sincronizar se houver mudanças
+      # Clona repositório de origem (FRONT) e sincroniza com o de destino se houver diferenças
+      - name: Clonar repositório de origem e sincronizar se necessário
         run: |
+          # Clona o repositório de origem (front-end)
+          git clone git@github.com:restic36/startup-campo-inteligente-site.git source
           cd source
 
-          # Adiciona repositório de destino como remote
-          git remote add destino https://marcosmoraisjr:${{ secrets.GH_PAT }}@github.com/marcosmoraisjr/CampoInteligente.git
+          # Adiciona repositório de destino
+          git remote add destino git@github.com:marcosmoraisjr/CampoInteligente.git
 
-          # Busca o estado atual da branch main do destino
+          # Busca o conteúdo da branch main do destino
           git fetch destino main
 
-          # Compara se há diferenças reais
-          if ! git diff --quiet origin/main destino/main; then
-            echo "Diferenças detectadas. Enviando sincronização..."
+          # Verifica se há diferenças antes de forçar o push
+          if ! git diff --quiet HEAD destino/main; then
+            echo "🚀 Diferenças detectadas. Iniciando sincronização..."
             git push --force destino main
           else
-            echo "Nenhuma mudança detectada. Sincronização não necessária."
+            echo "✅ Nenhuma diferença detectada. Sincronização não necessária."
           fi
