@@ -1,4 +1,4 @@
-name: Sync to CampoInteligente-Front
+name: Executar Sync to CampoInteligente-Front
 
 on:
   push:
