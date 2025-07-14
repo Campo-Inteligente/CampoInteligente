@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo ""
 echo "📦 Atualizando repositório..."
 
 # Garante que estamos no diretório correto
@@ -8,22 +9,45 @@ cd "$(dirname "$0")" || {
   exit 1
 }
 
-# Busca atualizações do GitHub
+# Verifica se há controle de versão Git
+if [ ! -d ".git" ]; then
+  echo "❌ Este diretório não é um repositório Git. Abortando."
+  exit 1
+fi
+
+# Atualiza a branch main
+echo "🔄 Buscando atualizações do repositório remoto..."
 git fetch origin
 
-# Reseta forçadamente para o estado mais recente da branch main
+echo "♻️ Resetando para o estado mais recente da main..."
 git reset --hard origin/main
 
-echo "✅ Projeto atualizado com sucesso!"
+# Instala dependências se necessário
+echo "📦 Instalando dependências..."
+npm install
+
+# Parando processos atuais do PM2
+echo "🛑 Parando processos PM2..."
+pm2 stop all
+
+# Build de produção
+echo "🔨 Gerando build de produção..."
+npm run build
+
+# Inicia com PM2 na porta 3000
+echo "🚀 Iniciando aplicação com PM2..."
+pm2 start ecosystem.config.js
+
+# Salva o estado para inicialização automática
+echo "💾 Salvando estado atual do PM2..."
+pm2 save
+
+# Exibe status
 echo ""
-echo " Parar todos os processos PM2 de uma vez:"
-echo " -pm2 stop all"
+echo "📋 Status do PM2:"
+pm2 list
+
 echo ""
-echo " Para por o projeto no ar execute..."
-echo " - npm run build"
-echo " - npm start"
+echo "✅ Projeto atualizado e rodando localmente na porta 3000"
+echo "🌐 Acesso externo via: http://campointeligente.ddns.com.br:21081/"
 echo ""
-echo " Para garantir que o Node suba após reinicialização do servidor:"
-echo " - pm2 startup"
-echo " - pm2 save"
-echo " - pm2 list"
