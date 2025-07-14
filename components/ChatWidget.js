@@ -9,21 +9,16 @@ export default function ChatWidget() {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
-  // 1. Estado para armazenar o ID da sessão do chat
   const [sessionId, setSessionId] = useState(null);
-
   const messageListRef = useRef(null);
 
-  // 2. Efeito para carregar o ID da sessão do localStorage quando o componente é montado
   useEffect(() => {
     const savedSessionId = localStorage.getItem("iagro_session_id");
     if (savedSessionId) {
       setSessionId(savedSessionId);
     }
-  }, []); // O array vazio [] garante que isso só rode uma vez
+  }, []);
 
-  // Efeito de scroll interno
   useEffect(() => {
     if (messageListRef.current) {
       messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
@@ -39,19 +34,14 @@ export default function ChatWidget() {
     setInput("");
     setIsLoading(true);
 
-    // URL da sua API (usando a rota /webchat)
-    const API_URL = "http://45.236.189.2:5000/webchat";
-
     try {
-      const response = await fetch(API_URL, {
+      const response = await fetch("/api/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          // Ngrok pode exigir este cabeçalho para evitar avisos
-          "ngrok-skip-browser-warning": "true",
         },
         body: JSON.stringify({
-          session_id: sessionId, // Envia o ID da sessão atual (pode ser null na primeira vez)
+          session_id: sessionId,
           mensagem: currentInput,
         }),
       });
@@ -62,7 +52,6 @@ export default function ChatWidget() {
 
       const data = await response.json();
 
-      // Atualiza e armazena o novo ID da sessão retornado pela API
       if (data.session_id) {
         setSessionId(data.session_id);
         localStorage.setItem("iagro_session_id", data.session_id);
