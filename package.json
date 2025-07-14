@@ -1,9 +1,9 @@
 {
   "name": "campo-inteligente",
   "description": "Campo Inteligente - Aplicativo de gestão agrícola para o campo inteligente",
-  "version": "1.50.24",
+  "version": "1.50.25",
   "commit": "d2f3df9",
-  "date": "2025-07-14T19:04:30.486Z",
+  "date": "2025-07-14T19:53:17.753Z",
   "tag": "v1.3.2",
   "private": true,
   "scripts": {
