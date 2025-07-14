@@ -113,7 +113,7 @@ export default function LoginPage() {
                 </Form>
 
                 <div className={`${styles.createAccountLink} mt-3`}>
-                  <Link href="/criar-conta" className={styles.link}>
+                  <Link href="/painelControle/signUp" className={styles.link}>
                     Criar conta
                   </Link>
                 </div>

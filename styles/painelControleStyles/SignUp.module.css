@@ -1,0 +1,178 @@
+.backgroundContainer {
+  min-height: 100vh;
+  width: 100%;
+  padding: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/imagens/background-business.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+.formCard {
+  max-width: 650px;
+  min-height: 600px;
+  width: 100%;
+  background-color: rgba(235, 245, 230, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  padding: 2rem;
+  overflow-y: auto;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  .backgroundContainer {
+    padding: 30px;
+  }
+  .formCard {
+    padding: 1.5rem;
+  }
+}
+
+.backButton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #004809;
+  border: 1px solid rgba(0, 72, 9, 0.2);
+  transition: background-color 0.2s ease, color 0.2s ease;
+  margin-top: 10px;
+}
+
+.backButton:hover {
+  background-color: #004809;
+  color: #ffffff;
+}
+
+.title {
+  color: #004809;
+  font-weight: bold;
+  text-align: start;
+  margin-left: 45px;
+}
+
+.instructions {
+  color: #127234;
+  font-size: 1rem;
+  text-align: center;
+  text-align: start;
+  margin-left: 45px;
+  font-size: 14px;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+  text-align: left;
+  max-width: 600px;
+}
+
+.formGroup label {
+  color: #004809;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.input,
+.input:-webkit-autofill {
+  /* Garante que o estilo aplique mesmo com preenchimento automático */
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid rgba(0, 72, 9, 0.2);
+  border: 0px;
+  border-radius: 10px;
+  background-color: rgba(76, 175, 80, 0.38);
+  font-size: 1rem;
+  color: #004809;
+  transition: all 0.2s ease-in-out;
+}
+
+.input:focus {
+  border-color: #127234;
+  background-color: rgba(76, 175, 80, 0.38);
+  box-shadow: 0 0 0 2px rgba(18, 114, 52, 0.2);
+}
+
+.input::placeholder {
+  color: #127234;
+  opacity: 0.3;
+}
+
+.checkboxGroup {
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+}
+
+.checkboxLabel {
+  color: #004809;
+  font-size: 0.9rem;
+}
+
+.checkboxInput {
+  border-color: #127234;
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+}
+.checkboxInput:checked {
+  background-color: #004809;
+  border-color: #004809;
+}
+
+.link {
+  color: #004809;
+  font-weight: bold;
+  text-decoration: underline;
+}
+.link:hover {
+  color: #e6cf35;
+}
+
+.button {
+  width: 60%;
+  max-width: 299px;
+  padding: 0.75rem;
+  background-color: #004809;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.button:hover {
+  background-color: #4caf50;
+}
+
+.footerLink {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #004809;
+  font-weight: 500;
+}
+
+.footerLink a {
+  color: #004809;
+  font-weight: 500;
+  text-decoration: underline;
+  margin-left: 5px; /* Espaço entre o texto e o link */
+}
+
+.footerLink a:hover {
+  color: #e6cf35;
+}
