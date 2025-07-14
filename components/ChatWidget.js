@@ -40,7 +40,7 @@ export default function ChatWidget() {
     setIsLoading(true);
 
     // URL da sua API (usando a rota /webchat)
-    const API_URL = "https://793c29fe1c8c.ngrok-free.app/webchat";
+    const API_URL = "http://45.236.189.2:5000/webchat";
 
     try {
       const response = await fetch(API_URL, {
