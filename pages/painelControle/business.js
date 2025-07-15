@@ -21,7 +21,6 @@ export default function LoginPage() {
       <Head>
         <title>Login | Campo Inteligente</title>
       </Head>
-      {/* 2. A estrutura agora usa o Grid do Bootstrap */}
       <Container fluid className={`${styles.loginContainer} p-0`}>
         <Row className="g-0 vh-100">
           {/* Painel da Imagem: Oculto em telas menores que 'lg' (992px) */}
