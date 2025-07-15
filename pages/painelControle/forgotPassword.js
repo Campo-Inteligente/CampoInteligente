@@ -68,8 +68,9 @@ export default function forgotPasswordPage() {
           </Form>
 
           <div className={styles.footerLink}>
+            Lembrou a senha?{" "}
             <Link href="/painelControle/business">
-              Lembrou a senha? Voltar para o Login
+              Voltar para o Login
             </Link>
           </div>
         </motion.div>
