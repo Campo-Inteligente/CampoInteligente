@@ -162,7 +162,7 @@ export default function ChatWidget() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className={styles.textBubble}>Converse com o Iagro</span>
+            <span className={styles.textBubble}>Olá! Vamos conversar ?</span>
             <Image
               src="/imagens/avatar.png"
               alt="Abrir Chat"
