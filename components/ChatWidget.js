@@ -73,7 +73,7 @@ export default function ChatWidget() {
         ];
 
         const mensagemAleatoria = mensagensErro[Math.floor(Math.random() * mensagensErro.length)];
-        const mensagemFinal = `${mensagemAleatoria}\n\nTenha paciência comigo, estou aprendendo a falar com humanos 😉🤖`;
+        const mensagemFinal = `${mensagemAleatoria}\n\n Tenha paciência comigo, estou aprendendo a falar com humanos 😉🤖`;
 
         const errorMessage = {
           text: mensagemFinal,
