@@ -177,7 +177,7 @@ export default function ChatWidget() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
-            <span className={styles.textBubble}>Olá! Vamos conversar ?</span>
+            <span className={styles.textBubble}>Bem-vindo! Sou o 🤖 IAGRO, seu assistente virtual especializado no agronegócio. Vamos esclarecer suas dúvidas sobre o agro?</span>
             <Image
               src="/imagens/avatar.png"
               alt="Abrir Chat"
