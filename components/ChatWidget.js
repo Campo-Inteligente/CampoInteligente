@@ -166,8 +166,8 @@ export default function ChatWidget() {
             <Image
               src="/imagens/avatar.png"
               alt="Abrir Chat"
-              width={100}
-              height={100}
+              width={200}
+              height={200}
               className={styles.triggerAvatar}
             />
           </motion.div>
