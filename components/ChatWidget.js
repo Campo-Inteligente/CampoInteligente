@@ -60,11 +60,28 @@ export default function ChatWidget() {
       const botMessage = { text: data.resposta, sender: "bot" };
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
-      console.error("Falha ao comunicar com o chatbot:", error);
-      const errorMessage = {
-        text: "Ops! Não consegui me conectar ao meu cérebro 🧠. Por favor, tente novamente mais tarde.",
-        sender: "bot",
-      };
+        console.error("Falha ao comunicar com o chatbot:", error);
+
+        const mensagensErro = [
+          "Uuups… minha mente deu um nó nos fios! Tenta de novo daqui a pouquinho.",
+          "Meu sistema foi colher umas ideias e se perdeu no campo! Volto já!",
+          "Conexão com os servidores foi tão instável quanto clima de trovoada. Por favor, tente novamente em instantes.",
+          "Recebi um ping… mas não consegui responder! Tente novamente em breve.",
+          "A inteligência aqui saiu pra buscar milho! Já já ela volta. Tente de novo mais tarde.",
+          "O sinal do campo ficou fraco... aguarde um pouquinho e me chame de novo.",
+          "Desculpe, não consegui processar sua mensagem agora. Tente novamente mais tarde.",
+        ];
+
+        const mensagemAleatoria = mensagensErro[Math.floor(Math.random() * mensagensErro.length)];
+        const mensagemFinal = `${mensagemAleatoria}\n\nTenha paciência comigo, estou aprendendo a falar com humanos 😉🤖`;
+
+        const errorMessage = {
+          text: mensagemFinal,
+          sender: "bot",
+        };
+
+        // Aqui você pode fazer algo com errorMessage, como exibir no chat
+      }
       setMessages((prev) => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
