@@ -79,9 +79,7 @@ export default function ChatWidget() {
           text: mensagemFinal,
           sender: "bot",
         };
-
-        // Aqui você pode fazer algo com errorMessage, como exibir no chat
-      }
+     
       setMessages((prev) => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
