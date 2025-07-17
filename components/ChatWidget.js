@@ -205,7 +205,7 @@ export default function ChatWidget() {
           >
             <span className={styles.textBubble}>
               🖐️ Olá! Sou o IAGRO, seu Assistente Virtual. 
-              <br />Estou por aqui para te ajudar no que precisar — conte comigo!             
+              <br />Estou aqui para ajudar — conte comigo!             
             </span>
 
             <Image
