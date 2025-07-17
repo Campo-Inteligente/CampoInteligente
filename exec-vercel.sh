@@ -47,3 +47,9 @@ fi
 echo "🔍 Verificando repositório remoto atual..."
 git remote -v
 git status
+
+echo ""
+echo "✅ Projeto atualizado e publicado."
+echo "🌐 Servidor de homologação: http://campointeligente.ddns.com.br:21081/"
+echo "🌐 Servidor de produção ..: http://campointeligente.agr.br/"
+echo ""
