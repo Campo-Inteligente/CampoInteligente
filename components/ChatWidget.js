@@ -64,13 +64,21 @@ export default function ChatWidget() {
         console.error("Falha ao comunicar com a API:", error);
 
         const mensagensErro = [
-          "Uuups… minha mente deu um nó nos fios! Tenta de novo daqui a pouquinho.",
-          "Meu sistema foi colher umas ideias e se perdeu no campo! Volto já!",
-          "Conexão com os servidores foi tão instável quanto clima de trovoada. Por favor, tente novamente em instantes.",
-          "Recebi um ping… mas não consegui responder! Tente novamente em breve.",
-          "A inteligência aqui saiu pra buscar milho! Já já ela volta. Tente de novo mais tarde.",
-          "O sinal do campo ficou fraco... aguarde um pouquinho e me chame de novo.",
-          "Desculpe, não consegui processar sua mensagem agora. Tente novamente mais tarde.",
+            "Me enrosquei nos cabo aqui... pensa num trem difícil!",
+            "Fui lá na roça buscar umas ideia... mas me perdi no mato.",
+            "A chuva caiu forte e embaralhou meu sistema que nem estrada de chão molhada.",
+            "Tentei responder, mas parecia mói de burro empacado… não saía nada!",
+            "Dei um bug aqui que nem galinha assustada com trovão.",
+            "Meu sinal tá mais fraco que café de beira de estrada.",
+            "Parece que alguém puxou o fio da minha cabeça... fiquei sem reação.",
+            "Saí correndo atrás de uns dado e voltei de mão abanando.",
+            "Meu sistema deu uma reviravolta que nem porco em dia de feira.",
+            "Os botão aqui travou tudo… acho que foi poeira do campo!",
+            "Tava indo bem, mas tropecei nos próprio código… ô lasqueira!",
+            "Me atrapalhei todo, igual cavalo bravo no curral apertado.",
+            "Fiquei rodando igual peão tonto sem rumo.",
+            "Pensei que dava conta, mas travei igual trator atolado na lama.",
+            "Caiu uma tempestade nos meus pensamento… eita confusão!",
         ];
       
         const usadas = JSON.parse(localStorage.getItem("mensagensUsadas") || "[]");
