@@ -60,6 +60,7 @@ export default function ChatWidget() {
       const botMessage = { text: data.resposta, sender: "bot" };
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
+
         console.error("Falha ao comunicar com a API:", error);
 
         const mensagensErro = [
@@ -71,16 +72,33 @@ export default function ChatWidget() {
           "O sinal do campo ficou fraco... aguarde um pouquinho e me chame de novo.",
           "Desculpe, não consegui processar sua mensagem agora. Tente novamente mais tarde.",
         ];
-
-        const mensagemAleatoria = mensagensErro[Math.floor(Math.random() * mensagensErro.length)];
-        const mensagemFinal = `${mensagemAleatoria}\n\n Tenha paciência comigo, estou aprendendo a falar com humanos 😉🤖`;
-
+      
+        const usadas = JSON.parse(localStorage.getItem("mensagensUsadas") || "[]");
+      
+        // Se todas já foram usadas, reseta
+        if (usadas.length === mensagensErro.length) {
+          localStorage.removeItem("mensagensUsadas");
+          usadas.length = 0;
+        }
+      
+        // Filtra mensagens ainda não usadas
+        const restantes = mensagensErro
+          .map((msg, index) => ({ msg, index }))
+          .filter(({ index }) => !usadas.includes(index));
+      
+        // Seleciona aleatoriamente uma das restantes
+        const aleatoria = restantes[Math.floor(Math.random() * restantes.length)];
+        usadas.push(aleatoria.index);
+        localStorage.setItem("mensagensUsadas", JSON.stringify(usadas));
+      
+        const mensagemFinal = `Tenha paciência comigo, estou aprendendo a falar com humanos 😉🤖\n\n${aleatoria.msg}`;
+      
         const errorMessage = {
           text: mensagemFinal,
           sender: "bot",
         };
-     
-      setMessages((prev) => [...prev, errorMessage]);
+      
+        setMessages((prev) => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
     }
