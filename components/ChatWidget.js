@@ -204,7 +204,7 @@ export default function ChatWidget() {
             whileTap={{ scale: 0.95 }}
           >
             <span className={styles.textBubble}>
-              Olá, Sou o IAGRO, seu Assistente Virtual!  
+              Olá, sou o IAGRO, seu Assistente Virtual!  
               <br />Estou a aqui para tentar te ajudar!              
             </span>
 
