@@ -60,7 +60,7 @@ export default function ChatWidget() {
       const botMessage = { text: data.resposta, sender: "bot" };
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
-        console.error("Falha ao comunicar com o chatbot:", error);
+        console.error("Falha ao comunicar com a API:", error);
 
         const mensagensErro = [
           "Uuups… minha mente deu um nó nos fios! Tenta de novo daqui a pouquinho.",
