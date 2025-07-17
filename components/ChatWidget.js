@@ -204,10 +204,8 @@ export default function ChatWidget() {
             whileTap={{ scale: 0.95 }}
           >
             <span className={styles.textBubble}>
-              Prazer! Sou o 🤖 IAGRO, seu assistente virtual 
-              <br />especializado no agronegócio.
-              <br />Vamos esclarecer suas 
-              <br />dúvidas sobre o agro?
+              Olá, Sou o IAGRO, seu Assistente Virtual!  
+              <br />Estou a aqui para tentar te ajudar!              
             </span>
 
             <Image
