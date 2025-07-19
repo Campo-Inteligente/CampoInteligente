@@ -42,3 +42,6 @@ yarn-error.log*  # Logs de erro do Yarn
 # Arquivos relacionados ao TypeScript
 *.tsbuildinfo    # Informações de build do TypeScript
 next-env.d.ts    # Configuração do ambiente para Next.js
+/generated/prisma
+
+/lib/generated/prisma

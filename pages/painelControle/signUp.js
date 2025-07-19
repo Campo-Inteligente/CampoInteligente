@@ -27,7 +27,7 @@ export default function SignUpPage() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (formData.password !== formData.confirmPassword) {
       alert("As senhas não correspondem!");
@@ -37,9 +37,30 @@ export default function SignUpPage() {
       alert("Você precisa aceitar os Termos de Serviço.");
       return;
     }
-    console.log("Dados do novo administrador:", formData);
-    alert(`Conta para ${formData.fullName} criada com sucesso! (Simulação)`);
-    router.push("/painelControle/business");
+
+    try {
+      const response = await fetch("/api/auth/signUp", {
+        // Chamada para a sua API Route
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert(
+          "Conta criada com sucesso! Você será redirecionado para o login."
+        );
+        router.push("/painelControle/business"); // Redireciona para a página de login
+      } else {
+        // Mostra a mensagem de erro vinda da API (ex: "E-mail já cadastrado")
+        alert(`Erro: ${result.message}`);
+      }
+    } catch (error) {
+      console.error("Erro ao criar conta:", error);
+      alert("Não foi possível conectar ao servidor. Tente novamente.");
+    }
   };
 
   return (
@@ -162,32 +183,31 @@ export default function SignUpPage() {
                 </Form.Group>
               </Col>
             </Row>
-            
 
             <Form.Group
               className={styles.checkboxGroup}
               controlId="termsAccepted"
             >
+              {/* --- ESTRUTURA CORRIGIDA AQUI --- */}
               <Form.Check
                 type="checkbox"
                 name="termsAccepted"
                 checked={formData.termsAccepted}
                 onChange={handleChange}
                 required
-              >
-                <Form.Check.Input
-                  type="checkbox"
-                  className={styles.checkboxInput}
-                />
-                <Form.Check.Label className={styles.checkboxLabel}>
-                  Eu li e aceito os{" "}
-                  <Link href="/termos-de-servico" legacyBehavior>
-                    <a target="_blank" className={styles.link}>
-                      Termos de Serviço
-                    </a>
-                  </Link>
-                </Form.Check.Label>
-              </Form.Check>
+                className={styles.checkboxLabel} // A classe de estilo vai aqui
+                label={
+                  // O conteúdo do label, incluindo o link, vai na prop 'label'
+                  <>
+                    Eu li e aceito os{" "}
+                    <Link href="/termos-de-servico" legacyBehavior>
+                      <a target="_blank" className={styles.link}>
+                        Termos de Serviço
+                      </a>
+                    </Link>
+                  </>
+                }
+              />
             </Form.Group>
 
             <Button type="submit" className={styles.button}>

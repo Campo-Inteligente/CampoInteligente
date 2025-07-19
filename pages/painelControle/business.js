@@ -4,16 +4,41 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "../../styles/painelControleStyles/Business.module.css";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    console.log({ email, password });
-    alert("Tentativa de login!");
+    try {
+      const response = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert("Login realizado com sucesso!");
+
+        // Salva o token e os dados do usuário no navegador
+        localStorage.setItem("authToken", result.token);
+        localStorage.setItem("userData", JSON.stringify(result.user));
+
+        // Redireciona para a página principal do painel de controle
+        router.push("/painelControle/dashboard");
+      } else {
+        alert(`Erro: ${result.message}`);
+      }
+    } catch (error) {
+      console.error("Erro no login:", error);
+      alert("Não foi possível conectar ao servidor. Tente novamente.");
+    }
   };
 
   return (
@@ -23,7 +48,6 @@ export default function LoginPage() {
       </Head>
       <Container fluid className={`${styles.loginContainer} p-0`}>
         <Row className="g-0 vh-100">
-          {/* Painel da Imagem: Oculto em telas menores que 'lg' (992px) */}
           <Col
             lg={6}
             className={`d-none d-lg-block ${styles.imagePanelWrapper}`}
@@ -36,7 +60,6 @@ export default function LoginPage() {
             />
           </Col>
 
-          {/* Painel do Formulário: Ocupa a tela inteira em telas pequenas */}
           <Col lg={4} className={styles.formPanel}>
             <div className={styles.formWrapper}>
               <motion.div
@@ -58,7 +81,6 @@ export default function LoginPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
               >
-                {/* 3. O formulário agora usa componentes Form do Bootstrap */}
                 <Form onSubmit={handleLogin}>
                   <Form.Group
                     className={styles.formGroup}
