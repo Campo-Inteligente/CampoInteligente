@@ -20,6 +20,20 @@ export default function ChatWidget() {
   }, []);
 
   useEffect(() => {
+    const setVh = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+
+    setVh();
+    window.addEventListener("resize", setVh); 
+
+    // Função de limpeza para remover o listener
+    return () => window.removeEventListener("resize", setVh);
+  }, []);
+
+
+  useEffect(() => {
     if (messageListRef.current) {
       messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
     }
@@ -60,53 +74,54 @@ export default function ChatWidget() {
       const botMessage = { text: data.resposta, sender: "bot" };
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
+      console.error("Falha ao comunicar com a API:", error);
 
-        console.error("Falha ao comunicar com a API:", error);
+      const mensagensErro = [
+        "Me enrosquei nos cabo aqui... pensa num trem difícil!",
+        "Fui lá na roça buscar umas ideia... mas me perdi no mato.",
+        "A chuva caiu forte e embaralhou meu sistema que nem estrada de chão molhada.",
+        "Tentei responder, mas parecia mói de burro empacado… não saía nada!",
+        "Dei um bug aqui que nem galinha assustada com trovão.",
+        "Meu sinal tá mais fraco que café de beira de estrada.",
+        "Parece que alguém puxou o fio da minha cabeça... fiquei sem reação.",
+        "Saí correndo atrás de uns dado e voltei de mão abanando.",
+        "Meu sistema deu uma reviravolta que nem porco em dia de feira.",
+        "Os botão aqui travou tudo… acho que foi poeira do campo!",
+        "Tava indo bem, mas tropecei nos próprio código… ô lasqueira!",
+        "Me atrapalhei todo, igual cavalo bravo no curral apertado.",
+        "Fiquei rodando igual peão tonto sem rumo.",
+        "Pensei que dava conta, mas travei igual trator atolado na lama.",
+        "Caiu uma tempestade nos meus pensamento… eita confusão!",
+      ];
 
-        const mensagensErro = [
-            "Me enrosquei nos cabo aqui... pensa num trem difícil!",
-            "Fui lá na roça buscar umas ideia... mas me perdi no mato.",
-            "A chuva caiu forte e embaralhou meu sistema que nem estrada de chão molhada.",
-            "Tentei responder, mas parecia mói de burro empacado… não saía nada!",
-            "Dei um bug aqui que nem galinha assustada com trovão.",
-            "Meu sinal tá mais fraco que café de beira de estrada.",
-            "Parece que alguém puxou o fio da minha cabeça... fiquei sem reação.",
-            "Saí correndo atrás de uns dado e voltei de mão abanando.",
-            "Meu sistema deu uma reviravolta que nem porco em dia de feira.",
-            "Os botão aqui travou tudo… acho que foi poeira do campo!",
-            "Tava indo bem, mas tropecei nos próprio código… ô lasqueira!",
-            "Me atrapalhei todo, igual cavalo bravo no curral apertado.",
-            "Fiquei rodando igual peão tonto sem rumo.",
-            "Pensei que dava conta, mas travei igual trator atolado na lama.",
-            "Caiu uma tempestade nos meus pensamento… eita confusão!",
-        ];
-      
-        const usadas = JSON.parse(localStorage.getItem("mensagensUsadas") || "[]");
-      
-        // Se todas já foram usadas, reseta
-        if (usadas.length === mensagensErro.length) {
-          localStorage.removeItem("mensagensUsadas");
-          usadas.length = 0;
-        }
-      
-        // Filtra mensagens ainda não usadas
-        const restantes = mensagensErro
-          .map((msg, index) => ({ msg, index }))
-          .filter(({ index }) => !usadas.includes(index));
-      
-        // Seleciona aleatoriamente uma das restantes
-        const aleatoria = restantes[Math.floor(Math.random() * restantes.length)];
-        usadas.push(aleatoria.index);
-        localStorage.setItem("mensagensUsadas", JSON.stringify(usadas));
-      
-        const mensagemFinal = `Tenha paciência comigo, estou aprendendo a falar com humanos 😉🤖\n\n${aleatoria.msg}`;
-      
-        const errorMessage = {
-          text: mensagemFinal,
-          sender: "bot",
-        };
-      
-        setMessages((prev) => [...prev, errorMessage]);
+      const usadas = JSON.parse(
+        localStorage.getItem("mensagensUsadas") || "[]"
+      );
+
+      // Se todas já foram usadas, reseta
+      if (usadas.length === mensagensErro.length) {
+        localStorage.removeItem("mensagensUsadas");
+        usadas.length = 0;
+      }
+
+      // Filtra mensagens ainda não usadas
+      const restantes = mensagensErro
+        .map((msg, index) => ({ msg, index }))
+        .filter(({ index }) => !usadas.includes(index));
+
+      // Seleciona aleatoriamente uma das restantes
+      const aleatoria = restantes[Math.floor(Math.random() * restantes.length)];
+      usadas.push(aleatoria.index);
+      localStorage.setItem("mensagensUsadas", JSON.stringify(usadas));
+
+      const mensagemFinal = `Tenha paciência comigo, estou aprendendo a falar com humanos 😉🤖\n\n${aleatoria.msg}`;
+
+      const errorMessage = {
+        text: mensagemFinal,
+        sender: "bot",
+      };
+
+      setMessages((prev) => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
     }
@@ -204,8 +219,9 @@ export default function ChatWidget() {
             whileTap={{ scale: 0.95 }}
           >
             <span className={styles.textBubble}>
-              🖐️ Olá! Sou o IAGRO, seu Assistente Virtual. 
-              <br />Estou aqui para ajudar — conte comigo!             
+              🖐️ Olá! Sou o IAGRO, seu Assistente Virtual.
+              <br />
+              Estou aqui para ajudar — conte comigo!
             </span>
 
             <Image
