@@ -11,10 +11,7 @@
 
 #!/bin/bash
 
-# Adicionar a chave ao agente SSH
-eval "$(ssh-agent -s)"
-ssh-add ~/.ssh/id_ed25519
-ssh -T git@github.com
+
 
 echo "📦 Pegando atualizações no github.com..."
 
