@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Image from 'next/image';
 import styles from '../../../styles/painelControleStyles/ChangePasswordModal.module.css';
 
 export default function ChangePasswordModal({ isOpen, onClose, onSuccess }) {
@@ -86,7 +87,13 @@ export default function ChangePasswordModal({ isOpen, onClose, onSuccess }) {
       <div className={styles.modalContent}>
         <div className={styles.modalHeader}>
           <div className={styles.titleContainer}>
-            <span className={styles.warningIcon}>&#9888;</span>
+            <Image
+              src="/imagens/alert-icon.svg"
+              alt="Ícone de Alerta"
+              width={24}
+              height={21}
+              className={styles.warningIcon}
+            />
             <h2 className={styles.title}>Trocar senha</h2>
           </div>
           <button onClick={handleCloseAndReset} className={styles.closeButton} disabled={loading}>

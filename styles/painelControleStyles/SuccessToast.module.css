@@ -16,7 +16,7 @@
   left: 50%;
   transform: translateX(-50%);
   z-index: 2000;
-  background-color: #4CAF50; /* Verde do design */
+  background-color: #4CAF50;
   color: white;
   padding: 1.25rem 2rem;
   border-radius: 12px;
