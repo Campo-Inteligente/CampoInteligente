@@ -5,10 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 
-import { LuSearch, LuBell, LuChevronDown } from "react-icons/lu";
-
-// --- COMPONENTES AUXILIARES ---
+import { LuSearch, LuBell, LuChevronDown, LuMenu, LuX } from "react-icons/lu";
 
 // Função para pegar as iniciais de um nome
 const getInitials = (name) => {
@@ -25,10 +24,64 @@ const UserAvatar = ({ name }) => (
   <div className={styles.avatarInitials}>{getInitials(name)}</div>
 );
 
+//Menu Overlay para Mobile
+const MobileNavOverlay = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1.2, ease: "easeOut" }}
+      className={`${styles.mobileMenuOverlay} ${isOpen ? styles.open : ""}`}
+      onClick={onClose}
+    >
+      <Link href="/painelControle/dashboard" className={styles.mobileNavLink}>
+        <Image
+          src="/imagens/dashboard-icon.svg"
+          alt="Dashboard"
+          width={28}
+          height={28}
+        />
+        Dashboard
+      </Link>
+      <Link
+        href="/painelControle/messageSquare"
+        className={styles.mobileNavLink}
+      >
+        <Image
+          src="/imagens/comunicacao-icon.svg"
+          alt="Comunicação"
+          width={28}
+          height={28}
+        />
+        Comunicação
+      </Link>
+      <Link href="/painelControle/users" className={styles.mobileNavLink}>
+        <Image
+          src="/imagens/usuarios-icon.svg"
+          alt="Usuários"
+          width={28}
+          height={28}
+        />
+        Usuários
+      </Link>
+      <Link href="/painelControle/settings" className={styles.mobileNavLink}>
+        <Image
+          src="/imagens/configuracoes-icon.svg"
+          alt="Configurações"
+          width={28}
+          height={28}
+        />
+        Configurações
+      </Link>
+    </motion.div>
+  );
+};
+
 // --- COMPONENTES PRINCIPAIS ---
 const Sidebar = () => {
   const pathname = usePathname();
-
   return (
     <aside className={styles.sidebar}>
       <div className={styles.sidebarHeader}>
@@ -133,82 +186,113 @@ const Sidebar = () => {
   );
 };
 
-const TopNavbar = ({ user }) => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const Header = ({ user, onMenuButtonClick }) => {
   const router = useRouter();
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const handleLogout = async () => {
     try {
       await fetch("/api/auth/logout");
     } catch (error) {
       console.error("Falha ao fazer logout:", error);
     } finally {
-      // Limpa dados do cliente e redireciona
       localStorage.removeItem("userData");
       router.push("/painelControle/business");
     }
   };
 
   if (!user) {
-    return <header className={styles.navbar}></header>;
+    return <header className={styles.header}></header>;
   }
 
+  useEffect(() => {
+    const handleClickOutside = () => setIsMenuOpen(false);
+    if (isMenuOpen) {
+      window.addEventListener("click", handleClickOutside);
+    }
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, [isMenuOpen]);
   return (
-    <header className={styles.navbar}>
-      <div className={styles.searchContainer}>
-        <input
-          type="text"
-          placeholder="Search..."
-          className={styles.searchInput}
-        />
-        <LuSearch size={20} className={styles.searchIcon} />
-      </div>
-      <div className={styles.navbarActions}>
-        <LuBell size={22} className={styles.notificationIcon} />
-        <div className={styles.profileWrapper}>
-          <div
-            className={styles.profileDropdown}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
+    // Adicionamos um onClick aqui para evitar que cliques dentro do header fechem o menu
+    <header className={styles.header} onClick={(e) => e.stopPropagation()}>
+      <div className="d-flex justify-content-between align-items-center w-100">
+        {/* --- LADO ESQUERDO (Busca no Desktop, Hamburger no Mobile) --- */}
+        {/* Ícone de Menu Hamburger (Mobile) */}
+        <div className="d-lg-none">
+          <button
+            onClick={onMenuButtonClick}
+            className={styles.hamburgerButton}
           >
-            <UserAvatar name={user.name || user.nome} />
+            <LuMenu />
+          </button>
+        </div>
+        {/* Barra de Busca (Desktop) */}
+        <div className="d-none d-lg-block flex-grow-1">
+          <div className={styles.searchContainer}>
+            <input
+              type="text"
+              placeholder="Search..."
+              className={styles.searchInput}
+            />
+            <LuSearch size={20} className={styles.searchIcon} />
+          </div>
+        </div>
 
-            <div className={styles.profileInfo}>
-              <span className={styles.profileWelcome}>Bem-vindo</span>
-              <span className={styles.profileName}>
-                {user.name || user.nome}
-              </span>
+        {/* --- LADO DIREITO (Notificações e Perfil) --- */}
+        <div className="d-flex align-items-center gap-3">
+          {/* Ícone de Notificação (Aparece em todas as telas) */}
+          <LuBell size={22} className={styles.notificationIcon} />
+
+          {/* Perfil (Desktop) */}
+          <div className="d-none d-lg-block">
+            <div
+              className={styles.profileDropdown}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              <UserAvatar name={user.name || user.nome} />
+              <div className={styles.profileInfo}>
+                <span className={styles.profileWelcome}>Bem-vindo</span>
+                <span className={styles.profileName}>
+                  {user.name || user.nome}
+                </span>
+              </div>
+              <LuChevronDown size={20} className={styles.profileChevron} />
             </div>
-            <LuChevronDown size={20} className={styles.profileChevron} />
           </div>
 
-          {isMenuOpen && (
-            <div className={styles.dropdownMenu}>
-              <Link
-                href="/painelControle/profile"
-                className={styles.dropdownItem}
-              >
-                <Image
-                  src="/imagens/perfil-icon.svg"
-                  alt="Meu Perfil"
-                  width={20}
-                  height={20}
-                />
-                <span>Meu perfil</span>
-              </Link>
-              <div className={styles.dropdownDivider} />
-              <button onClick={handleLogout} className={styles.dropdownItem}>
-                <Image
-                  src="/imagens/sair-icon.svg"
-                  alt="Sair"
-                  width={20}
-                  height={20}
-                />
-                <span>Sair</span>
-              </button>
-            </div>
-          )}
+          {/* Avatar (Mobile) */}
+          <div className="d-lg-none" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <UserAvatar name={user.name || user.nome} />
+          </div>
         </div>
       </div>
+
+      {/* --- MENU DROPDOWN (Renderizado fora dos containers de visibilidade) --- */}
+      {/* Agora ele é controlado pelo estado e posicionado com CSS */}
+      {isMenuOpen && (
+        <div className={styles.dropdownMenu}>
+          <Link href="/painelControle/profile" className={styles.dropdownItem}>
+            <Image
+              src="/imagens/perfil-icon.svg"
+              alt="Meu Perfil"
+              width={20}
+              height={20}
+            />
+            <span>Meu perfil</span>
+          </Link>
+          <div className={styles.dropdownDivider} />
+          <button onClick={handleLogout} className={styles.dropdownItem}>
+            <Image
+              src="/imagens/sairconta-icon.svg"
+              alt="Sair"
+              width={20}
+              height={20}
+            />
+            <span>Sair</span>
+          </button>
+        </div>
+      )}
     </header>
   );
 };
@@ -217,6 +301,7 @@ const TopNavbar = ({ user }) => {
 
 export default function PainelLayout({ children, user: initialUser }) {
   const [user, setUser] = useState(initialUser);
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     if (!initialUser) {
@@ -231,12 +316,17 @@ export default function PainelLayout({ children, user: initialUser }) {
       }
     }
   }, [initialUser]);
-
   return (
     <div className={styles.layoutContainer}>
       <Sidebar />
+
+      <MobileNavOverlay
+        isOpen={isMobileMenuOpen}
+        onClose={() => setMobileMenuOpen(false)}
+      />
+
       <div className={styles.mainContentWrapper}>
-        <TopNavbar user={user} />
+        <Header user={user} onMenuButtonClick={() => setMobileMenuOpen(true)} />
         <main className={styles.pageContent}>{children}</main>
       </div>
     </div>
