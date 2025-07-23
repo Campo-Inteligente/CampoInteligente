@@ -204,20 +204,10 @@ const Header = ({ user, onMenuButtonClick }) => {
     return <header className={styles.header}></header>;
   }
 
-  useEffect(() => {
-    const handleClickOutside = () => setIsMenuOpen(false);
-    if (isMenuOpen) {
-      window.addEventListener("click", handleClickOutside);
-    }
-    return () => {
-      window.removeEventListener("click", handleClickOutside);
-    };
-  }, [isMenuOpen]);
+
   return (
-    // Adicionamos um onClick aqui para evitar que cliques dentro do header fechem o menu
     <header className={styles.header} onClick={(e) => e.stopPropagation()}>
       <div className="d-flex justify-content-between align-items-center w-100">
-        {/* --- LADO ESQUERDO (Busca no Desktop, Hamburger no Mobile) --- */}
         {/* Ícone de Menu Hamburger (Mobile) */}
         <div className="d-lg-none">
           <button
@@ -241,7 +231,6 @@ const Header = ({ user, onMenuButtonClick }) => {
 
         {/* --- LADO DIREITO (Notificações e Perfil) --- */}
         <div className="d-flex align-items-center gap-3">
-          {/* Ícone de Notificação (Aparece em todas as telas) */}
           <LuBell size={22} className={styles.notificationIcon} />
 
           {/* Perfil (Desktop) */}
@@ -269,7 +258,6 @@ const Header = ({ user, onMenuButtonClick }) => {
       </div>
 
       {/* --- MENU DROPDOWN (Renderizado fora dos containers de visibilidade) --- */}
-      {/* Agora ele é controlado pelo estado e posicionado com CSS */}
       {isMenuOpen && (
         <div className={styles.dropdownMenu}>
           <Link href="/painelControle/profile" className={styles.dropdownItem}>
