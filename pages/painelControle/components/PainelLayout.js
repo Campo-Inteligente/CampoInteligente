@@ -4,23 +4,16 @@ import styles from "../../../styles/painelControleStyles/PainelLayout.module.css
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import {
-  LuLayoutDashboard,
-  LuMessageSquare,
-  LuUsers,
-  LuUser,
-  LuSettings,
-  LuLogOut,
-  LuSearch,
-  LuBell,
-  LuChevronDown,
-} from "react-icons/lu";
 import { useRouter } from "next/router";
+
+import { LuSearch, LuBell, LuChevronDown } from "react-icons/lu";
+
+// --- COMPONENTES AUXILIARES ---
 
 // Função para pegar as iniciais de um nome
 const getInitials = (name) => {
   if (!name || typeof name !== "string") return "?";
-  const nameParts = name.split(" ");
+  const nameParts = name.trim().split(" ");
   const firstNameInitial = nameParts[0] ? nameParts[0][0] : "";
   const lastNameInitial =
     nameParts.length > 1 ? nameParts[nameParts.length - 1][0] : "";
@@ -32,7 +25,7 @@ const UserAvatar = ({ name }) => (
   <div className={styles.avatarInitials}>{getInitials(name)}</div>
 );
 
-// Componente do Sidebar
+// --- COMPONENTES PRINCIPAIS ---
 const Sidebar = () => {
   const pathname = usePathname();
 
@@ -44,6 +37,7 @@ const Sidebar = () => {
           alt="Campo Inteligente Logo"
           width={200}
           height={60}
+          priority
         />
       </div>
       <nav className={styles.sidebarNav}>
@@ -56,7 +50,14 @@ const Sidebar = () => {
               : styles.navLink
           }
         >
-          <LuLayoutDashboard size={20} /> <span>Dashboard</span>
+          <Image
+            src="/imagens/dashboard-icon.svg"
+            alt="Dashboard"
+            width={20}
+            height={20}
+            className={styles.navLinkIcon}
+          />
+          <span>Dashboard</span>
         </Link>
         <Link
           href="/painelControle/messageSquare"
@@ -66,7 +67,13 @@ const Sidebar = () => {
               : styles.navLink
           }
         >
-          <LuMessageSquare size={20} /> <span>Comunicação</span>
+          <Image
+            src="/imagens/comunicacao-icon.svg"
+            alt="Comunicação"
+            width={20}
+            height={20}
+          />
+          <span>Comunicação</span>
         </Link>
         <Link
           href="/painelControle/users"
@@ -76,7 +83,13 @@ const Sidebar = () => {
               : styles.navLink
           }
         >
-          <LuUsers size={20} /> <span>Usuários</span>
+          <Image
+            src="/imagens/usuarios-icon.svg"
+            alt="Usuários"
+            width={20}
+            height={20}
+          />
+          <span>Usuários</span>
         </Link>
       </nav>
 
@@ -90,7 +103,13 @@ const Sidebar = () => {
               : styles.navLink
           }
         >
-          <LuSettings size={20} /> <span>Configurações</span>
+          <Image
+            src="/imagens/configuracoes-icon.svg"
+            alt="Configurações"
+            width={20}
+            height={20}
+          />
+          <span>Configurações</span>
         </Link>
 
         <Link
@@ -101,7 +120,13 @@ const Sidebar = () => {
               : styles.navLink
           }
         >
-          <LuSettings size={20} /> <span>Sobre</span>
+          <Image
+            src="/imagens/sobre-icon.svg"
+            alt="Sobre"
+            width={20}
+            height={20}
+          />
+          <span>Sobre</span>
         </Link>
       </div>
     </aside>
@@ -109,19 +134,23 @@ const Sidebar = () => {
 };
 
 const TopNavbar = ({ user }) => {
-  // Recebe 'user' como prop
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
 
-  const handleLogout = () => {
-    localStorage.removeItem("authToken");
-    localStorage.removeItem("userData");
-    router.push("/painelControle/business"); // Redireciona para o login
+  const handleLogout = async () => {
+    try {
+      await fetch("/api/auth/logout");
+    } catch (error) {
+      console.error("Falha ao fazer logout:", error);
+    } finally {
+      // Limpa dados do cliente e redireciona
+      localStorage.removeItem("userData");
+      router.push("/painelControle/business");
+    }
   };
 
-  // Se não houver usuário, pode mostrar um estado de carregamento ou nada
   if (!user) {
-    return <header className={styles.navbar}></header>; // Retorna uma navbar vazia enquanto carrega
+    return <header className={styles.navbar}></header>;
   }
 
   return (
@@ -141,32 +170,41 @@ const TopNavbar = ({ user }) => {
             className={styles.profileDropdown}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
-            <UserAvatar name={user.nome} />
+            <UserAvatar name={user.name || user.nome} />
 
             <div className={styles.profileInfo}>
               <span className={styles.profileWelcome}>Bem-vindo</span>
-              <span className={styles.profileName}>{user.nome}</span>
+              <span className={styles.profileName}>
+                {user.name || user.nome}
+              </span>
             </div>
             <LuChevronDown size={20} className={styles.profileChevron} />
           </div>
 
           {isMenuOpen && (
             <div className={styles.dropdownMenu}>
-                           {" "}
               <Link
-                href="/painelControle/perfil"
+                href="/painelControle/profile"
                 className={styles.dropdownItem}
               >
-                                <LuUser size={18} />               {" "}
-                <span>Meu perfil</span>             {" "}
+                <Image
+                  src="/imagens/perfil-icon.svg"
+                  alt="Meu Perfil"
+                  width={20}
+                  height={20}
+                />
+                <span>Meu perfil</span>
               </Link>
-                            <div className={styles.dropdownDivider} />         
-                 {" "}
-              <button className={styles.dropdownItem}>
-                                <LuLogOut size={18} />               {" "}
-                <span>Sair</span>             {" "}
+              <div className={styles.dropdownDivider} />
+              <button onClick={handleLogout} className={styles.dropdownItem}>
+                <Image
+                  src="/imagens/sair-icon.svg"
+                  alt="Sair"
+                  width={20}
+                  height={20}
+                />
+                <span>Sair</span>
               </button>
-                         {" "}
             </div>
           )}
         </div>
@@ -175,15 +213,24 @@ const TopNavbar = ({ user }) => {
   );
 };
 
-export default function PainelLayout({ children }) {
-  const [user, setUser] = useState(null);
+// --- COMPONENTE DE LAYOUT PRINCIPAL ---
+
+export default function PainelLayout({ children, user: initialUser }) {
+  const [user, setUser] = useState(initialUser);
 
   useEffect(() => {
-    const userDataString = localStorage.getItem("userData");
-    if (userDataString) {
-      setUser(JSON.parse(userDataString));
+    if (!initialUser) {
+      const userDataString = localStorage.getItem("userData");
+      if (userDataString) {
+        try {
+          setUser(JSON.parse(userDataString));
+        } catch (e) {
+          console.error("Erro ao ler dados do usuário do localStorage", e);
+          setUser(null);
+        }
+      }
     }
-  }, []);
+  }, [initialUser]);
 
   return (
     <div className={styles.layoutContainer}>
