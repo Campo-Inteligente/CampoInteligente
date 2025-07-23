@@ -1,0 +1,826 @@
+[1mdiff --git a/.env b/.env[m
+[1mindex 5d00d61..272a987 100644[m
+[1m--- a/.env[m
+[1m+++ b/.env[m
+[36m@@ -1,3 +1,8 @@[m
+ EMAIL_USER=startupcampointeligente@gmail.com[m
+ EMAIL_PASS=kvpgsvxidpkdmnoz[m
+[31m-EMAIL_TO=startupcampointeligente@gmail.com[m
+\ No newline at end of file[m
+[32m+[m[32mEMAIL_TO=startupcampointeligente@gmail.com[m
+[32m+[m
+[32m+[m
+[32m+[m
+[32m+[m[32mDATABASE_URL="postgresql://campo_user:cipass12bd@campointeligente.ddns.com.br:5432/campo_inteligente"[m
+[32m+[m[32mJWT_SECRET = admin123[m
+\ No newline at end of file[m
+[1mdiff --git a/.github/workflows/deploy.yml b/.github/workflows/deploy.yml[m
+[1mindex 8d734d7..337491e 100644[m
+[1m--- a/.github/workflows/deploy.yml[m
+[1m+++ b/.github/workflows/deploy.yml[m
+[36m@@ -1,37 +1,28 @@[m
+[31m-name: Executar Deploy on main push or manual run  # Nome do workflow que aparecerá no GitHub Actions[m
+[32m+[m[32mname: Deploy on main push[m
+ [m
+ on:[m
+   push:[m
+     branches:[m
+[31m-      - main  # Dispara automaticamente quando houver push na branch 'main'[m
+[31m-[m
+[31m-  workflow_dispatch:  # Permite a execução manual do workflow via botão no GitHub[m
+[32m+[m[32m      - main  # Dispara quando houver push na branch main[m
+ [m
+ jobs:[m
+   deploy:[m
+[31m-    runs-on: ubuntu-latest  # Define que o job será executado em um runner com Ubuntu[m
+[32m+[m[32m    runs-on: ubuntu-latest[m
+ [m
+     steps:[m
+[31m-      # Etapa 1: Faz o checkout do repositório para o runner[m
+[31m-      - name: Checkout repo[m
+[31m-        uses: actions/checkout@v3[m
+[31m-[m
+[31m-      # Etapa 2: Configura o agente SSH com a chave privada armazenada nos segredos do repositório[m
+[31m-      - name: Setup SSH[m
+[31m-        uses: webfactory/ssh-agent@v0.5.4[m
+[31m-        with:[m
+[31m-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}[m
+[31m-[m
+[31m-      # Etapa 3: Acessa o servidor remoto via SSH e executa os comandos de deploy[m
+[31m-      - name: Deploy to server[m
+[31m-        run: |[m
+[31m-          ssh -p 21022 marcosmorais@campointeligente.ddns.com.br << 'EOF'[m
+[31m-            # Navega até a pasta do projeto no servidor. Se não existir, gera erro.[m
+[31m-            cd /var/www/campointeligente-site || exit 1[m
+[31m-[m
+[31m-            # Atualiza a branch main diretamente do repositório remoto[m
+[31m-            git fetch origin[m
+[31m-            git reset --hard origin/main[m
+[31m-[m
+[31m-            exit[m
+[31m-          EOF[m
+[32m+[m[32m    - name: Checkout repo[m
+[32m+[m[32m      uses: actions/checkout@v3[m
+[32m+[m
+[32m+[m[32m    - name: Setup SSH[m
+[32m+[m[32m      uses: webfactory/ssh-agent@v0.5.4[m
+[32m+[m[32m      with:[m
+[32m+[m[32m        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}[m
+[32m+[m
+[32m+[m[32m    - name: Deploy to server[m
+[32m+[m[32m      run: |[m
+[32m+[m[32m        ssh -p 21022 marcosmorais@campointeligente.ddns.com.br << 'EOF'[m
+[32m+[m[32m          cd /var/www/campointeligente-site || exit 1[m
+[32m+[m[32m          git fetch origin[m
+[32m+[m[32m          git reset --hard origin/main[m
+[32m+[m[32m          exit[m
+[32m+[m[32m        EOF[m
+[1mdiff --git a/.github/workflows/sync.yml b/.github/workflows/sync.yml[m
+[1mindex ca20f55..6e6de76 100644[m
+[1m--- a/.github/workflows/sync.yml[m
+[1m+++ b/.github/workflows/sync.yml[m
+[36m@@ -1,45 +1,26 @@[m
+[31m-name: Executar Sync to CampoInteligente-Front[m
+[32m+[m[32mname: Sync to CampoInteligente[m
+ [m
+ on:[m
+[31m-  push:[m
+[32m+[m[32m  push: # Gatilho para executar ao receber commits[m
+     branches:[m
+[31m-      - main  # Executa automaticamente com push na branch main[m
+[31m-  workflow_dispatch:        # Permite execução manual via GitHub Actions[m
+[32m+[m[32m      - main # Executa apenas se o push for na branch main[m
+[32m+[m[32m  schedule:[m
+[32m+[m[32m    - cron: "*/30 * * * *" # Executa a cada 30 minutos[m
+[32m+[m[32m  workflow_dispatch: # Permite execução manual[m
+ [m
+ jobs:[m
+   mirror:[m
+     runs-on: ubuntu-latest[m
+ [m
+     steps:[m
+[31m-      # Configura identidade do Git[m
+       - name: Configurar Git[m
+         run: |[m
+           git config --global user.name "Marcos Morais"[m
+           git config --global user.email "marcosmoraisjr@users.noreply.github.com"[m
+ [m
+[31m-      # Ativa o ssh-agent com a chave privada armazenada nos segredos[m
+[31m-      - name: Configurar ssh-agent[m
+[31m-        uses: webfactory/ssh-agent@v0.5.4[m
+[31m-        with:[m
+[31m-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}[m
+[31m-[m
+[31m-      # Clona repositório de origem (FRONT) e sincroniza com o de destino se houver diferenças[m
+[31m-      - name: Clonar repositório de origem e sincronizar se necessário[m
+[32m+[m[32m      - name: Clonar repositório de origem[m
+         run: |[m
+[31m-          # Clona o repositório de origem (front-end)[m
+[31m-          git clone git@github.com:restic36/startup-campo-inteligente-site.git source[m
+[32m+[m[32m          git clone https://marcosmoraisjr:${{ secrets.GH_PAT }}@github.com/restic36/startup-campo-inteligente-site.git source[m
+           cd source[m
+[31m-[m
+[31m-          # Adiciona repositório de destino[m
+[31m-          git remote add destino git@github.com:marcosmoraisjr/CampoInteligente.git[m
+[31m-[m
+[31m-          # Busca o conteúdo da branch main do destino[m
+[31m-          git fetch destino main[m
+[31m-[m
+[31m-          # Verifica se há diferenças antes de forçar o push[m
+[31m-          if ! git diff --quiet HEAD destino/main; then[m
+[31m-            echo "🚀 Diferenças detectadas. Iniciando sincronização..."[m
+[31m-            git push --force destino main[m
+[31m-          else[m
+[31m-            echo "✅ Nenhuma diferença detectada. Sincronização não necessária."[m
+[31m-          fi[m
+[32m+[m[32m          git remote add destino https://marcosmoraisjr:${{ secrets.GH_PAT }}@github.com/marcosmoraisjr/CampoInteligente.git[m
+[32m+[m[32m          git push --force destino main[m
+[1mdiff --git a/.github/workflows/update-readme.yml b/.github/workflows/update-readme.yml[m
+[1mindex 636ea82..ff6b0e7 100644[m
+[1m--- a/.github/workflows/update-readme.yml[m
+[1m+++ b/.github/workflows/update-readme.yml[m
+[36m@@ -3,15 +3,17 @@[m [mname: Executar update-readme.py[m
+ on:[m
+   push:[m
+     branches:[m
+[31m-      - main  # Executa automaticamente apenas com push na branch main[m
+[31m-  workflow_dispatch:  # Permite execução manual via botão no GitHub Actions[m
+[32m+[m[32m      - main[m
+[32m+[m[32m  schedule:[m
+[32m+[m[32m    - cron: '*/30 * * * *'  # Executa a cada 30 minutos[m
+[32m+[m[32m  workflow_dispatch:         # Permite execução manual[m
+ [m
+ jobs:[m
+   run-script:[m
+     runs-on: ubuntu-latest[m
+ [m
+     permissions:[m
+[31m-      contents: write  # Permite escrever no repositório (necessário para o push)[m
+[32m+[m[32m      contents: write  # Permite fazer push no repositório[m
+ [m
+     steps:[m
+       # Passo 1: Fazer checkout do código[m
+[36m@@ -24,7 +26,7 @@[m [mjobs:[m
+         with:[m
+           python-version: '3.11'[m
+ [m
+[31m-      # Passo 3: Ajustar fuso horário para Brasília[m
+[32m+[m[32m      # Passo 3: Ajustar timezone para Brasília[m
+       - name: Ajustar fuso horário para Brasília[m
+         run: |[m
+           sudo apt-get update[m
+[36m@@ -32,7 +34,7 @@[m [mjobs:[m
+           sudo ln -fs /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime[m
+           sudo dpkg-reconfigure -f noninteractive tzdata[m
+ [m
+[31m-      # Passo 4: Instalar dependências necessárias para o script[m
+[32m+[m[32m      # Passo 4: Instalar dependências[m
+       - name: Instalar pytz[m
+         run: pip install pytz[m
+ [m
+[36m@@ -40,20 +42,23 @@[m [mjobs:[m
+       - name: Executar update-readme.py[m
+         run: python .github/workflows/update-readme.py[m
+ [m
+[31m-      # Passo 6: Configurar Git para commit automático[m
+[32m+[m[32m      # Passo 6: Configurar Git[m
+       - name: Configurar Git[m
+         run: |[m
+           git config user.name "github-actions[bot]"[m
+           git config user.email "github-actions[bot]@users.noreply.github.com"[m
+ [m
+[31m-      # Passo 7: Fazer commit e push apenas se houver mudanças reais[m
+[32m+[m[32m      # Passo 7: Commit e push se houver mudanças[m
+       - name: Commit e push do README.md e versao.txt[m
+         run: |[m
+           if [ -z "$(git status --porcelain)" ]; then[m
+             echo '✅ Nenhuma mudança detectada. Nada a fazer.'[m
+           else[m
+             echo '🚀 Mudanças detectadas. Comitando arquivos...'[m
+[32m+[m
+[32m+[m[32m            # Adiciona todos os arquivos modificados[m
+             git add .[m
+[32m+[m
+             git commit -m '📄 Atualização automática do README.md via GitHub Actions'[m
+ [m
+             echo "🔄 Tentando rebase antes do push..."[m
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mindex a1d6a8c..9ae06dd 100644[m
+[1m--- a/.gitignore[m
+[1m+++ b/.gitignore[m
+[36m@@ -41,4 +41,7 @@[m [myarn-error.log*  # Logs de erro do Yarn[m
+ [m
+ # Arquivos relacionados ao TypeScript[m
+ *.tsbuildinfo    # Informações de build do TypeScript[m
+[31m-next-env.d.ts    # Configuração do ambiente para Next.js[m
+\ No newline at end of file[m
+[32m+[m[32mnext-env.d.ts    # Configuração do ambiente para Next.js[m
+[32m+[m[32m/generated/prisma[m
+[32m+[m
+[32m+[m[32m/lib/generated/prisma[m
+[1mdiff --git a/TUTORIAL.md b/TUTORIAL.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..01b1c4e[m
+[1m--- /dev/null[m
+[1m+++ b/TUTORIAL.md[m
+[36m@@ -0,0 +1,92 @@[m
+[32m+[m[32m## 🧑‍💻 **Como Contribuir**[m
+[32m+[m
+[32m+[m[32mContribuições são sempre bem-vindas! Para colaborar com o projeto, siga os passos abaixo:[m
+[32m+[m
+[32m+[m[32m### 1. **Faça um Fork do Repositório**[m
+[32m+[m
+[32m+[m[32mClique no botão **Fork** no canto superior direito deste repositório para criar uma cópia do repositório em sua conta do GitHub.[m
+[32m+[m
+[32m+[m[32m### 2. **Clone o Repositório**[m
+[32m+[m
+[32m+[m[32mClone o repositório na sua máquina local para começar a trabalhar:[m
+[32m+[m
+[32m+[m[32m```bash[m
+[32m+[m[32mgit clone https://github.com/seu-usuario/CampoInteligente.git[m
+[32m+[m[32mcd CampoInteligente[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m### 3. **Crie uma Branch para Sua Contribuição**[m
+[32m+[m
+[32m+[m[32mCrie uma nova branch para a sua contribuição, garantindo que seu trabalho seja mantido separado da branch principal:[m
+[32m+[m
+[32m+[m[32m```bash[m
+[32m+[m[32mgit checkout -b minha-contribuicao[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m### 4. **Realize as Alterações Necessárias**[m
+[32m+[m
+[32m+[m[32mSinta-se à vontade para editar, corrigir ou adicionar novos recursos à aplicação conforme sua necessidade.[m
+[32m+[m
+[32m+[m[32m### 5. **Commit e Push das Alterações**[m
+[32m+[m
+[32m+[m[32mAdicione suas alterações e faça o commit com uma mensagem descritiva:[m
+[32m+[m
+[32m+[m[32m```bash[m
+[32m+[m[32mgit add .[m
+[32m+[m[32mgit commit -m "Descrição das mudanças realizadas"[m
+[32m+[m[32mgit push origin minha-contribuicao[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m### 6. **Crie um Pull Request (PR)**[m
+[32m+[m
+[32m+[m[32mApós realizar o push da sua branch, acesse seu repositório no GitHub e crie um **Pull Request**. Compare a sua branch com a branch principal (`main`) do repositório original e envie para revisão.[m
+[32m+[m
+[32m+[m[32m---[m
+[32m+[m
+[32m+[m[32m## 🛠️ **Como Rodar Localmente**[m
+[32m+[m
+[32m+[m[32mPara rodar a aplicação localmente em seu ambiente de desenvolvimento, siga os passos abaixo.[m
+[32m+[m
+[32m+[m[32m### **Pré-requisitos**[m
+[32m+[m
+[32m+[m[32mCertifique-se de ter o seguinte instalado:[m
+[32m+[m
+[32m+[m[32m- **Node.js** (versão LTS recomendada)[m
+[32m+[m[32m- **npm** ou **yarn** (gerenciador de pacotes)[m
+[32m+[m
+[32m+[m[32m### **Passos para Executar o Projeto Localmente**[m
+[32m+[m
+[32m+[m[32m1. **Instale as dependências do projeto**:[m
+[32m+[m
+[32m+[m[32m```bash[m
+[32m+[m[32mnpm install[m
+[32m+[m[32mnpm install framer-motion[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m2. **Construa o projeto**:[m
+[32m+[m
+[32m+[m[32m```bash[m
+[32m+[m[32mnpx next build[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m3. **Execute a aplicação localmente**:[m
+[32m+[m
+[32m+[m[32m```bash[m
+[32m+[m[32mnpm run dev     --Modo de Desenvolvimento[m
+[32m+[m[32mnpm run build   --Compilação para Produção[m
+[32m+[m[32mnpm run start   --Modo de Visualização[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m4. **Acesse a aplicação**:[m
+[32m+[m
+[32m+[m[32mAbra o navegador e acesse `http://localhost:3000` para ver a aplicação em funcionamento.[m
+[32m+[m
+[32m+[m[32m5. **Atualize o repositório**:[m
+[32m+[m
+[32m+[m[32mApós realizar alterações e verificar que tudo está funcionando localmente, envie suas modificações para o GitHub:[m
+[32m+[m
+[32m+[m[32m```bash[m
+[32m+[m[32mgit add .[m
+[32m+[m[32mgit commit -m "Mensagem explicando as mudanças"[m
+[32m+[m[32mgit push origin minha-contribuicao[m
+[32m+[m[32m```[m
+[1mdiff --git a/VERSIONS.md b/VERSIONS.md[m
+[1mnew file mode 100644[m
+[1mindex 0000000..e636c15[m
+[1m--- /dev/null[m
+[1m+++ b/VERSIONS.md[m
+[36m@@ -0,0 +1,69 @@[m
+[32m+[m
+[32m+[m[32m# 📦 VERSIONS.md[m
+[32m+[m
+[32m+[m[32m### Versão: 0.146.0 (31ab060)[m
+[32m+[m
+[32m+[m[32mEste documento registra as versões utilizadas no projeto **campo-inteligente** para garantir consistência e facilitar a manutenção entre os ambientes de desenvolvimento e produção.[m
+[32m+[m[32m---[m
+[32m+[m
+[32m+[m[32m## 🧰 Ferramentas e Bibliotecas[m
+[32m+[m
+[32m+[m[32m| Dependência                        | Versão    | Tipo            |[m
+[32m+[m[32m|------------------------------------|-----------|------------------|[m
+[32m+[m[32m| next                               | ^15.3.0   | dependência      |[m
+[32m+[m[32m| react                              | 19.0.0    | dependência      |[m
+[32m+[m[32m| react-dom                          | 19.0.0    | dependência      |[m
+[32m+[m[32m| bootstrap                          | ^5.3.5    | dependência      |[m
+[32m+[m[32m| react-bootstrap                    | ^2.10.9   | dependência      |[m
+[32m+[m[32m| @popperjs/core                     | ^2.11.8   | dependência      |[m
+[32m+[m[32m| @fortawesome/fontawesome-svg-core  | ^6.7.2    | dependência      |[m
+[32m+[m[32m| @fortawesome/free-brands-svg-icons | ^6.7.2    | dependência      |[m
+[32m+[m[32m| @fortawesome/react-fontawesome     | ^0.2.2    | dependência      |[m
+[32m+[m[32m| framer-motion                      | ^12.7.4   | dependência      |[m
+[32m+[m[32m| next-images                        | ^1.8.5    | dependência      |[m
+[32m+[m[32m| nodemailer                         | ^6.10.0   | dependência      |[m
+[32m+[m[32m| eslint                             | 9.23.0    | devDependência   |[m
+[32m+[m[32m| eslint-config-next                 | 15.2.3    | devDependência   |[m
+[32m+[m
+[32m+[m[32m---[m
+[32m+[m
+[32m+[m[32m## 📁 Padrões de Arquivos[m
+[32m+[m
+[32m+[m[32m- `package.json`: Declara as dependências e scripts do projeto.[m
+[32m+[m[32m- `package-lock.json`: 🔒 Garante a instalação das **mesmas versões exatas** em todas as máquinas e servidores.[m
+[32m+[m
+[32m+[m[32m> ✅ **Sempre comitar ambos os arquivos após qualquer alteração de dependência.**[m
+[32m+[m
+[32m+[m[32m---[m
+[32m+[m
+[32m+[m[32m## 🏗️ Instruções para rodar o projeto[m
+[32m+[m
+[32m+[m[32m**1. Instalar dependências:**[m
+[32m+[m[32m```bash[m
+[32m+[m[32mnpm install[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m**2. Construir o projeto:**[m
+[32m+[m[32m```bash[m
+[32m+[m[32mnpx next build[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m**3. Rodar localmente:**[m
+[32m+[m[32m```bash[m
+[32m+[m[32mnpm run dev[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m**4. Acessar no navegador:**[m
+[32m+[m[32m```[m
+[32m+[m[32mhttp://localhost:3000[m
+[32m+[m[32m```[m
+[32m+[m
+[32m+[m[32m---[m
+[32m+[m
+[32m+[m[32m## 🔄 Boas práticas[m
+[32m+[m
+[32m+[m[32m- ❗ Não atualize versões sem antes consultar a equipe.[m
+[32m+[m[32m- 📄 Em caso de inclusão de novas bibliotecas, registre neste arquivo (`VERSIONS.md`).[m
+[32m+[m[32m- 🔄 Sempre mantenha `package-lock.json` sincronizado e versionado no GitHub.[m
+[32m+[m
+[32m+[m[32m---[m
+[1mdiff --git a/atualizar-site.sh b/atualizar-site.sh[m
+[1mnew file mode 100755[m
+[1mindex 0000000..e881d95[m
+[1m--- /dev/null[m
+[1m+++ b/atualizar-site.sh[m
+[36m@@ -0,0 +1,18 @@[m
+[32m+[m[32m#!/bin/bash[m
+[32m+[m
+[32m+[m[32mecho "📦 Atualizando repositório..."[m
+[32m+[m
+[32m+[m[32m# Garante que estamos no diretório correto[m
+[32m+[m[32mcd "$(dirname "$0")" || {[m
+[32m+[m[32m  echo "❌ Erro ao acessar diretório do projeto."[m
+[32m+[m[32m  exit 1[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m[32m# Busca atualizações do GitHub[m
+[32m+[m[32mgit fetch origin[m
+[32m+[m
+[32m+[m[32m# Reseta forçadamente para o estado mais recente da branch main[m
+[32m+[m[32mgit reset --hard origin/main[m
+[32m+[m
+[32m+[m[32mecho "✅ Projeto atualizado com sucesso!"[m
+[32m+[m
+[1mdiff --git a/exec-baixar.bat b/baixar-atualizacao.bat[m
+[1msimilarity index 93%[m
+[1mrename from exec-baixar.bat[m
+[1mrename to baixar-atualizacao.bat[m
+[1mindex 93d576b..b46ef23 100644[m
+[1m--- a/exec-baixar.bat[m
+[1m+++ b/baixar-atualizacao.bat[m
+[36m@@ -2,4 +2,4 @@[m
+ git pull origin main --rebase[m
+ [m
+ echo Repositório local atualizado com sucesso![m
+[31m-pause[m
+\ No newline at end of file[m
+[32m+[m[32mpause[m
+[1mdiff --git a/components/ChatWidget.js b/components/ChatWidget.js[m
+[1mdeleted file mode 100644[m
+[1mindex 56a8e67..0000000[m
+[1m--- a/components/ChatWidget.js[m
+[1m+++ /dev/null[m
+[36m@@ -1,223 +0,0 @@[m
+[31m-import { useState, useEffect, useRef } from "react";[m
+[31m-import styles from "../styles/ChatWidget.module.css";[m
+[31m-import { motion, AnimatePresence } from "framer-motion";[m
+[31m-import { LuSendHorizontal, LuX } from "react-icons/lu";[m
+[31m-import Image from "next/image";[m
+[31m-[m
+[31m-export default function ChatWidget() {[m
+[31m-  const [isOpen, setIsOpen] = useState(false);[m
+[31m-  const [messages, setMessages] = useState([]);[m
+[31m-  const [input, setInput] = useState("");[m
+[31m-  const [isLoading, setIsLoading] = useState(false);[m
+[31m-  const [sessionId, setSessionId] = useState(null);[m
+[31m-  const messageListRef = useRef(null);[m
+[31m-[m
+[31m-  useEffect(() => {[m
+[31m-    const savedSessionId = localStorage.getItem("iagro_session_id");[m
+[31m-    if (savedSessionId) {[m
+[31m-      setSessionId(savedSessionId);[m
+[31m-    }[m
+[31m-  }, []);[m
+[31m-[m
+[31m-  useEffect(() => {[m
+[31m-    if (messageListRef.current) {[m
+[31m-      messageListRef.current.scrollTop = messageListRef.current.scrollHeight;[m
+[31m-    }[m
+[31m-  }, [messages]);[m
+[31m-[m
+[31m-  const handleSend = async () => {[m
+[31m-    if (input.trim() === "" || isLoading) return;[m
+[31m-[m
+[31m-    const userMessage = { text: input, sender: "user" };[m
+[31m-    setMessages((prev) => [...prev, userMessage]);[m
+[31m-    const currentInput = input;[m
+[31m-    setInput("");[m
+[31m-    setIsLoading(true);[m
+[31m-[m
+[31m-    try {[m
+[31m-      const response = await fetch("/api/chat", {[m
+[31m-        method: "POST",[m
+[31m-        headers: {[m
+[31m-          "Content-Type": "application/json",[m
+[31m-        },[m
+[31m-        body: JSON.stringify({[m
+[31m-          session_id: sessionId,[m
+[31m-          mensagem: currentInput,[m
+[31m-        }),[m
+[31m-      });[m
+[31m-[m
+[31m-      if (!response.ok) {[m
+[31m-        throw new Error(`Erro na API: ${response.statusText}`);[m
+[31m-      }[m
+[31m-[m
+[31m-      const data = await response.json();[m
+[31m-[m
+[31m-      if (data.session_id) {[m
+[31m-        setSessionId(data.session_id);[m
+[31m-        localStorage.setItem("iagro_session_id", data.session_id);[m
+[31m-      }[m
+[31m-[m
+[31m-      const botMessage = { text: data.resposta, sender: "bot" };[m
+[31m-      setMessages((prev) => [...prev, botMessage]);[m
+[31m-    } catch (error) {[m
+[31m-[m
+[31m-        console.error("Falha ao comunicar com a API:", error);[m
+[31m-[m
+[31m-        const mensagensErro = [[m
+[31m-            "Me enrosquei nos cabo aqui... pensa num trem difícil!",[m
+[31m-            "Fui lá na roça buscar umas ideia... mas me perdi no mato.",[m
+[31m-            "A chuva caiu forte e embaralhou meu sistema que nem estrada de chão molhada.",[m
+[31m-            "Tentei responder, mas parecia mói de burro empacado… não saía nada!",[m
+[31m-            "Dei um bug aqui que nem galinha assustada com trovão.",[m
+[31m-            "Meu sinal tá mais fraco que café de beira de estrada.",[m
+[31m-            "Parece que alguém puxou o fio da minha cabeça... fiquei sem reação.",[m
+[31m-            "Saí correndo atrás de uns dado e voltei de mão abanando.",[m
+[31m-            "Meu sistema deu uma reviravolta que nem porco em dia de feira.",[m
+[31m-            "Os botão aqui travou tudo… acho que foi poeira do campo!",[m
+[31m-            "Tava indo bem, mas tropecei nos próprio código… ô lasqueira!",[m
+[31m-            "Me atrapalhei todo, igual cavalo bravo no curral apertado.",[m
+[31m-            "Fiquei rodando igual peão tonto sem rumo.",[m
+[31m-            "Pensei que dava conta, mas travei igual trator atolado na lama.",[m
+[31m-            "Caiu uma tempestade nos meus pensamento… eita confusão!",[m
+[31m-        ];[m
+[31m-      [m
+[31m-        const usadas = JSON.parse(localStorage.getItem("mensagensUsadas") || "[]");[m
+[31m-      [m
+[31m-        // Se todas já foram usadas, reseta[m
+[31m-        if (usadas.length === mensagensErro.length) {[m
+[31m-          localStorage.removeItem("mensagensUsadas");[m
+[31m-          usadas.length = 0;[m
+[31m-        }[m
+[31m-      [m
+[31m-        // Filtra mensagens ainda não usadas[m
+[31m-        const restantes = mensagensErro[m
+[31m-          .map((msg, index) => ({ msg, index }))[m
+[31m-          .filter(({ index }) => !usadas.includes(index));[m
+[31m-      [m
+[31m-        // Seleciona aleatoriamente uma das restantes[m
+[31m-        const aleatoria = restantes[Math.floor(Math.random() * restantes.length)];[m
+[31m-        usadas.push(aleatoria.index);[m
+[31m-        localStorage.setItem("mensagensUsadas", JSON.stringify(usadas));[m
+[31m-      [m
+[31m-        const mensagemFinal = `Tenha paciência comigo, estou aprendendo a falar com humanos 😉🤖\n\n${aleatoria.msg}`;[m
+[31m-      [m
+[31m-        const errorMessage = {[m
+[31m-          text: mensagemFinal,[m
+[31m-          sender: "bot",[m
+[31m-        };[m
+[31m-      [m
+[31m-        setMessages((prev) => [...prev, errorMessage]);[m
+[31m-    } finally {[m
+[31m-      setIsLoading(false);[m
+[31m-    }[m
+[31m-  };[m
+[31m-[m
+[31m-  return ([m
+[31m-    <div className={styles.Container}>[m
+[31m-      <div className={styles.widgetContainer}>[m
+[31m-        {/* Janela do Chat */}[m
+[31m-        <AnimatePresence>[m
+[31m-          {isOpen && ([m
+[31m-            <motion.div[m
+[31m-              initial={{ opacity: 0, y: 20, scale: 0.95 }}[m
+[31m-              animate={{ opacity: 1, y: 0, scale: 1 }}[m
+[31m-              exit={{ opacity: 0, y: 20, scale: 0.95 }}[m
+[31m-              transition={{ duration: 0.2, ease: "easeOut" }}[m
+[31m-              className={styles.chatWindow}[m
+[31m-            >[m
+[31m-              <div className={styles.chatHeader}>[m
+[31m-                <h3>Como o Iagro pode te ajudar?</h3>[m
+[31m-                <button[m
+[31m-                  className={styles.closeButton}[m
+[31m-                  onClick={() => setIsOpen(false)}[m
+[31m-                >[m
+[31m-                  <LuX size={20} />[m
+[31m-                </button>[m
+[31m-              </div>[m
+[31m-              <div ref={messageListRef} className={styles.messageList}>[m
+[31m-                {messages.map((msg, index) => ([m
+[31m-                  <div[m
+[31m-                    key={index}[m
+[31m-                    className={`${styles.message} ${styles[msg.sender]}`}[m
+[31m-                  >[m
+[31m-                    {msg.sender === "bot" && ([m
+[31m-                      <Image[m
+[31m-                        src="/imagens/perfil.png"[m
+[31m-                        alt="Avatar"[m
+[31m-                        width={30}[m
+[31m-                        height={30}[m
+[31m-                        className={styles.avatar}[m
+[31m-                      />[m
+[31m-                    )}[m
+[31m-                    <p>{msg.text}</p>[m
+[31m-                  </div>[m
+[31m-                ))}[m
+[31m-                {isLoading && ([m
+[31m-                  <div className={`${styles.message} ${styles.bot}`}>[m
+[31m-                    <Image[m
+[31m-                      src="/imagens/perfil.png"[m
+[31m-                      alt="Avatar"[m
+[31m-                      width={30}[m
+[31m-                      height={30}[m
+[31m-                      className={styles.avatar}[m
+[31m-                    />[m
+[31m-                    <div className={styles.loadingDots}>[m
+[31m-                      <span></span>[m
+[31m-                      <span></span>[m
+[31m-                      <span></span>[m
+[31m-                    </div>[m
+[31m-                  </div>[m
+[31m-                )}[m
+[31m-              </div>[m
+[31m-              <div className={styles.inputArea}>[m
+[31m-                <input[m
+[31m-                  type="text"[m
+[31m-                  value={input}[m
+[31m-                  onChange={(e) => setInput(e.target.value)}[m
+[31m-                  onKeyPress={(e) => e.key === "Enter" && handleSend()}[m
+[31m-                  placeholder="Digite sua mensagem..."[m
+[31m-                  disabled={isLoading}[m
+[31m-                />[m
+[31m-                <button[m
+[31m-                  onClick={handleSend}[m
+[31m-                  disabled={isLoading}[m
+[31m-                  className={styles.sendButton}[m
+[31m-                >[m
+[31m-                  <LuSendHorizontal size={20} />[m
+[31m-                </button>[m
+[31m-              </div>[m
+[31m-            </motion.div>[m
+[31m-          )}[m
+[31m-        </AnimatePresence>[m
+[31m-      </div>[m
+[31m-      {/* Gatilho para abrir o chat */}[m
+[31m-      <AnimatePresence>[m
+[31m-        {!isOpen && ([m
+[31m-          <motion.div[m
+[31m-            initial={{ opacity: 0, y: 5 }}[m
+[31m-            animate={{ opacity: 1, y: 0 }}[m
+[31m-            exit={{ opacity: 0, y: 5 }}[m
+[31m-            transition={{ duration: 0.8 }}[m
+[31m-            className={styles.chatTrigger}[m
+[31m-            onClick={() => setIsOpen(true)}[m
+[31m-            whileHover={{ scale: 1.1 }}[m
+[31m-            whileTap={{ scale: 0.95 }}[m
+[31m-          >[m
+[31m-            <span className={styles.textBubble}>[m
+[31m-              🖐️ Olá! Sou o IAGRO, seu Assistente Virtual. [m
+[31m-              <br />Estou aqui para ajudar — conte comigo!             [m
+[31m-            </span>[m
+[31m-[m
+[31m-            <Image[m
+[31m-              src="/imagens/avatar.png"[m
+[31m-              alt="Abrir Chat"[m
+[31m-              width={200}[m
+[31m-              height={200}[m
+[31m-              className={styles.triggerAvatar}[m
+[31m-            />[m
+[31m-          </motion.div>[m
+[31m-        )}[m
+[31m-      </AnimatePresence>[m
+[31m-    </div>[m
+[31m-  );[m
+[31m-}[m
+[1mdiff --git a/components/Navbar.js b/components/Navbar.js[m
+[1mindex e1f6e11..73bcb75 100644[m
+[1m--- a/components/Navbar.js[m
+[1m+++ b/components/Navbar.js[m
+[36m@@ -34,17 +34,15 @@[m [mexport default function Navbar() {[m
+         className={styles.logo}[m
+       >[m
+         <Link href="/">[m
+[31m-         <Image[m
+[31m-          src="/imagens/Logo.png"[m
+[31m-          alt="Campo Inteligente" [m
+[31m-          width={200}[m
+[31m-           height={50} [m
+[31m-           priority [m
+[31m-           style={{cursor: 'pointer'}}[m
+[31m-             />[m
+[31m-        [m
+[32m+[m[32m          <Image[m
+[32m+[m[32m            src="/imagens/Logo.png"[m
+[32m+[m[32m            alt="Campo Inteligente"[m
+[32m+[m[32m            width={200}[m
+[32m+[m[32m            height={50}[m
+[32m+[m[32m            priority[m
+[32m+[m[32m            style={{ cursor: "pointer" }}[m
+[32m+[m[32m          />[m
+         </Link>[m
+[31m-       [m
+       </motion.div>[m
+ [m
+       {/* Botão menu hamburguer */}[m
+[36m@@ -71,6 +69,9 @@[m [mexport default function Navbar() {[m
+           <li>[m
+             <Link href="/contato">Contato</Link>[m
+           </li>[m
+[32m+[m[32m          <li>[m
+[32m+[m[32m            <Link href="painelControle/business">Business</Link>[m
+[32m+[m[32m          </li>[m
+         </ul>[m
+       </motion.nav>[m
+     </motion.header>[m
+[1mdiff --git a/documentos/Diagrama atividades/Diagrama atividades - Gerenciar Estoque.png b/documentos/Diagrama atividades/Diagrama atividades - Gerenciar Estoque.png[m
+[1mdeleted file mode 100644[m
+[1mindex 0bde9e4..0000000[m
+Binary files a/documentos/Diagrama atividades/Diagrama atividades - Gerenciar Estoque.png and /dev/null differ
+[1mdiff --git a/documentos/Diagrama atividades/Diagrama de Atividades - Registrar Safra.png b/documentos/Diagrama atividades/Diagrama de Atividades - Registrar Safra.png[m
+[1mdeleted file mode 100644[m
+[1mindex a5a9afa..0000000[m
+Binary files a/documentos/Diagrama atividades/Diagrama de Atividades - Registrar Safra.png and /dev/null differ
+[1mdiff --git "a/documentos/Diagrama atividades/Diagrama de atividades  intera\303\247\303\265es chatbot.png" "b/documentos/Diagrama atividades/Diagrama de atividades  intera\303\247\303\265es chatbot.png"[m
+[1mdeleted file mode 100644[m
+[1mindex 85f27f8..0000000[m
+Binary files "a/documentos/Diagrama atividades/Diagrama de atividades  intera\303\247\303\265es chatbot.png" and /dev/null differ
+[1mdiff --git "a/documentos/Diagrama atividades/Diagrama de atividades - Gerar relat\303\263rio de intera\303\247\303\265es.png" "b/documentos/Diagrama atividades/Diagrama de atividades - Gerar relat\303\263rio de intera\303\247\303\265es.png"[m
+[1mdeleted file mode 100644[m
+[1mindex 0a60658..0000000[m
+Binary files "a/documentos/Diagrama atividades/Diagrama de atividades - Gerar relat\303\263rio de intera\303\247\303\265es.png" and /dev/null differ
+[1mdiff --git a/documentos/Diagrama atividades/Diagrama de atividades - Gerenciar administradores.png b/documentos/Diagrama atividades/Diagrama de atividades - Gerenciar administradores.png[m
+[1mdeleted file mode 100644[m
+[1mindex c900efe..0000000[m
+Binary files a/documentos/Diagrama atividades/Diagrama de atividades - Gerenciar administradores.png and /dev/null differ
+[1mdiff --git "a/documentos/Diagrama atividades/Diagrama de atividades - Vinncular agricultor a orgnaiza\303\247\303\243o final.png" "b/documentos/Diagrama atividades/Diagrama de atividades - Vinncular agricultor a orgnaiza\303\247\303\243o final.png"[m
+[1mdeleted file mode 100644[m
+[1mindex 4b3df08..0000000[m
+Binary files "a/documentos/Diagrama atividades/Diagrama de atividades - Vinncular agricultor a orgnaiza\303\247\303\243o final.png" and /dev/null differ
+[1mdiff --git a/documentos/Diagrama atividades/Diagrama de atividades - cadastro chatbot.png b/documentos/Diagrama atividades/Diagrama de atividades - cadastro chatbot.png[m
+[1mdeleted file mode 100644[m
+[1mindex 397a0ee..0000000[m
+Binary files a/documentos/Diagrama atividades/Diagrama de atividades - cadastro chatbot.png and /dev/null differ
+[1mdiff --git a/documentos/Diagrama caso de uso.png b/documentos/Diagrama caso de uso.png[m
+[1mdeleted file mode 100644[m
+[1mindex 45f6ad5..0000000[m
+Binary files a/documentos/Diagrama caso de uso.png and /dev/null differ
+[1mdiff --git a/documentos/Diagrama de classes/Diagrama de classes.png b/documentos/Diagrama de classes/Diagrama de classes.png[m
+[1mdeleted file mode 100644[m
+[1mindex 4805501..0000000[m
+Binary files a/documentos/Diagrama de classes/Diagrama de classes.png and /dev/null differ
+[1mdiff --git "a/documentos/Diagrama de estado/Diagrama de estado - Conversa\303\247\303\265es - N\303\203O EST\303\201 FINALIZADO.png" "b/documentos/Diagrama de estado/Diagrama de estado - Conversa\303\247\303\265es - N\303\203O EST\303\201 FINALIZADO.png"[m
+[1mdeleted file mode 100644[m
+[1mindex 3b2bcdc..0000000[m
+Binary files "a/documentos/Diagrama de estado/Diagrama de estado - Conversa\303\247\303\265es - N\303\203O EST\303\201 FINALIZADO.png" and /dev/null differ
+[1mdiff --git a/documentos/Diagrama de estado/Diagrama de estado - Estoque.png b/documentos/Diagrama de estado/Diagrama de estado - Estoque.png[m
+[1mdeleted file mode 100644[m
+[1mindex 5a7eb7b..0000000[m
+Binary files a/documentos/Diagrama de estado/Diagrama de estado - Estoque.png and /dev/null differ
+[1mdiff --git a/documentos/Diagrama de estado/diagrama de estado agricultor.png b/documentos/Diagrama de estado/diagrama de estado agricultor.png[m
+[1mdeleted file mode 100644[m
+[1mindex 6ebc36f..0000000[m
+Binary files a/documentos/Diagrama de estado/diagrama de estado agricultor.png and /dev/null differ
+[1mdiff --git a/documentos/Diagrama_ER.png b/documentos/Diagrama_ER.png[m
+[1mdeleted file mode 100644[m
+[1mindex 1a2e89e..0000000[m
+Binary files a/documentos/Diagrama_ER.png and /dev/null differ
+[1mdiff --git "a/documentos/Documenta\303\247\303\243o Backend - Weavetrip(atualizada).pdf" "b/documentos/Documenta\303\247\303\243o Backend - Weavetrip(atualizada).pdf"[m
+[1mdeleted file mode 100644[m
+[1mindex 301e982..0000000[m
+[1m--- "a/documentos/Documenta\303\247\303\243o Backend - Weavetrip(atualizada).pdf"[m	
+[1m+++ /dev/null[m
+[36m@@ -1,2391 +0,0 @@[m
+[31m-Documentação Backend[m
+[31m-        - WeaveTrip -[m
+[31m-[m
+[31m-           Diego Silva Oliveira[m
+[31m-        Edivan Figueiredo Braga[m
+[31m- Eduardo Caetano de Souza Junior[m
+[31m-         Fernando Silva Ferreira[m
+[31m-    Franklin Xavier Ramos Santos[m
+[31m-         Geisa de Souza Santos[m
+[31m-     Marcus Vítor Souza Cardoso[m
+[31m-        Marcos Morais de Sousa[m
+[31m-SUMÁRIO[m
+[31m-[m
+[31m-1. VISÃO GERAL DO DOCUMENTO......................................................................................2[m
+[31m-2. OBJETIVO DO SISTEMA....................................................................................................2[m
+[31m-3. TECNOLOGIAS E FERRAMENTAS UTILIZADAS.............................................................4[m
+[31m-[m
+[31m-    3.1 Linguagens de Programação e Versões..................................................................... 4[m
+[31m-    3.2 Frameworks Principais................................................................................................. 5[m
+[31m-    3.3 Bibliotecas e Dependências Adicionais........................................................................6[m
+[31m-    3.4 Ferramentas de Testes e Qualidade de Código...........................................................8[m
+[31m-4. REFERÊNCIAS E FONTES DE CONSULTA.................................................................... 11[m
+[31m-5. ARQUITETURA DO SISTEMA.......................................................................................... 11[m
+[31m-    5.1 Modelo Arquitetural Adotado......................................................................................12[m
+[31m-    5.2 Organização Estrutural do Projeto............................................................................. 14[m
+[31m-    5.3 Funcionalidades, Módulos e Regras de negócio....................................................... 15[m
+[31m-[m
+[31m-         5.3.1 Users................................................................................................................. 16[m
+[31m-         5.3.2 Travel Package..................................................................................................20[m
+[31m-         5.3.3 Media Package..................................................................................................25[m
+[31m-         5.3.4 Reservation....................................................................................................... 29[m
+[31m-         5.3.5 Payment............................................................................................................ 36[m
+[31m-6. CAMADAS E RESPONSABILIDADES............................................................................. 41[m
+[31m-7. GESTÃO DE CONFIGURAÇÕES E AMBIENTES........................................................... 43[m
+[31m-8. SEGURANÇA.................................................................................................................... 45[m
+[31m-9. TRATAMENTO DE ERROS E LOGS................................................................................ 46[m
+[31m-10. BANCO DE DADOS E MODELOS DE DADOS............................................................. 47[m
+[31m-11. ENDPOINTS E API CONTRACT..................................................................................... 50[m
+[31m-12. MANUAL DE INSTALAÇÃO E USO............................................................................... 52[m
+[31m-    12.1. Tecnologias Utilizadas.............................................................................................52[m
+[31m-    12.2. Instalação em Ambiente Local................................................................................ 53[m
+[31m-    12.3. Instalação com Docker............................................................................................54[m
+[31m-    12.4. Deploy em Servidor.................................................................................................54[m
+[31m-    12.5. Gerenciamento de Logs e Manutenção.................................................................. 56[m
+[31m-    12.6. Boas Práticas em Produção....................................................................................57[m
+[31m-13. CONSIDERAÇÕES FINAIS E TRABALHOS FUTUROS............................................... 58[m
+[31m-14. REFERÊNCIAS............................................................................................................... 58[m
+[31m-[m
+[31m-                                                                                                                          1[m
+[31m-1. VISÃO GERAL DO DOCUMENTO[m
+[31m-[m
+[31m-         Este documento tem como principal objetivo apresentar, de forma clara e[m
+[31m-detalhada, a estrutura, funcionalidades e regras de negócio da API desenvolvida[m
+[31m-para o sistema WeaveTrip. A finalidade da documentação é servir como uma fonte[m
+[31m-de referência técnica para todos os envolvidos no desenvolvimento, manutenção,[m
+[31m-testes e integração da aplicação, garantindo o alinhamento entre as equipes e[m
+[31m-facilitando futuras expansões ou correções.[m
+[31m-[m
+[31m-         A documentação descreve os principais módulos do backend, incluindo[m
+[31m-entidades como usuários, reservas, pacotes de viagem e mídias associadas,[m
+[31m-abordando desde os fluxos básicos de criação e consulta até as regras específicas[m
+[31m-de validação, permissões de acesso e controle de integridade. Também são[m
+[31m-cobertos aspectos importantes como autenticação, controle de sessões, estrutura[m
+[31m-de banco de dados e rotas de acesso (REST e GraphQL).[m
+[31m-[m
+[31m-         O escopo deste material está restrito ao backend do sistema WeaveTrip, não[m
+[31m-abrangendo componentes de frontend web ou mobile. Essa delimitação garante que[m
+[31m-a documentação seja focada
