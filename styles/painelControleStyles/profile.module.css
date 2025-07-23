@@ -1,0 +1,178 @@
+/* Container principal com a cor de fundo exata e espaçamento generoso */
+.perfilContainer {
+  background-color: #ffffff; /* Verde bem claro de fundo, como na imagem */
+  margin-top: 20px;
+  padding: 2.5rem; /* Mais espaçamento interno */
+  border-radius: 12px;
+  font-family: 'Poppins', sans-serif;
+  color: #374151; /* Cinza escuro para o texto, mais suave que preto */
+  width: 100%; /* Ocupa toda a largura do wrapper */
+  height: 700px;
+  flex-grow: 1; /* Ocupa toda a altura restante no layout flex */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cabeçalho com o título "Meu Perfil" */
+.header {
+  /* alterar arrow */
+}
+
+.header h2 {
+  font-weight: 700; /* Mais peso na fonte */
+  font-size: 1.75rem; /* Tamanho maior */
+  color: #14532d; /* Verde escuro do menu lateral */
+}
+
+.backButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280; /* Cinza médio */
+  font-size: 0.9rem;
+  margin-bottom: 0.75rem;
+  padding: 0;
+}
+
+/* Wrapper principal do conteúdo, usando flexbox para alinhamento preciso */
+.contentWrapper {
+  display: flex;
+  flex-direction: column; /* Organiza as linhas verticalmente */
+  gap: 4rem; /* Espaço entre as linhas do formulário */
+  flex-grow: 1; /* Faz esta área crescer para empurrar o rodapé para baixo */
+}
+
+/* Linha para o avatar e o nome */
+.avatarAndNameRow {
+  display: flex;
+  align-items: center; /* Alinha o input ao centro do avatar */
+  gap: 7.5rem; /* 121px */
+}
+
+/* Seção do avatar */
+.avatarInitialsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0; /* Impede que o avatar encolha */
+}
+.avatarInitials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: #127234; /* Verde escuro do tema */
+  color: #ffffff;
+  font-size: 4rem; /* Tamanho grande para as iniciais */
+  font-weight: 600;
+}
+
+.nameGroup {
+  flex-grow: 1; /* Faz o campo de nome ocupar o espaço restante */
+}
+
+/* Seção do formulário, ocupando o espaço restante */
+.formSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem; /* Espaço entre as linhas de inputs */
+  width: 100%;
+}
+
+/* Linha genérica para os campos do formulário */
+.formRow {
+  display: flex;
+  gap: 4.37rem; /* Espaço entre os campos na mesma linha */
+  align-items: flex-end; /* Alinha a base dos elementos */
+}
+
+/* Estilo individual para cada grupo de label + input */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Faz com que os grupos de formulário dividam o espaço igualmente */
+}
+
+.formGroup label {
+  font-family: 'Inria Sans', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #004809;
+  margin-bottom: 0.5rem;
+}
+
+.formGroup input {
+  border: 1px solid #d1d5db; /* Borda cinza clara */
+  border-radius: 8px; /* Bordas mais arredondadas */
+  padding: 0.8rem 1rem;
+  background-color: #ffffff; /* Fundo branco, como solicitado */
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05); /* Sombra interna sutil */
+  font-family: 'Inria Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 400; /* Regular */
+  color: #4CAF50;
+}
+
+/* Ações que ficam abaixo do formulário */
+.actionsSection {
+  display: flex;
+  justify-content: flex-end; /* Alinha o conteúdo à direita */
+  flex: 1; /* Faz a seção de ações ocupar o mesmo espaço que os outros campos */
+}
+
+.changePasswordButton {
+  background-color: #166534; /* Verde escuro, cor exata do botão */
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  transition: all 0.2s ease-in-out;
+  width: 270px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 47px;
+}
+
+.changePasswordButton:hover {
+  background-color: #15803d;
+  transform: translateY(-2px);
+}
+
+/* Rodapé com o botão de sair */
+.footerActions {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.logoutButton {
+  background-color: #ef4444;
+  color: white;
+  border: none;
+  width: 160px;
+  height: 56px;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  display: flex;
+  justify-content: center; /* Centraliza o ícone e o texto */
+  align-items: center;
+  gap: 0.6rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.logoutButton:hover {
+  background-color: #dc2626;
+  transform: translateY(-2px);
+}
