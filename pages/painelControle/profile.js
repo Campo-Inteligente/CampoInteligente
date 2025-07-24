@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import Head from 'next/head';
-import { useRouter } from 'next/router';
-import PainelLayout from './components/PainelLayout';
-import Image from 'next/image';
-import ChangePasswordModal from './components/ChangePasswordModal';
-import SuccessToast from './components/SuccessToast';
-import styles from '../../styles/painelControleStyles/profile.module.css';
+import React, { useState, useEffect } from "react";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import PainelLayout from "./components/PainelLayout";
+import Image from "next/image";
+import ChangePasswordModal from "./components/ChangePasswordModal";
+import SuccessToast from "./components/SuccessToast";
+import styles from "../../styles/painelControleStyles/profile.module.css";
 
 export default function ProfilePage() {
   const router = useRouter();
@@ -14,33 +14,33 @@ export default function ProfilePage() {
   const [showSuccessToast, setShowSuccessToast] = useState(false);
 
   const getInitials = (name) => {
-    if (!name) return '';
-    const parts = name.split(' ');
-    const firstInitial = parts[0] ? parts[0][0] : '';
-    const lastInitial = parts.length > 1 ? parts[parts.length - 1][0] : '';
+    if (!name) return "";
+    const parts = name.split(" ");
+    const firstInitial = parts[0] ? parts[0][0] : "";
+    const lastInitial = parts.length > 1 ? parts[parts.length - 1][0] : "";
     return `${firstInitial}${lastInitial}`.toUpperCase();
   };
 
   useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const storedUserData = localStorage.getItem('userData');
+    if (typeof window !== "undefined") {
+      const storedUserData = localStorage.getItem("userData");
       if (storedUserData) {
         const parsedData = JSON.parse(storedUserData);
         setUserData({
           ...parsedData, // Inclui todos os dados, como o ID
           nomeCompleto: parsedData.nome,
-          organizacao: parsedData.tb_organizacoes?.nome || 'Não especificada',
+          organizacao: parsedData.tb_organizacoes?.nome || "Não especificada",
         });
       } else {
-        router.push('/painelControle/business');
+        router.push("/painelControle/login");
       }
     }
   }, [router]);
 
   const handleLogout = () => {
-    localStorage.removeItem('authToken');
-    localStorage.removeItem('userData');
-    router.push('/painelControle/business');
+    localStorage.removeItem("authToken");
+    localStorage.removeItem("userData");
+    router.push("/painelControle/login");
   };
 
   const handlePasswordChangeSuccess = () => {
@@ -63,7 +63,7 @@ export default function ProfilePage() {
       <Head>
         <title>Meu Perfil | Painel Campo Inteligente</title>
       </Head>
-      
+
       {showSuccessToast && (
         <SuccessToast
           title="Senha alterada"
@@ -130,12 +130,7 @@ export default function ProfilePage() {
             <div className={`${styles.formRow} ${styles.lastFormRow}`}>
               <div className={styles.formGroup}>
                 <label htmlFor="cargo">Seu Cargo:</label>
-                <input
-                  type="text"
-                  id="cargo"
-                  value={userData.cargo}
-                  disabled
-                />
+                <input type="text" id="cargo" value={userData.cargo} disabled />
               </div>
               <div className={styles.actionsSection}>
                 <button
@@ -151,7 +146,11 @@ export default function ProfilePage() {
         </div>
 
         <div className={styles.footerActions}>
-          <button type="button" onClick={handleLogout} className={styles.logoutButton}>
+          <button
+            type="button"
+            onClick={handleLogout}
+            className={styles.logoutButton}
+          >
             <Image
               src="/imagens/sair-icon.svg"
               alt="Ícone de Sair"
@@ -163,9 +162,9 @@ export default function ProfilePage() {
         </div>
       </main>
 
-      <ChangePasswordModal 
-        isOpen={isModalOpen} 
-        onClose={() => setIsModalOpen(false)} 
+      <ChangePasswordModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
         onSuccess={handlePasswordChangeSuccess}
       />
     </PainelLayout>

@@ -6,10 +6,13 @@ import styles from "../../styles/painelControleStyles/Business.module.css";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import SuccessToast from "../../pages/painelControle/components/SuccessToast";
+
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showToast, setShowToast] = useState(false);
   const router = useRouter();
 
   const handleLogin = async (e) => {
@@ -24,14 +27,14 @@ export default function LoginPage() {
       const result = await response.json();
 
       if (response.ok) {
-        alert("Login realizado com sucesso!");
+        setShowToast(true);
 
-        // Salva o token e os dados do usuário no navegador
-        localStorage.setItem("authToken", result.token);
-        localStorage.setItem("userData", JSON.stringify(result.user));
-
-        // Redireciona para a página principal do painel de controle
-        router.push("/painelControle/dashboard");
+        // Atraso para permitir que o toast seja exibido antes do redirecionamento
+        setTimeout(() => {
+          localStorage.setItem("authToken", result.token);
+          localStorage.setItem("userData", JSON.stringify(result.user));
+          router.push("/painelControle/dashboard");
+        }, 1000);
       } else {
         alert(`Erro: ${result.message}`);
       }
@@ -46,6 +49,16 @@ export default function LoginPage() {
       <Head>
         <title>Login | Campo Inteligente</title>
       </Head>
+
+      {showToast && (
+        <SuccessToast
+          title="Login bem-sucedido!"
+          message="Você será redirecionado para o painel."
+          duration={2000}
+          onClose={() => setShowToast(false)}
+        />
+      )}
+
       <Container fluid className={`${styles.loginContainer} p-0`}>
         <Row className="g-0 vh-100">
           <Col

@@ -70,7 +70,7 @@ export default function Navbar() {
             <Link href="/contato">Contato</Link>
           </li>
           <li>
-            <Link href="painelControle/business">Business</Link>
+            <Link href="painelControle/login">Painel de Controle</Link>
           </li>
         </ul>
       </motion.nav>

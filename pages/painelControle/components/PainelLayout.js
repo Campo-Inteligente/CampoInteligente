@@ -196,14 +196,13 @@ const Header = ({ user, onMenuButtonClick }) => {
       console.error("Falha ao fazer logout:", error);
     } finally {
       localStorage.removeItem("userData");
-      router.push("/painelControle/business");
+      router.push("/painelControle/login");
     }
   };
 
   if (!user) {
     return <header className={styles.header}></header>;
   }
-
 
   return (
     <header className={styles.header} onClick={(e) => e.stopPropagation()}>
