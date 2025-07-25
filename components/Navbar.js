@@ -34,17 +34,15 @@ export default function Navbar() {
         className={styles.logo}
       >
         <Link href="/">
-         <Image
-          src="/imagens/Logo.png"
-          alt="Campo Inteligente" 
-          width={200}
-           height={50} 
-           priority 
-           style={{cursor: 'pointer'}}
-             />
-        
+          <Image
+            src="/imagens/Logo.png"
+            alt="Campo Inteligente"
+            width={200}
+            height={50}
+            priority
+            style={{ cursor: "pointer" }}
+          />
         </Link>
-       
       </motion.div>
 
       {/* Botão menu hamburguer */}
@@ -70,6 +68,9 @@ export default function Navbar() {
           </li>
           <li>
             <Link href="/contato">Contato</Link>
+          </li>
+          <li>
+            <Link href="painelControle/login">Painel de Controle</Link>
           </li>
         </ul>
       </motion.nav>

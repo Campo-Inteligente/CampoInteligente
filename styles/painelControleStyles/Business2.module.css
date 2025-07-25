@@ -1,0 +1,164 @@
+.backgroundContainer {
+  min-height: 100vh;
+  width: 100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f7fbf3;
+  background-image: url("/imagens/background-business.svg");
+  background-size: cover;
+  background-position: center;
+}
+
+.formCard {
+  max-width: 600px;
+  min-height: 650px;
+  width: 100%;
+  background-color: rgba(235, 245, 230, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  padding: 2rem;
+  overflow-y: auto;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  .formCard {
+    padding: 1.5rem;
+  }
+}
+
+.logoContainer {
+  text-align: center;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label,
+.formLabel {
+  display: block;
+  color: #004809;
+  margin-bottom: 7px;
+  text-align: left;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 0px;
+  border-radius: 10px;
+  background-color: rgba(76, 175, 80, 0.38);
+  font-size: 1rem;
+}
+.input:focus {
+  border-color: #127234;
+  background-color: rgba(76, 175, 80, 0.38);
+  box-shadow: 0 0 0 2px rgba(18, 114, 52, 0.2);
+}
+.input::placeholder {
+  color: #127234;
+  opacity: 0.3;
+}
+
+.checkboxGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkboxLabel {
+  color: #004809;
+  font-size: 0.8rem;
+}
+
+.checkboxInput {
+  border-color: #127234;
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+}
+.checkboxInput:checked {
+  background-color: #004809;
+  border-color: #004809;
+}
+.link {
+  color: #004809;
+  font-weight: 500;
+  text-decoration: underline;
+}
+.link:hover {
+  color: #e6cf35;
+}
+
+.optionsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  font-size: 0.8rem;
+}
+
+.customCheckboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #004809;
+}
+
+.customCheckboxContainer input[type="checkbox"] {
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+}
+
+.customCheckboxContainer input[type="checkbox"]:checked {
+  background-color: #004809;
+  border-color: #004809;
+}
+
+.customCheckboxContainer input[type="checkbox"]:focus {
+  border-color: #004809;
+  box-shadow: 0 0 0 0.25rem rgba(0, 72, 9, 0.25);
+}
+
+.link {
+  color: #004809;
+  font-weight: 500;
+  text-decoration: underline;
+}
+.link:hover {
+  color: #e6cf35;
+}
+
+/* Este estilo já está correto e deve ser mantido */
+.button {
+  width: 60%;
+  max-width: 299px; /* Adicionei o max-width do seu CSS anterior */
+  padding: 8px;
+  border: none;
+  border-radius: 8px;
+  background-color: #004809;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: block;
+  margin: 25px auto 0 auto; /* Ajustado para ter uma margem superior */
+}
+.button:hover {
+  background-color: #4caf50;
+}
+
+.createAccountLink {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}

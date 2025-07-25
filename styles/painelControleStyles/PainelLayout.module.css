@@ -1,0 +1,310 @@
+.layoutContainer {
+  display: flex;
+  min-height: 100vh;
+  background-color: #e8f5e9;
+}
+
+.sidebar {
+  width: 15.6rem;
+  background-color: #004809;
+  color: #ffffff;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-top-right-radius: 30px;
+  flex-shrink: 0;
+}
+
+.sidebarHeader {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.sidebarNav {
+  flex-grow: 1;
+  padding: 1rem;
+}
+
+.navHeading {
+  font-size: 0.7rem;
+  color: #e8f5e9;
+  opacity: 0.7;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.navLink,
+.navLinkActive {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-block-end: 2rem;
+  color: #e8f5e9;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.navLink:hover {
+  font-weight: bold;
+}
+
+.navLinkActive {
+  background-color: transparent;
+  color: #ffffff;
+}
+
+.navLinkActive svg {
+  background-color: #127234;
+  border-radius: 6px;
+  padding: 6px;
+  box-sizing: content-box;
+}
+
+.navLinkActive span {
+  font-weight: bold;
+  position: relative;
+}
+
+.navLinkActive span::after {
+  content: "";
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ffffff;
+}
+
+.sidebarFooter {
+  padding: 16px;
+}
+
+/* --- Conteúdo Principal --- */
+.mainContentWrapper {
+  margin-left: 15.6rem;
+  flex-grow: 1;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* --- ESTILOS PARA A NAVBAR --- */
+.header {
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  top: 0;
+  z-index: 100;
+}
+
+.searchContainer {
+  position: relative;
+  width: 35rem;
+}
+
+.searchInput {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background-color: #4caf5099;
+  padding-left: 16px;
+  padding-right: 40px;
+  color: #004809;
+  font-weight: 500;
+}
+
+.searchInput::placeholder {
+  color: #388e3c;
+  opacity: 0.8;
+}
+
+.searchIcon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #1e4620;
+}
+
+/* --- LADO DIREITO: AÇÕES --- */
+.navbarActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.notificationIcon {
+  color: #388e3c;
+  fill: transparent;
+  cursor: pointer;
+  transition: color 0.15s ease, fill 0.15s ease;
+}
+
+.notificationIcon:active {
+  color: #004809;
+  fill: #004809;
+}
+
+/* --- DROPDOWN DO PERFIL --- */
+
+.profileWrapper {
+  position: relative;
+}
+
+.avatarInitials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #127234;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+/* A área clicável do perfil */
+.profileDropdown {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.profileDropdown img {
+  border-radius: 50%;
+}
+
+.profileInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #1e4620;
+}
+
+.profileWelcome {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  color: #004809;
+}
+
+/* Nome do usuário */
+.profileName {
+  font-weight: 600;
+  color: #4caf50;
+}
+
+/* Seta para baixo */
+.profileChevron {
+  color: #388e3c;
+}
+
+/* O menu que aparece/desaparece */
+.dropdownMenu {
+  position: absolute; 
+  top: 4.5rem; 
+  right: -0.5rem; 
+  z-index: 1000;
+  width: 10rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  z-index: 10;
+  border: 1px solid #e2e8f0;
+}
+
+.dropdownItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1e4620;
+  text-decoration: none;
+  background-color: transparent;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.dropdownItem:hover {
+  background-color: #f1f8f1;
+}
+
+.dropdownDivider {
+  height: 1px;
+  background-color: #e2e8f0;
+}
+
+
+.hamburgerButton {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #004809;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.mobileMenuOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Links dentro do menu mobile */
+.mobileNavLink {
+  color: #ffffff;
+  font-size: 2rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-block-end: 2rem;
+}
+
+.mobileNavLink:hover {
+  color: #c8e6c9; /* Efeito hover */
+}
+
+/* --- AJUSTES DE RESPONSIVIDADE PARA O LAYOUT EXISTENTE --- */
+
+@media (max-width: 991.98px) {
+  /* Esconde a sidebar em telas menores que 'lg' (992px) */
+  .sidebar {
+    display: none;
+  }
+
+  /* Faz o conteúdo principal ocupar 100% da largura */
+  .mainContentWrapper {
+    margin-left: 0;
+    width: 100%;
+    padding: 0 1.5rem;
+  }
+
+  .searchContainer {
+    display: none;
+  }
+
+  .navbarActions {
+    display: none;
+  }
+}
