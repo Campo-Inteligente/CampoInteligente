@@ -1,6 +1,7 @@
 import prisma from "../../../lib/prisma";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import { serialize } from "cookie";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
@@ -28,15 +29,28 @@ export default async function handler(req, res) {
       {
         userId: admin.id,
         email: admin.email,
+        name: admin.nome,
         organizacaoId: admin.organizacao_id,
       },
       process.env.JWT_SECRET,
-      { expiresIn: "24h" }
+      { expiresIn: "8h" }
     );
 
+    //  Cria o cookie seguro que será lido pelo getServerSideProps
+    const cookie = serialize("auth_token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV !== "development",
+      sameSite: "strict",
+      maxAge: 60 * 60 * 8, // 8 horas em segundos
+      path: "/",
+    });
+
+    // Define o cookie no cabeçalho da resposta
+    res.setHeader("Set-Cookie", cookie);
+
+    //  Envia a resposta JSON para o frontend
     res.status(200).json({
       message: "Login bem-sucedido!",
-      token,
       user: {
         id: admin.id,
         nome: admin.nome,

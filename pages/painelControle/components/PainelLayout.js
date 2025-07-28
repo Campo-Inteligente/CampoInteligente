@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import styles from "../../../styles/painelControleStyles/PainelLayout.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 
@@ -81,7 +80,8 @@ const MobileNavOverlay = ({ isOpen, onClose }) => {
 
 // --- COMPONENTES PRINCIPAIS ---
 const Sidebar = () => {
-  const pathname = usePathname();
+  const router = useRouter(); // Use o hook useRouter
+  const { pathname } = router; // Pega o pathname a partir do router
   return (
     <aside className={styles.sidebar}>
       <div className={styles.sidebarHeader}>

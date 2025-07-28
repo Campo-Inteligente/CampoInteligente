@@ -1,0 +1,279 @@
+/* Container principal da página de usuários */
+
+
+/* Cabeçalho com título e botões de ação */
+.pageHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.titleGroup h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #004809;
+  margin: 0;
+}
+
+.titleGroup p {
+  font-size: 1rem;
+  color: #127234;
+}
+
+.actionsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Container para o seletor de visualização */
+.viewSwitcher {
+  position:initial;
+  flex-shrink: 0; /* Impede que o botão seja espremido */
+}
+
+/* O botão principal que mostra a visualização atual */
+.viewSwitcherButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0 1rem;
+  height: 40px;
+  background-color: white;
+  border: 1px solid #cbd5e0;
+  border-radius: 5px;
+  color: #004809;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  z-index: 101;
+}
+
+.viewSwitcherButton:hover {
+  background-color: #f7fafc;
+}
+
+/* O menu dropdown que aparece */
+.viewSwitcherDropdown {
+  position: absolute;
+  top: calc(100% + 8px); /* Posição abaixo do botão com um espaçamento */
+  left: 0;
+  width: 200px;
+  background-color: white;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 0.5rem;
+  z-index: 20;
+}
+
+/* Cada item dentro do dropdown */
+.viewSwitcherItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #2d3748;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.viewSwitcherItem:hover {
+  background-color: #f1f8f1;
+}
+
+.viewSwitcherItem.active {
+  background-color: #e8f5e9;
+  font-weight: 700;
+  color: #004d09;
+}
+
+.filterInputGroup {
+  position: relative;
+  flex-grow: 1;
+}
+
+.filterInput {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  padding: 0 1rem 0 2.5rem;
+  background-color: white;
+}
+
+.filterInputIcon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
+}
+
+
+.ButtonContainer {
+  display: flex;
+  gap: 1rem;
+}
+
+.actionButton {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.exportButton {
+  background-color: #004d09;
+  color: white;
+}
+.exportButton:hover {
+  background-color: #003a06;
+}
+
+.deleteButton {
+  background-color: #e2e8f0;
+  color: #a0aec0;
+  cursor: not-allowed;
+}
+
+
+
+/* Tabela de Usuários */
+.tableContainer {
+  background-color: white;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden; /* Garante que as bordas arredondadas funcionem */
+}
+
+.usersTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.usersTable th,
+.usersTable td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: middle;
+}
+
+.usersTable thead {
+  background-color: #f7fafc;
+}
+
+.usersTable th {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.usersTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.userName {
+  font-weight: 600;
+  color: #2d3748;
+}
+
+/* Pílulas de Status */
+.statusPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.statusAtivo {
+  background-color: #e6f4ea;
+  color: #34a853;
+}
+
+.statusInativo {
+  background-color: #fce8e6;
+  color: #ea4335;
+}
+
+.statusPausa {
+  background-color: #feefc3;
+  color: #fbbc04;
+}
+
+/* Ações da Tabela */
+.tableActions button,
+.tableActions a {
+  background: none;
+  border: none;
+  color: #4a5568;
+  cursor: pointer;
+  margin-right: 1rem;
+  font-weight: 500;
+}
+
+.tableActions a {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+/* Paginação */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.25rem;
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.paginationControls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.paginationControls button,
+.paginationControls span {
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.paginationControls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.paginationControls span.activePage {
+  background-color: #e8f5e9;
+  border-color: #004d09;
+  color: #004d09;
+  font-weight: 700;
+}
