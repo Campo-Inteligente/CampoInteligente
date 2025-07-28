@@ -1,0 +1,115 @@
+/* styles/painelControleStyles/ConfirmationModal.module.css */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: fadeIn 0.3s ease-out;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #a0aec0;
+  cursor: pointer;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.header h2 {
+  font-size: 1.5rem;
+  color: #004d09;
+  font-weight: 600;
+  margin: 0;
+}
+
+.content p {
+  font-size: 1rem;
+  color: #127234;
+  margin: 0.5rem 0;
+  line-height: 1.5;
+}
+
+.warningText {
+  font-weight: 600;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+}
+
+.actions button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.actions button:active {
+  transform: scale(0.98);
+}
+
+.cancelButton {
+  background-color: #f1f8f1;
+  color: #004d09;
+  border: 1px solid #e2e8f0;
+}
+
+.cancelButton:hover {
+  background-color: #e8f5e9;
+}
+
+.confirmButton {
+  background-color: #004d09;
+  color: white;
+}
+
+.confirmButton:hover {
+  background-color: #003a06;
+}

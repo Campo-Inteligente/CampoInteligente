@@ -1,15 +1,13 @@
 import Head from "next/head";
-// Importando todos os hooks necessários do React
 import React, { useState, useRef, useEffect } from "react";
 import jwt from "jsonwebtoken";
 import PainelLayout from "../painelControle/components/PainelLayout";
 import styles from "../../styles/painelControleStyles/Usuarios.module.css";
 import prisma from "../../lib/prisma";
 import Image from "next/image";
+import ConfirmationModal from "./components/ConfirmationModal";
+import SuccessToast from "./components/SuccessToast";
 import {
-  LuTable,
-  LuLayoutGrid,
-  LuList,
   LuSearch,
   LuDownload,
   LuTrash2,
@@ -17,10 +15,9 @@ import {
   LuChevronRight,
   LuChevronsLeft,
   LuChevronsRight,
-  LuChevronDown,
 } from "react-icons/lu";
 
-// Mapeamento de status para estilos e ícones (agora usamos "Ativo" e "Inativo")
+// Mapeamento de status para estilos (sem alterações)
 const statusConfig = {
   Ativo: {
     className: styles.statusAtivo,
@@ -32,23 +29,84 @@ const statusConfig = {
   },
   "Pausa/Aviso": {
     className: styles.statusPausa,
-    iconSrc: "/imagens/aviso-triangulo.svg", // Caminho para sua imagem de status aviso
+    iconSrc: "/imagens/aviso-triangulo.svg",
   },
 };
 
+// Opções de visualização (sem alterações)
 const viewOptions = [
   { name: "Tabela", iconSrc: "/imagens/tabela-icon.svg" },
   { name: "Quadro", iconSrc: "/imagens/quadro-icon.svg" },
   { name: "Lista", iconSrc: "/imagens/lista-icon.svg" },
 ];
 
-export default function UsuariosPage({ user, users }) {
-  // NOVO: Estados para controlar o seletor de visualização
-  const [currentView, setCurrentView] = useState(viewOptions[0]); // Começa com 'Tabela'
-  const [isViewMenuOpen, setIsViewMenuOpen] = useState(false);
-  const viewSwitcherRef = useRef(null); // Referência para o container do dropdown
+export default function UsuariosPage({ user, users: initialUsers }) {
+  const [displayedUsers, setDisplayedUsers] = useState(initialUsers);
+  const [selectedUsers, setSelectedUsers] = useState([]);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [toast, setToast] = useState({ show: false, title: "", message: "" });
 
-  // NOVO: Lógica para fechar o menu ao clicar fora
+  const [currentView, setCurrentView] = useState(viewOptions[0]);
+  const [isViewMenuOpen, setIsViewMenuOpen] = useState(false);
+  const viewSwitcherRef = useRef(null);
+
+  // Lida com a seleção de um único usuário
+  const handleSelectUser = (id) => {
+    setSelectedUsers((prevSelected) => {
+      if (prevSelected.includes(id)) {
+        return prevSelected.filter((userId) => userId !== id); // Desmarcar
+      } else {
+        return [...prevSelected, id]; // Marcar
+      }
+    });
+  };
+
+  // Lida com "selecionar todos"
+  const handleSelectAll = (e) => {
+    if (e.target.checked) {
+      const allUserIds = displayedUsers.map((u) => u.id);
+      setSelectedUsers(allUserIds);
+    } else {
+      setSelectedUsers([]);
+    }
+  };
+
+  // Lógica de exclusão
+  const handleConfirmDelete = async () => {
+    try {
+      const response = await fetch("/api/users/delete", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ids: selectedUsers }),
+      });
+
+      if (!response.ok) {
+        throw new Error("Falha ao excluir usuários");
+      }
+
+      // Atualiza a UI sem recarregar a página
+      setDisplayedUsers((current) =>
+        current.filter((user) => !selectedUsers.includes(user.id))
+      );
+
+      // Limpa a seleção
+      setSelectedUsers([]);
+
+      // Fecha o modal
+      setIsModalOpen(false);
+
+      // Mostra o toast de sucesso
+      setToast({
+        show: true,
+        title: "Usuário excluído",
+        message: "O usuário foi excluído com sucesso.",
+      });
+    } catch (error) {
+      console.error(error);
+      // Aqui você poderia mostrar um toast de erro
+    }
+  };
+
   useEffect(() => {
     function handleClickOutside(event) {
       if (
@@ -66,8 +124,7 @@ export default function UsuariosPage({ user, users }) {
 
   const handleViewChange = (view) => {
     setCurrentView(view);
-    setIsViewMenuOpen(false); // Fecha o menu ao selecionar
-    // Aqui você adicionaria a lógica para mudar a visualização da página
+    setIsViewMenuOpen(false);
   };
 
   return (
@@ -76,13 +133,31 @@ export default function UsuariosPage({ user, users }) {
         <title>Usuários | Painel Campo Inteligente</title>
       </Head>
 
-      {/* Cabeçalho e Barra de Filtros (sem alterações) */}
+      {/* NOVO: Renderiza o Toast de Sucesso */}
+      {toast.show && (
+        <SuccessToast
+          title={toast.title}
+          message={toast.message}
+          onClose={() => setToast({ ...toast, show: false })}
+        />
+      )}
+
+      {/* NOVO: Renderiza o Modal de Confirmação */}
+      <ConfirmationModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        onConfirm={handleConfirmDelete}
+        title="Você tem certeza?"
+        message="Você está prestes a excluir permanentemente."
+      />
+
       <header className={styles.pageHeader}>
         <div className={styles.titleGroup}>
           <h1>Usuários</h1>
           <p>Gerencie os usuários cadastrados e suas informações aqui.</p>
         </div>
       </header>
+
       <div className={styles.actionsContainer}>
         <div className={styles.viewSwitcher} ref={viewSwitcherRef}>
           <button
@@ -97,7 +172,7 @@ export default function UsuariosPage({ user, users }) {
             />
             <span>{currentView.name}</span>
             <Image
-              src="/imagens/down.svg" 
+              src="/imagens/down.svg"
               alt="Abrir menu"
               width={12}
               height={12}
@@ -114,7 +189,13 @@ export default function UsuariosPage({ user, users }) {
                   }`}
                   onClick={() => handleViewChange(option)}
                 >
-                  <Image src="/imagens/down.svg" width={12} height={12} />
+                  {/* ALTERAÇÃO: Usando o iconSrc correto da opção */}
+                  <Image
+                    src={option.iconSrc}
+                    alt={option.name}
+                    width={16}
+                    height={16}
+                  />
                   <span>{option.name}</span>
                 </div>
               ))}
@@ -130,8 +211,13 @@ export default function UsuariosPage({ user, users }) {
             className={styles.filterInput}
           />
         </div>
+
         <div className={styles.ButtonContainer}>
-          <button className={styles.deleteButton} disabled>
+          <button
+            className={styles.deleteButton}
+            disabled={selectedUsers.length === 0}
+            onClick={() => setIsModalOpen(true)}
+          >
             <LuTrash2 size={16} /> Excluir
           </button>
           <button className={`${styles.actionButton} ${styles.exportButton}`}>
@@ -140,83 +226,109 @@ export default function UsuariosPage({ user, users }) {
         </div>
       </div>
 
-      {/* Tabela de Usuários com dados do seu banco */}
-      <div className={styles.tableContainer}>
-        <table className={styles.usersTable}>
-          <thead>
-            <tr>
-              <th>
-                <input type="checkbox" />
-              </th>
-              <th>Nome do Usuário</th>
-              <th>Telefone</th>
-              <th>Localização</th>
-              <th>Status</th>
-              <th>Data de Cadastro</th>
-              {/* A coluna "Cultivo Principal" foi removida */}
-              <th>Ações</th>
-            </tr>
-          </thead>
-          <tbody>
-            {users.map((dbUser) => {
-              // Mapeia o valor do banco ('S'/'N') para o texto que queremos exibir
-              const statusText = dbUser.ativo === "S" ? "Ativo" : "Inativo";
-              const config = statusConfig[statusText];
-
-              return (
-                <tr key={dbUser.id}>
-                  <td>
-                    <input type="checkbox" />
-                  </td>
-                  <td>
-                    <span className={styles.userName}>{dbUser.nome}</span>
-                  </td>
-                  <td>{dbUser.whatsapp_id}</td>
-                  <td>{`${dbUser.cidade || ""} - ${dbUser.estado || ""}`}</td>
-                  <td>
-                    {config && config.iconSrc ? ( // Verifica se temos um caminho de imagem
-                      <span
-                        className={`${styles.statusPill} ${config.className}`}
-                      >
-                        {statusText}
-                      </span>
-                    ) : (
-                      <span>{statusText}</span>
-                    )}
-                  </td>
-                  <td>
-                    {dbUser.data_cadastro
-                      ? new Date(dbUser.data_cadastro).toLocaleDateString(
-                          "pt-BR"
-                        )
-                      : "N/A"}
-                  </td>
-                  <td className={styles.tableActions}>
-                    <button>Excluir</button>
-                    <button>Enviar</button>
-                    <a href="#">
-                      {/* MUDANÇA: Usando o componente Image para o ícone de detalhes */}
-                      <Image
-                        src="/imagens/icons/editar-detalhes.svg" // Use o caminho do seu ícone de edição
-                        alt="Ver detalhes"
-                        width={14}
-                        height={14}
-                      />
-                      Ver detalhes
-                    </a>
-                  </td>
+      <main>
+        {currentView.name === "Tabela" && (
+          <div className={styles.tableContainer}>
+            <table className={styles.usersTable}>
+              <thead>
+                <tr>
+                  <th>
+                    <input
+                      type="checkbox"
+                      onChange={handleSelectAll}
+                      checked={
+                        displayedUsers.length > 0 &&
+                        selectedUsers.length === displayedUsers.length
+                      }
+                    />
+                  </th>
+                  <th>Nome do Usuário</th>
+                  <th>Telefone</th>
+                  <th>Localização</th>
+                  <th>Status</th>
+                  <th>Data de Cadastro</th>
+                  <th>Ações</th>
                 </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
+              </thead>
+              <tbody>
+                {displayedUsers.map((dbUser) => {
+                  const statusText = dbUser.ativo === "S" ? "Ativo" : "Inativo";
+                  const config = statusConfig[statusText];
 
-      {/* Paginação */}
+                  return (
+                    <tr key={dbUser.id}>
+                      <td>
+                        <input
+                          type="checkbox"
+                          checked={selectedUsers.includes(dbUser.id)}
+                          onChange={() => handleSelectUser(dbUser.id)}
+                        />
+                      </td>
+                      <td>
+                        <span className={styles.userName}>{dbUser.nome}</span>
+                      </td>
+                      <td>{dbUser.whatsapp_id}</td>
+                      <td>{`${dbUser.cidade || ""} - ${
+                        dbUser.estado || ""
+                      }`}</td>
+                      <td>
+                        {config ? (
+                          <span
+                            className={`${styles.statusPill} ${config.className}`}
+                          >
+                            {statusText}
+                          </span>
+                        ) : (
+                          <span>{statusText}</span>
+                        )}
+                      </td>
+                      <td>
+                        {dbUser.data_cadastro
+                          ? new Date(dbUser.data_cadastro).toLocaleDateString(
+                              "pt-BR"
+                            )
+                          : "N/A"}
+                      </td>
+                      <td className={styles.tableActions}>
+                        <button>Excluir</button>
+                        <button>Enviar</button>
+                        <a href="#">
+                          <Image
+                            src="/imagens/icons/editar-detalhes.svg"
+                            alt="Ver detalhes"
+                            width={14}
+                            height={14}
+                          />
+                          Ver detalhes
+                        </a>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+        )}
+
+        {currentView.name === "Quadro" && (
+          <div className={styles.placeholderView}>
+            <h2>Visualização em Quadro</h2>
+            <p>A funcionalidade de quadro será implementada aqui.</p>
+          </div>
+        )}
+
+        {currentView.name === "Lista" && (
+          <div className={styles.placeholderView}>
+            <h2>Visualização em Lista</h2>
+            <p>A funcionalidade de lista será implementada aqui.</p>
+          </div>
+        )}
+      </main>
+
       <footer className={styles.pagination}>
         <div>
           <span>
-            1-{users.length} de {users.length} linhas
+            1-{displayedUsers.length} de {displayedUsers.length} linhas
           </span>
         </div>
         <div className={styles.paginationControls}>
@@ -251,16 +363,10 @@ export async function getServerSideProps(context) {
 
   try {
     const decodedUser = jwt.verify(token, process.env.JWT_SECRET);
-
-    // Busca os dados no banco usando o nome do seu model: 'tb_usuarios'
     const userList = await prisma.tb_usuarios.findMany({
-      orderBy: {
-        nome: "asc",
-      },
+      orderBy: { nome: "asc" },
     });
 
-    // Serializa os dados para que possam ser passados como props
-    // Convertendo objetos 'Decimal' e 'Date' para tipos compatíveis com JSON (string/number)
     const serializedUsers = userList.map((user) => ({
       ...user,
       latitude: user.latitude ? user.latitude.toString() : null,
