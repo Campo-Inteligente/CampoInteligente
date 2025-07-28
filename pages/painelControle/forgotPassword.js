@@ -39,7 +39,7 @@ export default function forgotPasswordPage() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
-          <Link href="/painelControle/business" className={styles.backButton}>
+          <Link href="/painelControle/login" className={styles.backButton}>
             <IoIosArrowBack size={24} />
           </Link>
 
@@ -69,9 +69,7 @@ export default function forgotPasswordPage() {
 
           <div className={styles.footerLink}>
             Lembrou a senha?{" "}
-            <Link href="/painelControle/business">
-              Voltar para o Login
-            </Link>
+            <Link href="/painelControle/login">Voltar para o Login</Link>
           </div>
         </motion.div>
       </div>

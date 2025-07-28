@@ -1,32 +1,36 @@
-.loginContainer {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-  background-color: #e8f5e9;
-}
-
-.imagePanelWrapper {
-  height: 100vh;
-  padding: 0;
-}
-
-.imagePanel {
+.backgroundContainer {
+  min-height: 100vh;
   width: 100%;
-  height: 100%;
-  background-image: url("/imagens/background-painel.png");
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-.formPanel {
+  padding: 1rem;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  background-color: #f7fbf3;
+  background-image: url("/imagens/background-business.svg");
+  background-size: cover;
+  background-position: center;
 }
 
-.formWrapper {
+.formCard {
+  max-width: 600px;
+  min-height: 650px;
   width: 100%;
-  max-width: 500px;
+  background-color: rgba(235, 245, 230, 0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+  padding: 2rem;
+  overflow-y: auto;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 767px) {
+  .formCard {
+    padding: 1.5rem;
+  }
 }
 
 .logoContainer {
@@ -61,6 +65,36 @@
 .input::placeholder {
   color: #127234;
   opacity: 0.3;
+}
+
+.checkboxGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkboxLabel {
+  color: #004809;
+  font-size: 0.8rem;
+}
+
+.checkboxInput {
+  border-color: #127234;
+  cursor: pointer;
+  width: 1em;
+  height: 1em;
+}
+.checkboxInput:checked {
+  background-color: #004809;
+  border-color: #004809;
+}
+.link {
+  color: #004809;
+  font-weight: 500;
+  text-decoration: underline;
+}
+.link:hover {
+  color: #e6cf35;
 }
 
 .optionsRow {
@@ -103,8 +137,10 @@
   color: #e6cf35;
 }
 
+/* Este estilo já está correto e deve ser mantido */
 .button {
   width: 60%;
+  max-width: 299px; /* Adicionei o max-width do seu CSS anterior */
   padding: 8px;
   border: none;
   border-radius: 8px;
@@ -115,7 +151,7 @@
   cursor: pointer;
   transition: background-color 0.2s;
   display: block;
-  margin: 0 auto;
+  margin: 25px auto 0 auto; /* Ajustado para ter uma margem superior */
 }
 .button:hover {
   background-color: #4caf50;
@@ -125,10 +161,4 @@
   display: block;
   text-align: center;
   margin-top: 20px;
-}
-
-@media (max-width: 767px) {
-  .formPanel {
-    padding: 1.5rem;
-  }
 }

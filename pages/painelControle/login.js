@@ -58,104 +58,95 @@ export default function LoginPage() {
           onClose={() => setShowToast(false)}
         />
       )}
-
-      <Container fluid className={`${styles.loginContainer} p-0`}>
-        <Row className="g-0 vh-100">
-          <Col
-            lg={6}
-            className={`d-none d-lg-block ${styles.imagePanelWrapper}`}
+ <div className={styles.backgroundContainer}>
+        <motion.div
+          className={styles.formCard}
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+          <motion.div
+            className={styles.logoContainer}
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <motion.div
-              className={styles.imagePanel}
-              initial={{ opacity: 0, x: -100 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
+            <Image
+              src="/imagens/logo-business.svg"
+              alt="Logo Campo Inteligente"
+              width={367 * 0.9}
+              height={264 * 0.9}
             />
-          </Col>
+          </motion.div>
 
-          <Col lg={4} className={styles.formPanel}>
-            <div className={styles.formWrapper}>
-              <motion.div
-                className={styles.logoContainer}
-                initial={{ opacity: 0, y: -50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-              >
-                <Image
-                  src="/imagens/logo-business.svg"
-                  alt="Logo Campo Inteligente"
-                  width={367 * 0.95}
-                  height={264 * 0.95}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
+            {/* 3. O formulário agora usa componentes Form do Bootstrap */}
+            <Form onSubmit={handleLogin}>
+              <Form.Group className={styles.formGroup} controlId="formEmail">
+                <Form.Label>Login:</Form.Label>
+                <Form.Control
+                  type="email"
+                  placeholder="campointeligente@gmail.com"
+                  className={styles.input}
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
-              </motion.div>
+              </Form.Group>
 
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-              >
-                <Form onSubmit={handleLogin}>
-                  <Form.Group
-                    className={styles.formGroup}
-                    controlId="formEmail"
-                  >
-                    <Form.Label>Login:</Form.Label>
-                    <Form.Control
-                      type="email"
-                      placeholder="campointeligente@gmail.com"
-                      className={styles.input}
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      required
-                    />
-                  </Form.Group>
+              <Form.Group className={styles.formGroup} controlId="formPassword">
+                <Form.Label>Senha:</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="************"
+                  className={styles.input}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </Form.Group>
 
-                  <Form.Group
-                    className={styles.formGroup}
-                    controlId="formPassword"
-                  >
-                    <Form.Label>Senha:</Form.Label>
-                    <Form.Control
-                      type="password"
-                      placeholder="************"
-                      className={styles.input}
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      required
-                    />
-                  </Form.Group>
-
-                  <div className={styles.optionsRow}>
-                    <Form.Check
+              <div className={styles.optionsRow}>
+                <Form.Group
+                  className={styles.checkboxGroup}
+                  controlId="termsAccepted"
+                >
+                  <Form.Check type="checkbox" name="termsAccepted" required>
+                    <Form.Check.Input
                       type="checkbox"
-                      id="remember-me"
-                      label="Manter-me conectado"
-                      className={styles.customCheckboxContainer}
+                      className={styles.checkboxInput}
                     />
+                    <Form.Check.Label className={styles.checkboxLabel}>
+                      Manter-me conectado
+                    </Form.Check.Label>
+                  </Form.Check>
+                </Form.Group>
 
-                    <Link
-                      href="/painelControle/forgotPassword"
-                      className={styles.link}
-                    >
-                      Esqueceu a senha?
-                    </Link>
-                  </div>
+                <Link
+                  href="/painelControle/forgotPassword"
+                  className={styles.link}
+                >
+                  Esqueceu a senha?
+                </Link>
+              </div>
 
-                  <Button type="submit" className={styles.button}>
-                    Entrar
-                  </Button>
-                </Form>
+              <Button type="submit" className={styles.button}>
+                Entrar
+              </Button>
+            </Form>
 
-                <div className={`${styles.createAccountLink} mt-3`}>
-                  <Link href="/painelControle/signUp" className={styles.link}>
-                    Criar conta
-                  </Link>
-                </div>
-              </motion.div>
+            <div className={`${styles.createAccountLink} mt-3`}>
+              <Link href="/painelControle/signUp" className={styles.link}>
+                Criar conta
+              </Link>
             </div>
-          </Col>
-        </Row>
-      </Container>
+          </motion.div>
+        </motion.div>
+      </div>
     </>
   );
 }
