@@ -6,20 +6,13 @@ import Image from "next/image";
 import ChangePasswordModal from "./components/ChangePasswordModal";
 import SuccessToast from "./components/SuccessToast";
 import styles from "../../styles/painelControleStyles/profile.module.css";
+import { Row, Col, Form, Button } from "react-bootstrap";
 
 export default function ProfilePage() {
   const router = useRouter();
   const [userData, setUserData] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [showSuccessToast, setShowSuccessToast] = useState(false);
-
-  const getInitials = (name) => {
-    if (!name) return "";
-    const parts = name.split(" ");
-    const firstInitial = parts[0] ? parts[0][0] : "";
-    const lastInitial = parts.length > 1 ? parts[parts.length - 1][0] : "";
-    return `${firstInitial}${lastInitial}`.toUpperCase();
-  };
 
   useEffect(() => {
     if (typeof window !== "undefined") {
@@ -38,8 +31,8 @@ export default function ProfilePage() {
   }, [router]);
 
   const handleLogout = () => {
-    localStorage.removeItem("authToken");
-    localStorage.removeItem("userData");
+    localStorage.removeItem("authToken"); // Mantido para consistência
+    localStorage.removeItem("userData"); // Mantido para consistência
     router.push("/painelControle/login");
   };
 
@@ -57,6 +50,14 @@ export default function ProfilePage() {
       </PainelLayout>
     );
   }
+
+  // A função getInitials pode ser movida para um arquivo de utilitários
+  // para evitar duplicação, já que também existe em PainelLayout.js
+  const getInitials = (name) => {
+    if (!name) return '';
+    const parts = name.split(' ');
+    return `${parts[0]?.[0] ?? ''}${parts.length > 1 ? parts[parts.length - 1][0] : ''}`.toUpperCase();
+  };
 
   return (
     <PainelLayout>
@@ -87,70 +88,71 @@ export default function ProfilePage() {
       </div>
 
       <main className={styles.perfilContainer}>
-        <div className={styles.contentWrapper}>
-          <div className={styles.avatarAndNameRow}>
-            <div className={styles.avatarInitialsContainer}>
-              <div className={styles.avatarInitials}>
-                {getInitials(userData.nomeCompleto)}
-              </div>
+        <Row className="align-items-center mb-4 gy-4">
+          <Col xs={12} md="auto" className={styles.avatarInitialsContainer}>
+            <div className={styles.avatarInitials}>
+              {getInitials(userData.nomeCompleto)}
             </div>
-            <div className={`${styles.formGroup} ${styles.nameGroup}`}>
-              <label htmlFor="nomeCompleto">Nome completo:</label>
-              <input
+          </Col>
+          <Col xs={12} md>
+            <Form.Group className={styles.formGroup}>
+              <Form.Label htmlFor="nomeCompleto">Nome completo:</Form.Label>
+              <Form.Control
                 type="text"
                 id="nomeCompleto"
                 value={userData.nomeCompleto}
                 disabled
+                className={styles.input}
               />
-            </div>
-          </div>
+            </Form.Group>
+          </Col>
+        </Row>
 
-          <form className={styles.formSection}>
-            <div className={styles.formRow}>
-              <div className={styles.formGroup}>
-                <label htmlFor="email">E-mail:</label>
-                <input
+        <Form>
+          <Row className="mb-4 gy-4">
+            <Col md={6}>
+              <Form.Group className={styles.formGroup}>
+                <Form.Label htmlFor="email">E-mail:</Form.Label>
+                <Form.Control
                   type="email"
                   id="email"
                   value={userData.email}
                   disabled
+                  className={styles.input}
                 />
-              </div>
-              <div className={`${styles.formGroup} ${styles.organizacaoGroup}`}>
-                <label htmlFor="organizacao">Sua organização:</label>
-                <input
+              </Form.Group>
+            </Col>
+            <Col md={6}>
+              <Form.Group className={styles.formGroup}>
+                <Form.Label htmlFor="organizacao">Sua organização:</Form.Label>
+                <Form.Control
                   type="text"
                   id="organizacao"
                   value={userData.organizacao}
                   disabled
+                  className={styles.input}
                 />
-              </div>
-            </div>
+              </Form.Group>
+            </Col>
+          </Row>
 
-            <div className={`${styles.formRow} ${styles.lastFormRow}`}>
-              <div className={styles.formGroup}>
-                <label htmlFor="cargo">Seu Cargo:</label>
-                <input type="text" id="cargo" value={userData.cargo} disabled />
-              </div>
-              <div className={styles.actionsSection}>
-                <button
-                  type="button"
-                  className={styles.changePasswordButton}
-                  onClick={() => setIsModalOpen(true)}
-                >
-                  Trocar senha
-                </button>
-              </div>
-            </div>
-          </form>
-        </div>
+          <Row className="align-items-end gy-4">
+            <Col md={6}>
+              <Form.Group className={styles.formGroup}>
+                <Form.Label htmlFor="cargo">Seu Cargo:</Form.Label>
+                <Form.Control type="text" id="cargo" value={userData.cargo} disabled className={styles.input} />
+              </Form.Group>
+            </Col>
+            <Col md={6} className="d-flex justify-content-center justify-content-md-end">
+              <Button type="button" className={styles.changePasswordButton} onClick={() => setIsModalOpen(true)}>
+                Trocar senha
+              </Button>
+            </Col>
+          </Row>
+        </Form>
 
         <div className={styles.footerActions}>
-          <button
-            type="button"
-            onClick={handleLogout}
-            className={styles.logoutButton}
-          >
+          <Button variant="danger" onClick={handleLogout} className={styles.logoutButton}>
             <Image
               src="/imagens/sair-icon.svg"
               alt="Ícone de Sair"
@@ -158,7 +160,7 @@ export default function ProfilePage() {
               height={20}
             />
             Sair
-          </button>
+          </Button>
         </div>
       </main>
 

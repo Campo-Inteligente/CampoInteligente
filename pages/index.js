@@ -26,16 +26,34 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Campo Inteligente | Chatbot para o Agronegócio com Inteligência Artificial</title>
-        <meta name="description" content="A Campo Inteligente é uma plataforma com chatbot via WhatsApp que usa inteligência artificial para otimizar o agronegócio familiar com dados climáticos e de mercado." />
-        <meta name="keywords" content="agronegócio, chatbot, inteligência artificial, IA no campo, agricultura familiar, clima, mercado agrícola, WhatsApp" />
+        <title>
+          Campo Inteligente | Chatbot para o Agronegócio com Inteligência
+          Artificial
+        </title>
+        <meta
+          name="description"
+          content="A Campo Inteligente é uma plataforma com chatbot via WhatsApp que usa inteligência artificial para otimizar o agronegócio familiar com dados climáticos e de mercado."
+        />
+        <meta
+          name="keywords"
+          content="agronegócio, chatbot, inteligência artificial, IA no campo, agricultura familiar, clima, mercado agrícola, WhatsApp"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="Campo Inteligente | Chatbot com IA para o Agronegócio" />
-        <meta property="og:description" content="Plataforma inteligente que oferece suporte ao agricultor familiar via chatbot com IA." />
+        <meta
+          property="og:title"
+          content="Campo Inteligente | Chatbot com IA para o Agronegócio"
+        />
+        <meta
+          property="og:description"
+          content="Plataforma inteligente que oferece suporte ao agricultor familiar via chatbot com IA."
+        />
         {/* recomendo uma imagem em /public/imagens/og-image.jpg (1200x630) para o Open Graph e redes sociais. */}
         <meta property="og:image" content="/imagens/og-image.jpg" />
-        <meta property="og:url" content="https://www.campointeligente.agr.br/" />
+        <meta
+          property="og:url"
+          content="https://www.campointeligente.agr.br/"
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="canonical" href="https://www.campointeligente.agr.br/" />
       </Head>
@@ -54,8 +72,8 @@ export default function Home() {
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className={`${styles["logo-mobile"]} col-12 order-1 mb-4 text-start`} 
-                style={{ paddingLeft: "70px" }} 
+                className={`${styles["logo-mobile"]} col-12 order-1 mb-4 text-start`}
+                style={{ paddingLeft: "70px" }}
               >
                 <div className={`${styles.logoContainer}`}>
                   <motion.div
@@ -228,7 +246,7 @@ export default function Home() {
                 className="d-none d-lg-flex flex-column gap-4"
                 style={{
                   position: "absolute",
-                  left:"1338px", 
+                  left: "1338px",
                   top: "30%",
                   transform: "translateY(-50%)",
                   zIndex: 999,
@@ -260,7 +278,7 @@ export default function Home() {
                     whileHover={{ y: -3 }}
                     whileTap={{ scale: 0.9 }}
                   >
-                    <FontAwesomeIcon icon={faFacebook} size="lg"/>
+                    <FontAwesomeIcon icon={faFacebook} size="lg" />
                   </motion.a>
                 </div>
               </motion.div>

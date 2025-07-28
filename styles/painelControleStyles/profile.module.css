@@ -4,12 +4,7 @@
   border-radius: 12px;
   color: #374151; 
   width: 100%;
-  flex-grow: 1; 
-  display: flex;
-  flex-direction: column;
 }
-
-
 
 .header h2 {
   font-weight: 700; 
@@ -31,27 +26,10 @@
 }
 
 
-.contentWrapper {
-  display: flex;
-  flex-direction: column; 
-  gap: 2.5rem; 
-  flex-grow: 1; 
-}
-
-
-.avatarAndNameRow {
-  display: flex;
-  align-items: center; 
-  gap: 3rem; 
-}
-
-/* Seção do avatar */
 .avatarInitialsContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.5rem;
-  flex-shrink: 0; 
 }
 .avatarInitials {
   display: flex;
@@ -66,35 +44,9 @@
   font-weight: 600;
 }
 
-.nameGroup {
-  flex-grow: 1; 
-}
-
-.nameGroup,
-.organizacaoGroup {
-  margin-right: 47px;
-}
-
-/* Seção do formulário, ocupando o espaço restante */
-.formSection {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  width: 100%;
-}
-
-/* Linha genérica para os campos do formulário */
-.formRow {
-  display: flex;
-  gap: 2.5rem; 
-  align-items: flex-end; 
-}
-
-/* Estilo individual para cada grupo de label + input */
 .formGroup {
   display: flex;
   flex-direction: column;
-  flex: 1; 
 }
 
 .formGroup label {
@@ -105,7 +57,7 @@
   margin-bottom: 0.5rem;
 }
 
-.formGroup input {
+.input { 
   border: 1px solid #d1d5db; 
   border-radius: 8px; 
   padding: 0.6rem 0.8rem; 
@@ -117,13 +69,6 @@
   color: #4CAF50;
 }
 
-/* Ações que ficam abaixo do formulário */
-.actionsSection {
-  display: flex;
-  justify-content: flex-end; 
-  flex: 1; 
-}
-
 .changePasswordButton {
   background-color: #166534; 
   color: white;
@@ -133,13 +78,10 @@
   font-weight: 600;
   font-size: 1rem;
   box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  transition: all 0.2s ease-in-out;
-  width: 240px;
+  transition: all 0.2s ease-in-out; 
   height: 48px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 47px;
+  width: 100%;
+  max-width: 240px;
 }
 
 .changePasswordButton:hover {
@@ -147,19 +89,20 @@
   transform: translateY(-2px);
 }
 
-/* Rodapé com o botão de sair */
 .footerActions {
-  margin-top: auto;
+  margin-top: 4rem;
   padding-top: 1.5rem;
   display: flex;
   justify-content: center;
+  border-top: 1px solid #e5e7eb;
 }
 
 .logoutButton {
   background-color: #ef4444;
   color: white;
   border: none;
-  width: 140px;
+  width: 100%;
+  max-width: 240px;
   height: 48px;
   padding: 0.7rem 1.5rem;
   border-radius: 8px;
@@ -176,4 +119,29 @@
 .logoutButton:hover {
   background-color: #dc2626;
   transform: translateY(-2px);
+}
+
+@media (max-width: 767.98px) {
+  .perfilContainer {
+    padding: 1.5rem;
+  }
+
+  .footerActions {
+    margin-top: 1rem;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .logoutButton {
+    max-width: 240px;
+  }
+}
+
+@media (min-width: 768px) {
+  .changePasswordButton {
+    width: 240px;
+  }
+  .logoutButton {
+    width: 240px;
+  }
 }

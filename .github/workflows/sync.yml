@@ -1,26 +1,45 @@
-name: Sync to CampoInteligente
+name: Executar Sync to CampoInteligente-Front
 
 on:
-  push: # Gatilho para executar ao receber commits
+  push:
     branches:
-      - main # Executa apenas se o push for na branch main
-  schedule:
-    - cron: "*/30 * * * *" # Executa a cada 30 minutos
-  workflow_dispatch: # Permite execução manual
+      - main  # Executa automaticamente com push na branch main
+  workflow_dispatch:        # Permite execução manual via GitHub Actions
 
 jobs:
   mirror:
     runs-on: ubuntu-latest
 
     steps:
+      # Configura identidade do Git
       - name: Configurar Git
         run: |
           git config --global user.name "Marcos Morais"
           git config --global user.email "marcosmoraisjr@users.noreply.github.com"
 
-      - name: Clonar repositório de origem
+      # Ativa o ssh-agent com a chave privada armazenada nos segredos
+      - name: Configurar ssh-agent
+        uses: webfactory/ssh-agent@v0.5.4
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+      # Clona repositório de origem (FRONT) e sincroniza com o de destino se houver diferenças
+      - name: Clonar repositório de origem e sincronizar se necessário
         run: |
-          git clone https://marcosmoraisjr:${{ secrets.GH_PAT }}@github.com/restic36/startup-campo-inteligente-site.git source
+          # Clona o repositório de origem (front-end)
+          git clone git@github.com:restic36/startup-campo-inteligente-site.git source
           cd source
-          git remote add destino https://marcosmoraisjr:${{ secrets.GH_PAT }}@github.com/marcosmoraisjr/CampoInteligente.git
-          git push --force destino main
+
+          # Adiciona repositório de destino
+          git remote add destino git@github.com:marcosmoraisjr/CampoInteligente.git
+
+          # Busca o conteúdo da branch main do destino
+          git fetch destino main
+
+          # Verifica se há diferenças antes de forçar o push
+          if ! git diff --quiet HEAD destino/main; then
+            echo "🚀 Diferenças detectadas. Iniciando sincronização..."
+            git push --force destino main
+          else
+            echo "✅ Nenhuma diferença detectada. Sincronização não necessária."
+          fi

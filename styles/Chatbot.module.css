@@ -300,6 +300,10 @@
   margin-bottom: 40px;
 }
 
+.message {
+  white-space: pre-line;
+}
+
 .carousel-indicators {
   position: absolute !important;
   bottom: 10px !important;

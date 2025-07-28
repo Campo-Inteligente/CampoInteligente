@@ -83,7 +83,7 @@ const Sidebar = () => {
   const router = useRouter(); // Use o hook useRouter
   const { pathname } = router; // Pega o pathname a partir do router
   return (
-    <aside className={styles.sidebar}>
+    <aside className={`${styles.sidebar} d-none d-lg-block`}>
       <div className={styles.sidebarHeader}>
         <Image
           src="/imagens/logo2.svg"
