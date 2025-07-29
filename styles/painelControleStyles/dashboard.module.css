@@ -1,0 +1,193 @@
+.card {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardIcon {
+  color: var(--text-secondary);
+}
+/* Alinha o icone a direita */
+.iconAlign{
+  padding-left: 0.5rem;
+}
+/* Alinha os items da linha */
+.statsAlign{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* Define tamanho do icone */
+.statsIconSize{
+ width: 14px;
+}
+
+/* Estilos específicos para os cards de estatísticas */
+.statCardValue {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--green-dark);
+}
+
+.statCardChange {
+  font-size: 0.875rem;
+  color: var(--green-medium);
+}
+
+/* Estilos para a tabela de ranking */
+.rankingTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.75rem; /* Espaçamento entre as linhas */
+}
+
+.rankingTable td {
+  padding: 0.5rem;
+  vertical-align: middle;
+}
+
+.rankingTable .rankNumber {
+  background-color: var(--green-light);
+  color: var(--green-dark);
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+}
+
+/* Estilos para os botões de filtro (Diário, Semanal, etc.) */
+.filterButtons {
+  display: flex;
+  gap: 0.5rem;
+  background-color: #e7e7e7;
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.filterButtons button {
+  background-color: transparent;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.filterButtons button.active {
+  background-color: #ffffff;
+  color: var(--green-dark);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Card com fundo verde para Usuários Ativos */
+.activeUsersCard {
+  background-color: #22c55e; /* Verde médio */
+  color: white;
+}
+
+.activeUsersCard .cardTitle {
+  color: white;
+}
+
+.activeUsersCard .filterButtons {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.activeUsersCard .filterButtons button {
+  color: white;
+}
+
+.activeUsersCard .filterButtons button.active {
+  background-color: #16a34a; /* Verde um pouco mais escuro */
+  color: white;
+  box-shadow: none;
+}
+
+/* Container para o mapa "falso" */
+.mapContainer {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  background-image: url('/imagens/mapa-bahia.png');
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Estilo base para os marcadores no mapa */
+.mapMarker {
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 0.3rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  border: 2px solid;
+  white-space: nowrap;
+}
+
+/* Cores específicas para as bordas dos marcadores */
+.markerPink { border-color: #ec4899; color: #ec4899; }
+.markerBlue { border-color: #3b82f6; color: #3b82f6; }
+.markerPurple { border-color: #8b5cf6; color: #8b5cf6; }
+
+/* Estilo para o card de variação de preços */
+.priceChartCard {
+  background-color: #14532d; /* Verde bem escuro */
+  color: white;
+}
+
+.priceChartCard .cardTitle {
+  color: white;
+}
+
+.priceChartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.priceChartTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.productSelector {
+  background-color: white;
+  color: #1f2937;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.chartContainer {
+  background-color: #064e3b; /* Verde escuro, mas mais claro que o card */
+  padding: 1.5rem;
+  border-radius: 12px;
+  height: 350px; /* Altura fixa para o gráfico */
+}

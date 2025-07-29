@@ -1,6 +1,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
 
+:root {
+  --green-dark: #0d6d37;
+  --green-medium: #16a34a;
+  --green-light: #f0fdf4;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --pink-accent: #ec4899;
+  --red-accent: #ef4444;
+}
+
 html, body {
   margin: 0;
   padding: 0;
