@@ -26,12 +26,11 @@ export default function ChatWidget() {
     };
 
     setVh();
-    window.addEventListener("resize", setVh); 
+    window.addEventListener("resize", setVh);
 
     // Função de limpeza para remover o listener
     return () => window.removeEventListener("resize", setVh);
   }, []);
-
 
   useEffect(() => {
     if (messageListRef.current) {
@@ -159,8 +158,8 @@ export default function ChatWidget() {
                       <Image
                         src="/imagens/perfil.png"
                         alt="Avatar"
-                        width={30}
-                        height={30}
+                        width={20}
+                        height={20}
                         className={styles.avatar}
                       />
                     )}
@@ -172,8 +171,8 @@ export default function ChatWidget() {
                     <Image
                       src="/imagens/perfil.png"
                       alt="Avatar"
-                      width={30}
-                      height={30}
+                      width={20}
+                      height={20}
                       className={styles.avatar}
                     />
                     <div className={styles.loadingDots}>
@@ -219,9 +218,9 @@ export default function ChatWidget() {
             whileTap={{ scale: 0.95 }}
           >
             <span className={styles.textBubble}>
-              🖐️ Olá! Sou o IAGRO, seu Assistente Virtual.
+              🖐️Olá! Sou o IAGRO,<br /> seu Assistente Virtual.
               <br />
-              Estou aqui para ajudar — conte comigo!
+              Estou aqui para ajudar, <br /> conte comigo!
             </span>
 
             <Image

@@ -16,6 +16,12 @@ const poppins = Poppins({
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
+   // DEFINE AS ROTAS ONDE O CHAT DEVE APARECER ---
+  const chatWidgetPaths = ["/sobre", "/contato", "/home"];
+
+  // VERIFIQUA SE A ROTA ATUAL ESTÁ NA LISTA ---
+  const showChatWidget = chatWidgetPaths.includes(router.pathname);
+
   useEffect(() => {
     import("bootstrap/dist/js/bootstrap.bundle.min.js");
   }, []);
