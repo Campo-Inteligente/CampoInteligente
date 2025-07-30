@@ -15,6 +15,8 @@ import {
   LuChevronRight,
   LuChevronsLeft,
   LuChevronsRight,
+  LuChevronDown,
+  LuPlus,
 } from "react-icons/lu";
 
 // Mapeamento de status para estilos (sem alterações)
@@ -133,7 +135,7 @@ export default function UsuariosPage({ user, users: initialUsers }) {
         <title>Usuários | Painel Campo Inteligente</title>
       </Head>
 
-      {/* NOVO: Renderiza o Toast de Sucesso */}
+      {/* Renderiza o Toast de Sucesso */}
       {toast.show && (
         <SuccessToast
           title={toast.title}
@@ -142,7 +144,7 @@ export default function UsuariosPage({ user, users: initialUsers }) {
         />
       )}
 
-      {/* NOVO: Renderiza o Modal de Confirmação */}
+      {/*Renderiza o Modal de Confirmação */}
       <ConfirmationModal
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
@@ -150,203 +152,235 @@ export default function UsuariosPage({ user, users: initialUsers }) {
         title="Você tem certeza?"
         message="Você está prestes a excluir permanentemente."
       />
+      <div className={styles.pageContentWrapper}>
+        <header className={styles.pageHeader}>
+          <div className={styles.titleGroup}>
+            <h1>Usuários</h1>
+            <p>Gerencie os usuários cadastrados e suas informações aqui.</p>
+          </div>
+        </header>
 
-      <header className={styles.pageHeader}>
-        <div className={styles.titleGroup}>
-          <h1>Usuários</h1>
-          <p>Gerencie os usuários cadastrados e suas informações aqui.</p>
-        </div>
-      </header>
+        <div className={styles.headerActionsWrapper}>
+          <div className={`${styles.actionsContainer} gap-2 gap-sm-3`}>
+            <div className={styles.viewSwitcher} ref={viewSwitcherRef}>
+              <button
+                onClick={() => setIsViewMenuOpen(!isViewMenuOpen)}
+                className={styles.viewSwitcherButton}
+              >
+                <Image
+                  src={currentView.iconSrc}
+                  alt={currentView.name}
+                  width={16}
+                  height={16}
+                />
+                <span className="d-none d-sm-inline">{currentView.name}</span>
+                <Image
+                  src="/imagens/down.svg"
+                  alt="Abrir menu"
+                  width={12}
+                  height={12}
+                />
+              </button>
 
-      <div className={styles.actionsContainer}>
-        <div className={styles.viewSwitcher} ref={viewSwitcherRef}>
-          <button
-            onClick={() => setIsViewMenuOpen(!isViewMenuOpen)}
-            className={styles.viewSwitcherButton}
-          >
-            <Image
-              src={currentView.iconSrc}
-              alt={currentView.name}
-              width={16}
-              height={16}
-            />
-            <span>{currentView.name}</span>
-            <Image
-              src="/imagens/down.svg"
-              alt="Abrir menu"
-              width={12}
-              height={12}
-            />
-          </button>
-
-          {isViewMenuOpen && (
-            <div className={styles.viewSwitcherDropdown}>
-              {viewOptions.map((option) => (
-                <div
-                  key={option.name}
-                  className={`${styles.viewSwitcherItem} ${
-                    currentView.name === option.name ? styles.active : ""
-                  }`}
-                  onClick={() => handleViewChange(option)}
-                >
-                  {/* ALTERAÇÃO: Usando o iconSrc correto da opção */}
-                  <Image
-                    src={option.iconSrc}
-                    alt={option.name}
-                    width={16}
-                    height={16}
-                  />
-                  <span>{option.name}</span>
+              {isViewMenuOpen && (
+                <div className={styles.viewSwitcherDropdown}>
+                  {viewOptions.map((option) => (
+                    <div
+                      key={option.name}
+                      className={`${styles.viewSwitcherItem} ${
+                        currentView.name === option.name ? styles.active : ""
+                      }`}
+                      onClick={() => handleViewChange(option)}
+                    >
+                      <Image
+                        src={option.iconSrc}
+                        alt={option.name}
+                        width={16}
+                        height={16}
+                      />
+                      <span>{option.name}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              )}
+            </div>
+
+            <div className={styles.filterInputGroup}>
+              <LuSearch size={18} className={styles.filterInputIcon} />
+              <input
+                type="text"
+                placeholder="Buscar por nome, telefone, localização..."
+                className={styles.filterInput}
+              />
+            </div>
+
+            <div className={`${styles.ButtonContainer} gap-2 gap-sm-3`}>
+              <button
+                className={styles.deleteButton}
+                disabled={selectedUsers.length === 0}
+                onClick={() => setIsModalOpen(true)}
+              >
+                <LuTrash2 size={16} />
+                {/* Este span só será visível em telas pequenas (sm) ou maiores */}
+                <span className="d-none d-sm-inline ms-2">Excluir</span>
+              </button>
+              <button
+                className={`${styles.actionButton} ${styles.exportButton}`}
+              >
+                <LuDownload size={16} />
+
+                <span className="d-none d-sm-inline ms-2">Exportar</span>
+              </button>
+            </div>
+          </div>
+          {/* BARRA DE FILTROS  */}
+          <div className={styles.filterBar}>
+            <button className={styles.filterButton}>
+              <span>Localização</span>
+              <LuChevronDown size={16} />
+            </button>
+            <button className={styles.filterButton}>
+              <span>BA</span>
+              <LuChevronDown size={16} />
+            </button>
+            <button
+              className={`${styles.filterButton} ${styles.addFilterButton}`}
+            >
+              <LuPlus size={16} />
+              <span>Add filtro</span>
+            </button>
+          </div>
+        </div>
+
+        <main>
+          {currentView.name === "Tabela" && (
+            <div className={styles.tableContainer}>
+              <table className={styles.usersTable}>
+                <thead>
+                  <tr>
+                    <th>
+                      <input
+                        type="checkbox"
+                        onChange={handleSelectAll}
+                        className={styles.checkboxInput}
+                        checked={
+                          displayedUsers.length > 0 &&
+                          selectedUsers.length === displayedUsers.length
+                        }
+                      />
+                    </th>
+                    <th>Nome do Usuário</th>
+                    <th>Telefone</th>
+                    <th>Localização</th>
+                    <th>Status</th>
+                    <th>Data de Cadastro</th>
+                    <th>Cultivo Principal</th>
+                    <th>Ações</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {displayedUsers.map((dbUser) => {
+                    const statusText =
+                      dbUser.ativo === "S" ? "Ativo" : "Inativo";
+                    const config = statusConfig[statusText];
+
+                    return (
+                      <tr key={dbUser.id}>
+                        <td>
+                          <input
+                            type="checkbox"
+                            className={styles.checkboxInput}
+                            checked={selectedUsers.includes(dbUser.id)}
+                            onChange={() => handleSelectUser(dbUser.id)}
+                          />
+                        </td>
+                        <td>
+                          <span className={styles.userName}>{dbUser.nome}</span>
+                        </td>
+                        <td>{dbUser.whatsapp_id}</td>
+                        <td>{`${dbUser.cidade || ""} - ${
+                          dbUser.estado || ""
+                        }`}</td>
+                        <td>
+                          {config ? (
+                            <span
+                              className={`${styles.statusPill} ${config.className}`}
+                            >
+                              <span className={styles.statusDot}></span>
+                              {statusText}
+                            </span>
+                          ) : (
+                            <span>{statusText}</span>
+                          )}
+                        </td>
+                        <td>
+                          {dbUser.data_cadastro
+                            ? new Date(dbUser.data_cadastro).toLocaleDateString(
+                                "pt-BR"
+                              )
+                            : "N/A"}
+                        </td>
+                        <td>{dbUser.cultivo_principal || "N/A"}</td>
+
+                        <td>
+                          {" "}
+                          <div className={styles.tableActions}>
+                            {" "}
+                            <button className={styles.rowActionButton}>
+                              <LuTrash2 size={14} />
+                              <span>Excluir</span>
+                            </button>
+                            <a href="#" className={styles.rowDetailsLink}>
+                              Ver detalhes
+                            </a>
+                          </div>
+                        </td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
             </div>
           )}
-        </div>
 
-        <div className={styles.filterInputGroup}>
-          <LuSearch size={18} className={styles.filterInputIcon} />
-          <input
-            type="text"
-            placeholder="Buscar por nome, telefone, localização..."
-            className={styles.filterInput}
-          />
-        </div>
+          {currentView.name === "Quadro" && (
+            <div className={styles.placeholderView}>
+              <h2>Visualização em Quadro</h2>
+              <p>A funcionalidade de quadro será implementada aqui.</p>
+            </div>
+          )}
 
-        <div className={styles.ButtonContainer}>
-          <button
-            className={styles.deleteButton}
-            disabled={selectedUsers.length === 0}
-            onClick={() => setIsModalOpen(true)}
-          >
-            <LuTrash2 size={16} /> Excluir
-          </button>
-          <button className={`${styles.actionButton} ${styles.exportButton}`}>
-            <LuDownload size={16} /> Exportar
-          </button>
-        </div>
+          {currentView.name === "Lista" && (
+            <div className={styles.placeholderView}>
+              <h2>Visualização em Lista</h2>
+              <p>A funcionalidade de lista será implementada aqui.</p>
+            </div>
+          )}
+        </main>
+
+        <footer className={styles.pagination}>
+          <div>
+            <span>
+              1-{displayedUsers.length} de {displayedUsers.length} linhas
+            </span>
+          </div>
+          <div className={styles.paginationControls}>
+            <button disabled>
+              <LuChevronsLeft size={16} />
+            </button>
+            <button disabled>
+              <LuChevronLeft size={16} />
+            </button>
+            <span className={styles.activePage}>1</span>
+            <button>
+              <LuChevronRight size={16} />
+            </button>
+            <button>
+              <LuChevronsRight size={16} />
+            </button>
+          </div>
+        </footer>
       </div>
-
-      <main>
-        {currentView.name === "Tabela" && (
-          <div className={styles.tableContainer}>
-            <table className={styles.usersTable}>
-              <thead>
-                <tr>
-                  <th>
-                    <input
-                      type="checkbox"
-                      onChange={handleSelectAll}
-                      checked={
-                        displayedUsers.length > 0 &&
-                        selectedUsers.length === displayedUsers.length
-                      }
-                    />
-                  </th>
-                  <th>Nome do Usuário</th>
-                  <th>Telefone</th>
-                  <th>Localização</th>
-                  <th>Status</th>
-                  <th>Data de Cadastro</th>
-                  <th>Ações</th>
-                </tr>
-              </thead>
-              <tbody>
-                {displayedUsers.map((dbUser) => {
-                  const statusText = dbUser.ativo === "S" ? "Ativo" : "Inativo";
-                  const config = statusConfig[statusText];
-
-                  return (
-                    <tr key={dbUser.id}>
-                      <td>
-                        <input
-                          type="checkbox"
-                          checked={selectedUsers.includes(dbUser.id)}
-                          onChange={() => handleSelectUser(dbUser.id)}
-                        />
-                      </td>
-                      <td>
-                        <span className={styles.userName}>{dbUser.nome}</span>
-                      </td>
-                      <td>{dbUser.whatsapp_id}</td>
-                      <td>{`${dbUser.cidade || ""} - ${
-                        dbUser.estado || ""
-                      }`}</td>
-                      <td>
-                        {config ? (
-                          <span
-                            className={`${styles.statusPill} ${config.className}`}
-                          >
-                            {statusText}
-                          </span>
-                        ) : (
-                          <span>{statusText}</span>
-                        )}
-                      </td>
-                      <td>
-                        {dbUser.data_cadastro
-                          ? new Date(dbUser.data_cadastro).toLocaleDateString(
-                              "pt-BR"
-                            )
-                          : "N/A"}
-                      </td>
-                      <td className={styles.tableActions}>
-                        <button>Excluir</button>
-                        <button>Enviar</button>
-                        <a href="#">
-                          <Image
-                            src="/imagens/icons/editar-detalhes.svg"
-                            alt="Ver detalhes"
-                            width={14}
-                            height={14}
-                          />
-                          Ver detalhes
-                        </a>
-                      </td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          </div>
-        )}
-
-        {currentView.name === "Quadro" && (
-          <div className={styles.placeholderView}>
-            <h2>Visualização em Quadro</h2>
-            <p>A funcionalidade de quadro será implementada aqui.</p>
-          </div>
-        )}
-
-        {currentView.name === "Lista" && (
-          <div className={styles.placeholderView}>
-            <h2>Visualização em Lista</h2>
-            <p>A funcionalidade de lista será implementada aqui.</p>
-          </div>
-        )}
-      </main>
-
-      <footer className={styles.pagination}>
-        <div>
-          <span>
-            1-{displayedUsers.length} de {displayedUsers.length} linhas
-          </span>
-        </div>
-        <div className={styles.paginationControls}>
-          <button disabled>
-            <LuChevronsLeft size={16} />
-          </button>
-          <button disabled>
-            <LuChevronLeft size={16} />
-          </button>
-          <span className={styles.activePage}>1</span>
-          <button>
-            <LuChevronRight size={16} />
-          </button>
-          <button>
-            <LuChevronsRight size={16} />
-          </button>
-        </div>
-      </footer>
     </PainelLayout>
   );
 }

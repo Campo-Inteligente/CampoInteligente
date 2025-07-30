@@ -1,9 +1,15 @@
-/* Cabeçalho com título e botões de ação */
+/* Geral e Cabeçalho */
 .pageHeader {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
+}
+
+.pageContentWrapper {
+  width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
 }
 
 .titleGroup h1 {
@@ -18,21 +24,23 @@
   color: #127234;
 }
 
+/* ============================================= */
+/* ============ Barra de Ações ============ */
+/* ============================================= */
 .actionsContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem; /* Reduzido para melhor responsividade */
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e2e8f0;
 }
 
-/* ALTERAÇÃO: position: relative adicionado */
+/* Seletor de Visualização (Tabela/Quadro/Lista) */
 .viewSwitcher {
-  position: relative; /* Isso garante que o dropdown se posicione em relação a este container */
+  position: relative;
   flex-shrink: 0;
 }
 
-/* O botão principal que mostra a visualização atual */
 .viewSwitcherButton {
   display: inline-flex;
   align-items: center;
@@ -41,38 +49,44 @@
   height: 2.5rem;
   background-color: white;
   border: 1px solid #cbd5e0;
-  border-radius: 5px;
-  color: #004809;
+  border-radius: 8px;
+  color: #2d3748;
+  font-weight: 500;
   cursor: pointer;
   transition: background-color 0.2s ease;
+
+  justify-content: center;
+}
+
+@media (min-width: 576px) {
+  .viewSwitcherButton {
+    width: 10rem;
+  }
 }
 
 .viewSwitcherButton:hover {
   background-color: #f7fafc;
 }
 
-/* O menu dropdown que aparece */
 .viewSwitcherDropdown {
   position: absolute;
-  top: calc(100% + 8px); /* Posição abaixo do botão com um espaçamento */
+  top: calc(100% + 8px);
   left: 0;
-  width: 142px;
+  width: 10rem;
   background-color: white;
   border-radius: 8px;
   border: 1px solid #e2e8f0;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   padding: 0.5rem;
-  z-index: 100; /* Z-index para sobrepor outros elementos */
+  z-index: 100;
 }
 
-/* Cada item dentro do dropdown */
 .viewSwitcherItem {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   padding: 0.75rem;
   border-radius: 6px;
-  text-decoration: none;
   color: #2d3748;
   font-weight: 500;
   cursor: pointer;
@@ -88,6 +102,7 @@
   color: #004d09;
 }
 
+/* Barra de Busca */
 .filterInputGroup {
   position: relative;
   flex-grow: 1;
@@ -95,7 +110,7 @@
 
 .filterInput {
   width: 100%;
-  height: 40px;
+  height: 2.5rem;
   border: 1px solid #cbd5e0;
   border-radius: 8px;
   padding: 0 1rem 0 2.5rem;
@@ -110,17 +125,19 @@
   color: #a0aec0;
 }
 
+/* Container dos botões Exportar/Excluir */
 .ButtonContainer {
   display: flex;
   gap: 1rem;
 }
 
+/* Botão Genérico de Ação */
 .actionButton {
-  padding: 0.75rem 1.5rem;
+  padding: 0 1.5rem;
+  height: 2.5rem;
   border-radius: 8px;
   font-weight: 600;
   font-size: 0.9rem;
-  height: 2.5rem;
   border: none;
   cursor: pointer;
   display: flex;
@@ -129,53 +146,98 @@
   transition: background-color 0.2s ease;
 }
 
+/* Botão Exportar (Verde) */
 .exportButton {
   background-color: #004d09;
   color: white;
 }
 .exportButton:hover {
-    background-color: #4caf50;
-  border-color: #4caf50;
-  color: #ffffff;
+  background-color: #003a06;
 }
 
-
+/* Botão Excluir (Branco/Cinza) */
 .deleteButton {
+  padding: 0 1.5rem;
   height: 2.5rem;
-  padding: 0.75rem 1.5rem;
   border-radius: 8px;
-  border: 1px solid #e2e8f0;
   font-weight: 600;
   font-size: 0.9rem;
-  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  transition: background-color 0.2s ease;
-  background-color: #e2e8f0;
+  transition: all 0.2s ease;
+  border: 1px solid #cbd5e0;
+  background-color: #f8fafc;
   color: #a0aec0;
   cursor: not-allowed;
 }
 
 .deleteButton:not(:disabled) {
-  background-color: #ffffff;
-  color: #004809;
-  border-color: #004d09;
+  background-color: white;
+  color: #334155;
+  border-color: #cbd5e0;
   cursor: pointer;
 }
 
 .deleteButton:not(:disabled):hover {
-  background-color: #4caf50;
-  border-color: #4caf50;
-  color: #ffffff;
+  background-color: #f1f8f1;
+  border-color: #004d09;
+  color: #004d09;
 }
 
-/* Tabela de Usuários */
+.headerActionsWrapper {
+  margin-bottom: 0rem;
+}
+
+.filterBar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 0;
+}
+
+.filterButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 2.25rem;
+  padding: 0 1rem;
+  background-color: white;
+  border: 1px solid #cbd5e0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #2d3748;
+  transition: all 0.2s ease;
+}
+
+.filterButton:hover {
+  border-color: #004d09;
+  color: #004d09;
+}
+
+/* Estilo específico para o botão "Add filtro" */
+.addFilterButton {
+  color: #127234;
+  background-color: transparent;
+  border: 0;
+}
+
+.addFilterButton:hover {
+  color: #4caf50;
+  background-color: transparent;
+  border: 0;
+}
+
+/* ================ Tabela ================ */
+
 .tableContainer {
   background-color: white;
-  border-radius: 12px;
+  border-radius: 8px;
   border: 1px solid #e2e8f0;
-  overflow: hidden;
+  overflow-x: auto;
+  font-size: 0.95rem;
+  color: #2d3748;
 }
 
 .usersTable {
@@ -183,28 +245,86 @@
   border-collapse: collapse;
 }
 
+.checkboxInput {
+  cursor: pointer;
+  width: 1.1rem; 
+  height: 1.1rem; 
+  vertical-align: middle; 
+  accent-color: #004d09; 
+}
+
 .usersTable th,
 .usersTable td {
-  padding: 1rem 1.25rem;
+  padding: 0.6rem 0.5rem;
   text-align: left;
   border-bottom: 1px solid #e2e8f0;
   vertical-align: middle;
 }
 
+.usersTable th:not(:last-child),
+.usersTable td:not(:last-child) {
+  border-right: 1px solid #e2e8f0;
+}
+
+/* === CONTROLE DE LARGURA FLUIDO E INTELIGENTE === */
+/* ========================================================= */
+/* === CONTROLE DE LARGURA FLUIDO E INTELIGENTE (CORRIGIDO) === */
+/* ========================================================= */
+
+/* Colunas que NUNCA quebram e ocupam o mínimo espaço (Checkbox, Status, Ações) */
+.usersTable th:nth-child(1),
+.usersTable td:nth-child(1),
+.usersTable th:nth-child(5),
+.usersTable td:nth-child(5),
+.usersTable th:nth-child(8),
+.usersTable td:nth-child(8) {
+  width: 1%;
+  white-space: nowrap;
+}
+
+/* Coluna principal (Nome) - pode quebrar a linha */
+.usersTable th:nth-child(2),
+.usersTable td:nth-child(2) {
+  min-width: 200px; /* Define o limite mínimo para encolher */
+  word-break: break-word; /* Permite a quebra de palavras longas */
+}
+
+/* Coluna do Telefone - pode encolher um pouco, mas não quebra */
+.usersTable th:nth-child(3),
+.usersTable td:nth-child(3) {
+  min-width: 140px;
+  white-space: nowrap;
+}
+
+/* Coluna da Localização - pode quebrar a linha */
+.usersTable th:nth-child(4),
+.usersTable td:nth-child(4) {
+  min-width: 180px;
+}
+
+/* Colunas de Data e Cultivo - podem encolher um pouco, mas não quebram */
+.usersTable th:nth-child(6),
+.usersTable td:nth-child(6),
+.usersTable th:nth-child(7),
+.usersTable td:nth-child(7) {
+  min-width: 120px;
+  white-space: nowrap;
+}
+
+.usersTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
 .usersTable thead {
-  background-color: #f7fafc;
+  background-color: #f1f8f1;
 }
 
 .usersTable th {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #718096;
+  color: #004d09;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-}
-
-.usersTable tbody tr:last-child td {
-  border-bottom: none;
 }
 
 .userName {
@@ -217,57 +337,83 @@
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.25rem 0.75rem;
+  padding: 0.35rem 0.75rem;
   border-radius: 9999px;
   font-size: 0.8rem;
   font-weight: 600;
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
 }
 
 .statusAtivo {
   background-color: #e6f4ea;
   color: #34a853;
 }
+.statusAtivo .statusDot {
+  background-color: #34a853;
+}
 
 .statusInativo {
   background-color: #fce8e6;
   color: #ea4335;
+}
+.statusInativo .statusDot {
+  background-color: #ea4335;
 }
 
 .statusPausa {
   background-color: #feefc3;
   color: #fbbc04;
 }
+.statusPausa .statusDot {
+  background-color: #fbbc04;
+}
 
-/* Ações da Tabela */
-.tableActions button,
-.tableActions a {
+/* Ações por Linha da Tabela */
+.tableActions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.rowActionButton {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
   background: none;
   border: none;
-  color: #4a5568;
   cursor: pointer;
-  margin-right: 1rem;
+  color: #127234;
   font-weight: 500;
+  font-size: 0.7rem;
 }
 
-.tableActions a {
+.rowDetailsLink {
+  color: #127234;
+  font-weight: 500;
   text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
+  font-size: 0.7rem;
 }
 
-/* Paginação */
+.rowDetailsLink:hover {
+  text-decoration: underline;
+}
+
+/* ============================================= */
+/* ================ Paginação ================ */
+/* ============================================= */
 .pagination {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 1.25rem;
+  padding: 1rem 1.25rem;
   font-size: 0.9rem;
   color: #4a5568;
   border-top: 1px solid #e2e8f0;
-  background-color: #f7fafc;
-  margin-top: 1.5rem;
-  border-radius: 0 0 12px 12px;
 }
 
 .paginationControls {
@@ -290,14 +436,16 @@
   cursor: not-allowed;
 }
 
-.paginationControls span.activePage {
+.paginationControls .activePage {
   background-color: #e8f5e9;
-  border-color: #004d09;
+  border-color: #a7d7b7;
   color: #004d09;
   font-weight: 700;
 }
 
-/* NOVO: Estilo para as visualizações de placeholder */
+/* ============================================= */
+/* ======== Views (Quadro/Lista) ======== */
+/* ============================================= */
 .placeholderView {
   background-color: white;
   border: 1px solid #e2e8f0;
