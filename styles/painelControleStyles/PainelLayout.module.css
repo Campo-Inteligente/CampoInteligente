@@ -85,9 +85,10 @@
 /* --- Conteúdo Principal --- */
 .mainContentWrapper {
   margin-left: 15.6rem;
-  flex-grow: 1;
+  flex: 1;
   padding-left: 2rem;
   padding-right: 2rem;
+  overflow-y: auto;
 }
 
 /* --- ESTILOS PARA A NAVBAR --- */
