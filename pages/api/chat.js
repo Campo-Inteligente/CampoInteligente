@@ -5,30 +5,43 @@ export default async function handler(req, res) {
   }
 
   // Pega os dados enviados pelo frontend (ChatWidget.js)
-  const { session_id, mensagem } = req.body;
+  // AGORA USAMOS 'message' AQUI TAMBÉM!
+  const { session_id, message } = req.body; 
 
-  // Define a URL real
-  const REAL_API_URL = "http://45.236.189.2:5000/webchat";
+  // Define a URL real da sua API Django para o webchat
+    const REAL_API_URL = "http://campointeligente.ddns.com.br:21083/api/v1/chatbot/webchat/";
+
+  const requestBodyJson = JSON.stringify({
+    session_id: session_id,
+    message: message, // A variável 'message' (já desestruturada) está sendo usada aqui
+  });
+
+  // Linha de debug (pode remover depois)
+  console.log("JSON REAL ENVIADO PELO PROXY:", requestBodyJson);
 
   try {
-    // Encaminha a requisição para a API
     const apiResponse = await fetch(REAL_API_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({
-        session_id: session_id,
-        mensagem: mensagem,
-      }),
+      body: requestBodyJson,
     });
 
     if (!apiResponse.ok) {
-      // Se a API real retornar um erro, repassa o erro
-      throw new Error(`Erro da API externa: ${apiResponse.statusText}`);
+      const errorData = await apiResponse.json();
+      console.error(
+        "Erro da API externa (Django):",
+        apiResponse.status,
+        errorData
+      );
+      throw new Error(
+        `Erro da API externa: ${apiResponse.statusText} - ${JSON.stringify(
+          errorData
+        )}`
+      );
     }
 
-    // Pega a resposta da API real e a envia de volta para o frontend
     const data = await apiResponse.json();
     res.status(200).json(data);
   } catch (error) {

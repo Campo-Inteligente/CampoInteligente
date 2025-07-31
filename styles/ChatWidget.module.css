@@ -107,14 +107,27 @@
   gap: 10px;
   max-width: 90%;
 }
+
+/* ================================================= */
+/* AQUI ESTÁ A CORREÇÃO DEFINITIVA PARA A FORMATAÇÃO */
+/* ================================================= */
 .message p {
+  /* Seus estilos existentes como padding, border-radius, etc. continuam aqui */
   padding: 8px 12px;
   border-radius: 18px;
   margin: 0;
   word-wrap: break-word;
   font-size: 0.8rem;
   line-height: 1.5;
+  
+  /* ================================================= */
+  /* Adicione estas 3 linhas para corrigir TUDO: */
+  /* ================================================= */
+  white-space: pre-wrap;    /* <-- Corrige as quebras de linha */
+  letter-spacing: normal; /* <-- Corrige o espaçamento entre letras */
+  word-spacing: normal;   /* <-- Corrige as palavras juntas */
 }
+
 .message.user p {
   background-color: #dcf8c6;
   color: #333;
@@ -158,7 +171,6 @@
   background-color: #f4f7f6;
   border-radius: 20px;
   padding: 10px 15px;
-  font-size: 1rem;
   font-size: 0.9rem;
 }
 .inputArea input:focus {

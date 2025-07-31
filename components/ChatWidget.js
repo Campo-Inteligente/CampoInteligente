@@ -3,6 +3,7 @@ import styles from "../styles/ChatWidget.module.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { LuSendHorizontal, LuX } from "react-icons/lu";
 import Image from "next/image";
+import { v4 as uuidv4 } from "uuid";
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,25 +14,13 @@ export default function ChatWidget() {
   const messageListRef = useRef(null);
 
   useEffect(() => {
-    const savedSessionId = localStorage.getItem("iagro_session_id");
-    if (savedSessionId) {
-      setSessionId(savedSessionId);
+    let currentSessionId = localStorage.getItem("iagro_session_id");
+    if (!currentSessionId) {
+      currentSessionId = uuidv4();
+      localStorage.setItem("iagro_session_id", currentSessionId);
     }
+    setSessionId(currentSessionId);
   }, []);
-
-  useEffect(() => {
-    const setVh = () => {
-      const vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
-    };
-
-    setVh();
-    window.addEventListener("resize", setVh); 
-
-    // Função de limpeza para remover o listener
-    return () => window.removeEventListener("resize", setVh);
-  }, []);
-
 
   useEffect(() => {
     if (messageListRef.current) {
@@ -41,7 +30,6 @@ export default function ChatWidget() {
 
   const handleSend = async () => {
     if (input.trim() === "" || isLoading) return;
-
     const userMessage = { text: input, sender: "user" };
     setMessages((prev) => [...prev, userMessage]);
     const currentInput = input;
@@ -51,12 +39,10 @@ export default function ChatWidget() {
     try {
       const response = await fetch("/api/chat", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           session_id: sessionId,
-          mensagem: currentInput,
+          message: currentInput,
         }),
       });
 
@@ -65,62 +51,14 @@ export default function ChatWidget() {
       }
 
       const data = await response.json();
-
-      if (data.session_id) {
-        setSessionId(data.session_id);
-        localStorage.setItem("iagro_session_id", data.session_id);
-      }
-
-      const botMessage = { text: data.resposta, sender: "bot" };
+      const botMessage = { text: data.response, sender: "bot" };
       setMessages((prev) => [...prev, botMessage]);
     } catch (error) {
       console.error("Falha ao comunicar com a API:", error);
-
-      const mensagensErro = [
-        "Me enrosquei nos cabo aqui... pensa num trem difícil!",
-        "Fui lá na roça buscar umas ideia... mas me perdi no mato.",
-        "A chuva caiu forte e embaralhou meu sistema que nem estrada de chão molhada.",
-        "Tentei responder, mas parecia mói de burro empacado… não saía nada!",
-        "Dei um bug aqui que nem galinha assustada com trovão.",
-        "Meu sinal tá mais fraco que café de beira de estrada.",
-        "Parece que alguém puxou o fio da minha cabeça... fiquei sem reação.",
-        "Saí correndo atrás de uns dado e voltei de mão abanando.",
-        "Meu sistema deu uma reviravolta que nem porco em dia de feira.",
-        "Os botão aqui travou tudo… acho que foi poeira do campo!",
-        "Tava indo bem, mas tropecei nos próprio código… ô lasqueira!",
-        "Me atrapalhei todo, igual cavalo bravo no curral apertado.",
-        "Fiquei rodando igual peão tonto sem rumo.",
-        "Pensei que dava conta, mas travei igual trator atolado na lama.",
-        "Caiu uma tempestade nos meus pensamento… eita confusão!",
-      ];
-
-      const usadas = JSON.parse(
-        localStorage.getItem("mensagensUsadas") || "[]"
-      );
-
-      // Se todas já foram usadas, reseta
-      if (usadas.length === mensagensErro.length) {
-        localStorage.removeItem("mensagensUsadas");
-        usadas.length = 0;
-      }
-
-      // Filtra mensagens ainda não usadas
-      const restantes = mensagensErro
-        .map((msg, index) => ({ msg, index }))
-        .filter(({ index }) => !usadas.includes(index));
-
-      // Seleciona aleatoriamente uma das restantes
-      const aleatoria = restantes[Math.floor(Math.random() * restantes.length)];
-      usadas.push(aleatoria.index);
-      localStorage.setItem("mensagensUsadas", JSON.stringify(usadas));
-
-      const mensagemFinal = `Tenha paciência comigo, estou aprendendo a falar com humanos 😉🤖\n\n${aleatoria.msg}`;
-
       const errorMessage = {
-        text: mensagemFinal,
+        text: "Desculpe, não consegui me conectar. Tente novamente.",
         sender: "bot",
       };
-
       setMessages((prev) => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
@@ -130,7 +68,6 @@ export default function ChatWidget() {
   return (
     <div className={styles.Container}>
       <div className={styles.widgetContainer}>
-        {/* Janela do Chat */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -184,6 +121,7 @@ export default function ChatWidget() {
                   </div>
                 )}
               </div>
+
               <div className={styles.inputArea}>
                 <input
                   type="text"
@@ -205,7 +143,6 @@ export default function ChatWidget() {
           )}
         </AnimatePresence>
       </div>
-      {/* Gatilho para abrir o chat */}
       <AnimatePresence>
         {!isOpen && (
           <motion.div
@@ -223,7 +160,6 @@ export default function ChatWidget() {
               <br />
               Estou aqui para ajudar — conte comigo!
             </span>
-
             <Image
               src="/imagens/avatar.png"
               alt="Abrir Chat"
