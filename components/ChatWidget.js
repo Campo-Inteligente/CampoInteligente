@@ -23,6 +23,20 @@ export default function ChatWidget() {
   }, []);
 
   useEffect(() => {
+    const setVh = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    };
+
+    setVh();
+    window.addEventListener("resize", setVh); 
+
+    // Função de limpeza para remover o listener
+    return () => window.removeEventListener("resize", setVh);
+  }, []);
+
+
+  useEffect(() => {
     if (messageListRef.current) {
       messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
     }
@@ -96,8 +110,8 @@ export default function ChatWidget() {
                       <Image
                         src="/imagens/perfil.png"
                         alt="Avatar"
-                        width={30}
-                        height={30}
+                        width={20}
+                        height={20}
                         className={styles.avatar}
                       />
                     )}
@@ -109,8 +123,8 @@ export default function ChatWidget() {
                     <Image
                       src="/imagens/perfil.png"
                       alt="Avatar"
-                      width={30}
-                      height={30}
+                      width={20}
+                      height={20}
                       className={styles.avatar}
                     />
                     <div className={styles.loadingDots}>
@@ -156,9 +170,9 @@ export default function ChatWidget() {
             whileTap={{ scale: 0.95 }}
           >
             <span className={styles.textBubble}>
-              🖐️ Olá! Sou o IAGRO, seu Assistente Virtual.
+              🖐️Olá! Sou o IAGRO,<br /> seu Assistente Virtual.
               <br />
-              Estou aqui para ajudar — conte comigo!
+              Estou aqui para ajudar, <br /> conte comigo!
             </span>
             <Image
               src="/imagens/avatar.png"
