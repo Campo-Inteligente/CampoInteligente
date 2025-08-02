@@ -6,10 +6,11 @@ export default async function handler(req, res) {
 
   // Pega os dados enviados pelo frontend (ChatWidget.js)
   // AGORA USAMOS 'message' AQUI TAMBÉM!
-  const { session_id, message } = req.body; 
+  const { session_id, message } = req.body;
 
   // Define a URL real da sua API Django para o webchat
-    const REAL_API_URL = "http://campointeligente.ddns.com.br:21083/api/v1/chatbot/webchat/";
+  const REAL_API_URL =
+    "http://campointeligente.ddns.com.br:21083/api/v1/chatbot/webchat/";
 
   const requestBodyJson = JSON.stringify({
     session_id: session_id,
