@@ -129,10 +129,10 @@ export default function Footer() {
           transition={{ duration: 1, ease: "easeOut" }}
           className={styles.footercontact}
         >
-          <p>Entre em contato conosco para saber mais</p>
+          {/*<p>Entre em contato conosco para saber mais</p>
           <a href="mailto:startupcampointeligente@gmail.com">
             startupcampointeligente@gmail.com
-          </a>
+          </a>*/}
         </motion.div>
       </div>
 
