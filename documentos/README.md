@@ -9,9 +9,9 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 ```
 Repositório..........: FRONT-END
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 25 (AUTO-INCREMENTO)
+Versão...............: 26 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 07/08/2025 15:02:03
+Data de Atualização..: 07/08/2025 15:21:13
 Responsável..........: Marcos Morais
 ```
 ## 👥 Participantes
@@ -80,90 +80,6 @@ Descrição das tecnologias:
 │   │   ├── 📄 Cronograma entregas - Redes Sociais 10.06 a 20.06.pdf
 │   │   └── 📄 Cronograma entregas - Redes Sociais Semana 07.12 a 12.07.pdf
 │   └── 📂 Imagens
-│       ├── 📂 Facebook
-│       │   ├── 📄 01 de julho 1.jpg
-│       │   ├── 📄 01 de julho 2.jpg
-│       │   ├── 📄 01 de julho 3.jpg
-│       │   ├── 📄 01 de julho 4.jpg
-│       │   ├── 📄 01 de julho 5.jpg
-│       │   ├── 📄 01 de julho 6.jpg
-│       │   ├── 📄 01 de julho 7.jpg
-│       │   ├── 📄 10 de junho 1.png
-│       │   ├── 📄 10 de junho 2.png
-│       │   ├── 📄 10 de junho 3.png
-│       │   ├── 📄 10 de junho 4.png
-│       │   ├── 📄 10 de junho 5.png
-│       │   ├── 📄 10 de junho 6.png
-│       │   ├── 📄 11 de julho.png
-│       │   ├── 📄 13 de junho 1.png
-│       │   ├── 📄 13 de junho 2.png
-│       │   ├── 📄 13 de junho 3.png
-│       │   ├── 📄 13 de junho 4.png
-│       │   ├── 📄 13 de junho 5.png
-│       │   ├── 📄 15 de junho 10.png
-│       │   ├── 📄 15 de junho 2.png
-│       │   ├── 📄 15 de junho 3.png
-│       │   ├── 📄 15 de junho 4.png
-│       │   ├── 📄 15 de junho 5.png
-│       │   ├── 📄 15 de junho 6.png
-│       │   ├── 📄 15 de junho 7.png
-│       │   ├── 📄 15 de junho 8.png
-│       │   ├── 📄 15 de junho 9.png
-│       │   ├── 📄 17 de junho.jpg
-│       │   ├── 📄 18 de junho.mp4
-│       │   ├── 📄 23 de junho 1.jpg
-│       │   ├── 📄 23 de junho 2.jpg
-│       │   ├── 📄 23 de junho 3.jpg
-│       │   ├── 📄 23 de junho 4.jpg
-│       │   ├── 📄 23 de junho 5.jpg
-│       │   ├── 📄 3 de julho.png
-│       │   ├── 📄 5 de julho.png
-│       │   ├── 📄 9 de julho 1.jpg
-│       │   ├── 📄 9 de julho 2.jpg
-│       │   ├── 📄 9 de julho 3.jpg
-│       │   └── 📄 9 de julho 4.jpg
-│       ├── 📂 Instagram
-│       │   ├── 📄 01 de julho 1.jpg
-│       │   ├── 📄 01 de julho 2.jpg
-│       │   ├── 📄 01 de julho 3.jpg
-│       │   ├── 📄 01 de julho 4.jpg
-│       │   ├── 📄 01 de julho 5.jpg
-│       │   ├── 📄 01 de julho 6.jpg
-│       │   ├── 📄 01 de julho 7.jpg
-│       │   ├── 📄 10 de junho 1.png
-│       │   ├── 📄 10 de junho 2.png
-│       │   ├── 📄 10 de junho 3.png
-│       │   ├── 📄 10 de junho 4.png
-│       │   ├── 📄 10 de junho 5.png
-│       │   ├── 📄 10 de junho 6.png
-│       │   ├── 📄 11 de julho.png
-│       │   ├── 📄 13 de junho 1.png
-│       │   ├── 📄 13 de junho 2.png
-│       │   ├── 📄 13 de junho 3.png
-│       │   ├── 📄 13 de junho 4.png
-│       │   ├── 📄 13 de junho 5.png
-│       │   ├── 📄 15 de junho 10.png
-│       │   ├── 📄 15 de junho 2.png
-│       │   ├── 📄 15 de junho 3.png
-│       │   ├── 📄 15 de junho 4.png
-│       │   ├── 📄 15 de junho 5.png
-│       │   ├── 📄 15 de junho 6.png
-│       │   ├── 📄 15 de junho 7.png
-│       │   ├── 📄 15 de junho 8.png
-│       │   ├── 📄 15 de junho 9.png
-│       │   ├── 📄 17 de junho.jpg
-│       │   ├── 📄 18 de junho.mp4
-│       │   ├── 📄 23 de junho 1.jpg
-│       │   ├── 📄 23 de junho 2.jpg
-│       │   ├── 📄 23 de junho 3.jpg
-│       │   ├── 📄 23 de junho 4.jpg
-│       │   ├── 📄 23 de junho 5.jpg
-│       │   ├── 📄 3 de julho.png
-│       │   ├── 📄 5 de julho.png
-│       │   ├── 📄 9 de julho 1.jpg
-│       │   ├── 📄 9 de julho 2.jpg
-│       │   ├── 📄 9 de julho 3.jpg
-│       │   └── 📄 9 de julho 4.jpg
 │       ├── 📂 Linkedin
 │       │   ├── 📄 01 de julho 1.jpg
 │       │   ├── 📄 01 de julho 2.jpg
@@ -616,90 +532,6 @@ Descrição das tecnologias:
 │   │   │   ├── 📄 Cronograma entregas - Redes Sociais 10.06 a 20.06.pdf
 │   │   │   └── 📄 Cronograma entregas - Redes Sociais Semana 07.12 a 12.07.pdf
 │   │   └── 📂 Imagens
-│   │       ├── 📂 Facebook
-│   │       │   ├── 📄 01 de julho 1.jpg
-│   │       │   ├── 📄 01 de julho 2.jpg
-│   │       │   ├── 📄 01 de julho 3.jpg
-│   │       │   ├── 📄 01 de julho 4.jpg
-│   │       │   ├── 📄 01 de julho 5.jpg
-│   │       │   ├── 📄 01 de julho 6.jpg
-│   │       │   ├── 📄 01 de julho 7.jpg
-│   │       │   ├── 📄 10 de junho 1.png
-│   │       │   ├── 📄 10 de junho 2.png
-│   │       │   ├── 📄 10 de junho 3.png
-│   │       │   ├── 📄 10 de junho 4.png
-│   │       │   ├── 📄 10 de junho 5.png
-│   │       │   ├── 📄 10 de junho 6.png
-│   │       │   ├── 📄 11 de julho.png
-│   │       │   ├── 📄 13 de junho 1.png
-│   │       │   ├── 📄 13 de junho 2.png
-│   │       │   ├── 📄 13 de junho 3.png
-│   │       │   ├── 📄 13 de junho 4.png
-│   │       │   ├── 📄 13 de junho 5.png
-│   │       │   ├── 📄 15 de junho 10.png
-│   │       │   ├── 📄 15 de junho 2.png
-│   │       │   ├── 📄 15 de junho 3.png
-│   │       │   ├── 📄 15 de junho 4.png
-│   │       │   ├── 📄 15 de junho 5.png
-│   │       │   ├── 📄 15 de junho 6.png
-│   │       │   ├── 📄 15 de junho 7.png
-│   │       │   ├── 📄 15 de junho 8.png
-│   │       │   ├── 📄 15 de junho 9.png
-│   │       │   ├── 📄 17 de junho.jpg
-│   │       │   ├── 📄 18 de junho.mp4
-│   │       │   ├── 📄 23 de junho 1.jpg
-│   │       │   ├── 📄 23 de junho 2.jpg
-│   │       │   ├── 📄 23 de junho 3.jpg
-│   │       │   ├── 📄 23 de junho 4.jpg
-│   │       │   ├── 📄 23 de junho 5.jpg
-│   │       │   ├── 📄 3 de julho.png
-│   │       │   ├── 📄 5 de julho.png
-│   │       │   ├── 📄 9 de julho 1.jpg
-│   │       │   ├── 📄 9 de julho 2.jpg
-│   │       │   ├── 📄 9 de julho 3.jpg
-│   │       │   └── 📄 9 de julho 4.jpg
-│   │       ├── 📂 Instagram
-│   │       │   ├── 📄 01 de julho 1.jpg
-│   │       │   ├── 📄 01 de julho 2.jpg
-│   │       │   ├── 📄 01 de julho 3.jpg
-│   │       │   ├── 📄 01 de julho 4.jpg
-│   │       │   ├── 📄 01 de julho 5.jpg
-│   │       │   ├── 📄 01 de julho 6.jpg
-│   │       │   ├── 📄 01 de julho 7.jpg
-│   │       │   ├── 📄 10 de junho 1.png
-│   │       │   ├── 📄 10 de junho 2.png
-│   │       │   ├── 📄 10 de junho 3.png
-│   │       │   ├── 📄 10 de junho 4.png
-│   │       │   ├── 📄 10 de junho 5.png
-│   │       │   ├── 📄 10 de junho 6.png
-│   │       │   ├── 📄 11 de julho.png
-│   │       │   ├── 📄 13 de junho 1.png
-│   │       │   ├── 📄 13 de junho 2.png
-│   │       │   ├── 📄 13 de junho 3.png
-│   │       │   ├── 📄 13 de junho 4.png
-│   │       │   ├── 📄 13 de junho 5.png
-│   │       │   ├── 📄 15 de junho 10.png
-│   │       │   ├── 📄 15 de junho 2.png
-│   │       │   ├── 📄 15 de junho 3.png
-│   │       │   ├── 📄 15 de junho 4.png
-│   │       │   ├── 📄 15 de junho 5.png
-│   │       │   ├── 📄 15 de junho 6.png
-│   │       │   ├── 📄 15 de junho 7.png
-│   │       │   ├── 📄 15 de junho 8.png
-│   │       │   ├── 📄 15 de junho 9.png
-│   │       │   ├── 📄 17 de junho.jpg
-│   │       │   ├── 📄 18 de junho.mp4
-│   │       │   ├── 📄 23 de junho 1.jpg
-│   │       │   ├── 📄 23 de junho 2.jpg
-│   │       │   ├── 📄 23 de junho 3.jpg
-│   │       │   ├── 📄 23 de junho 4.jpg
-│   │       │   ├── 📄 23 de junho 5.jpg
-│   │       │   ├── 📄 3 de julho.png
-│   │       │   ├── 📄 5 de julho.png
-│   │       │   ├── 📄 9 de julho 1.jpg
-│   │       │   ├── 📄 9 de julho 2.jpg
-│   │       │   ├── 📄 9 de julho 3.jpg
-│   │       │   └── 📄 9 de julho 4.jpg
 │   │       ├── 📂 Linkedin
 │   │       │   ├── 📄 01 de julho 1.jpg
 │   │       │   ├── 📄 01 de julho 2.jpg
