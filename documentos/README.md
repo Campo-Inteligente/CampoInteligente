@@ -9,9 +9,9 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 ```
 Repositório..........: FRONT-END
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 19 (AUTO-INCREMENTO)
+Versão...............: 20 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 07/08/2025 08:25:04
+Data de Atualização..: 07/08/2025 08:27:29
 Responsável..........: Marcos Morais
 ```
 ## 👥 Participantes
@@ -233,6 +233,7 @@ Descrição das tecnologias:
 ├── 📄 cmd-baixar.bat
 ├── 📄 cmd-deploy.bat
 ├── 📄 cmd-enviar.bat
+├── 📄 cmd-vercel.bat
 ├── 📂 components
 │   ├── 📄 ChatWidget.js
 │   ├── 📄 Footer.js
