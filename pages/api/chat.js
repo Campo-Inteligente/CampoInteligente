@@ -1,3 +1,7 @@
+// Importa o dotenv para carregar variáveis de ambiente do arquivo .env
+import dotenv from "dotenv";
+dotenv.config();
+
 export default async function handler(req, res) {
   // Garante que o método seja POST
   if (req.method !== "POST") {
@@ -9,8 +13,8 @@ export default async function handler(req, res) {
   const { session_id, message } = req.body;
 
   // Define a URL real da sua API Django para o webchat
-  const REAL_API_URL = "http://campointeligente.ddns.com.br:21083/api/v1/chatbot/webchat/";
-  //const REAL_API_URL = "http://localhost:8000/api/v1/chatbot/webchat/";
+  // Agora a URL vem do arquivo .env
+  const REAL_API_URL = process.env.REAL_API_URL;
 
   const requestBodyJson = JSON.stringify({
     session_id: session_id,
