@@ -9,9 +9,9 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 ```
 Repositório..........: FRONT-END
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 18 (AUTO-INCREMENTO)
+Versão...............: 19 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 02/08/2025 08:50:38
+Data de Atualização..: 07/08/2025 08:25:04
 Responsável..........: Marcos Morais
 ```
 ## 👥 Participantes
@@ -230,6 +230,9 @@ Descrição das tecnologias:
 ├── 📄 .vercelignore
 ├── 📄 LICENSE
 ├── 📄 README.md
+├── 📄 cmd-baixar.bat
+├── 📄 cmd-deploy.bat
+├── 📄 cmd-enviar.bat
 ├── 📂 components
 │   ├── 📄 ChatWidget.js
 │   ├── 📄 Footer.js
@@ -406,11 +409,8 @@ Descrição das tecnologias:
 │   │   └── 📄 teste1.txt
 │   └── 📄 versao.txt
 ├── 📄 ecosystem.config.js
-├── 📄 exec-baixar.bat
 ├── 📄 exec-baixar.sh
-├── 📄 exec-baixar.sh.save
 ├── 📄 exec-deploy.sh
-├── 📄 exec-enviar.bat
 ├── 📄 exec-enviar.sh
 ├── 📄 exec-vercel.sh
 ├── 📂 generated
