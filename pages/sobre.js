@@ -25,7 +25,7 @@ export default function Sobre() {
         "Graduando em Ciências da Computação pelo Instituto Federal de Educação, Ciências e Tecnologia da Bahia,IFBA, tem experiência com as linguagens java, python, C e com desenvolvimento back-end e automação de tarefas.",
       imagem: "/imagens/abimael.jpeg",
       linkedin:
-        "https://www.linkedin.com/in/abimael-uanderson/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        "https://www.linkedin.com/in/abimael-uanderson/",
     },
     {
       cargo: "CEO",

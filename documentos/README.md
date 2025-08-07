@@ -9,9 +9,9 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 ```
 Repositório..........: FRONT-END
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 17 (AUTO-INCREMENTO)
+Versão...............: 30 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 08/07/2025 03:49:24
+Data de Atualização..: 07/08/2025 15:28:07
 Responsável..........: Marcos Morais
 ```
 ## 👥 Participantes
@@ -52,9 +52,46 @@ Descrição das tecnologias:
 
 ```
 📂 documentos
+├── 📄 Diagrama ER.png
+├── 📄 Diagrama caso de uso.png
+├── 📂 Diagrama de classes
+│   └── 📄 Diagrama de classes atualizado 21.07.2025.png
+├── 📂 Diagrama de estado
+│   ├── 📄 Diagrama de estado - Conversações - NÃO ESTÁ FINALIZADO.png
+│   ├── 📄 Diagrama de estado - Estoque.png
+│   └── 📄 diagrama de estado agricultor.png
+├── 📂 Diagramas de atividades
+│   ├── 📄 Diagrama de Atividades - Interagir com o chatbot.png
+│   ├── 📄 Diagrama de atividades - Gerar relatório de interações.png
+│   ├── 📄 Diagrama de atividades - Gerenciar Estoque.png
+│   ├── 📄 Diagrama de atividades - Gerenciar administradores.png
+│   ├── 📄 Diagrama de atividades - Realizar cadastro.png
+│   ├── 📄 Diagrama de atividades - Registar Safra Agricola.png
+│   └── 📄 Diagrama de atividades - Vincular usuario a organização.png
+├── 📄 Documentação Backend - Weavetrip(atualizada).pdf
+├── 📄 Documento de visão.pdf
 ├── 📄 LICENSE
+├── 📄 Manual da Marca.pdf
 ├── 📄 README.md
 ├── 📄 TUTORIAL.md
+├── 📂 identidade_marketing
+│   ├── 📂 Cronogramas
+│   │   ├── 📄 Cronograma entregas - Redes Sociais - 01.07 a 05.07.pdf
+│   │   ├── 📄 Cronograma entregas - Redes Sociais 10.06 a 20.06.pdf
+│   │   └── 📄 Cronograma entregas - Redes Sociais Semana 07.12 a 12.07.pdf
+│   └── 📂 Imagens
+│       └── 📂 Logos
+│           ├── 📄 Iagro 1.png
+│           ├── 📄 Iagro 10.png
+│           ├── 📄 Iagro 2.png
+│           ├── 📄 Iagro 3.png
+│           ├── 📄 Iagro 4.png
+│           ├── 📄 Iagro 5.png
+│           ├── 📄 Iagro 6.png
+│           ├── 📄 Iagro 7.png
+│           ├── 📄 Iagro 8.png
+│           ├── 📄 Iagro 9.png
+│           └── 📄 iago 11.png
 ├── 📂 teste
 │   └── 📄 teste1.txt
 └── 📄 versao.txt
@@ -67,24 +104,118 @@ Descrição das tecnologias:
 ├── 📄 .vercelignore
 ├── 📄 LICENSE
 ├── 📄 README.md
-├── 📄 TUTORIAL.md
-├── 📄 VERSIONS.md
-├── 📄 atualizar-site.sh
-├── 📄 baixar-atualizacao.bat
+├── 📄 cmd-baixar.bat
+├── 📄 cmd-deploy.bat
+├── 📄 cmd-enviar.bat
+├── 📄 cmd-vercel.bat
 ├── 📂 components
+│   ├── 📄 ChatWidget.js
 │   ├── 📄 Footer.js
 │   ├── 📄 Navbar.js
 │   └── 📄 NavbarVerde.js
 ├── 📂 documentos
+│   ├── 📄 Diagrama ER.png
+│   ├── 📄 Diagrama caso de uso.png
+│   ├── 📂 Diagrama de classes
+│   │   └── 📄 Diagrama de classes atualizado 21.07.2025.png
+│   ├── 📂 Diagrama de estado
+│   │   ├── 📄 Diagrama de estado - Conversações - NÃO ESTÁ FINALIZADO.png
+│   │   ├── 📄 Diagrama de estado - Estoque.png
+│   │   └── 📄 diagrama de estado agricultor.png
+│   ├── 📂 Diagramas de atividades
+│   │   ├── 📄 Diagrama de Atividades - Interagir com o chatbot.png
+│   │   ├── 📄 Diagrama de atividades - Gerar relatório de interações.png
+│   │   ├── 📄 Diagrama de atividades - Gerenciar Estoque.png
+│   │   ├── 📄 Diagrama de atividades - Gerenciar administradores.png
+│   │   ├── 📄 Diagrama de atividades - Realizar cadastro.png
+│   │   ├── 📄 Diagrama de atividades - Registar Safra Agricola.png
+│   │   └── 📄 Diagrama de atividades - Vincular usuario a organização.png
+│   ├── 📄 Documentação Backend - Weavetrip(atualizada).pdf
+│   ├── 📄 Documento de visão.pdf
 │   ├── 📄 LICENSE
+│   ├── 📄 Manual da Marca.pdf
 │   ├── 📄 README.md
 │   ├── 📄 TUTORIAL.md
+│   ├── 📂 identidade_marketing
+│   │   ├── 📂 Cronogramas
+│   │   │   ├── 📄 Cronograma entregas - Redes Sociais - 01.07 a 05.07.pdf
+│   │   │   ├── 📄 Cronograma entregas - Redes Sociais 10.06 a 20.06.pdf
+│   │   │   └── 📄 Cronograma entregas - Redes Sociais Semana 07.12 a 12.07.pdf
+│   │   └── 📂 Imagens
+│   │       └── 📂 Logos
+│   │           ├── 📄 Iagro 1.png
+│   │           ├── 📄 Iagro 10.png
+│   │           ├── 📄 Iagro 2.png
+│   │           ├── 📄 Iagro 3.png
+│   │           ├── 📄 Iagro 4.png
+│   │           ├── 📄 Iagro 5.png
+│   │           ├── 📄 Iagro 6.png
+│   │           ├── 📄 Iagro 7.png
+│   │           ├── 📄 Iagro 8.png
+│   │           ├── 📄 Iagro 9.png
+│   │           └── 📄 iago 11.png
 │   ├── 📂 teste
 │   │   └── 📄 teste1.txt
 │   └── 📄 versao.txt
 ├── 📄 ecosystem.config.js
-├── 📄 enviar-atualizacao.bat
+├── 📄 exec-baixar.sh
+├── 📄 exec-deploy.sh
+├── 📄 exec-enviar.sh
+├── 📄 exec-vercel.sh
+├── 📂 generated
+│   └── 📂 prisma
+│       ├── 📄 client.d.ts
+│       ├── 📄 client.js
+│       ├── 📄 default.d.ts
+│       ├── 📄 default.js
+│       ├── 📄 edge.d.ts
+│       ├── 📄 edge.js
+│       ├── 📄 index-browser.js
+│       ├── 📄 index.d.ts
+│       ├── 📄 index.js
+│       ├── 📄 package.json
+│       ├── 📄 query_engine-windows.dll.node
+│       ├── 📂 runtime
+│       │   ├── 📄 edge-esm.js
+│       │   ├── 📄 edge.js
+│       │   ├── 📄 index-browser.d.ts
+│       │   ├── 📄 index-browser.js
+│       │   ├── 📄 library.d.ts
+│       │   ├── 📄 library.js
+│       │   ├── 📄 react-native.js
+│       │   ├── 📄 wasm-compiler-edge.js
+│       │   └── 📄 wasm-engine-edge.js
+│       ├── 📄 schema.prisma
+│       ├── 📄 wasm.d.ts
+│       └── 📄 wasm.js
 ├── 📄 index.html
+├── 📂 lib
+│   └── 📂 generated
+│       └── 📂 prisma
+│           ├── 📄 client.d.ts
+│           ├── 📄 client.js
+│           ├── 📄 default.d.ts
+│           ├── 📄 default.js
+│           ├── 📄 edge.d.ts
+│           ├── 📄 edge.js
+│           ├── 📄 index-browser.js
+│           ├── 📄 index.d.ts
+│           ├── 📄 index.js
+│           ├── 📄 package.json
+│           ├── 📄 query_engine-windows.dll.node
+│           ├── 📂 runtime
+│           │   ├── 📄 edge-esm.js
+│           │   ├── 📄 edge.js
+│           │   ├── 📄 index-browser.d.ts
+│           │   ├── 📄 index-browser.js
+│           │   ├── 📄 library.d.ts
+│           │   ├── 📄 library.js
+│           │   ├── 📄 react-native.js
+│           │   ├── 📄 wasm-compiler-edge.js
+│           │   └── 📄 wasm-engine-edge.js
+│           ├── 📄 schema.prisma
+│           ├── 📄 wasm.d.ts
+│           └── 📄 wasm.js
 ├── 📄 next.config.js
 ├── 📄 package-lock.json
 ├── 📄 package.json
@@ -92,6 +223,7 @@ Descrição das tecnologias:
 │   ├── 📄 _app.js
 │   ├── 📄 _document.js
 │   ├── 📂 api
+│   │   ├── 📄 chat.js
 │   │   ├── 📄 hello.js
 │   │   └── 📄 sendEmail.js
 │   ├── 📄 chatbot.js
@@ -116,6 +248,7 @@ Descrição das tecnologias:
 │   │   ├── 📄 analise.png
 │   │   ├── 📄 arthurr.jpg
 │   │   ├── 📄 arthurrr.jpg
+│   │   ├── 📄 avatar.png
 │   │   ├── 📄 bruna.jpg
 │   │   ├── 📄 contato.png
 │   │   ├── 📄 contatocerto.png
@@ -136,6 +269,7 @@ Descrição das tecnologias:
 │   │   ├── 📄 next1.png
 │   │   ├── 📄 next2.png
 │   │   ├── 📄 next3.png
+│   │   ├── 📄 perfil.png
 │   │   ├── 📄 previsao.png
 │   │   ├── 📄 simulacao.png
 │   │   ├── 📄 valores.png
@@ -147,6 +281,7 @@ Descrição das tecnologias:
 │   ├── 📄 generate-version.js
 │   └── 📄 get-version.js
 └── 📂 styles
+    ├── 📄 ChatWidget.module.css
     ├── 📄 Chatbot.module.css
     ├── 📄 Contato.module.css
     ├── 📄 Footer.module.css

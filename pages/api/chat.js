@@ -1,3 +1,7 @@
+// Importa o dotenv para carregar variáveis de ambiente do arquivo .env
+import dotenv from "dotenv";
+dotenv.config();
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Método não permitido" });
