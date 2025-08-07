@@ -4,6 +4,7 @@ setlocal enabledelayedexpansion
 :: Caminho real do repositório local
 set "REPO_LOCAL=D:\Dev\Projetos_RESTIC36\Equipe_11\startup-campo-inteligente-site"
 set "DESTINO=git@github.com:marcosmoraisjr/CampoInteligente.git"
+set "COMMIT_MSG=Atualização automática via script .bat"
 
 echo ATENCAO: Voce esta prestes a espelhar o repositório RESTIC36 em dois destinos:
 echo     Origem local: %REPO_LOCAL%
@@ -34,18 +35,22 @@ echo Adicionando repositório de destino...
 git remote add destino %DESTINO%
 
 echo.
-echo Espelhando conteúdo para o repositório original (origin)...
-git push origin --mirror
+echo Adicionando arquivos modificados e não rastreados...
+git add .
+
+echo Criando commit com mensagem: "%COMMIT_MSG%"
+git commit -m "%COMMIT_MSG%" 2>nul
 if %errorlevel% neq 0 (
-    echo Falha ao enviar para origin. Verifique permissões ou conflitos.
+    echo Nenhuma alteração para commit ou erro ao commitar.
 )
 
 echo.
-echo Espelhando conteúdo para o repositório destino (CampoInteligente)...
-git push destino --mirror
-if %errorlevel% neq 0 (
-    echo Falha ao enviar para destino. Verifique permissões ou conflitos.
-)
+echo Enviando para o repositório original (origin)...
+git push origin main
+
+echo.
+echo Enviando para o repositório destino (CampoInteligente)...
+git push destino main
 
 echo.
 echo Verificando repositórios remotos finais:
