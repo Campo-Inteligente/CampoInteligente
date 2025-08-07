@@ -9,9 +9,9 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 ```
 Repositório..........: FRONT-END
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 27 (AUTO-INCREMENTO)
+Versão...............: 28 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 07/08/2025 15:22:50
+Data de Atualização..: 07/08/2025 15:23:58
 Responsável..........: Marcos Morais
 ```
 ## 👥 Participantes
@@ -112,164 +112,85 @@ Descrição das tecnologias:
 │   │   │   ├── 📄 .cache_szwpp1
 │   │   │   └── 📄 .cache_xxb8y2
 │   │   ├── 📂 images
-│   │   │   ├── 📂 -rhny31goRmLeqSf_UueVt1w9Jk9kg7Gm4DH2JK0jOY
-│   │   │   │   └── 📄 60.1754422812802.80qO5jFO7pYPBkVcdB5xmLk0jX2VeYRxhN4WpStUVBU.Vy8iYTMxN2UtMTk4MGE0YzkwMGUi.webp
-│   │   │   ├── 📂 1xVz6Z6jCLPig34A-gUxpf8IxSdPmeOdkI3haA0Q89o
-│   │   │   │   └── 📄 60.1745014598451.lp2FoVqfjptzr_p1atPnLXGE3J-jQ-Rsw8A0WpmKYp8.Vy8iMWQ2MDItMTk2M2ZkNDFhZmYi.webp
-│   │   │   ├── 📂 1zmv1PP-Va3LQK7NLSpKFH6clnMizgcXrrL8AN663XE
-│   │   │   │   └── 📄 60.1745014598379.H3vxZNWq3mpu-iU5bLJnUX5RBJiz8jZxdTh-IxS8Bpk.Vy8iMTY5Y2QtMTk2M2ZkNDE3ZmIi.webp
-│   │   │   ├── 📂 36povmOzAGtC-xeH2wFWfLyEtbtChOIFGmG1MQXoHQE
-│   │   │   │   └── 📄 60.1745014598521.Q5wxnicE6BRJ5zqEs0qDwSTwi3M97oW2eoOdFuEBgoI.Vy8iMTY5Y2QtMTk2M2ZkNDE3ZmIi.webp
-│   │   │   ├── 📂 3BhMLRXjQnYjV69m_fbwhi2CGrJDUsAlj9wZfMAdq9Y
-│   │   │   │   └── 📄 60.1745014598425.ZNvNHKUhxLDeRnZVJm98B44lZeyyNGjojiWAqoaOzHY.Vy8iMzI2YzgtMTk2M2ZkNDE4MTAi.webp
-│   │   │   ├── 📂 3nFmrE2WMdLVGE4B8-dQV6dprRiey_XGCsFQrAE1HFI
-│   │   │   │   └── 📄 60.1745014591211.OmK6ytyhNEaPRb7YapP32HZeI6rO6NN4QB6QxtdnbNk.Vy8iYjJkOC0xOTYzZmQ0MWFmNSI.webp
-│   │   │   ├── 📂 4-uJSWVJUCbz8GWXHKfCoak1rF3VrLZ3E_gwqmdk-Xk
-│   │   │   │   └── 📄 60.1754513510597.MGQnDdf4XAZOTNWXJtkor3euPDyGQ4ybLN4RwkD2ggI.Vy8iNzUyMy0xOTYzZmQ0MTdlZSI.webp
-│   │   │   ├── 📂 44whNHNj8L4P6Mg--19575k0I5hspPrz_r1tWVWebag
-│   │   │   │   └── 📄 60.1745014598748.H80kA1TjGj1JBHz2OWC46FaLtND_Au-ZUghcrEXTo1k.Vy8iMWY5YjYtMTk2M2ZkNDFhY2Ui.webp
-│   │   │   ├── 📂 5hjBfCksrHbhlFzqqfSJOkiQrpywx_bbKMTum1y93g8
-│   │   │   │   └── 📄 60.1745014589065.ZuVwqcarPtDkKzTNXXd6oDMsc3rnv0aUUhoBkEsVzmM.Vy8iMzI2YzgtMTk2M2ZkNDE4MTAi.webp
-│   │   │   ├── 📂 5qjMQKy_eA7RNi8uja3QhIrfmU3ZJCxEBPPrjjD4VUo
-│   │   │   │   └── 📄 60.1745603998245.7rzTGUR5Aqo4NqPwB6bxQGThnvRh3SpK_K72Cr025Hg.Vy8iMzI2YzgtMTk2M2ZkNDE4MTAi.webp
-│   │   │   ├── 📂 7vsDQf_8NgdhIP2hlE49nAB6QyYmzZ6lJ4wlSV1PLUg
-│   │   │   │   └── 📄 60.1745014591027.VXrePnIRKtNF8HSkqBQ05kMseJSIdcLUr3SK4FPOSRE.Vy8iN2JkZS0xOTYzZmQ0MTgwMCI.webp
-│   │   │   ├── 📂 81zBM4yc3iFVv1cOn9EZCDHhakGt4IH5nOO12rLGhz0
-│   │   │   │   └── 📄 60.1745603998283.onWhb7mlcfKZql8iMqlVOQQq95_vKBugv7GhiFt_2Gw.Vy8iNWQ1NC0xOTY0M2MxYTUyYyI.webp
-│   │   │   ├── 📂 8fBFGsQUTWesy5qzHf30AYW0YbuSECBMr_ZB4sd-8rk
-│   │   │   │   └── 📄 60.1745014598507.wCWjt9F2BVGKJJPhkzHjrDiqIrjDKCp8VNjvcaAuvF8.Vy8iMWVkM2QtMTk2M2ZkNDE4MTQi.webp
-│   │   │   ├── 📂 Bojta_CwSdDZRZnIuNcPkENiTHtrhVyTi3tgZqdTVDY
-│   │   │   │   └── 📄 60.1754513511058.XYjfmPM0SRntgfOES1LP7_g4B6Do52YgSnV4VBdnP_E.Vy8iMzAzNi0xOTYzZmQ0MWFmYiI.webp
-│   │   │   ├── 📂 DDkOEjv-B_yLSReXnZJOD8VblNzf3EhWV5EJFUKuqvI
-│   │   │   │   └── 📄 60.1745603998295.YlpOMDjAipMymobT9HI4iRGzj9niC9p_lea6EVFDr68.Vy8iMWVkM2QtMTk2M2ZkNDE4MTQi.webp
-│   │   │   ├── 📂 Fq4KCWtflsSZgENabotcdF5jZHo5rK3WnbeYEAjXd1s
-│   │   │   │   └── 📄 60.1745020994325.WJljhfOpA6kExdRAVtOfTubTA6dd6IXCNHE8OYvtRno.Vy8iMzI2YzgtMTk2M2ZkNDE4MTAi.webp
-│   │   │   ├── 📂 GPBIswk5rBWJWziIkNq-6GmuGQJlHgjB5VJbRQ0Ra2Y
-│   │   │   │   └── 📄 60.1745014598308.onWhb7mlcfKZql8iMqlVOQQq95_vKBugv7GhiFt_2Gw.Vy8iNWQ1NC0xOTY0M2MxYTUyYyI.webp
-│   │   │   ├── 📂 GXhTBqI1ip1nIj2KgPpfKnn2WKU6Ks2cdXqbCvTOuhw
-│   │   │   │   └── 📄 60.1745021001284.oSUu7kGuU77JysxZV7FezXQ5G8saEPU8cTctGQ_0RFw.Vy8iZDhlYS0xOTYzZmQ0MWFmNyI.webp
-│   │   │   ├── 📂 HJOW0JmVQJQQi1RCVEhz2SCaDDLNgPbLE34nBJDE6aY
-│   │   │   │   └── 📄 60.1745603998295.ifUDyW36BDArp8fUuW5IuLD1LrRDM8_di6tJyAAJluk.Vy8iYjJkOC0xOTYzZmQ0MWFmNSI.webp
-│   │   │   ├── 📂 IEajImbHwjDkpQUEJDT6skF1nJBqA3hM1jOuujOYrNc
-│   │   │   │   └── 📄 60.1745014619698.tVs82GcMV63w9RCpi4Pf08PI8vYzCqwAnvtnOYrZB6U.Vy8iMzAzNi0xOTYzZmQ0MWFmYiI.webp
-│   │   │   ├── 📂 IWK8IVB-pxoc5NwVPOkPo9KWaFUWCKZohI2AxLBA4MQ
-│   │   │   │   └── 📄 60.1745020995072.YlpOMDjAipMymobT9HI4iRGzj9niC9p_lea6EVFDr68.Vy8iMWVkM2QtMTk2M2ZkNDE4MTQi.webp
-│   │   │   ├── 📂 IbA-bTw_b493fT3nhj7r3753EJdCNT_rK-KRO6toTP0
-│   │   │   │   └── 📄 60.1745014598339.VXrePnIRKtNF8HSkqBQ05kMseJSIdcLUr3SK4FPOSRE.Vy8iN2JkZS0xOTYzZmQ0MTgwMCI.webp
-│   │   │   ├── 📂 IzbQq4prV6Juo97a-wLHZjgbwq5PLX542bhMMYeb0AY
-│   │   │   │   └── 📄 60.1745014598615.O1pNZXjvTcfVmIK2uqTN31wLL9L1N87ZD_q8g4GnaFY.Vy8iMWQ2MDItMTk2M2ZkNDFhZmYi.webp
-│   │   │   ├── 📂 K6docDmrZp8QlWrLHbKRGNGQNlf_fLcEMloL6PXa_T8
-│   │   │   │   └── 📄 60.1747073551928.4dYc7MBmKpHmV9XJC-_ZifyWk3JxcgN2umksMT4Gb8o.Vy8iYWZkLTE5NmM0NTc4NTM3Ig.webp
-│   │   │   ├── 📂 KCcN_Anicpp8qdne4AHBsDZ-K0z_b9HDGW33E3eB30Q
-│   │   │   │   └── 📄 60.1747394395609.M9K9ADHYslTQJAsFGr8f8lgwE69D8t6aNWkr8GSOdbE.Vy8iOTkwYjMtMTk2M2ZkNDE4MGIi.webp
-│   │   │   ├── 📂 KLTTvbVsuxRdeemtCblhfWQ0sJQINcwMyDeYYCUEpfM
-│   │   │   │   └── 📄 60.1754513510597.Kd5E-2NK8udEk3v8d-g74pg4eGKNvTu70wKjOhHgRtA.Vy8iNzUyMy0xOTYzZmQ0MTdlZSI.webp
-│   │   │   ├── 📂 LTh1cCsBs1DcgL6_Zdp0JXzG0VOmdxwl_5uqZjrYjJY
-│   │   │   │   └── 📄 60.1745014619717.M9K9ADHYslTQJAsFGr8f8lgwE69D8t6aNWkr8GSOdbE.Vy8iOTkwYjMtMTk2M2ZkNDE4MGIi.webp
-│   │   │   ├── 📂 LihGoIypV-uicxAyIuksVr7NrNj49Sol95X4zjMIYxo
-│   │   │   │   └── 📄 60.1747073551929.5GELSfr2VVyAcpo5hd2SVGpcaX7_nWpOZSBxJX583b4.Vy8iNDE4LTE5NmM0NTc4NTM4Ig.webp
-│   │   │   ├── 📂 Mgy-UXHqreC1SZpW49JRjKXVHqk01wPnb2NeYMfSv6c
-│   │   │   │   └── 📄 60.1745014598443.onWhb7mlcfKZql8iMqlVOQQq95_vKBugv7GhiFt_2Gw.Vy8iNWQ1NC0xOTY0M2MxYTUyYyI.webp
-│   │   │   ├── 📂 MsaA6cJi_3cnaJsqSPL_hM_80-Kr595CS3JZbX5ZZcY
-│   │   │   │   └── 📄 60.1747073551308.4FAROhpb_RVXPeyemhFDbHTmrR0roNY6xfWrev1xBYk.Vy8iMzFjZTEtMTk2YzQ1Nzg1Mzki.webp
-│   │   │   ├── 📂 NZvOviiQEzwH5G_98jLjHEDK4S8F1pfAyqz2QBxq3j0
-│   │   │   │   └── 📄 60.1747073551927.2qNz4OcixI4-GnmrfiljWOcoI6mhmkXQ7cmT6eO3jkY.Vy8iNWVmLTE5NmM0NTc4NTNlIg.webp
-│   │   │   ├── 📂 Pmb17w9QEKO6iSYOjwbVdPXpZXpg_3ezhIi4ocvzU6c
-│   │   │   │   └── 📄 60.1745014591140._z6UDXf2U2mtoay7avPHY24nGZN1irQBLYqm1Wd6p7I.Vy8iMWY5YjYtMTk2M2ZkNDFhY2Ui.webp
-│   │   │   ├── 📂 Ppq6wHGhUilTIlsTU_0GGUFUX6se86AHm1ngAs3sV4g
-│   │   │   │   └── 📄 60.1745014598382.7Q_ODTKa_AFMvyNZhedHBsjT_elY1L-wu2j9q1CX39k.Vy8iMWY5YjYtMTk2M2ZkNDFhY2Ui.webp
-│   │   │   ├── 📂 QRKUyhHLbGK-_WgJIpalZQ7aOy4hEUKToRYHYCtavFs
-│   │   │   │   └── 📄 60.1745022359898.f2KpbRuNisDRUVqnWCpFeN-3YPvRGaE-jp9pzpKXbhs.Vy8iMzA2Ny0xOTYzZmQ0MTdlZiI.webp
-│   │   │   ├── 📂 QxV56lKH8bV_KsZLpt6TbRyvgdQ2BHI5ZKzR7mHjll8
-│   │   │   │   └── 📄 60.1745014598429.oSUu7kGuU77JysxZV7FezXQ5G8saEPU8cTctGQ_0RFw.Vy8iZDhlYS0xOTYzZmQ0MWFmNyI.webp
-│   │   │   ├── 📂 S9c4f3ttBZjUzS1siKdM17jvrx3SrFmyjF8IUXCaF2o
-│   │   │   │   └── 📄 60.1745014598352.Dt5iz1q2zuaApcFZzjZxf2_ZyqH0VFlbuk0eu7NUAHg.Vy8iMWVkM2QtMTk2M2ZkNDE4MTQi.webp
-│   │   │   ├── 📂 SAJnBGi0Nk0nNB2zd5fmrMCqcgIPECYGYc4w5LdO3HA
-│   │   │   │   └── 📄 60.1754513511064.ILHJ2GcmySxf4ScsPsy7cXV5zuN2XzQ5OadSAUPLY1s.Vy8iNWJlYWYtMTk4MGE0YzkwMDYi.webp
-│   │   │   ├── 📂 TYQ88FiIiG1G_gTeTejcCN4cmEEgu_hlNYu8rMiC1Q8
-│   │   │   │   └── 📄 60.1745603998286.VXrePnIRKtNF8HSkqBQ05kMseJSIdcLUr3SK4FPOSRE.Vy8iN2JkZS0xOTYzZmQ0MTgwMCI.webp
-│   │   │   ├── 📂 ToxgnsgnPXnywLh53q6cLi-jwL0-LCreZUH6N0ELmGU
-│   │   │   │   └── 📄 60.1747073551926.U289tWZp24D0SkzIFMNoFd2k7QER_-H16OBaCI8lCPc.Vy8iNTJiLTE5NmM0NTc4NTNlIg.webp
-│   │   │   ├── 📂 TvTu3tUYXR9sN6VW_-BVCN5CiYhbwbl-STTsanLKNSU
-│   │   │   │   └── 📄 60.1745014598561.ifUDyW36BDArp8fUuW5IuLD1LrRDM8_di6tJyAAJluk.Vy8iYjJkOC0xOTYzZmQ0MWFmNSI.webp
-│   │   │   ├── 📂 Uz_GvrcqvAh8_kYKGz-Gy3uudx0qmcr2qlaO2t5OGxI
-│   │   │   │   └── 📄 60.1745020995099.dPfcIpl9imta8Wy9GOFgW5Z8Md7f4SLxHIWCx_1xVDg.Vy8iMTY5Y2QtMTk2M2ZkNDE3ZmIi.webp
-│   │   │   ├── 📂 W8rjjqHr4HW0r_mvzEk8COo98vZJlY75vxNe1_v5Cuk
-│   │   │   │   └── 📄 60.1745021000172.H80kA1TjGj1JBHz2OWC46FaLtND_Au-ZUghcrEXTo1k.Vy8iMWY5YjYtMTk2M2ZkNDFhY2Ui.webp
-│   │   │   ├── 📂 WXngAVZh5uGPck5BFSz0qKlP3dqtHgdIabc_ZtDFxjs
-│   │   │   │   └── 📄 60.1747394395593.KGSd0kIZBrKFWpXyKLtnelKDH5xbcGPtFbtRApNmOi0.Vy8iMzAzNi0xOTYzZmQ0MWFmYiI.webp
-│   │   │   ├── 📂 WekL0m7czP8osYRKa-BqFp6zM3vOO65Oj5x7JPlOTnA
-│   │   │   │   └── 📄 60.1745022360699.Ve4kRQPQRAsxvAd0fl-bAGAHEYQOdZQxeOOhGTVEvoY.Vy8iYTg0MS0xOTYzZmQ0MWIwNSI.webp
-│   │   │   ├── 📂 WfUWyxO2D16htIBgvk60XLvbxlBXJ_oP0vy6G85mRy4
-│   │   │   │   └── 📄 60.1745603998288.ZniqDuEVcgXFBlSPwy3rk4EVk8NKk632kA9c9W-TezA.Vy8iMTY5Y2QtMTk2M2ZkNDE3ZmIi.webp
-│   │   │   ├── 📂 XQIE4NpMnZ_KL0ToQWRjrGsJ0a7eR-CHZEoIGDnILLo
-│   │   │   │   └── 📄 60.1745014590952.fkAq5_Ouj1OvVeemYQiy-hq_eNn2LPuwfULlYc3Bm4c.Vy8iMTY5Y2QtMTk2M2ZkNDE3ZmIi.webp
-│   │   │   ├── 📂 XfoKyjaufNMK5E7GHXlufnLyBXeSkPV-K4LRI7EJsPk
-│   │   │   │   └── 📄 60.1745014591082.ovnABD6P7rNGMpoMqxuCm3DarxUBUkFx1r70Mta9SO4.Vy8iMWVkM2QtMTk2M2ZkNDE4MTQi.webp
-│   │   │   ├── 📂 YLox0F8RQtn053tchFV38mqUvzRNH-txXWe6JoY_7S0
-│   │   │   │   └── 📄 60.1745021001306.O1pNZXjvTcfVmIK2uqTN31wLL9L1N87ZD_q8g4GnaFY.Vy8iMWQ2MDItMTk2M2ZkNDFhZmYi.webp
-│   │   │   ├── 📂 YUaSqCFD1KNPcobe59zA4BGTzjSkF6LgsyWCYTz5o7g
-│   │   │   │   └── 📄 60.1745603998279.mXjhePoM_x5QdEgqbxendOqf0oaA2rdrgoNlHFBkUVM.Vy8iZGE3OC0xOTYzZmQ0MWIwMiI.webp
-│   │   │   ├── 📂 ZGcjyT6ETNLZNw3Ysjhi3_dks-nXQ5Z7zBy0_rblb48
-│   │   │   │   └── 📄 60.1745603998297.H80kA1TjGj1JBHz2OWC46FaLtND_Au-ZUghcrEXTo1k.Vy8iMWY5YjYtMTk2M2ZkNDFhY2Ui.webp
-│   │   │   ├── 📂 ZyyZEtCaH0MZ0i_mjzr-TQvURXWUUGO937gMDHpL4WM
-│   │   │   │   └── 📄 60.1745022503807.Kd5E-2NK8udEk3v8d-g74pg4eGKNvTu70wKjOhHgRtA.Vy8iNzUyMy0xOTYzZmQ0MTdlZSI.webp
-│   │   │   ├── 📂 _KwWdc7hmtZ8Q2jgz6hVzVtKz_72SJMCaT_M2_1ZeeE
-│   │   │   │   └── 📄 60.1745603998300.O1pNZXjvTcfVmIK2uqTN31wLL9L1N87ZD_q8g4GnaFY.Vy8iMWQ2MDItMTk2M2ZkNDFhZmYi.webp
-│   │   │   ├── 📂 _Yk2OcfJuVFOc1z6Amp-in5qpRa-sF2PN0Ol6eCD64I
-│   │   │   │   └── 📄 60.1745014598540.6XOknRqkqF_bUqSdz6VoKl_LofvKQ04iptE2zsvKaPg.Vy8iMWY5YjYtMTk2M2ZkNDFhY2Ui.webp
-│   │   │   ├── 📂 aKPdPL-Mj7INXz7UTrWBEzEDnLhPV2T1vy5JNAkw3pI
-│   │   │   │   └── 📄 60.1745014598404.ifUDyW36BDArp8fUuW5IuLD1LrRDM8_di6tJyAAJluk.Vy8iYjJkOC0xOTYzZmQ0MWFmNSI.webp
-│   │   │   ├── 📂 b4WNDkqR0PiWP2AikWLS7nUCh2OEFN5L_Vu_lHsSkbA
-│   │   │   │   └── 📄 60.1745014598663.VXrePnIRKtNF8HSkqBQ05kMseJSIdcLUr3SK4FPOSRE.Vy8iN2JkZS0xOTYzZmQ0MTgwMCI.webp
-│   │   │   ├── 📂 bJFdJdNFuc7OZtwRLat2VyYgfbVDy2UdpHWak2s3KAk
-│   │   │   │   └── 📄 60.1747073551972.7HeJJT6HzuKuE4iZhd-SvE6snkCuI4Q19x6vbemWsJo.Vy8iMzFhMmEtMTk2YzQ1Nzg1M2Mi.webp
-│   │   │   ├── 📂 c3mjb6LPLLXXNfqEWjwrKMmRROK18-n1YAKyuqvD9Ro
-│   │   │   │   └── 📄 60.1745014598743.ifUDyW36BDArp8fUuW5IuLD1LrRDM8_di6tJyAAJluk.Vy8iYjJkOC0xOTYzZmQ0MWFmNSI.webp
-│   │   │   ├── 📂 cNWbKYHKMMXwqLAPECElMVwEv1wdVE8sar_BFNXFkfo
-│   │   │   │   └── 📄 60.1745020994998.VXrePnIRKtNF8HSkqBQ05kMseJSIdcLUr3SK4FPOSRE.Vy8iN2JkZS0xOTYzZmQ0MTgwMCI.webp
-│   │   │   ├── 📂 ctTfHWHWbza3rna35t7CXFjL-otzB6V2LtLMTTlS0bs
-│   │   │   │   └── 📄 60.1745603998281.Q7jb4KiYC-vyII6aRBY5pfIOSBKFkKCjmJnzgD_VeUk.Vy8iYTg0MS0xOTYzZmQ0MWIwNSI.webp
-│   │   │   ├── 📂 d5S3SDHIMVadpkfsn0VVY6gwKPfR7B5dFBBdtemkYRw
-│   │   │   │   └── 📄 60.1745014598633.onWhb7mlcfKZql8iMqlVOQQq95_vKBugv7GhiFt_2Gw.Vy8iNWQ1NC0xOTY0M2MxYTUyYyI.webp
-│   │   │   ├── 📂 dmSQI6JISMcWQevUZeEN9bpcxvXz-ZZMoEAQ3lZBcVc
-│   │   │   │   └── 📄 60.1745021000105.ifUDyW36BDArp8fUuW5IuLD1LrRDM8_di6tJyAAJluk.Vy8iYjJkOC0xOTYzZmQ0MWFmNSI.webp
-│   │   │   ├── 📂 dzQ3ib3tdksZ8YCqih8qcfCdl7IAIFS2CjGcCrt3cIw
-│   │   │   │   └── 📄 60.1747073551965.nCvD8MgAuCGW81WOiNXuRXNjN5_4BRv8tOHC5leejyk.Vy8iMzkwYTctMTk2YzQ1Nzg1M2Qi.webp
-│   │   │   ├── 📂 e8q_uS51DewFM02nzyEiwkuHGKspmB-yrUWLGDu-kek
-│   │   │   │   └── 📄 60.1745014591498.Qlo-O-h48znU1U_8TJO1NU0gRvah0bHFBa2sMgtiLoA.Vy8iMWQ2MDItMTk2M2ZkNDFhZmYi.webp
-│   │   │   ├── 📂 efZWI19CartrmVTAAw19vrWxZ9XxQqovkFDrz90eDO8
-│   │   │   │   └── 📄 60.1745014598693.YlpOMDjAipMymobT9HI4iRGzj9niC9p_lea6EVFDr68.Vy8iMWVkM2QtMTk2M2ZkNDE4MTQi.webp
-│   │   │   ├── 📂 fzAdHq2t4Lc0b2U4atXVoP_w8OqVhHIpn03Adxx_C2o
-│   │   │   │   └── 📄 60.1745014598791.oSUu7kGuU77JysxZV7FezXQ5G8saEPU8cTctGQ_0RFw.Vy8iZDhlYS0xOTYzZmQ0MWFmNyI.webp
-│   │   │   ├── 📂 gUSqPITTF0RSv4hnL2yZmUOzqWE6wPRtcKfGFxCB5c8
-│   │   │   │   └── 📄 60.1745020994947.onWhb7mlcfKZql8iMqlVOQQq95_vKBugv7GhiFt_2Gw.Vy8iNWQ1NC0xOTY0M2MxYTUyYyI.webp
-│   │   │   ├── 📂 kG7NhXA4WHAb8YdyrSWsSOVcVOxqWG9ZHdIaE890rbA
-│   │   │   │   └── 📄 60.1754513510599.9djk85eqvdomZRwJvIvHpM8mktGvF3riiuhYCr8nTdY.Vy8iMzA2Ny0xOTYzZmQ0MTdlZiI.webp
-│   │   │   ├── 📂 kXsfUmGxWSbF2nO4-smeA-mA6Q23J4Rr15drxt36Cx4
-│   │   │   │   └── 📄 60.1745014598472.VXrePnIRKtNF8HSkqBQ05kMseJSIdcLUr3SK4FPOSRE.Vy8iN2JkZS0xOTYzZmQ0MTgwMCI.webp
-│   │   │   ├── 📂 mm7yuxApYiwr3e74dIV79JSnZMCX7YNaJn8HR9Us1iI
-│   │   │   │   └── 📄 60.1745603998296.oSUu7kGuU77JysxZV7FezXQ5G8saEPU8cTctGQ_0RFw.Vy8iZDhlYS0xOTYzZmQ0MWFmNyI.webp
-│   │   │   ├── 📂 p5UfHuoY-ci-q0JIv-hQQ40M5PYOtzgkysl7dg5Zzrk
-│   │   │   │   └── 📄 60.1745022360700.kUlG6AGX5vrVQ5RV3ymbLuerZg4Jr-m-xNScZqx3F_Q.Vy8iYjUxYy0xOTYzZmQ0MWIwNyI.webp
-│   │   │   ├── 📂 pKlSeVap2Av9gQNdLpK2o08zfiGmHbtZLHD1h_Ral9Y
-│   │   │   │   └── 📄 60.1745603998283.oVeVfzIhB6L2cbDJTKJne5dTzvBgCAAzJUqP8KnFWcw.Vy8iYjUxYy0xOTYzZmQ0MWIwNyI.webp
-│   │   │   ├── 📂 sFqJIUe9rMizq_k_7u3lxjzUaBccHhFi-mq1nxSm1AQ
-│   │   │   │   └── 📄 60.1745014591335.oSUu7kGuU77JysxZV7FezXQ5G8saEPU8cTctGQ_0RFw.Vy8iZDhlYS0xOTYzZmQ0MWFmNyI.webp
-│   │   │   ├── 📂 t3LYNfvY_ivYYnO8c4-0E07hXFTYci-9A-kVaRXUouA
-│   │   │   │   └── 📄 60.1745014598571.oSUu7kGuU77JysxZV7FezXQ5G8saEPU8cTctGQ_0RFw.Vy8iZDhlYS0xOTYzZmQ0MWFmNyI.webp
-│   │   │   ├── 📂 vQDML0Y6403A_RLJLnisFIz1sqREtWfGYmq4VCOpq9o
-│   │   │   │   └── 📄 60.1745014590812.onWhb7mlcfKZql8iMqlVOQQq95_vKBugv7GhiFt_2Gw.Vy8iNWQ1NC0xOTY0M2MxYTUyYyI.webp
-│   │   │   ├── 📂 xZLiLlwvqdbHUGc7VRVqGg6SFCI8CcjlGCPTgbDF-5k
-│   │   │   │   └── 📄 60.1745014598824.O1pNZXjvTcfVmIK2uqTN31wLL9L1N87ZD_q8g4GnaFY.Vy8iMWQ2MDItMTk2M2ZkNDFhZmYi.webp
-│   │   │   ├── 📂 xqg2P9t4s2cTy0SO8A-Qe0uLEMzX1KG_3udq3xChUh0
-│   │   │   │   └── 📄 60.1745022360699.8clCJk_hgPTVfngf2hg2XJ2F7Ued8qbPZHYM42_K01M.Vy8iZGE3OC0xOTYzZmQ0MWIwMiI.webp
-│   │   │   ├── 📂 zgr3_SgUMxOSpfYOa3dyMsub51DkyiwuCf8CUESgCHQ
-│   │   │   │   └── 📄 60.1745014598558.-z2vejQulRLKWYQ7UpXXuZiV_Ix-zvgGfkHWFuZbKEA.Vy8iMzI2YzgtMTk2M2ZkNDE4MTAi.webp
-│   │   │   ├── 📂 zpvEE3kq54SgApI9K004dtimyKQGFPUusjT-A-eVzek
-│   │   │   │   └── 📄 60.1745014598753.0zYv7BmUklYfj5g1raVVwSbo0IiOiPOvdBcnvZ7Du-k.Vy8iMTY5Y2QtMTk2M2ZkNDE3ZmIi.webp
-│   │   │   └── 📂 zypkr-9RC5eBAhgVIxa52Cc3tdvoo9UbMgEWZVdoBwo
-│   │   │       └── 📄 60.1745014598774.ZcAsU8ciBzQxN3LawykUnP4mCYiyevaNir_rMLmef5Y.Vy8iMzI2YzgtMTk2M2ZkNDE4MTAi.webp
+│   │   │   ├── 🗂️ -rhny31goRmLeqSf_UueVt1w9Jk9kg7Gm4DH2JK0jOY
+│   │   │   ├── 🗂️ 1xVz6Z6jCLPig34A-gUxpf8IxSdPmeOdkI3haA0Q89o
+│   │   │   ├── 🗂️ 1zmv1PP-Va3LQK7NLSpKFH6clnMizgcXrrL8AN663XE
+│   │   │   ├── 🗂️ 36povmOzAGtC-xeH2wFWfLyEtbtChOIFGmG1MQXoHQE
+│   │   │   ├── 🗂️ 3BhMLRXjQnYjV69m_fbwhi2CGrJDUsAlj9wZfMAdq9Y
+│   │   │   ├── 🗂️ 3nFmrE2WMdLVGE4B8-dQV6dprRiey_XGCsFQrAE1HFI
+│   │   │   ├── 🗂️ 4-uJSWVJUCbz8GWXHKfCoak1rF3VrLZ3E_gwqmdk-Xk
+│   │   │   ├── 🗂️ 44whNHNj8L4P6Mg--19575k0I5hspPrz_r1tWVWebag
+│   │   │   ├── 🗂️ 5hjBfCksrHbhlFzqqfSJOkiQrpywx_bbKMTum1y93g8
+│   │   │   ├── 🗂️ 5qjMQKy_eA7RNi8uja3QhIrfmU3ZJCxEBPPrjjD4VUo
+│   │   │   ├── 🗂️ 7vsDQf_8NgdhIP2hlE49nAB6QyYmzZ6lJ4wlSV1PLUg
+│   │   │   ├── 🗂️ 81zBM4yc3iFVv1cOn9EZCDHhakGt4IH5nOO12rLGhz0
+│   │   │   ├── 🗂️ 8fBFGsQUTWesy5qzHf30AYW0YbuSECBMr_ZB4sd-8rk
+│   │   │   ├── 🗂️ Bojta_CwSdDZRZnIuNcPkENiTHtrhVyTi3tgZqdTVDY
+│   │   │   ├── 🗂️ DDkOEjv-B_yLSReXnZJOD8VblNzf3EhWV5EJFUKuqvI
+│   │   │   ├── 🗂️ Fq4KCWtflsSZgENabotcdF5jZHo5rK3WnbeYEAjXd1s
+│   │   │   ├── 🗂️ GPBIswk5rBWJWziIkNq-6GmuGQJlHgjB5VJbRQ0Ra2Y
+│   │   │   ├── 🗂️ GXhTBqI1ip1nIj2KgPpfKnn2WKU6Ks2cdXqbCvTOuhw
+│   │   │   ├── 🗂️ HJOW0JmVQJQQi1RCVEhz2SCaDDLNgPbLE34nBJDE6aY
+│   │   │   ├── 🗂️ IEajImbHwjDkpQUEJDT6skF1nJBqA3hM1jOuujOYrNc
+│   │   │   ├── 🗂️ IWK8IVB-pxoc5NwVPOkPo9KWaFUWCKZohI2AxLBA4MQ
+│   │   │   ├── 🗂️ IbA-bTw_b493fT3nhj7r3753EJdCNT_rK-KRO6toTP0
+│   │   │   ├── 🗂️ IzbQq4prV6Juo97a-wLHZjgbwq5PLX542bhMMYeb0AY
+│   │   │   ├── 🗂️ K6docDmrZp8QlWrLHbKRGNGQNlf_fLcEMloL6PXa_T8
+│   │   │   ├── 🗂️ KCcN_Anicpp8qdne4AHBsDZ-K0z_b9HDGW33E3eB30Q
+│   │   │   ├── 🗂️ KLTTvbVsuxRdeemtCblhfWQ0sJQINcwMyDeYYCUEpfM
+│   │   │   ├── 🗂️ LTh1cCsBs1DcgL6_Zdp0JXzG0VOmdxwl_5uqZjrYjJY
+│   │   │   ├── 🗂️ LihGoIypV-uicxAyIuksVr7NrNj49Sol95X4zjMIYxo
+│   │   │   ├── 🗂️ Mgy-UXHqreC1SZpW49JRjKXVHqk01wPnb2NeYMfSv6c
+│   │   │   ├── 🗂️ MsaA6cJi_3cnaJsqSPL_hM_80-Kr595CS3JZbX5ZZcY
+│   │   │   ├── 🗂️ NZvOviiQEzwH5G_98jLjHEDK4S8F1pfAyqz2QBxq3j0
+│   │   │   ├── 🗂️ Pmb17w9QEKO6iSYOjwbVdPXpZXpg_3ezhIi4ocvzU6c
+│   │   │   ├── 🗂️ Ppq6wHGhUilTIlsTU_0GGUFUX6se86AHm1ngAs3sV4g
+│   │   │   ├── 🗂️ QRKUyhHLbGK-_WgJIpalZQ7aOy4hEUKToRYHYCtavFs
+│   │   │   ├── 🗂️ QxV56lKH8bV_KsZLpt6TbRyvgdQ2BHI5ZKzR7mHjll8
+│   │   │   ├── 🗂️ S9c4f3ttBZjUzS1siKdM17jvrx3SrFmyjF8IUXCaF2o
+│   │   │   ├── 🗂️ SAJnBGi0Nk0nNB2zd5fmrMCqcgIPECYGYc4w5LdO3HA
+│   │   │   ├── 🗂️ TYQ88FiIiG1G_gTeTejcCN4cmEEgu_hlNYu8rMiC1Q8
+│   │   │   ├── 🗂️ ToxgnsgnPXnywLh53q6cLi-jwL0-LCreZUH6N0ELmGU
+│   │   │   ├── 🗂️ TvTu3tUYXR9sN6VW_-BVCN5CiYhbwbl-STTsanLKNSU
+│   │   │   ├── 🗂️ Uz_GvrcqvAh8_kYKGz-Gy3uudx0qmcr2qlaO2t5OGxI
+│   │   │   ├── 🗂️ W8rjjqHr4HW0r_mvzEk8COo98vZJlY75vxNe1_v5Cuk
+│   │   │   ├── 🗂️ WXngAVZh5uGPck5BFSz0qKlP3dqtHgdIabc_ZtDFxjs
+│   │   │   ├── 🗂️ WekL0m7czP8osYRKa-BqFp6zM3vOO65Oj5x7JPlOTnA
+│   │   │   ├── 🗂️ WfUWyxO2D16htIBgvk60XLvbxlBXJ_oP0vy6G85mRy4
+│   │   │   ├── 🗂️ XQIE4NpMnZ_KL0ToQWRjrGsJ0a7eR-CHZEoIGDnILLo
+│   │   │   ├── 🗂️ XfoKyjaufNMK5E7GHXlufnLyBXeSkPV-K4LRI7EJsPk
+│   │   │   ├── 🗂️ YLox0F8RQtn053tchFV38mqUvzRNH-txXWe6JoY_7S0
+│   │   │   ├── 🗂️ YUaSqCFD1KNPcobe59zA4BGTzjSkF6LgsyWCYTz5o7g
+│   │   │   ├── 🗂️ ZGcjyT6ETNLZNw3Ysjhi3_dks-nXQ5Z7zBy0_rblb48
+│   │   │   ├── 🗂️ ZyyZEtCaH0MZ0i_mjzr-TQvURXWUUGO937gMDHpL4WM
+│   │   │   ├── 🗂️ _KwWdc7hmtZ8Q2jgz6hVzVtKz_72SJMCaT_M2_1ZeeE
+│   │   │   ├── 🗂️ _Yk2OcfJuVFOc1z6Amp-in5qpRa-sF2PN0Ol6eCD64I
+│   │   │   ├── 🗂️ aKPdPL-Mj7INXz7UTrWBEzEDnLhPV2T1vy5JNAkw3pI
+│   │   │   ├── 🗂️ b4WNDkqR0PiWP2AikWLS7nUCh2OEFN5L_Vu_lHsSkbA
+│   │   │   ├── 🗂️ bJFdJdNFuc7OZtwRLat2VyYgfbVDy2UdpHWak2s3KAk
+│   │   │   ├── 🗂️ c3mjb6LPLLXXNfqEWjwrKMmRROK18-n1YAKyuqvD9Ro
+│   │   │   ├── 🗂️ cNWbKYHKMMXwqLAPECElMVwEv1wdVE8sar_BFNXFkfo
+│   │   │   ├── 🗂️ ctTfHWHWbza3rna35t7CXFjL-otzB6V2LtLMTTlS0bs
+│   │   │   ├── 🗂️ d5S3SDHIMVadpkfsn0VVY6gwKPfR7B5dFBBdtemkYRw
+│   │   │   ├── 🗂️ dmSQI6JISMcWQevUZeEN9bpcxvXz-ZZMoEAQ3lZBcVc
+│   │   │   ├── 🗂️ dzQ3ib3tdksZ8YCqih8qcfCdl7IAIFS2CjGcCrt3cIw
+│   │   │   ├── 🗂️ e8q_uS51DewFM02nzyEiwkuHGKspmB-yrUWLGDu-kek
+│   │   │   ├── 🗂️ efZWI19CartrmVTAAw19vrWxZ9XxQqovkFDrz90eDO8
+│   │   │   ├── 🗂️ fzAdHq2t4Lc0b2U4atXVoP_w8OqVhHIpn03Adxx_C2o
+│   │   │   ├── 🗂️ gUSqPITTF0RSv4hnL2yZmUOzqWE6wPRtcKfGFxCB5c8
+│   │   │   ├── 🗂️ kG7NhXA4WHAb8YdyrSWsSOVcVOxqWG9ZHdIaE890rbA
+│   │   │   ├── 🗂️ kXsfUmGxWSbF2nO4-smeA-mA6Q23J4Rr15drxt36Cx4
+│   │   │   ├── 🗂️ mm7yuxApYiwr3e74dIV79JSnZMCX7YNaJn8HR9Us1iI
+│   │   │   ├── 🗂️ p5UfHuoY-ci-q0JIv-hQQ40M5PYOtzgkysl7dg5Zzrk
+│   │   │   ├── 🗂️ pKlSeVap2Av9gQNdLpK2o08zfiGmHbtZLHD1h_Ral9Y
+│   │   │   ├── 🗂️ sFqJIUe9rMizq_k_7u3lxjzUaBccHhFi-mq1nxSm1AQ
+│   │   │   ├── 🗂️ t3LYNfvY_ivYYnO8c4-0E07hXFTYci-9A-kVaRXUouA
+│   │   │   ├── 🗂️ vQDML0Y6403A_RLJLnisFIz1sqREtWfGYmq4VCOpq9o
+│   │   │   ├── 🗂️ xZLiLlwvqdbHUGc7VRVqGg6SFCI8CcjlGCPTgbDF-5k
+│   │   │   ├── 🗂️ xqg2P9t4s2cTy0SO8A-Qe0uLEMzX1KG_3udq3xChUh0
+│   │   │   ├── 🗂️ zgr3_SgUMxOSpfYOa3dyMsub51DkyiwuCf8CUESgCHQ
+│   │   │   ├── 🗂️ zpvEE3kq54SgApI9K004dtimyKQGFPUusjT-A-eVzek
+│   │   │   └── 🗂️ zypkr-9RC5eBAhgVIxa52Cc3tdvoo9UbMgEWZVdoBwo
 │   │   ├── 📂 swc
 │   │   │   └── 📂 plugins
 │   │   │       ├── 🗂️ v7_windows_x86_64_15.0.1
