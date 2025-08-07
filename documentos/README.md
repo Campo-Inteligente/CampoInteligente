@@ -9,9 +9,9 @@ ESTE README É ATUALIZADO AUTOMATICAMENTE A CADA COMMIT NA MAIN
 ```
 Repositório..........: FRONT-END
 Sistema..............: [Campo Inteligente](https://www.campointeligente.agr.br/)
-Versão...............: 28 (AUTO-INCREMENTO)
+Versão...............: 29 (AUTO-INCREMENTO)
 URL..................: https://www.campointeligente.agr.br/
-Data de Atualização..: 07/08/2025 15:23:58
+Data de Atualização..: 07/08/2025 15:25:00
 Responsável..........: Marcos Morais
 ```
 ## 👥 Participantes
@@ -104,170 +104,6 @@ Descrição das tecnologias:
 ├── 📂 .next
 │   ├── 📄 BUILD_ID
 │   ├── 📄 build-manifest.json
-│   ├── 📂 cache
-│   │   ├── 📄 .previewinfo
-│   │   ├── 📄 .rscinfo
-│   │   ├── 📂 eslint
-│   │   │   ├── 📄 .cache_6ptxtp
-│   │   │   ├── 📄 .cache_szwpp1
-│   │   │   └── 📄 .cache_xxb8y2
-│   │   ├── 📂 images
-│   │   │   ├── 🗂️ -rhny31goRmLeqSf_UueVt1w9Jk9kg7Gm4DH2JK0jOY
-│   │   │   ├── 🗂️ 1xVz6Z6jCLPig34A-gUxpf8IxSdPmeOdkI3haA0Q89o
-│   │   │   ├── 🗂️ 1zmv1PP-Va3LQK7NLSpKFH6clnMizgcXrrL8AN663XE
-│   │   │   ├── 🗂️ 36povmOzAGtC-xeH2wFWfLyEtbtChOIFGmG1MQXoHQE
-│   │   │   ├── 🗂️ 3BhMLRXjQnYjV69m_fbwhi2CGrJDUsAlj9wZfMAdq9Y
-│   │   │   ├── 🗂️ 3nFmrE2WMdLVGE4B8-dQV6dprRiey_XGCsFQrAE1HFI
-│   │   │   ├── 🗂️ 4-uJSWVJUCbz8GWXHKfCoak1rF3VrLZ3E_gwqmdk-Xk
-│   │   │   ├── 🗂️ 44whNHNj8L4P6Mg--19575k0I5hspPrz_r1tWVWebag
-│   │   │   ├── 🗂️ 5hjBfCksrHbhlFzqqfSJOkiQrpywx_bbKMTum1y93g8
-│   │   │   ├── 🗂️ 5qjMQKy_eA7RNi8uja3QhIrfmU3ZJCxEBPPrjjD4VUo
-│   │   │   ├── 🗂️ 7vsDQf_8NgdhIP2hlE49nAB6QyYmzZ6lJ4wlSV1PLUg
-│   │   │   ├── 🗂️ 81zBM4yc3iFVv1cOn9EZCDHhakGt4IH5nOO12rLGhz0
-│   │   │   ├── 🗂️ 8fBFGsQUTWesy5qzHf30AYW0YbuSECBMr_ZB4sd-8rk
-│   │   │   ├── 🗂️ Bojta_CwSdDZRZnIuNcPkENiTHtrhVyTi3tgZqdTVDY
-│   │   │   ├── 🗂️ DDkOEjv-B_yLSReXnZJOD8VblNzf3EhWV5EJFUKuqvI
-│   │   │   ├── 🗂️ Fq4KCWtflsSZgENabotcdF5jZHo5rK3WnbeYEAjXd1s
-│   │   │   ├── 🗂️ GPBIswk5rBWJWziIkNq-6GmuGQJlHgjB5VJbRQ0Ra2Y
-│   │   │   ├── 🗂️ GXhTBqI1ip1nIj2KgPpfKnn2WKU6Ks2cdXqbCvTOuhw
-│   │   │   ├── 🗂️ HJOW0JmVQJQQi1RCVEhz2SCaDDLNgPbLE34nBJDE6aY
-│   │   │   ├── 🗂️ IEajImbHwjDkpQUEJDT6skF1nJBqA3hM1jOuujOYrNc
-│   │   │   ├── 🗂️ IWK8IVB-pxoc5NwVPOkPo9KWaFUWCKZohI2AxLBA4MQ
-│   │   │   ├── 🗂️ IbA-bTw_b493fT3nhj7r3753EJdCNT_rK-KRO6toTP0
-│   │   │   ├── 🗂️ IzbQq4prV6Juo97a-wLHZjgbwq5PLX542bhMMYeb0AY
-│   │   │   ├── 🗂️ K6docDmrZp8QlWrLHbKRGNGQNlf_fLcEMloL6PXa_T8
-│   │   │   ├── 🗂️ KCcN_Anicpp8qdne4AHBsDZ-K0z_b9HDGW33E3eB30Q
-│   │   │   ├── 🗂️ KLTTvbVsuxRdeemtCblhfWQ0sJQINcwMyDeYYCUEpfM
-│   │   │   ├── 🗂️ LTh1cCsBs1DcgL6_Zdp0JXzG0VOmdxwl_5uqZjrYjJY
-│   │   │   ├── 🗂️ LihGoIypV-uicxAyIuksVr7NrNj49Sol95X4zjMIYxo
-│   │   │   ├── 🗂️ Mgy-UXHqreC1SZpW49JRjKXVHqk01wPnb2NeYMfSv6c
-│   │   │   ├── 🗂️ MsaA6cJi_3cnaJsqSPL_hM_80-Kr595CS3JZbX5ZZcY
-│   │   │   ├── 🗂️ NZvOviiQEzwH5G_98jLjHEDK4S8F1pfAyqz2QBxq3j0
-│   │   │   ├── 🗂️ Pmb17w9QEKO6iSYOjwbVdPXpZXpg_3ezhIi4ocvzU6c
-│   │   │   ├── 🗂️ Ppq6wHGhUilTIlsTU_0GGUFUX6se86AHm1ngAs3sV4g
-│   │   │   ├── 🗂️ QRKUyhHLbGK-_WgJIpalZQ7aOy4hEUKToRYHYCtavFs
-│   │   │   ├── 🗂️ QxV56lKH8bV_KsZLpt6TbRyvgdQ2BHI5ZKzR7mHjll8
-│   │   │   ├── 🗂️ S9c4f3ttBZjUzS1siKdM17jvrx3SrFmyjF8IUXCaF2o
-│   │   │   ├── 🗂️ SAJnBGi0Nk0nNB2zd5fmrMCqcgIPECYGYc4w5LdO3HA
-│   │   │   ├── 🗂️ TYQ88FiIiG1G_gTeTejcCN4cmEEgu_hlNYu8rMiC1Q8
-│   │   │   ├── 🗂️ ToxgnsgnPXnywLh53q6cLi-jwL0-LCreZUH6N0ELmGU
-│   │   │   ├── 🗂️ TvTu3tUYXR9sN6VW_-BVCN5CiYhbwbl-STTsanLKNSU
-│   │   │   ├── 🗂️ Uz_GvrcqvAh8_kYKGz-Gy3uudx0qmcr2qlaO2t5OGxI
-│   │   │   ├── 🗂️ W8rjjqHr4HW0r_mvzEk8COo98vZJlY75vxNe1_v5Cuk
-│   │   │   ├── 🗂️ WXngAVZh5uGPck5BFSz0qKlP3dqtHgdIabc_ZtDFxjs
-│   │   │   ├── 🗂️ WekL0m7czP8osYRKa-BqFp6zM3vOO65Oj5x7JPlOTnA
-│   │   │   ├── 🗂️ WfUWyxO2D16htIBgvk60XLvbxlBXJ_oP0vy6G85mRy4
-│   │   │   ├── 🗂️ XQIE4NpMnZ_KL0ToQWRjrGsJ0a7eR-CHZEoIGDnILLo
-│   │   │   ├── 🗂️ XfoKyjaufNMK5E7GHXlufnLyBXeSkPV-K4LRI7EJsPk
-│   │   │   ├── 🗂️ YLox0F8RQtn053tchFV38mqUvzRNH-txXWe6JoY_7S0
-│   │   │   ├── 🗂️ YUaSqCFD1KNPcobe59zA4BGTzjSkF6LgsyWCYTz5o7g
-│   │   │   ├── 🗂️ ZGcjyT6ETNLZNw3Ysjhi3_dks-nXQ5Z7zBy0_rblb48
-│   │   │   ├── 🗂️ ZyyZEtCaH0MZ0i_mjzr-TQvURXWUUGO937gMDHpL4WM
-│   │   │   ├── 🗂️ _KwWdc7hmtZ8Q2jgz6hVzVtKz_72SJMCaT_M2_1ZeeE
-│   │   │   ├── 🗂️ _Yk2OcfJuVFOc1z6Amp-in5qpRa-sF2PN0Ol6eCD64I
-│   │   │   ├── 🗂️ aKPdPL-Mj7INXz7UTrWBEzEDnLhPV2T1vy5JNAkw3pI
-│   │   │   ├── 🗂️ b4WNDkqR0PiWP2AikWLS7nUCh2OEFN5L_Vu_lHsSkbA
-│   │   │   ├── 🗂️ bJFdJdNFuc7OZtwRLat2VyYgfbVDy2UdpHWak2s3KAk
-│   │   │   ├── 🗂️ c3mjb6LPLLXXNfqEWjwrKMmRROK18-n1YAKyuqvD9Ro
-│   │   │   ├── 🗂️ cNWbKYHKMMXwqLAPECElMVwEv1wdVE8sar_BFNXFkfo
-│   │   │   ├── 🗂️ ctTfHWHWbza3rna35t7CXFjL-otzB6V2LtLMTTlS0bs
-│   │   │   ├── 🗂️ d5S3SDHIMVadpkfsn0VVY6gwKPfR7B5dFBBdtemkYRw
-│   │   │   ├── 🗂️ dmSQI6JISMcWQevUZeEN9bpcxvXz-ZZMoEAQ3lZBcVc
-│   │   │   ├── 🗂️ dzQ3ib3tdksZ8YCqih8qcfCdl7IAIFS2CjGcCrt3cIw
-│   │   │   ├── 🗂️ e8q_uS51DewFM02nzyEiwkuHGKspmB-yrUWLGDu-kek
-│   │   │   ├── 🗂️ efZWI19CartrmVTAAw19vrWxZ9XxQqovkFDrz90eDO8
-│   │   │   ├── 🗂️ fzAdHq2t4Lc0b2U4atXVoP_w8OqVhHIpn03Adxx_C2o
-│   │   │   ├── 🗂️ gUSqPITTF0RSv4hnL2yZmUOzqWE6wPRtcKfGFxCB5c8
-│   │   │   ├── 🗂️ kG7NhXA4WHAb8YdyrSWsSOVcVOxqWG9ZHdIaE890rbA
-│   │   │   ├── 🗂️ kXsfUmGxWSbF2nO4-smeA-mA6Q23J4Rr15drxt36Cx4
-│   │   │   ├── 🗂️ mm7yuxApYiwr3e74dIV79JSnZMCX7YNaJn8HR9Us1iI
-│   │   │   ├── 🗂️ p5UfHuoY-ci-q0JIv-hQQ40M5PYOtzgkysl7dg5Zzrk
-│   │   │   ├── 🗂️ pKlSeVap2Av9gQNdLpK2o08zfiGmHbtZLHD1h_Ral9Y
-│   │   │   ├── 🗂️ sFqJIUe9rMizq_k_7u3lxjzUaBccHhFi-mq1nxSm1AQ
-│   │   │   ├── 🗂️ t3LYNfvY_ivYYnO8c4-0E07hXFTYci-9A-kVaRXUouA
-│   │   │   ├── 🗂️ vQDML0Y6403A_RLJLnisFIz1sqREtWfGYmq4VCOpq9o
-│   │   │   ├── 🗂️ xZLiLlwvqdbHUGc7VRVqGg6SFCI8CcjlGCPTgbDF-5k
-│   │   │   ├── 🗂️ xqg2P9t4s2cTy0SO8A-Qe0uLEMzX1KG_3udq3xChUh0
-│   │   │   ├── 🗂️ zgr3_SgUMxOSpfYOa3dyMsub51DkyiwuCf8CUESgCHQ
-│   │   │   ├── 🗂️ zpvEE3kq54SgApI9K004dtimyKQGFPUusjT-A-eVzek
-│   │   │   └── 🗂️ zypkr-9RC5eBAhgVIxa52Cc3tdvoo9UbMgEWZVdoBwo
-│   │   ├── 📂 swc
-│   │   │   └── 📂 plugins
-│   │   │       ├── 🗂️ v7_windows_x86_64_15.0.1
-│   │   │       └── 🗂️ v7_windows_x86_64_9.0.0
-│   │   └── 📂 webpack
-│   │       ├── 📂 client-development
-│   │       │   ├── 📄 0.pack.gz
-│   │       │   ├── 📄 1.pack.gz
-│   │       │   ├── 📄 10.pack.gz
-│   │       │   ├── 📄 11.pack.gz
-│   │       │   ├── 📄 12.pack.gz
-│   │       │   ├── 📄 2.pack.gz
-│   │       │   ├── 📄 3.pack.gz
-│   │       │   ├── 📄 4.pack.gz
-│   │       │   ├── 📄 5.pack.gz
-│   │       │   ├── 📄 6.pack.gz
-│   │       │   ├── 📄 7.pack.gz
-│   │       │   ├── 📄 8.pack.gz
-│   │       │   ├── 📄 9.pack.gz
-│   │       │   ├── 📄 index.pack.gz
-│   │       │   └── 📄 index.pack.gz.old
-│   │       ├── 📂 client-production
-│   │       │   ├── 📄 0.pack
-│   │       │   ├── 📄 1.pack
-│   │       │   ├── 📄 10.pack
-│   │       │   ├── 📄 11.pack
-│   │       │   ├── 📄 12.pack
-│   │       │   ├── 📄 13.pack
-│   │       │   ├── 📄 14.pack
-│   │       │   ├── 📄 15.pack
-│   │       │   ├── 📄 16.pack
-│   │       │   ├── 📄 17.pack
-│   │       │   ├── 📄 18.pack
-│   │       │   ├── 📄 19.pack
-│   │       │   ├── 📄 2.pack
-│   │       │   ├── 📄 3.pack
-│   │       │   ├── 📄 4.pack
-│   │       │   ├── 📄 5.pack
-│   │       │   ├── 📄 6.pack
-│   │       │   ├── 📄 7.pack
-│   │       │   ├── 📄 8.pack
-│   │       │   ├── 📄 9.pack
-│   │       │   ├── 📄 index.pack
-│   │       │   └── 📄 index.pack.old
-│   │       ├── 📂 edge-server-production
-│   │       │   ├── 📄 0.pack
-│   │       │   ├── 📄 index.pack
-│   │       │   └── 📄 index.pack.old
-│   │       ├── 📂 server-development
-│   │       │   ├── 📄 0.pack.gz
-│   │       │   ├── 📄 1.pack.gz
-│   │       │   ├── 📄 2.pack.gz
-│   │       │   ├── 📄 3.pack.gz
-│   │       │   ├── 📄 4.pack.gz
-│   │       │   ├── 📄 5.pack.gz
-│   │       │   ├── 📄 6.pack.gz
-│   │       │   ├── 📄 7.pack.gz
-│   │       │   ├── 📄 8.pack.gz
-│   │       │   ├── 📄 9.pack.gz
-│   │       │   ├── 📄 index.pack.gz
-│   │       │   └── 📄 index.pack.gz.old
-│   │       └── 📂 server-production
-│   │           ├── 📄 0.pack
-│   │           ├── 📄 1.pack
-│   │           ├── 📄 10.pack
-│   │           ├── 📄 11.pack
-│   │           ├── 📄 12.pack
-│   │           ├── 📄 2.pack
-│   │           ├── 📄 3.pack
-│   │           ├── 📄 4.pack
-│   │           ├── 📄 5.pack
-│   │           ├── 📄 6.pack
-│   │           ├── 📄 7.pack
-│   │           ├── 📄 8.pack
-│   │           ├── 📄 9.pack
-│   │           ├── 📄 index.pack
-│   │           └── 📄 index.pack.old
 │   ├── 📂 diagnostics
 │   │   ├── 📄 build-diagnostics.json
 │   │   └── 📄 framework.json
@@ -31314,16 +31150,6 @@ Descrição das tecnologias:
 │   │   │   │   ├── 📄 AwaitDependenciesInitFragment.js
 │   │   │   │   └── 📄 InferAsyncModulesPlugin.js
 │   │   │   ├── 📄 buildChunkGraph.js
-│   │   │   ├── 📂 cache
-│   │   │   │   ├── 📄 AddBuildDependenciesPlugin.js
-│   │   │   │   ├── 📄 AddManagedPathsPlugin.js
-│   │   │   │   ├── 📄 IdleFileCachePlugin.js
-│   │   │   │   ├── 📄 MemoryCachePlugin.js
-│   │   │   │   ├── 📄 MemoryWithGcCachePlugin.js
-│   │   │   │   ├── 📄 PackFileCacheStrategy.js
-│   │   │   │   ├── 📄 ResolverCachePlugin.js
-│   │   │   │   ├── 📄 getLazyHashedEtag.js
-│   │   │   │   └── 📄 mergeEtags.js
 │   │   │   ├── 📄 cli.js
 │   │   │   ├── 📂 config
 │   │   │   │   ├── 📄 browserslistTargetHandler.js
