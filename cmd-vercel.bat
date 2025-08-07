@@ -35,6 +35,13 @@ echo Adicionando repositório de destino...
 git remote add destino %DESTINO%
 
 echo.
+echo Atualizando repositório local com origin/main...
+git pull origin main
+if %errorlevel% neq 0 (
+    echo Falha ao atualizar com origin/main. Verifique conflitos ou permissões.
+    exit /b 1
+)
+
 echo Adicionando arquivos modificados e não rastreados...
 git add .
 
@@ -47,10 +54,16 @@ if %errorlevel% neq 0 (
 echo.
 echo Enviando para o repositório original (origin)...
 git push origin main
+if %errorlevel% neq 0 (
+    echo Falha ao enviar para origin. Verifique conflitos ou permissões.
+)
 
 echo.
 echo Enviando para o repositório destino (CampoInteligente)...
 git push destino main
+if %errorlevel% neq 0 (
+    echo Falha ao enviar para destino. Verifique conflitos ou permissões.
+)
 
 echo.
 echo Verificando repositórios remotos finais:
