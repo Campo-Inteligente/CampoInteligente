@@ -22,7 +22,7 @@
   gap: 30px;
 }
 
-.nav ul li a {
+.nav ul li a:not(.navButton) {
   display: inline-block;
   text-decoration: none;
   color: rgb(10, 96, 5);
@@ -32,9 +32,33 @@
   transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.nav ul li a:hover {
+.nav ul li a:not(.navButton):hover {
   color: #ffcc00;
   transform: scale(1.2);
+}
+
+.navButton {
+  background-color: #127234;
+  color: white;
+  padding: 8px 24px;
+  height: 40px;
+  width: 120px;
+  border-radius: 50px;
+  font-weight: 500;
+  font-size: 18px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  border: none;
+  margin-top: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navButton:hover {
+  background: #e8f5e9;
+  color: #127234;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .hamburger {
@@ -47,7 +71,7 @@
 .bar {
   width: 25px;
   height: 3px;
-  background-color:  rgb(10, 96, 5);
+  background-color: rgb(10, 96, 5);
   margin: 4px 0;
   transition: 0.4s;
 }
@@ -83,7 +107,7 @@
   }
 
   .nav.open {
-    max-height: 300px; 
+    max-height: 300px;
   }
 
   .nav ul {
@@ -94,13 +118,10 @@
   }
 
   .nav ul li a {
-    color:  rgb(10, 96, 5) !important;
+    color: rgb(10, 96, 5) !important;
     font-size: 18px;
     padding: 10px 15px;
     transition: all 0.3s ease;
-    background: transparent !important; 
+    background: transparent !important;
   }
-
-  
-
 }

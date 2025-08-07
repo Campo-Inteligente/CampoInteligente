@@ -5,6 +5,22 @@ import { LuSendHorizontal, LuX } from "react-icons/lu";
 import Image from "next/image";
 import { v4 as uuidv4 } from "uuid";
 
+const FormattedMessage = ({ text }) => {
+  const formatText = (textToFormat) => {
+    if (!textToFormat) return "";
+
+    const formatted = textToFormat
+      .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>") // Negrito com **
+      .replace(/\*(.*?)\*/g, "<strong>$1</strong>") // Negrito com *
+      .replace(/_(.*?)_/g, "<em>$1</em>") // Itálico com _
+      .replace(/\n/g, "<br />");
+
+    return formatted;
+  };
+
+  return <p dangerouslySetInnerHTML={{ __html: formatText(text) }} />;
+};
+
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
@@ -12,6 +28,20 @@ export default function ChatWidget() {
   const [isLoading, setIsLoading] = useState(false);
   const [sessionId, setSessionId] = useState(null);
   const messageListRef = useRef(null);
+  const [showBubble, setShowBubble] = useState(false);
+
+  useEffect(() => {
+    const showTimer = setTimeout(() => {
+      setShowBubble(true);
+    }, 1500);
+    const hideTimer = setTimeout(() => {
+      setShowBubble(false);
+    }, 7000);
+    return () => {
+      clearTimeout(showTimer);
+      clearTimeout(hideTimer);
+    };
+  }, []);
 
   useEffect(() => {
     let currentSessionId = localStorage.getItem("iagro_session_id");
@@ -27,14 +57,10 @@ export default function ChatWidget() {
       const vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty("--vh", `${vh}px`);
     };
-
     setVh();
-    window.addEventListener("resize", setVh); 
-
-    // Função de limpeza para remover o listener
+    window.addEventListener("resize", setVh);
     return () => window.removeEventListener("resize", setVh);
   }, []);
-
 
   useEffect(() => {
     if (messageListRef.current) {
@@ -115,7 +141,11 @@ export default function ChatWidget() {
                         className={styles.avatar}
                       />
                     )}
-                    <p>{msg.text}</p>
+                    {msg.sender === "bot" ? (
+                      <FormattedMessage text={msg.text} />
+                    ) : (
+                      <p>{msg.text}</p>
+                    )}
                   </div>
                 ))}
                 {isLoading && (
@@ -135,7 +165,6 @@ export default function ChatWidget() {
                   </div>
                 )}
               </div>
-
               <div className={styles.inputArea}>
                 <input
                   type="text"
@@ -168,12 +197,25 @@ export default function ChatWidget() {
             onClick={() => setIsOpen(true)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
+            onMouseEnter={() => setShowBubble(true)}
+            onMouseLeave={() => setShowBubble(false)}
           >
-            <span className={styles.textBubble}>
-              🖐️Olá! Sou o IAGRO,<br /> seu Assistente Virtual.
-              <br />
-              Estou aqui para ajudar, <br /> conte comigo!
-            </span>
+            <AnimatePresence>
+              {showBubble && (
+                <motion.span
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.2 }}
+                  className={styles.textBubble}
+                >
+                  🖐️Olá! Sou o Iagro,
+                  <br /> seu Assistente Virtual.
+                  <br />
+                  Estou aqui para ajudar, <br /> conte comigo!
+                </motion.span>
+              )}
+            </AnimatePresence>
             <Image
               src="/imagens/avatar.png"
               alt="Abrir Chat"

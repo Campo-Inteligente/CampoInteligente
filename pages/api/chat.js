@@ -1,23 +1,17 @@
 export default async function handler(req, res) {
-  // Garante que o método seja POST
   if (req.method !== "POST") {
     return res.status(405).json({ message: "Método não permitido" });
   }
 
-  // Pega os dados enviados pelo frontend (ChatWidget.js)
-  // AGORA USAMOS 'message' AQUI TAMBÉM!
   const { session_id, message } = req.body;
 
-  // Define a URL real da sua API Django para o webchat
-  const REAL_API_URL =
-    "http://campointeligente.ddns.com.br:21083/api/v1/chatbot/webchat/";
+  const REAL_API_URL = process.env.REAL_API_URL;
 
   const requestBodyJson = JSON.stringify({
     session_id: session_id,
-    message: message, // A variável 'message' (já desestruturada) está sendo usada aqui
+    message: message,
   });
 
-  // Linha de debug (pode remover depois)
   console.log("JSON REAL ENVIADO PELO PROXY:", requestBodyJson);
 
   try {

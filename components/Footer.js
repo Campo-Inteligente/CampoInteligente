@@ -55,9 +55,18 @@ export default function Footer() {
         {/* Redes sociais animadas */}
         <motion.div className={styles.footersocial}>
           {[
-            { icon: faInstagram, link: "https://www.instagram.com/startupcampointeligente/" },
-            { icon: faLinkedin, link: "https://www.linkedin.com/company/campointeligente/" },
-            { icon: faFacebook, link: "https://www.facebook.com/share/1P3EQSsmCx/" },
+            {
+              icon: faInstagram,
+              link: "https://www.instagram.com/startupcampointeligente/",
+            },
+            {
+              icon: faLinkedin,
+              link: "https://www.linkedin.com/company/campointeligente/",
+            },
+            {
+              icon: faFacebook,
+              link: "https://www.facebook.com/share/1P3EQSsmCx/",
+            },
           ].map((item, index) => (
             <motion.a
               key={index}
@@ -122,18 +131,31 @@ export default function Footer() {
           </Link>
         </motion.div>
 
-        {/* Contato animado */}
-        <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: "easeOut" }}
-          className={styles.footercontact}
-        >
-          <p>Entre em contato conosco para saber mais</p>
-          <a href="mailto:startupcampointeligente@gmail.com">
-            startupcampointeligente@gmail.com
-          </a>
-        </motion.div>
+        <div className={styles.controlPanelContainer}>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className={styles.footercontact}
+          >
+            <p>Já é nosso cliente?</p>
+          </motion.div>
+          <motion.a
+            href={process.env.NEXT_PUBLIC_PANEL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${styles.btn} btn-lg d-inline-flex align-items-center justify-content-center`}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{
+              type: "spring",
+              stiffness: 400,
+              damping: 10,
+            }}
+          >
+            Entrar
+          </motion.a>
+        </div>
       </div>
 
       {/* Copyright animado */}

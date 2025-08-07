@@ -28,21 +28,21 @@
 }
 
 .footercontact {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
 
-.footerlinks{
+.footerlinks {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 40px;
-  font-weight:500;
+  font-weight: 500;
 }
 .footertitle {
-  color: #4CAF50;
+  color: #4caf50;
   font-size: 16px;
   font-weight: bold;
 }
@@ -59,14 +59,14 @@
 .footerlinks a:hover,
 .footerlegal a:hover,
 .footercontact a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .footercontact p {
-    color: #4CAF50;
-    font-weight: bold;
-    font-size: 16px;
-  }
+  color: #4caf50;
+  font-weight: bold;
+  font-size: 16px;
+}
 
 .footersocial {
   display: flex;
@@ -78,7 +78,7 @@
 .footersocial a {
   color: #127234;
   font-size: 20px;
-  background: #FFF;
+  background: #fff;
   padding: 12px;
   border-radius: 50%;
   display: flex;
@@ -129,7 +129,39 @@
 .footercenter {
   text-align: center;
   font-size: 16px;
-  color: #4CAF50;
+  color: #4caf50;
+}
+
+.btn {
+  background-color: #127234;
+  color: white;
+  padding: 12px 28px;
+  height: 40px;
+  width: 150px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  white-space: nowrap;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+  background: #e8f5e9;
+  color: #127234;
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.controlPanelContainer {
+  display: flex;   
+  flex-direction: column;    
+  align-items: center;       
+  gap: 5px;                 
 }
 
 @media (max-width: 768px) {
@@ -191,13 +223,12 @@
 
   .footerleft {
     position: static;
-    order: 2; 
+    order: 2;
     margin-top: 8px;
   }
 
   .footercenter {
     order: 1;
-  
   }
 
   .footerleft p {

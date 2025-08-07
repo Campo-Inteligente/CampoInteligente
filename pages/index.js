@@ -178,7 +178,7 @@ export default function Home() {
                     damping: 10,
                   }}
                 >
-                  Conheça nosso ChatBot <span className="ms-3">→</span>
+                  Saiba mais <span className="ms-3">→</span>
                 </motion.a>
                 <motion.p
                   className={`${styles.description} mt-5 mb-5`}
@@ -218,7 +218,7 @@ export default function Home() {
                       damping: 10,
                     }}
                   >
-                    Conheça nosso ChatBot <span className="ms-3">→</span>
+                    Saiba mais <span className="ms-3">→</span>
                   </motion.a>
                   <motion.p
                     className={`${styles.description} mt-5`}

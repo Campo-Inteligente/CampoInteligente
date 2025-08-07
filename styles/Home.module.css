@@ -51,6 +51,7 @@
   background-color: #127234;
   color: white;
   padding: 12px 28px;
+  width: 250px;
   border-radius: 50px;
   font-weight: 600;
   text-decoration: none;
@@ -60,6 +61,7 @@
   transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
   border: none;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-right: 10px;
 }
 
 .btn:hover {
