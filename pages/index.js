@@ -167,6 +167,24 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 className={`${styles["conteudo-mobile"]} col-12 order-3 text-center px-3`}
               >
+                
+                <motion.p
+                  className={`${styles.description} mt-5 mb-5`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.4 }}
+                >
+                  {/*Somos a Campo Inteligente, uma plataforma inovadora que coloca a tecnologia a
+                  serviço do agricultor familiar. Com inteligência artificial
+                  integrada a dados meteorológicos e de mercado, oferecemos uma
+                  ferramenta simples, eficiente e acessível para otimizar o
+                  plantio, o manejo das lavouras e a colheita. Tudo isso na
+                  palma da sua mão, direto pelo WhatsApp, para que você tome
+                  decisões estratégicas e maximize seus lucros com segurança e
+                  praticidade!*/}
+                  A <strong>Campo Inteligente</strong> oferece uma <strong>API</strong> robusta, flexível e em constante evolução, desenvolvida para conectar o agronegócio e a agricultura familiar à transformação digital. Integrada a dados meteorológicos e de mercado, ela otimiza plantio, manejo e colheita com eficiência e precisão. Sua arquitetura permite integração a diversos canais de comunicação — como WhatsApp, aplicativos móveis, chatbots e sistemas de gestão — garantindo que a informação certa chegue ao produtor no momento certo, impulsionando a produtividade e a rentabilidade com segurança e praticidade.
+                </motion.p>
+
                 <motion.a
                   href="/chatbot"
                   className={`${styles.btn} btn-lg d-inline-flex align-items-center justify-content-center`}
@@ -180,21 +198,7 @@ export default function Home() {
                 >
                   Saiba mais <span className="ms-3">→</span>
                 </motion.a>
-                <motion.p
-                  className={`${styles.description} mt-5 mb-5`}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.4 }}
-                >
-                  Somos uma plataforma inovadora que coloca a tecnologia a
-                  serviço do agricultor familiar. Com inteligência artificial
-                  integrada a dados meteorológicos e de mercado, oferecemos uma
-                  ferramenta simples, eficiente e acessível para otimizar o
-                  plantio, o manejo das lavouras e a colheita. Tudo isso na
-                  palma da sua mão, direto pelo WhatsApp, para que você tome
-                  decisões estratégicas e maximize seus lucros com segurança e
-                  praticidade!
-                </motion.p>
+                
               </motion.div>
 
               {/* Coluna do Conteúdo - Versão Desktop */}
@@ -206,20 +210,7 @@ export default function Home() {
                 style={{ marginTop: "300px", marginRight: "200px" }}
               >
                 <div className="text-center px-3 px-md-0">
-                  <motion.a
-                    href="/chatbot"
-                    className={`${styles.btn} btn-lg d-inline-flex align-items-center justify-content-center`}
-                    style={{ marginRight: "250px" }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 400,
-                      damping: 10,
-                    }}
-                  >
-                    Saiba mais <span className="ms-3">→</span>
-                  </motion.a>
+                  
                   <motion.p
                     className={`${styles.description} mt-5`}
                     initial={{ opacity: 0 }}
@@ -235,6 +226,21 @@ export default function Home() {
                     decisões estratégicas e maximize seus lucros com segurança e
                     praticidade!
                   </motion.p>
+
+                  <motion.a
+                    href="/chatbot"
+                    className={`${styles.btn} btn-lg d-inline-flex align-items-center justify-content-center`}
+                    style={{ marginRight: "250px" }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 10,
+                    }}
+                  >
+                    Saiba mais <span className="ms-3">→</span>
+                  </motion.a>
                 </div>
               </motion.div>
 

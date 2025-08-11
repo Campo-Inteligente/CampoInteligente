@@ -153,9 +153,11 @@ export default function Footer() {
               damping: 10,
             }}
           >
-            Entrar
+            Entrar aqui não
           </motion.a>
-        </div>
+        </div> 
+        
+
       </div>
 
       {/* Copyright animado */}
