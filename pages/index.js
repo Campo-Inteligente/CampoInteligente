@@ -182,7 +182,9 @@ export default function Home() {
                   palma da sua mão, direto pelo WhatsApp, para que você tome
                   decisões estratégicas e maximize seus lucros com segurança e
                   praticidade!*/}
-                  A <strong>Campo Inteligente</strong> oferece uma <strong>API</strong> robusta, flexível e em constante evolução, desenvolvida para conectar o agronegócio e a agricultura familiar à transformação digital. Integrada a dados meteorológicos e de mercado, ela otimiza plantio, manejo e colheita com eficiência e precisão. Sua arquitetura permite integração a diversos canais de comunicação — como WhatsApp, aplicativos móveis, chatbots e sistemas de gestão — garantindo que a informação certa chegue ao produtor no momento certo, impulsionando a produtividade e a rentabilidade com segurança e praticidade.
+                  A <strong>Campo Inteligente</strong> oferece uma <strong>API</strong> robusta, 
+                  flexível e em constante evolução, desenvolvida para conectar o agronegócio e a agricultura familiar à transformação digital. 
+                  Atualmente, integrada a dados meteorológicos e de mercado, ela otimiza plantio, manejo e colheita com eficiência e precisão. Sua arquitetura permite integração a diversos canais de comunicação — como WhatsApp, aplicativos móveis, chatbots e sistemas de gestão — garantindo que a informação certa chegue ao produtor no momento certo, impulsionando a produtividade e a rentabilidade com segurança e praticidade.
                 </motion.p>
 
                 <motion.a
