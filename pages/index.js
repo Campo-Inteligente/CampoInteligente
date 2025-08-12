@@ -72,7 +72,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: -50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-                className={`${styles["logo-mobile"]} col-12 order-1 mb-4 text-start`}
+                className={`${styles["logo-mobile"]} col-12 order-1 mb-1 text-start`}
                 style={{ paddingLeft: "70px" }}
               >
                 <div className={`${styles.logoContainer}`}>
@@ -122,44 +122,6 @@ export default function Home() {
                 </div>
               </motion.div>
 
-              {/* Ícones Sociais (Mobile) - ENTRE LOGO E BOTÃO */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.8 }}
-                className="col-12 d-flex d-lg-none mb-4 justify-content-center order-2"
-              >
-                <div className={`${styles.socialIcons} d-flex gap-4`}>
-                  <motion.a
-                    href="https://www.instagram.com/startupcampointeligente/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ y: -3 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <FontAwesomeIcon icon={faInstagram} size="lg" />
-                  </motion.a>
-                  <motion.a
-                    href="https://www.linkedin.com/company/campointeligente/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ y: -3 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <FontAwesomeIcon icon={faLinkedin} size="lg" />
-                  </motion.a>
-                  <motion.a
-                    href="https://www.facebook.com/share/1P3EQSsmCx/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    whileHover={{ y: -3 }}
-                    whileTap={{ scale: 0.9 }}
-                  >
-                    <FontAwesomeIcon icon={faFacebook} size="lg" />
-                  </motion.a>
-                </div>
-              </motion.div>
-
               {/* Coluna do Conteúdo - Versão Mobile */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
@@ -167,21 +129,8 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 className={`${styles["conteudo-mobile"]} col-12 order-3 text-center px-3`}
               >
-                <motion.a
-                  href="/chatbot"
-                  className={`${styles.btn} btn-lg d-inline-flex align-items-center justify-content-center`}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 400,
-                    damping: 10,
-                  }}
-                >
-                  Saiba mais <span className="ms-3">→</span>
-                </motion.a>
                 <motion.p
-                  className={`${styles.description} mt-5 mb-5`}
+                  className={`${styles.description} mt-4`}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   transition={{ delay: 0.4 }}
@@ -195,6 +144,20 @@ export default function Home() {
                   decisões estratégicas e maximize seus lucros com segurança e
                   praticidade!
                 </motion.p>
+                <motion.a
+                  href="/chatbot"
+                  className={`${styles.btn} btn-lg d-inline-flex align-items-center justify-content-center`}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 10,
+                  }}
+                  style={{ marginBottom: "50px", marginTop: "20px" }}
+                >
+                  Saiba mais <span className="ms-3">→</span>
+                </motion.a>
               </motion.div>
 
               {/* Coluna do Conteúdo - Versão Desktop */}
@@ -203,23 +166,9 @@ export default function Home() {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                 className={`${styles["conteudo-desktop"]} col-xl-5 col-lg-6 col-md-8 order-3 order-lg-2`}
-                style={{ marginTop: "300px", marginRight: "200px" }}
+                style={{ marginTop: "100px", marginRight: "200px" }}
               >
                 <div className="text-center px-3 px-md-0">
-                  <motion.a
-                    href="/chatbot"
-                    className={`${styles.btn} btn-lg d-inline-flex align-items-center justify-content-center`}
-                    style={{ marginRight: "250px" }}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    transition={{
-                      type: "spring",
-                      stiffness: 400,
-                      damping: 10,
-                    }}
-                  >
-                    Saiba mais <span className="ms-3">→</span>
-                  </motion.a>
                   <motion.p
                     className={`${styles.description} mt-5`}
                     initial={{ opacity: 0 }}
@@ -235,6 +184,20 @@ export default function Home() {
                     decisões estratégicas e maximize seus lucros com segurança e
                     praticidade!
                   </motion.p>
+                  <motion.a
+                    href="/chatbot"
+                    className={`${styles.btn} btn-lg d-inline-flex align-items-center justify-content-center`}
+                    style={{ marginRight: "270px" }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 400,
+                      damping: 10,
+                    }}
+                  >
+                    Saiba mais <span className="ms-3">→</span>
+                  </motion.a>
                 </div>
               </motion.div>
 

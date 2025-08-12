@@ -7,6 +7,11 @@ export default async function handler(req, res) {
 
   const REAL_API_URL = process.env.REAL_API_URL;
 
+   if (!REAL_API_URL) {
+    console.error("ERRO CRÍTICO: A variável de ambiente REAL_API_URL não está definida no ficheiro .env.local!");
+    return res.status(500).json({ resposta: "Erro de configuração no servidor." });
+  }
+
   const requestBodyJson = JSON.stringify({
     session_id: session_id,
     message: message,

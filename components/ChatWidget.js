@@ -8,16 +8,13 @@ import { v4 as uuidv4 } from "uuid";
 const FormattedMessage = ({ text }) => {
   const formatText = (textToFormat) => {
     if (!textToFormat) return "";
-
     const formatted = textToFormat
-      .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>") // Negrito com **
-      .replace(/\*(.*?)\*/g, "<strong>$1</strong>") // Negrito com *
-      .replace(/_(.*?)_/g, "<em>$1</em>") // Itálico com _
+      .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+      .replace(/\*(.*?)\*/g, "<strong>$1</strong>")
+      .replace(/_(.*?)_/g, "<em>$1</em>")
       .replace(/\n/g, "<br />");
-
     return formatted;
   };
-
   return <p dangerouslySetInnerHTML={{ __html: formatText(text) }} />;
 };
 
@@ -75,7 +72,6 @@ export default function ChatWidget() {
     const currentInput = input;
     setInput("");
     setIsLoading(true);
-
     try {
       const response = await fetch("/api/chat", {
         method: "POST",
@@ -85,11 +81,9 @@ export default function ChatWidget() {
           message: currentInput,
         }),
       });
-
       if (!response.ok) {
         throw new Error(`Erro na API: ${response.statusText}`);
       }
-
       const data = await response.json();
       const botMessage = { text: data.response, sender: "bot" };
       setMessages((prev) => [...prev, botMessage]);
@@ -217,11 +211,12 @@ export default function ChatWidget() {
               )}
             </AnimatePresence>
             <Image
-              src="/imagens/avatar.png"
+              src="/imagens/iagro.gif"
               alt="Abrir Chat"
-              width={200}
-              height={200}
+              width={1400}
+              height={1080}
               className={styles.triggerAvatar}
+              unoptimized={true}
             />
           </motion.div>
         )}

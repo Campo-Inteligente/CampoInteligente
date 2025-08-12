@@ -76,6 +76,7 @@
   max-width: 400%;
   border-color: #ffffff;
   text-align: center;
+  z-index: 1;
   
 }
 
@@ -165,6 +166,7 @@
   height: 150px;
   object-fit: cover;
   flex-shrink: 0;
+  mix-blend-mode: darken;
 }
 .inputArea {
   display: flex;
