@@ -131,31 +131,7 @@ export default function Footer() {
           </Link>
         </motion.div>
 
-        <div className={styles.controlPanelContainer}>
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className={styles.footercontact}
-          >
-            <p>Já é nosso cliente?</p>
-          </motion.div>
-          <motion.a
-            href={process.env.NEXT_PUBLIC_PANEL_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={`${styles.btn} btn-lg d-inline-flex align-items-center justify-content-center`}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{
-              type: "spring",
-              stiffness: 400,
-              damping: 10,
-            }}
-          >
-            Entrar
-          </motion.a>
-        </div>
+       
       </div>
 
       {/* Copyright animado */}
