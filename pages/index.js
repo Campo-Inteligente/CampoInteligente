@@ -173,12 +173,22 @@ export default function Home() {
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.4 }}
                   >
-                    A Campo Inteligente leva a transformação digital para o
+{/*A Campo Inteligente leva a transformação digital para o
                     agronegócio e a agricultura familiar. Nossa API integra
                     dados de clima e mercado, conecta-se a WhatsApp, aplicativos
                     e sistemas de gestão, e entrega a informação certa no
                     momento certo — ajudando o produtor a ganhar produtividade,
-                    segurança e rentabilidade.
+                    segurança e rentabilidade.*/}
+
+
+                   Somos a Campo Inteligente, uma plataforma inovadora que coloca a 
+                   tecnologia a serviço do agricultor familiar. Com inteligência 
+                   artificial integrada a dados meteorológicos e de mercado, 
+                   oferecemos uma ferramenta simples, eficiente e acessível 
+                   para otimizar o lantio, o manejo das lavouras e a colheita. 
+                   Tudo isso na palma da sua mão, direto pelo WhatsApp, para que 
+                   você tome decisões estratégicas e maximize seus lucros com segurança e praticidade!
+                     
                   </motion.p>
                   <motion.a
                     href="/chatbot"
