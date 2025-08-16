@@ -107,6 +107,14 @@
   z-index: 200;
 }
 
+.mobileControls {
+  display: none;
+  align-items: center;
+  gap: 10px; 
+}
+
+
+
 /* Responsividade */
 @media (min-width: 769px) {
   .desktopEnterButton {
@@ -128,6 +136,7 @@
   .hamburger {
     display: flex;
     order: 2;
+    margin-left: 0;
   }
 
   .desktopEnterButton {
@@ -162,6 +171,12 @@
     display: block;
     order: 1;
   }
+
+.mobileControls {
+    display: flex;
+    order: 2;
+  }
+
 }
 
 @media (max-width: 768px) and (min-width: 540px) {
@@ -172,3 +187,9 @@
 }
 
 
+@media (max-width: 375px) {
+  .lockButton {
+    font-size: 1.3rem;
+    margin-right: 8px;
+  }
+}

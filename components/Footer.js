@@ -1,17 +1,20 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
-
 import {
   faInstagram,
   faLinkedin,
   faFacebook,
 } from "@fortawesome/free-brands-svg-icons";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styles from "../styles/Footer.module.css";
 import Image from "next/image";
 
 export default function Footer() {
+  const [isLegalOpen, setIsLegalOpen] = useState(false);
+  const [version, setVersion] = useState(null);
+
   const handleClick = (e) => {
     e.preventDefault();
     const href = e.currentTarget.getAttribute("href");
@@ -19,12 +22,10 @@ export default function Footer() {
     window.location.href = href;
   };
 
-  const [version, setVersion] = useState(null);
-
   useEffect(() => {
     fetch("/version.json")
       .then((res) => res.json())
-      .then((data) => setVersion(data)) // Corrigido para setVersion
+      .then((data) => setVersion(data))
       .catch((err) => console.error("Erro ao carregar versão:", err));
   }, []);
 
@@ -36,7 +37,6 @@ export default function Footer() {
       className={styles.footer}
     >
       <div className={styles.footercontainer}>
-        {/* Logo animada */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -52,7 +52,6 @@ export default function Footer() {
           />
         </motion.div>
 
-        {/* Redes sociais animadas */}
         <motion.div className={styles.footersocial}>
           {[
             {
@@ -88,7 +87,6 @@ export default function Footer() {
       <div className={styles.footerline}></div>
 
       <div className={styles.footercontainer}>
-        {/* Links de navegação animados */}
         <motion.div className={styles.footerlinks}>
           {[
             { text: "Home", href: "/" },
@@ -112,29 +110,47 @@ export default function Footer() {
           ))}
         </motion.div>
 
-        {/* Jurídico animado */}
         <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
           className={styles.footerlegal}
         >
-          <span className={styles.footertitle}>JURÍDICO</span>
-          <Link href="/termos" passHref legacyBehavior>
-            <a onClick={handleClick}>Termos de uso</a>
-          </Link>
-          <Link href="/privacidade" passHref legacyBehavior>
-            <a onClick={handleClick}>Política de Privacidade</a>
-          </Link>
-          <Link href="/cookies" passHref legacyBehavior>
-            <a onClick={handleClick}>Política de Cookies</a>
-          </Link>
+          <div 
+            className={styles.legalHeader}
+            onClick={() => setIsLegalOpen(!isLegalOpen)}
+          >
+            <span className={styles.footertitle}>JURÍDICO</span>
+            <motion.div
+              animate={{ rotate: isLegalOpen ? 180 : 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <FontAwesomeIcon icon={faChevronDown} className={styles.chevronIcon} />
+            </motion.div>
+          </div>
+          
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{
+              height: isLegalOpen ? 'auto' : 0,
+              opacity: isLegalOpen ? 1 : 0
+            }}
+            transition={{ duration: 0.3 }}
+            className={styles.legalLinks}
+          >
+            <Link href="/termos" passHref legacyBehavior>
+              <a onClick={handleClick}>Termos de uso</a>
+            </Link>
+            <Link href="/privacidade" passHref legacyBehavior>
+              <a onClick={handleClick}>Política de Privacidade</a>
+            </Link>
+            <Link href="/cookies" passHref legacyBehavior>
+              <a onClick={handleClick}>Política de Cookies</a>
+            </Link>
+          </motion.div>
         </motion.div>
-
-       
       </div>
 
-      {/* Copyright animado */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}

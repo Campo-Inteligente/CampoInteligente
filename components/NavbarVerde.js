@@ -47,16 +47,7 @@ export default function Navbar() {
         </Link>
       </motion.div>
 
-     
-      <a
-        href={process.env.NEXT_PUBLIC_PANEL_URL}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={styles.lockButton}
-      >
-        <FontAwesomeIcon icon={faLock} />
-      </a>
-
+      {/* Container para desktop */}
       <div className={styles.navContainer}>
         <motion.nav
           initial={{ opacity: 0, y: -20 }}
@@ -77,7 +68,6 @@ export default function Navbar() {
           </ul>
         </motion.nav>
 
-       
         <motion.a
           href={process.env.NEXT_PUBLIC_PANEL_URL}
           target="_blank"
@@ -95,10 +85,22 @@ export default function Navbar() {
         </motion.a>
       </div>
 
-      <div className={styles.hamburger} onClick={toggleMenu}>
-        <div className={`${styles.bar} ${isMenuOpen ? styles.open : ""}`}></div>
-        <div className={`${styles.bar} ${isMenuOpen ? styles.open : ""}`}></div>
-        <div className={`${styles.bar} ${isMenuOpen ? styles.open : ""}`}></div>
+      {/* Container para mobile (cadeado + hamburguer) */}
+      <div className={styles.mobileControls}>
+        <a
+          href={process.env.NEXT_PUBLIC_PANEL_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.lockButton}
+        >
+          <FontAwesomeIcon icon={faLock} />
+        </a>
+
+        <div className={styles.hamburger} onClick={toggleMenu}>
+          <div className={`${styles.bar} ${isMenuOpen ? styles.open : ""}`}></div>
+          <div className={`${styles.bar} ${isMenuOpen ? styles.open : ""}`}></div>
+          <div className={`${styles.bar} ${isMenuOpen ? styles.open : ""}`}></div>
+        </div>
       </div>
     </motion.header>
   );
